@@ -1,0 +1,107 @@
+<h1>CREATE USER</h1>
+<div class="row">
+	<div class="col-md-12">
+		<form name="createuserform" ng-submit="createUserSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Enter Username</label>
+						<input class="form-control" type="text" name="username" ng-model="createuserdata.username">
+					</div>
+					<div class="form-group">
+						<label>Enter New Password</label>
+						<input class="form-control" type="password" name="password" ng-model="createuserdata.password">
+					</div>
+					<div class="form-group">
+						<label>Confirm Password</label>
+						<input class="form-control" type="password" name="confirm_password" ng-model="confirmPassword">
+					</div>
+					<div class="form-group">
+						<label>User Category</label>
+						<select class="form-control" ng-model="createuserdata.userRole">
+							<option>Select Category</option>
+							<option>Management</option>
+							<option>Principal</option>
+							<option>Office Admin</option>
+							<option>Office Admission</option>
+							<option>Office Fees</option>
+							<option>Office Supdt</option>
+							<option>Office Steno</option>
+							<option>Office Stores</option>
+							<option>Office Transport</option>
+							<option>Teaching Staff</option>
+							<option>HOD</option>
+							<option>Placement officer</option>
+							<option>Sports</option>
+							<option>Library</option>
+							<option>Hostel</option>
+							<option>Parent/Student</option>
+							<option>System Admin</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Student ID / Admission No. / Enrollment No</label>
+						<input class="form-control" type="text" name="studentid" ng-model="createuserdata.studentID">
+					</div>
+					<div class="form-group">
+						<label>Enter Staff ID</label>
+						<input class="form-control" type="text" name="staffid" ng-model="createuserdata.staffID">
+					</div>
+					<div class="form-group">
+						<label>First Name</label>
+						<input class="form-control" type="text" name="firstname" ng-model="createuserdata.firstName">
+					</div>
+					<div class="form-group">
+						<label>Last Name</label>
+						<input class="form-control" type="text" name="lastname" ng-model="createuserdata.lastName">
+					</div>
+					<div class="form-group">
+						<label>Select Branch Name</label>
+						<select class="form-control" ng-model="createuserdata.branchCode">
+							<option>Select Branch Name</option>
+							<option>1010 Civil Engineering</option>
+							<option>1020 Mechanical Engineering</option>
+							<option>1021 Automobile Engineering</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Designation</label>
+						<input class="form-control" type="text" name="designation" ng-model="createuserdata.designation">
+					</div>
+					<div class="form-group">
+						<label>Semester</label>
+						<select class="form-control" ng-model="createuserdata.semester">
+							<option>Select Semester</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="createuserdata.academicYear">
+							<option>Select Academic Year</option>
+							<option>2017-2018</option>
+							<option>2016-2017</option>
+							<option>2015-2016</option>
+							<option>2014-2015</option>
+							<option>2013-2014</option>
+							<option>2012-2013</option>
+							<option>2011-2012</option>
+							<option>2010-2011</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="CREATE USER">
+			</div>
+		</form>
+	</div>
+</div>
