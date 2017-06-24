@@ -1,0 +1,83 @@
+<h1>COLLEGE FEES SETTING</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="collegefeessettingform" ng-submit="collegeFeesSettingSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Fees Setting Date</label>
+						<input class="form-control" type="text" name="feessettingdate" ng-model="collegefeessettingdata.feessettingdate">
+					</div>
+					<div class="form-group">
+						<label>Branch Name</label>
+						<select class="form-control" ng-model="collegefeessettingdata.branchname">
+							<option>Select Category</option>
+							<option>Civil Engineering</option>
+							<option>Mechanical Engineering</option>
+							<option>Automobile Engineering</option>
+							<option>Electrical and Electronics Engineering</option>
+							<option>Electronics and Communication Engineering</option>
+							<option>Computer Engineering</option>
+							<option>Information Technology</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Branch Code</label>
+						<input class="form-control" type="text" name="branchcode" ng-model="collegefeessettingdata.branchcode">
+					</div>
+					<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="collegefeessettingdata.academicyear">
+							<option>Select Year</option>
+							<option>2016-2017</option>
+							<option>2017-2018</option>
+							<option>2018-2019</option>
+							<option>2019-2020</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Admission Fees</label>
+						<input class="form-control" type="text" name="admissionfees" ng-model="collegefeessettingdata.admissionfees">
+					</div>
+					<div class="form-group">
+						<label>Tution Fees</label>
+						<input class="form-control" type="text" name="tutionfees" ng-model="collegefeessettingdata.tutionfees">
+					</div>
+					<div class="form-group">
+						<label>TextBook Fees</label>
+						<input class="form-control" type="text" name="textbookfees" ng-model="collegefeessettingdata.textbookfees">
+					</div>
+					<div class="form-group">
+						<label>Miscalleneous Fees</label>
+						<input class="form-control" type="text" name="miscalleneousfees" ng-model="collegefeessettingdata.miscalleneousfees">
+					</div>
+					<div class="form-group">
+						<label>Special Fees</label>
+						<input class="form-control" type="text" name="specialfees" ng-model="collegefeessettingdata.specialfees">
+					</div>
+					<div class="form-group">
+						<label>Group Insurance</label>
+						<input class="form-control" type="text" name="groupinsurance" ng-model="collegefeessettingdata.groupinsurance">
+					</div>
+					<div class="form-group">
+						<label>Others</label>
+						<input class="form-control" type="text" name="others" ng-model="collegefeessettingdata.others">
+					</div>
+					<div class="form-group">
+						<label>Total Fees</label>
+						<input class="form-control" type="text" name="totalfees" ng-model="collegefeessettingdata.totalfees">
+					</div>
+					<div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="collegefeessettingdata.loginuser">
+					</div>
+					
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SAVE">
+			</div>
+		</form>
+	</div>
+</div>
