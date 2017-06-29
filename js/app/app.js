@@ -2,10 +2,12 @@ var sivwebapp = angular.module("sivweb", ["ngRoute"]);
 sivwebapp.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "templates/test.html"
+        templateUrl : "templates/login.html",
+        controller : "loginCtrl"
     })
     .when("/login", {
-        templateUrl : "templates/login.html"
+        templateUrl : "templates/login.html",
+        controller : "loginCtrl"
     })
     .when("/createuser", {
         templateUrl : "templates/createuser.html",
@@ -35,6 +37,7 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/foodfeessetting.html",
         controller : "foodFeesSettingCtrl"
     })
+<<<<<<< HEAD
     .when("/feespayment", {
         templateUrl : "templates/feespayment.html",
         controller : "feesPaymentCtrl"
@@ -54,6 +57,28 @@ sivwebapp.config(function($routeProvider) {
     .when("/subjectentry", {
         templateUrl : "templates/subjectentry.html",
         controller : "subjectEntryCtrl"
+=======
+    .when("/certificatesubmission", {
+        templateUrl : "templates/certificatesubmission.html",
+        controller : "certificateSubmissionCtrl"
+    })
+    .when("/studenttransport", {
+        templateUrl : "templates/studenttransport.html",
+        controller : "studentTransportCtrl"
+    })
+    .when("/studenthostel", {
+        templateUrl : "templates/studenthostel.html",
+        controller : "studentHostelCtrl"
+    })
+    .when("/studentfood", {
+        templateUrl : "templates/studentfood.html",
+        controller : "studentFoodCtrl"
+    })
+
+    .otherwise({
+        templateUrl : "templates/login.html",
+        controller : "loginCtrl"
+>>>>>>> 6bff16430bf12b907bb475aa2554116391886072
     });
     
 });

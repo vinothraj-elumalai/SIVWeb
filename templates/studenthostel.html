@@ -1,0 +1,95 @@
+<h1>STUDENT HOSTEL INFORMATION</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="studenthostelform" ng-submit="studentHostelSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Enter Register Number / Admission Number</label>
+						<input class="form-control" type="text" name="regno" ng-model="studentHostelData.regno">
+					</div>
+					<div class="form-group">	
+					<div class="text-right">
+					<input type="button" class="btn btn-default" value="SEARCH">
+					</div>
+					</div>
+					<div class="form-group">
+						<label>Select Branch</label>
+						<select class="form-control" ng-model="studentHostelData.branch">
+							<option>Select Branch</option>
+							<option>Civil Engineering</option>
+							<option>Mechanical Engineering</option>
+							<option>Automobile Engineering</option>
+							<option>Electrical and Electronics Engineering</option>
+							<option>Electronics and Communication Engineering</option>
+							<option>Computer Engineering</option>
+							<option>Information Technology</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Branch Code</label>
+						<input class="form-control" type="text" name="branchCode" ng-model="studentHostelData.branchcode">
+					</div>
+					<div class="form-group">
+						<label>Semester</label>
+						<select class="form-control" ng-model="studentHostelData.semester">
+							<option>Select Semester</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="studentHostelData.academicYear">
+							<option>Select Academic Year</option>
+							<option>2017-2018</option>
+							<option>2016-2017</option>
+							<option>2015-2016</option>
+							<option>2014-2015</option>
+							<option>2013-2014</option>
+							<option>2012-2013</option>
+							<option>2011-2012</option>
+							<option>2010-2011</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Opted Facility</label>
+						<select class="form-control" ng-model="studentHostelData.optdFacility">
+							<option>Select Opted Facility</option>
+							<option>1</option>
+							<option>2</option>
+							
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Food Type</label>
+						<select class="form-control" ng-model="studentHostelData.foodtype">
+							<option>Select Food Type</option>
+							<option>Veg</option>
+							<option>Non-Veg</option>
+						</select>
+						
+					</div>
+					<div class="form-group">
+						<label>Enter Amount Fess</label>
+						<input class="form-control" type="text" name="amount" ng-model="studentHostelData.amount">
+					</div>
+					<div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="studentHostelData.loginuser">
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>

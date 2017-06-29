@@ -1,1 +1,15 @@
-<h1>SAMPLE TEMPLATE</h1>
+<div class="row">
+	<div class="col-md-12">
+		<form name="createuserform" ng-submit="loginSubmit()" novalidate>
+			<div class="form-group">
+				<label>Enter Username</label>
+				<input class="form-control" type="text" name="username" ng-model="logindata.username">
+			</div>
+			<div class="form-group">
+				<label>Enter Password</label>
+				<input class="form-control" type="password" name="password" ng-model="logindata.password">
+			</div>
+			<input type="submit" class="btn btn-primary" value="LOGIN">
+		</form>
+	</div>
+</div>
