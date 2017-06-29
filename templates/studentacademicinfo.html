@@ -1,0 +1,73 @@
+<h1>STUDENT ACADEMIC INFORMATION</h1>
+<div class="row">
+	<div class="col-md-12">
+		<form name="studentacademicinfo" ng-submit="studentAcademicInfoSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Registratoin Number </label>
+						<input class="form-control" type="text" name="regno" ng-model="studentacademicinfodata.regno">
+					</div> 
+					<div class="form-group">	
+					<div class="text-right">
+						<input type="button" class="btn btn-default" value="SEARCH">
+					</div>
+					</div>
+					<div class="form-group">
+						<label>Community </label>
+						<input class="form-control" type="text" name="community" ng-model="studentacademicinfodata.community">
+					</div>
+					<div class="form-group">
+						<label>Religion  </label>
+						<input class="form-control" type="text" name="religion" ng-model="studentacademicinfodata.religion">
+					</div>
+					<div class="form-group">
+						<label>Caste </label>
+						<input class="form-control" type="text" name="caste" ng-model="studentacademicinfodata.caste">
+					</div>
+					<div class="form-group">
+
+						<label>National</label>
+						<input class="form-control" type="text" name="national" ng-model="studentacademicinfodata.national">
+					</div>
+					<div class="form-group">
+						<label>Blood Group </label>
+						<input class="form-control" type="text" name="bloodgroup" ng-model="studentacademicinfodata.bloodgroup">
+					</div>
+					<div class="form-group">
+						<label>Duration From</label>
+						<input class="form-control" type="text" name="durationfrom" ng-model="studentacademicinfodata.durationfrom">
+					</div>
+					<div class="form-group">
+						<label>Duration To</label>
+						<input class="form-control" type="text" name="durationto" ng-model="studentacademicinfodata.durationto">
+					</div>
+					<div class="form-group">
+						<label>Admitted Date </label>
+						<input class="form-control" type="text" name="admitteddate" ng-model="studentacademicinfodata.admitteddate">
+					</div>
+					<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="studentacademicinfodata.academicyear">
+							<option>Select Year</option>
+							<option>2016-2017</option>
+							<option>2017-2018</option>
+							<option>2018-2019</option>
+							<option>2019-2020</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Login User </label>
+						<input class="form-control" type="text" name="loginuser" ng-model="studentacademicinfodata.loginuser">
+					</div>
+		
+																									
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SAVE">
+			</div>
+		</form>
+	</div>
+</div>

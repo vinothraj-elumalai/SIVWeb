@@ -34,5 +34,26 @@ sivwebapp.config(function($routeProvider) {
     .when("/foodfeessetting", {
         templateUrl : "templates/foodfeessetting.html",
         controller : "foodFeesSettingCtrl"
+    })
+    .when("/feespayment", {
+        templateUrl : "templates/feespayment.html",
+        controller : "feesPaymentCtrl"
+    })
+    .when("/studentacademicinfo", {
+        templateUrl : "templates/studentacademicinfo.html",
+        controller : "studentAcademicInfoCtrl"
+    })
+    .when("/studentbaseinformation", {
+        templateUrl : "templates/studentbaseinformation.html",
+        controller : "studentBaseInformationCtrl"
+    })
+    .when("/studentpersonalinformation", {
+        templateUrl : "templates/studentpersonalinformation.html",
+        controller : "studentPersonalInformationCtrl"
+    })
+    .when("/subjectentry", {
+        templateUrl : "templates/subjectentry.html",
+        controller : "subjectEntryCtrl"
     });
+    
 });

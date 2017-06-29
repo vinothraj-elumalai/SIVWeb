@@ -1,0 +1,102 @@
+<h1>SUBJECT ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="subjectentryform" ng-submit="subjectEntrySubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">	
+				<div class="form-group">
+						<label>Branch Name</label>
+						<select class="form-control" ng-model="subjectentrydata.branchname">
+							<option>Select Category</option>
+							<option>Civil Engineering</option>
+							<option>Mechanical Engineering</option>
+							<option>Automobile Engineering</option>
+							<option>Electrtical and Electronics Engg</option>
+							<option>Electronics and Communication</option>
+							<option>Computer Engineering</option>
+							<option>Information Technology</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Branch Code</label>
+						<input class="form-control" type="text" name="branchcode" ng-model="subjectentrydata.branchcode">
+					</div>
+
+					<div class="form-group">
+						<label>Semester</label>
+						<select class="form-control" ng-model="subjectentrydata.semester">
+							<option>Select Category</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+						</select>
+					</div>
+                    <div class="form-group">
+						<label>Subject Name</label>
+						<select class="form-control" ng-model="subjectentrydata.subjectname">
+							<option>Select Category</option>
+							<option>C</option>
+							<option>C++</option>
+							<option>Java</option>
+							<option>.Net</option>
+							<option>SysAdmin</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Subject Code</label>
+						<input class="form-control" type="text" name="subjectcode" ng-model="subjectentrydata.subjectcode">
+					</div>
+					<div class="form-group">
+						<label>Scheme</label>
+						<select class="form-control" ng-model="subjectentrydata.scheme">
+							<option>Select scheme</option>
+							<option>L</option>
+							<option>M</option>
+							<option>K</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Hours/Week</label>
+						<input class="form-control" type="text" name="hours" ng-model="subjectentrydata.hours">
+					</div>
+					<div class="form-group">
+						<label>Required Hours</label>
+						<input class="form-control" type="text" name="reqhours" ng-model="subjectentrydata.reqhours">
+					</div>
+					<div class="form-group">
+						<label>In Short</label>
+						<input class="form-control" type="text" name="inshort" ng-model="subjectentrydata.inshort">
+					</div>
+					<div class="form-group">
+						<label>Allotted Hours</label>
+						<input class="form-control" type="text" name="allottedhours" ng-model="subjectentrydata.allottedhours">
+					</div>
+					<div class="form-group">
+						<label>Subject Type</label>
+						<select class="form-control" ng-model="subjectentrydata.subjecttype">
+							<option>Select Subject Type</option>
+							<option>Theory</option>
+							<option>Practical</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Column Name</label>
+						<input class="form-control" type="text" name="columnname" ng-model="subjectentrydata.columnname">
+					</div>
+					<div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="subjectentrydata.loginuser">
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="CREATE USER">
+			</div>
+		</form>
+	</div>
+</div>
