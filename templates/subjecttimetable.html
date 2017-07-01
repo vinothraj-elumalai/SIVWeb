@@ -1,0 +1,124 @@
+<h1>SUBJECT TIME TABLE ENTRY </h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="subjecttimetableform" ng-submit="subjectTimeTableSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Select Branch</label>
+						<select class="form-control" ng-model="subjecttimetabledata.branch">
+							<option>Select Branch</option>
+							<option>CIVIL ENGINEERING</option>
+							<option>MECHANICAL ENGINEERING</option>
+							<option>AUTOMOBILE ENGINEERING</option>
+							<option>ELECTRICAL AND ELECTRONICS ENGINEERING</option>
+							<option>ELECTRONICS AND COMMUNICATION ENGINEERING</option>
+							<option>COMPUTER ENGINEERING ENGINEERING</option>
+							<option>INFORMATION TECHNOLOGY</option>
+							</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Branch Code</label>
+						<input class="form-control" type="text" name="branchcode" ng-model="subjecttimetabledata.branchcode">
+					</div>
+					<div class="form-group">
+						<label>Batch</label>
+						<select class="form-control" ng-model="subjecttimetabledata.batch">
+							<option>Select Batch</option>
+							<option>Batch - I</option>
+							<option>Batch - II</option>
+							<option>Batch - II</option>
+							<option>Batch - IV</option>
+							<option>Batch - V</option>
+							<option>Batch - VI</option>
+							<option>Batch - VII</option>
+							<option>Batch - VIII</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Semester</label>
+						<select class="form-control" ng-model="subjecttimetabledata.semester">
+							<option>Select Semester</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="subjecttimetabledata.academicYear">
+							<option>Select Academic Year</option>
+							<option>2017-2018</option>
+							<option>2016-2017</option>
+							<option>2015-2016</option>
+							<option>2014-2015</option>
+							<option>2013-2014</option>
+							<option>2012-2013</option>
+							<option>2011-2012</option>
+							<option>2010-2011</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Enter Hour1</label>
+						<input class="form-control" type="text" name="hour1" ng-model="subjecttimetabledata.hour1">
+					</div>
+					<div class="form-group">
+						<label>Enter Hour2</label>
+						<input class="form-control" type="text" name="hour2" ng-model="subjecttimetabledata.hour2">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Hour3</label>
+						<input class="form-control" type="text" name="hour3" ng-model="subjecttimetabledata.hour3">
+					</div>
+					<div class="form-group">
+						<label>Enter Hour4</label>
+						<input class="form-control" type="text" name="hour4" ng-model="subjecttimetabledata.hour4">
+					</div>
+					<div class="form-group">
+						<label>Enter Hour5</label>
+						<input class="form-control" type="text" name="hour5" ng-model="subjecttimetabledata.hour5">
+					</div>
+					<div class="form-group">
+						<label>Enter Hour6</label>
+						<input class="form-control" type="text" name="hour6" ng-model="subjecttimetabledata.hour6">
+					</div>
+					<div class="form-group">
+						<label>Enter Hour7</label>
+						<input class="form-control" type="text" name="hour7" ng-model="subjecttimetabledata.hour7">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Hour8</label>
+						<input class="form-control" type="text" name="hour1" ng-model="subjecttimetabledata.hour8">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Day</label>
+						<input class="form-control" type="text" name="ttday" ng-model="subjecttimetabledata.ttday">
+					</div>
+					<div class="form-group">
+						<label>Enter DayNo</label>
+						<input class="form-control" type="text" name="dayno" ng-model="subjecttimetabledata.dayno">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="subjecttimetabledata.loginuser">
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>
