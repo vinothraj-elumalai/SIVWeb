@@ -1,0 +1,108 @@
+<h1>FEES FOLLOWUP</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="feesfollowupform" ng-submit="feesFollowupSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">	
+				    <div class="form-group">
+						<label>Date</label>
+						<input class="form-control" type="text" name="currentdate" ng-model="feesfollowupdata.currentdate">
+					</div>				
+					<div class="form-group">
+						<label>Enter RegNo</label>
+						<input class="form-control" type="text" name="regno" ng-model="feesfollowupdata.regno">
+					</div>
+
+					<div class="form-group">	
+					<div class="text-right">
+						<input type="button" class="btn btn-default" value="SEARCH">
+					</div>
+					</div>
+
+                    <div class="form-group">
+						<label>Admission No</label>
+						<input class="form-control" type="text" name="admissionno" ng-model="feesfollowupdata.admissionno">
+					</div>
+   					<div class="form-group">
+						<label>Name</label>
+						<input class="form-control" type="text" name="name" ng-model="feesfollowupdata.name">
+					</div>
+
+					<div class="form-group">
+						<label>Semester</label>
+						<select class="form-control" ng-model="feesfollowupdata.semester">
+							<option>Select Semester</option>
+							<option>I</option>
+							<option>II</option>
+							<option>III</option>
+							<option>IV</option>
+							<option>V</option>
+							<option>VI</option>
+						</select>
+					</div>
+					
+					<div class="form-group">
+						<label>Branch Name</label>
+						<select class="form-control" ng-model="feesfollowupdata.branchname">
+							<option>Select Category</option>
+							<option>Civil Engineering</option>
+							<option>Mechanical Engineering</option>
+							<option>Automobile Engineering</option>
+							<option>Electrtical and Electronics Engg</option>
+							<option>Electronics and Communication</option>
+							<option>Computer Engineering</option>
+							<option>Information Technology</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Branch Code</label>
+						<input class="form-control" type="text" name="branchcode" ng-model="feesfollowupdata.branchcode">
+					</div>
+
+                    <div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="feesfollowupdata.academicyear">
+							<option>Select Year</option>
+							<option>2016-2017</option>
+							<option>2017-2018</option>
+							<option>2018-2019</option>
+							<option>2019-2020</option>
+						</select>
+					</div>
+
+                    <div class="form-group">
+						<label>Last Payment Date</label>
+						<input class="form-control" type="text" name="lastpaymtdate" ng-model="feesfollowupdata.lastpaymtdate">
+					</div>
+ 					
+ 					<div class="form-group">
+						<label>Last Payment Amount</label>
+						<input class="form-control" type="text" name="lastpaymtamount" ng-model="feesfollowupdata.lastpaymtamount">
+					</div>
+
+                    <div class="form-group">
+						<label>Due Date</label>
+						<input class="form-control" type="text" name="duedate" ng-model="feesfollowupdata.duedate">
+					</div>
+                    
+                    <div class="form-group">
+						<label>Remarks</label>
+						<input class="form-control" type="text" name="remarks" ng-model="feesfollowupdata.remarks">
+					</div>
+
+					<div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="feesfollowupdata.loginuser">
+					</div>
+
+                    
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="CREATE USER">
+			</div>
+		</form>
+	</div>
+</div>

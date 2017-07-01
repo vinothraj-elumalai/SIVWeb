@@ -37,7 +37,6 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/foodfeessetting.html",
         controller : "foodFeesSettingCtrl"
     })
-<<<<<<< HEAD
     .when("/feespayment", {
         templateUrl : "templates/feespayment.html",
         controller : "feesPaymentCtrl"
@@ -57,7 +56,7 @@ sivwebapp.config(function($routeProvider) {
     .when("/subjectentry", {
         templateUrl : "templates/subjectentry.html",
         controller : "subjectEntryCtrl"
-=======
+    })
     .when("/certificatesubmission", {
         templateUrl : "templates/certificatesubmission.html",
         controller : "certificateSubmissionCtrl"
@@ -74,11 +73,37 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/studentfood.html",
         controller : "studentFoodCtrl"
     })
+    .when("/subjectallocation", {
+        templateUrl : "templates/subjectallocation.html",
+        controller : "subjectAllocationCtrl"
+    })
+    .when("/questionentry", {
+        templateUrl : "templates/questionentry.html",
+        controller : "questionEntryCtrl"
+    })
+    .when("/staffleaveletterentry", {
+        templateUrl : "templates/staffleaveletterentry.html",
+        controller : "staffLeaveLetterEntryCtrl"
+    })
+
+    .when("/bonafide", {
+        templateUrl : "templates/bonafide.html",
+        controller : "bonafideCtrl"
+    })
+    
+    .when("/firstaid", {
+        templateUrl : "templates/firstaid.html",
+        controller : "firstaidEntryCtrl"
+    })
+
+    .when("/feesfollowup", {
+        templateUrl : "templates/feesfollowup.html",
+        controller : "feesFollowupCtrl"
+    })
 
     .otherwise({
         templateUrl : "templates/login.html",
         controller : "loginCtrl"
->>>>>>> 6bff16430bf12b907bb475aa2554116391886072
     });
     
 });

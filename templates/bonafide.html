@@ -1,0 +1,98 @@
+<h1>BONAFIDE</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="bonafideform" ng-submit="bonafideSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Enter RegNo</label>
+						<input class="form-control" type="text" name="regno" ng-model="bonafidedata.regno">
+					</div>
+                    <div class="form-group">
+						<label>Admission No</label>
+						<input class="form-control" type="text" name="admissionno" ng-model="bonafidedata.admissionno">
+					</div>
+   					<div class="form-group">
+						<label>Name</label>
+						<input class="form-control" type="text" name="name" ng-model="bonafidedata.name">
+					</div>
+					<div class="form-group">
+						<label>Semester</label>
+						<input class="form-control" type="text" name="semester" ng-model="bonafidedata.semester">
+					</div>
+					
+					<div class="form-group">
+						<label>Branch Name</label>
+						<select class="form-control" ng-model="bonafidedata.branchname">
+							<option>Select Category</option>
+							<option>Civil Engineering</option>
+							<option>Mechanical Engineering</option>
+							<option>Automobile Engineering</option>
+							<option>Electrtical and Electronics Engg</option>
+							<option>Electronics and Communication</option>
+							<option>Computer Engineering</option>
+							<option>Information Technology</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Branch Code</label>
+						<input class="form-control" type="text" name="branchcode" ng-model="bonafidedata.branchcode">
+					</div>
+
+                    <div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="bonafidedata.academicyear">
+							<option>Select Year</option>
+							<option>2016-2017</option>
+							<option>2017-2018</option>
+							<option>2018-2019</option>
+							<option>2019-2020</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Father Name</label>
+						<input class="form-control" type="text" name="fathername" ng-model="bonafidedata.fathername">
+					</div>
+
+                    <div class="form-group">
+						<label>Issued Date</label>
+						<input class="form-control" type="text" name="issueddate" ng-model="bonafidedata.issueddate">
+					</div>
+                    
+                    <div class="form-group">
+						<label>Certificate For</label>
+						<select class="form-control" ng-model="bonafidedata.certificatefor">
+							<option>Select Option</option>
+							<option>X</option>
+							<option>Y</option>
+							<option>Z</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>No Of Years</label>
+						<select class="form-control" ng-model="bonafidedata.noofyears">
+							<option>Select Years</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+						</select>
+					</div>
+
+                    <div class="form-group">
+						<label>LoginUser1</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="bonafidedata.loginuser">
+					</div>
+                    
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="CREATE USER">
+			</div>
+		</form>
+	</div>
+</div>
