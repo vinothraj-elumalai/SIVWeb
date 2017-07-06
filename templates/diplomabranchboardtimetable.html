@@ -1,0 +1,326 @@
+<h1>BOARD EXAM TIME TABLE ENTRY </h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="diplomabranchboardexamtimetableform" ng-submit="diplomaBranchBoardExamTimeTableSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Enter Test Id</label>
+						<input class="form-control" type="text" name="examid" ng-model="diplomaBranchboardexamtimetabledata.examid">
+					</div>
+					
+					<div class="form-group">
+						<label>Enter Date</label>
+						<input class="form-control" type="text" name="entrydate" ng-model="diplomaBranchboardexamtimetabledata.entrydate">
+					</div>
+					<div class="form-group">
+						<label>Select Branch</label>
+						<select class="form-control" ng-model="branch">
+							<option>Select Branch</option>
+							<option>CIVIL ENGINEERING</option>
+							<option>MECHANICAL ENGINEERING</option>
+							<option>AUTOMOBILE ENGINEERING</option>
+							<option>ELECTRICAL AND ELECTRONICS ENGINEERING</option>
+							<option>ELECTRONICS AND COMMUNICATION ENGINEERING</option>
+							<option>COMPUTER ENGINEERING ENGINEERING</option>
+							<option>INFORMATION TECHNOLOGY</option>
+							</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Branch Code</label>
+						<input class="form-control" type="text" name="branchcode" ng-model="diplomaBranchboardexamtimetabledata.branchcode">
+					</div>
+										<div class="form-group">
+						<label>Batch</label>
+						<select class="form-control" ng-model="diplomaBranchboardexamtimetabledata.batch">
+							<option>Select Batch</option>
+							<option>Batch - I</option>
+							<option>Batch - II</option>
+							<option>Batch - II</option>
+							<option>Batch - IV</option>
+							<option>Batch - V</option>
+							<option>Batch - VI</option>
+							<option>Batch - VII</option>
+							<option>Batch - VIII</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Semester</label>
+						<select class="form-control" ng-model="diplomaBranchboardexamtimetabledata.semester">
+							<option>Select Semester</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="diplomaBranchboardexamtimetabledata.academicyear">
+							<option>Select Academic Year</option>
+							<option>2017-2018</option>
+							<option>2016-2017</option>
+							<option>2015-2016</option>
+							<option>2014-2015</option>
+							<option>2013-2014</option>
+							<option>2012-2013</option>
+							<option>2011-2012</option>
+							<option>2010-2011</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Month of Exam</label>
+						<select class="form-control" ng-model="diplomaBranchboardexamtimetabledata.monthofexam">
+							<option>Select Month of Exam</option>
+							<option>Jan</option>
+							<option>Feb</option>
+							<option>Mar</option>
+							<option>Apr</option>
+							<option>May</option>
+							<option>Jun</option>
+							<option>Jul</option>
+							<option>Aug</option>
+							<option>Sep</option>
+							<option>Oct</option>
+							<option>Nov</option>
+							<option>Dec</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Year of Exam</label>
+						<select class="form-control" ng-model="diplomaBranchboardexamtimetabledata.yearofexam">
+							<option>Select Year of Exam</option>
+							<option>2017</option>
+							<option>2018</option>
+							<option>2019</option>
+							<option>2020</option>
+							<option>2021</option>
+							<option>2022</option>
+							<option>2023</option>
+							<option>2024</option>
+							<option>2025</option>
+							<option>2026</option>
+							<option>2027</option>
+							<option>2028</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Maximum Marks</label>
+						<select class="form-control" ng-model="diplomaBranchboardexamtimetabledata.maxmarks">
+							<option>Select Maximum Marks of Internal Test</option>
+							<option>40</option>
+							<option>50</option>
+							<option>75</option>
+							<option>100</option>
+					</select>
+					</div>
+					
+					<div class="form-group">	
+					<div class="text-right">
+						<input type="button" class="btn btn-default" value="FETCH SUBJECT DETAILS">
+					</div>
+					</div>
+
+					<div class="form-group">
+						<label>Enter Subject1 Column Number</label>
+						<input class="form-control" type="text" name="subject1Colno" ng-model="diplomaBranchboardexamtimetabledata.subject1Colno">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Subject1 Code Number</label>
+						<input class="form-control" type="text" name="subject1Codeno" ng-model="diplomaBranchboardexamtimetabledata.subject1Codeno">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Subject1 Name</label>
+						<input class="form-control" type="text" name="subject1Name" ng-model="subject1Name">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Subject1 Test Date</label>
+						<input class="form-control" type="text" name="subject1TestDate" ng-model="diplomaBranchboardexamtimetabledata.subject1TestDate">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Subject1 Test Day</label>
+						<input class="form-control" type="text" name="subject1TestDay" ng-model="diplomaBranchboardexamtimetabledata.subject1TestDay">
+					</div>
+					<div class="form-group">
+						<label>Enter Subject2 Column Number</label>
+						<input class="form-control" type="text" name="subject2Colno" ng-model="diplomaBranchboardexamtimetabledata.subject2Colno">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Subject2 Code Number</label>
+						<input class="form-control" type="text" name="subject2Codeno" ng-model="diplomaBranchboardexamtimetabledata.subject2Codeno">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Subject2 Name</label>
+						<input class="form-control" type="text" name="subject2Name" ng-model="subject2Name">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Subject2 Test Date</label>
+						<input class="form-control" type="text" name="subject2TestDate" ng-model="diplomaBranchboardexamtimetabledata.subject2TestDate">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Subject2 Test Day</label>
+						<input class="form-control" type="text" name="subject2TestDay" ng-model="diplomaBranchboardexamtimetabledata.subject2TestDay">
+					</div>
+					<div class="form-group">
+						<label>Enter Subject3 Column Number</label>
+						<input class="form-control" type="text" name="subject3Colno" ng-model="diplomaBranchboardexamtimetabledata.subject3Colno">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Subject3 Code Number</label>
+						<input class="form-control" type="text" name="subject3Codeno" ng-model="diplomaBranchboardexamtimetabledata.subject3Codeno">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Subject3 Name</label>
+						<input class="form-control" type="text" name="subject3Name" ng-model="subject3Name">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Subject3 Test Date</label>
+						<input class="form-control" type="text" name="subject3TestDate" ng-model="diplomaBranchboardexamtimetabledata.subject3TestDate">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Subject3 Test Day</label>
+						<input class="form-control" type="text" name="subject3TestDay" ng-model="diplomaBranchboardexamtimetabledata.subject3TestDay">
+					</div>
+					<div class="form-group">
+						<label>Enter Subject4 Column Number</label>
+						<input class="form-control" type="text" name="subject4Colno" ng-model="diplomaBranchboardexamtimetabledata.subject4Colno">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Subject4 Code Number</label>
+						<input class="form-control" type="text" name="subject4Codeno" ng-model="diplomaBranchboardexamtimetabledata.subject4Codeno">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Subject4 Name</label>
+						<input class="form-control" type="text" name="subject4Name" ng-model="subject4Name">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Subject4 Test Date</label>
+						<input class="form-control" type="text" name="subject4TestDate" ng-model="diplomaBranchboardexamtimetabledata.subject4TestDate">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Subject4 Test Day</label>
+						<input class="form-control" type="text" name="subject4TestDay" ng-model="diplomaBranchboardexamtimetabledata.subject4TestDay">
+					</div>
+					<div class="form-group">
+						<label>Enter Subject5 Column Number</label>
+						<input class="form-control" type="text" name="subject5Colno" ng-model="diplomaBranchboardexamtimetabledata.subject5Colno">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Subject5 Code Number</label>
+						<input class="form-control" type="text" name="subject5Codeno" ng-model="diplomaBranchboardexamtimetabledata.subject5Codeno">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Subject5 Name</label>
+						<input class="form-control" type="text" name="subject5Name" ng-model="subject5Name">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Subject5 Test Date</label>
+						<input class="form-control" type="text" name="subject5TestDate" ng-model="diplomaBranchboardexamtimetabledata.subject5TestDate">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Subject5 Test Day</label>
+						<input class="form-control" type="text" name="subject5TestDay" ng-model="diplomaBranchboardexamtimetabledata.subject5TestDay">
+					</div>
+					<div class="form-group">
+						<label>Enter Subject6 Column Number</label>
+						<input class="form-control" type="text" name="subject6Colno" ng-model="diplomaBranchboardexamtimetabledata.subject6Colno">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Subject6 Code Number</label>
+						<input class="form-control" type="text" name="subject6Codeno" ng-model="diplomaBranchboardexamtimetabledata.subject6Codeno">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Subject6 Name</label>
+						<input class="form-control" type="text" name="subject6Name" ng-model="subject6Name">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Subject6 Test Date</label>
+						<input class="form-control" type="text" name="subject6TestDate" ng-model="diplomaBranchboardexamtimetabledata.subject6TestDate">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Subject6 Test Day</label>
+						<input class="form-control" type="text" name="subject6TestDay" ng-model="diplomaBranchboardexamtimetabledata.subject6TestDay">
+					</div>
+					<div class="form-group">
+						<label>Enter Subject7 Column Number</label>
+						<input class="form-control" type="text" name="subject7Colno" ng-model="diplomaBranchboardexamtimetabledata.subject7Colno">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Subject7 Code Number</label>
+						<input class="form-control" type="text" name="subject7Codeno" ng-model="diplomaBranchboardexamtimetabledata.subject7Codeno">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Subject7 Name</label>
+						<input class="form-control" type="text" name="subject7Name" ng-model="subject7Name">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Subject7 Test Date</label>
+						<input class="form-control" type="text" name="subject7TestDate" ng-model="diplomaBranchboardexamtimetabledata.subject7TestDate">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Subject7 Test Day</label>
+						<input class="form-control" type="text" name="subject7TestDay" ng-model="diplomaBranchboardexamtimetabledata.subject7TestDay">
+					</div>
+
+
+
+					<div class="form-group">
+						<label>Enter Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="diplomaBranchboardexamtimetabledata.loginuser">
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>

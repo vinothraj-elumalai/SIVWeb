@@ -1,0 +1,78 @@
+<h1>STOREDS VENDOR DETAILS ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="storesvendordetailform" ng-submit="storesVendorDetailSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Enter Vendor ID</label>
+						<input class="form-control" type="text" name="vendorId" ng-model="storesvendordetaildata.vendorId">
+					</div>
+					<div class="form-group">
+						<label>Enter Vendor Name</label>
+						<input class="form-control" type="text" name="vendorName" ng-model="storesvendordetaildata.vendorName">
+					</div>
+					<div class="form-group">
+						<label>Enter Contact Person Name</label>
+						<input class="form-control" type="text" name="contactPersonName" ng-model="storesvendordetaildata.contactPersonName">
+					</div>
+					<div class="form-group">
+						<label>Enter Contact Person Mobile Number</label>
+						<input class="form-control" type="text" name="contactPersonMobNo" ng-model="storesvendordetaildata.contactPersonMobNo">
+					</div>
+					<div class="form-group">
+						<label>Enter Contact Person Alternate Mobile Number</label>
+						<input class="form-control" type="text" name="contactPersonAlternateMobNo" ng-model="storesvendordetaildata.contactPersonAlternateMobNo">
+					</div>
+					<div class="form-group">
+						<label>Enter Vendor Address Line1</label>
+						<input class="form-control" type="text" name="vendorAddress1" ng-model="storesvendordetaildata.vendorAddress1">
+					</div>
+					
+					<div class="form-group">
+						<label>Enter Vendor Address Line2</label>
+						<input class="form-control" type="text" name="vendorAddress2" ng-model="storesvendordetaildata.vendorAddress2">
+					</div>
+					<div class="form-group">
+						<label>Enter Vendor Area</label>
+						<input class="form-control" type="text" name="vendorArea" ng-model="storesvendordetaildata.vendorArea">
+					</div>
+					<div class="form-group">
+						<label>Enter Vendor Pin</label>
+						<input class="form-control" type="text" name="vendorPin" ng-model="storesvendordetaildata.vendorPin">
+					</div>
+					<div class="form-group">
+						<label>Enter Vendor E-mail Id</label>
+						<input class="form-control" type="text" name="vendorEmail" ng-model="storesvendordetaildata.vendorEmail">
+					</div>
+					<div class="form-group">
+						<label>Enter Vendor Alternate E-mail Id</label>
+						<input class="form-control" type="text" name="vendorAlternateEmail" ng-model="storesvendordetaildata.vendorAlternateEmail">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Vendor PAN No</label>
+						<input class="form-control" type="text" name="vendorPanNo" ng-model="storesvendordetaildata.vendorPanNo">
+					</div>
+					<div class="form-group">
+						<label>Enter Vendor GST No</label>
+						<input class="form-control" type="text" name="vendorGSTNo" ng-model="storesvendordetaildata.vendorGSTNo">
+					</div>
+					<div class="form-group">
+						<label>Is Vendor Deleted ?</label>
+						<input type="checkbox"   name="vendorDeleted" ng-model="storesvendordetaildata.vendorDeleted"> Vendor Deleted</label>
+					</div>
+
+					<div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="storesvendordetaildata.loginuser">
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>

@@ -73,7 +73,6 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/studentfood.html",
         controller : "studentFoodCtrl"
     })
-<<<<<<< HEAD
     .when("/subjectallocation", {
         templateUrl : "templates/subjectallocation.html",
         controller : "subjectAllocationCtrl"
@@ -101,8 +100,6 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/feesfollowup.html",
         controller : "feesFollowupCtrl"
     })
-
-=======
     .when("/studentleaveletter", {
         templateUrl : "templates/studentleaveletter.html",
         controller : "studentLeaveLetterCtrl"
@@ -127,7 +124,39 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/studentdiscontinuedtc.html",
         controller : "studentDiscontinuedTcCtrl"
     })
->>>>>>> 3ef8e90ef218cad42b103055cc435b4d01a5afb7
+    .when("/studentremarksentry", {
+        templateUrl : "templates/studentremarks.html",
+        controller : "studentRemarksEntryCtrl"
+    })
+    .when("/studentremarksaction", {
+        templateUrl : "templates/studentremarksaction.html",
+        controller : "studentRemarksActionCtrl"
+    })
+    .when("/diplomainternalbranchtesttimetable", {
+        templateUrl : "templates/diplomabranchinttesttimetable.html",
+        controller : "diplomaBranchIntTestTimetableCtrl"
+    })
+    .when("/diplomainternalsem1testtimetable", {
+        templateUrl : "templates/diplomasem1inttesttimetable.html",
+        controller : "diplomaSem1IntTestTimetableCtrl"
+    })
+    .when("/diplomainternalsem2testtimetable", {
+        templateUrl : "templates/diplomasem2inttesttimetable.html",
+        controller : "diplomaSem2IntTestTimetableCtrl"
+    })
+    .when("/diplomabranchboardexamtimetable", {
+        templateUrl : "templates/diplomabranchboardtimetable.html",
+        controller : "diplomaBranchBoardExamTimetableCtrl"
+    })
+    .when("/diplomafirstyearboardexamtimetable", {
+        templateUrl : "templates/diplomafirstyearboardtimetable.html",
+        controller : "diplomaFirstYearBoardExamTimetableCtrl"
+    })
+    .when("/vendordetails", {
+        templateUrl : "templates/vendordetails.html",
+        controller : "vendorDetailsCtrl"
+    })
+
     .otherwise({
         templateUrl : "templates/login.html",
         controller : "loginCtrl"

@@ -1,0 +1,112 @@
+<h1>STUDENT REMARKS ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="studentremarksform" ng-submit="studentRemarksSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Enter Register Number</label>
+						<input class="form-control" type="text" name="regno" ng-model="studentremarksdata.regno">
+					</div>
+					<div class="form-group">
+						<label>Enter Name</label>
+						<input class="form-control" type="text" name="candname" ng-model="candname">
+					</div>
+					<div class="form-group">
+						<label>Select Branch</label>
+						<select class="form-control" ng-model="branch">
+							<option>Select Branch</option>
+							<option>CIVIL ENGINEERING</option>
+							<option>MECHANICAL ENGINEERING</option>
+							<option>AUTOMOBILE ENGINEERING</option>
+							<option>ELECTRICAL AND ELECTRONICS ENGINEERING</option>
+							<option>ELECTRONICS AND COMMUNICATION ENGINEERING</option>
+							<option>COMPUTER ENGINEERING ENGINEERING</option>
+							<option>INFORMATION TECHNOLOGY</option>
+							</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Branch Code</label>
+						<input class="form-control" type="text" name="branchcode" ng-model="studentremarksdata.branchcode">
+					</div>
+					<div class="form-group">
+						<label>Batch</label>
+						<select class="form-control" ng-model="studentremarksdata.batch">
+							<option>Select Batch</option>
+							<option>Batch - I</option>
+							<option>Batch - II</option>
+							<option>Batch - II</option>
+							<option>Batch - IV</option>
+							<option>Batch - V</option>
+							<option>Batch - VI</option>
+							<option>Batch - VII</option>
+							<option>Batch - VIII</option>
+						</select>
+					</div>
+
+					
+					<div class="form-group">
+						<label>Semester</label>
+						<select class="form-control" ng-model="studentremarksdata.semester">
+							<option>Select Semester</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="studentremarksdata.academicyear">
+							<option>Select Academic Year</option>
+							<option>2017-2018</option>
+							<option>2016-2017</option>
+							<option>2015-2016</option>
+							<option>2014-2015</option>
+							<option>2013-2014</option>
+							<option>2012-2013</option>
+							<option>2011-2012</option>
+							<option>2010-2011</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Enter Remarks</label>
+						<input class="form-control" type="text" name="remarks" ng-model="studentremarksdata.remarks">
+					</div>
+
+					<div class="form-group">
+						<label>Action Taken</label>
+						<select class="form-control" ng-model="studentremarksdata.primaryaction">
+							<option>Select Action Taken</option>
+							<option>INFORMED TO BRING PARENTS</option>
+							<option>WARNED</option>
+							<option>SUSPENDED</option>
+							<option>DISMISSED</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Date of Remark</label>
+						<input class="form-control" type="text" name="remarkdate" ng-model="studentremarksdata.remarkdate">
+					</div>
+					<div class="form-group">
+						<label>Day of Remark</label>
+						<input class="form-control" type="text" name="remarkday" ng-model="studentremarksdata.remarkday">
+					</div>
+					<div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="studentremarksdata.loginuser">
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>
