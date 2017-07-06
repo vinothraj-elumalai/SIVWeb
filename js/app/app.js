@@ -100,11 +100,6 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/feesfollowup.html",
         controller : "feesFollowupCtrl"
     })
-<<<<<<< HEAD
-=======
-
-
->>>>>>> c758828905f3e1ddcf2a5ab406008fc799ca6fe1
     .when("/studentleaveletter", {
         templateUrl : "templates/studentleaveletter.html",
         controller : "studentLeaveLetterCtrl"
@@ -129,7 +124,6 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/studentdiscontinuedtc.html",
         controller : "studentDiscontinuedTcCtrl"
     })
-<<<<<<< HEAD
     .when("/studentremarksentry", {
         templateUrl : "templates/studentremarks.html",
         controller : "studentRemarksEntryCtrl"
@@ -162,8 +156,6 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/vendordetails.html",
         controller : "vendorDetailsCtrl"
     })
-
-=======
     .when("/scholarship", {
         templateUrl : "templates/scholarship.html",
         controller : "scholarshipCtrl"
@@ -193,9 +185,6 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/stenocircular.html",
         controller : "circularCtrl"
     })
-
-
->>>>>>> c758828905f3e1ddcf2a5ab406008fc799ca6fe1
     .otherwise({
         templateUrl : "templates/login.html",
         controller : "loginCtrl"
