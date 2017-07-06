@@ -1,0 +1,194 @@
+<h1>EQUIVALENCE SUBJECT</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="equivalencesubjectform" ng-submit="equivalenceSubjectSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">	
+
+				<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="equivalencesubjectdata.academicYear">
+							<option>Select Academic Year</option>
+							<option>2017-2018</option>
+							<option>2016-2017</option>
+							<option>2015-2016</option>
+							<option>2014-2015</option>
+							<option>2013-2014</option>
+							<option>2012-2013</option>
+							<option>2011-2012</option>
+							<option>2010-2011</option>
+						</select>
+					</div>
+				
+					
+					<div class="form-group">
+						<label>Old Branch Name</label>
+						<select class="form-control" ng-model="equivalencesubjectdata.oldbranch">
+							<option>Select Old  Branch</option>
+							<option>Civil Engineering</option>
+							<option >Mechanical Engineering</option>
+							<option >Automobile Engineering</option>
+							<option >Electrical and Electronics Engineering</option>
+							<option >Electronics and Communication Engineering</option>
+							<option >Computer Engineering</option>
+							<option>Information Technology</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Old Branch Code</label>
+						<input class="form-control" type="text" name="oldbranchcode" ng-model="equivalencesubjectdata.oldbranchcode">
+					</div>
+					<div class="form-group">
+						<label>Old Semester</label>
+						<select class="form-control" ng-model="equivalencesubjectdata.oldsemester">
+							<option>Select Old Semester</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Old Column No</label>
+						<select class="form-control" ng-model="equivalencesubjectdata.oldcolumnno">
+							<option>Select Old Colum NO</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Old Scheme</label>
+						<select class="form-control" ng-model="equivalencesubjectdata.oldscheme">
+							<option>Select  Scheme</option>
+							<option> L </option>
+							<option> M </option>
+							<option> N </option>
+							<option> K </option>
+						</select>
+					</div>
+					
+					
+					<div class="form-group">
+						<label>Old Subject Name</label>
+						<select class="form-control" ng-model="equivalencesubjectdata.oldsubjectname">
+							<option>Select Old Subject</option>
+							<option> C </option>
+							<option> C++ </option>
+							<option> .Net </option>
+							<option> JAVA </option>
+						</select>
+					</div>
+					
+					<div class="form-group">
+						<label>Old Subject Code</label>
+						<input class="form-control" type="text" name="oldsubjectcode" ng-model="equivalencesubjectdata.oldsubjectcode">
+					</div>
+
+
+             
+
+					<div class="form-group">
+						<label>New Branch Name</label>
+						<select class="form-control" ng-model="equivalencesubjectdata.newbranch">
+							<option>Select New  Branch</option>
+							<option>Civil Engineering</option>
+							<option >Mechanical Engineering</option>
+							<option >Automobile Engineering</option>
+							<option >Electrical and Electronics Engineering</option>
+							<option >Electronics and Communication Engineering</option>
+							<option >Computer Engineering</option>
+							<option>Information Technology</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>New Branch Code</label>
+						<input class="form-control" type="text" name="newbranchcode" ng-model="equivalencesubjectdata.newbranchcode">
+					</div>
+
+					<div class="form-group">
+						<label>New Semester</label>
+						<select class="form-control" ng-model="equivalencesubjectdata.newsemester">
+							<option>Select Old Semester</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>New Scheme</label>
+						<select class="form-control" ng-model="equivalencesubjectdata.newscheme">
+							<option>Select  Scheme</option>
+							<option> L </option>
+							<option> M </option>
+							<option> N </option>
+							<option> K </option>
+						</select>
+					</div>
+					
+
+					<div class="form-group">
+						<label>New Column No</label>
+						<select class="form-control" ng-model="equivalencesubjectdata.newcolumnno">
+							<option>Select New Column No</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+						</select>
+					</div>
+
+					
+					<div class="form-group">
+						<label>New Subject Name</label>
+						<select class="form-control" ng-model="equivalencesubjectdata.newsubjectname">
+							<option>Select Old Subject</option>
+							<option> C </option>
+							<option> C++ </option>
+							<option> .Net </option>
+							<option> JAVA </option>
+						</select>
+					</div>
+					
+					<div class="form-group">
+						<label>New Subject Code</label>
+						<input class="form-control" type="text" name="newsubjectcode" ng-model="equivalencesubjectdata.newsubjectcode">
+					</div>
+
+					<div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="equivalencesubjectdata.loginuser">
+					</div>
+
+
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>

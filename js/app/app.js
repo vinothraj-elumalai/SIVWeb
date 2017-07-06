@@ -73,7 +73,6 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/studentfood.html",
         controller : "studentFoodCtrl"
     })
-<<<<<<< HEAD
     .when("/subjectallocation", {
         templateUrl : "templates/subjectallocation.html",
         controller : "subjectAllocationCtrl"
@@ -102,7 +101,7 @@ sivwebapp.config(function($routeProvider) {
         controller : "feesFollowupCtrl"
     })
 
-=======
+
     .when("/studentleaveletter", {
         templateUrl : "templates/studentleaveletter.html",
         controller : "studentLeaveLetterCtrl"
@@ -123,11 +122,41 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/studentcollegeid.html",
         controller : "studentCollegeIdCtrl"
     })
-        .when("/studentdiscontinuedtc", {
+    .when("/studentdiscontinuedtc", {
         templateUrl : "templates/studentdiscontinuedtc.html",
         controller : "studentDiscontinuedTcCtrl"
     })
->>>>>>> 3ef8e90ef218cad42b103055cc435b4d01a5afb7
+    .when("/scholarship", {
+        templateUrl : "templates/scholarship.html",
+        controller : "scholarshipCtrl"
+    })
+     
+    .when("/stafftransport", {
+        templateUrl : "templates/stafftransport.html",
+        controller : "staffTransportCtrl"
+    })
+    
+    .when("/equivalencesubject", {
+        templateUrl : "templates/equivalencesubject.html",
+        controller : "equivalenceSubjectCtrl"
+    })
+
+    .when("/egovspellentry", {
+        templateUrl : "templates/egovspellentry.html",
+        controller : "egovSpellEntryCtrl"
+    })
+
+    .when("/stenoevents", {
+        templateUrl : "templates/stenoevents.html",
+        controller : "eventsCtrl"
+    })
+    
+    .when("/stenocircular", {
+        templateUrl : "templates/stenocircular.html",
+        controller : "circularCtrl"
+    })
+
+
     .otherwise({
         templateUrl : "templates/login.html",
         controller : "loginCtrl"
