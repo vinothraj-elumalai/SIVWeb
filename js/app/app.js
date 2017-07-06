@@ -100,6 +100,11 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/feesfollowup.html",
         controller : "feesFollowupCtrl"
     })
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> c758828905f3e1ddcf2a5ab406008fc799ca6fe1
     .when("/studentleaveletter", {
         templateUrl : "templates/studentleaveletter.html",
         controller : "studentLeaveLetterCtrl"
@@ -120,10 +125,11 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/studentcollegeid.html",
         controller : "studentCollegeIdCtrl"
     })
-        .when("/studentdiscontinuedtc", {
+    .when("/studentdiscontinuedtc", {
         templateUrl : "templates/studentdiscontinuedtc.html",
         controller : "studentDiscontinuedTcCtrl"
     })
+<<<<<<< HEAD
     .when("/studentremarksentry", {
         templateUrl : "templates/studentremarks.html",
         controller : "studentRemarksEntryCtrl"
@@ -157,6 +163,39 @@ sivwebapp.config(function($routeProvider) {
         controller : "vendorDetailsCtrl"
     })
 
+=======
+    .when("/scholarship", {
+        templateUrl : "templates/scholarship.html",
+        controller : "scholarshipCtrl"
+    })
+     
+    .when("/stafftransport", {
+        templateUrl : "templates/stafftransport.html",
+        controller : "staffTransportCtrl"
+    })
+    
+    .when("/equivalencesubject", {
+        templateUrl : "templates/equivalencesubject.html",
+        controller : "equivalenceSubjectCtrl"
+    })
+
+    .when("/egovspellentry", {
+        templateUrl : "templates/egovspellentry.html",
+        controller : "egovSpellEntryCtrl"
+    })
+
+    .when("/stenoevents", {
+        templateUrl : "templates/stenoevents.html",
+        controller : "eventsCtrl"
+    })
+    
+    .when("/stenocircular", {
+        templateUrl : "templates/stenocircular.html",
+        controller : "circularCtrl"
+    })
+
+
+>>>>>>> c758828905f3e1ddcf2a5ab406008fc799ca6fe1
     .otherwise({
         templateUrl : "templates/login.html",
         controller : "loginCtrl"
