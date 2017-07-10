@@ -2,8 +2,8 @@ var sivwebapp = angular.module("sivweb", ["ngRoute"]);
 sivwebapp.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "templates/login.html",
-        controller : "loginCtrl"
+        templateUrl : "templates/dashboard.html",
+        controller : "dashboardCtrl"
     })
     .when("/login", {
         templateUrl : "templates/login.html",
@@ -90,7 +90,7 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/bonafide.html",
         controller : "bonafideCtrl"
     })
-    
+
     .when("/firstaid", {
         templateUrl : "templates/firstaid.html",
         controller : "firstaidEntryCtrl"
@@ -160,12 +160,12 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/scholarship.html",
         controller : "scholarshipCtrl"
     })
-     
+
     .when("/stafftransport", {
         templateUrl : "templates/stafftransport.html",
         controller : "staffTransportCtrl"
     })
-    
+
     .when("/equivalencesubject", {
         templateUrl : "templates/equivalencesubject.html",
         controller : "equivalenceSubjectCtrl"
@@ -180,14 +180,14 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/stenoevents.html",
         controller : "eventsCtrl"
     })
-    
+
     .when("/stenocircular", {
         templateUrl : "templates/stenocircular.html",
         controller : "circularCtrl"
     })
     .otherwise({
-        templateUrl : "templates/login.html",
-        controller : "loginCtrl"
+        templateUrl : "templates/dashboard.html",
+        controller : "dashboardCtrl"
     });
-    
+
 });
