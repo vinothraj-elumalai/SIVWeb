@@ -185,6 +185,19 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/stenocircular.html",
         controller : "circularCtrl"
     })
+    .when("/campusscheduler", {
+        templateUrl : "templates/campusscheduler.html",
+        controller : "campusSchedulerCtrl"
+    })
+    .when("/tournamentdata", {
+        templateUrl : "templates/tournamentdata.html",
+        controller : "tournamentDataCtrl"
+    })
+    .when("/sportskitsstock", {
+        templateUrl : "templates/sportskitsstock.html",
+        controller : "sportsKitsSockCtrl"
+    })
+
     .otherwise({
         templateUrl : "templates/dashboard.html",
         controller : "dashboardCtrl"

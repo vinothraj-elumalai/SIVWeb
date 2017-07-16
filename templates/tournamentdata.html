@@ -1,0 +1,127 @@
+<h1>TOURNAMENT DETAIL</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="tournamentform" ng-submit="tournamentSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Enter Tournament Id</label>
+						<input class="form-control" type="text" name="torunamentid" ng-model="tournamentdata.torunamentid">
+					</div>
+                    <div class="form-group">
+						<label>Enter Tournament Date</label>
+						<input class="form-control" type="text" name="tournamentdate" ng-model="tournamentdata.tournamentdate">
+					</div>
+   					<div class="form-group">
+						<label>Enter Tournament Day</label>
+						<input class="form-control" type="text" name="tournamentday" ng-model="tournamentdata.tournamentday">
+					</div>
+
+					
+					<div class="form-group">
+						<label>Enter Sports Type</label>
+						<select class="form-control" ng-model="tournamentdata.sportstype">
+							<option>Select Type of Sports</option>
+							<option>Cricket</option>
+							<option>Foot Ball</option>
+							<option>Table Tennis</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Sports Code</label>
+						<input class="form-control" type="text" name="sportscode" ng-model="tournamentdata.sportscode">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Tournament Name</label>
+						<input class="form-control" type="text" name="tournamentname" ng-model="tournamentdata.tournamentname">
+					</div>
+					<div class="form-group">
+						<label>Enter Level of Tournament</label>
+						<select class="form-control" ng-model="tournamentdata.tournamentlevel">
+							<option>Select Level of Tournament</option>
+							<option>Indoor Level</option>
+							<option>Institute Level</option>
+							<option>Zone Level</option>
+							<option>District Level</option>
+							<option>State Level</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Enter Location of Tournament</label>
+						<select class="form-control" ng-model="tournamentdata.tournamentlocation">
+							<option>Select Location of Tournament</option>
+							<option>In-Door</option>
+							<option>Out-Door</option>
+							
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Location Address</label>
+						<input class="form-control" type="text" name="locationaddress1" ng-model="tournamentdata.locationaddress1">
+						<input class="form-control" type="text" name="locationaddress2" ng-model="tournamentdata.locationaddress2">
+					</div>
+					<div class="form-group">
+						<label>Location Area/City</label>
+						<input class="form-control" type="text" name="locationarea" ng-model="tournamentdata.locationarea">
+					</div>
+					<div class="form-group">
+						<label>Location PinCode</label>
+						<input class="form-control" type="text" name="locationpincode" ng-model="tournamentdata.locationpincode">
+					</div>
+					<div class="form-group">
+						<label>Location State</label>
+						<select class="form-control" ng-model="tournamentdata.locationstate">
+							<option>Select State</option>
+							<option>TamiNadu</option>
+							<option>Puducherry</option>
+							<option>Andhra Pradesh</option>
+							</select>
+					</div>
+					<div class="form-group">
+						<label>Physical Director Mobile No of Location</label>
+						<input class="form-control" type="text" name="physicaldirectormobileno" ng-model="tournamentdata.physicaldirectormobileno">
+					</div>
+					<div class="form-group">
+						<label>Physical Director Alternate Mobile No</label>
+						<input class="form-control" type="text" name="physicaldirectoraltmobno" ng-model="tournamentdata.physicaldirectoraltmobno">
+					</div>
+					<div class="form-group">
+						<label>Physical Director E-mail</label>
+						<input class="form-control" type="text" name="physicaldirectoremail" ng-model="tournamentdata.physicaldirectoremail">
+					</div>
+					<div class="form-group">
+						<label>Physical Director Alternate Email</label>
+						<input class="form-control" type="text" name="physicaldirectoraltemail" ng-model="tournamentdata.physicaldirectoraltemail">
+					</div>
+					<div class="form-group">
+						<label>Enter Tournament Start Date</label>
+						<input class="form-control" type="text" name="tournamentstartdate" ng-model="tournamentdata.tournamentstartdate">
+					</div>
+					<div class="form-group">
+						<label>Enter Tournament End Date</label>
+						<input class="form-control" type="text" name="tournamentenddate" ng-model="tournamentdata.tournamentenddate">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Tournament No of Days</label>
+						<input class="form-control" type="text" name="tournamentnoofdays" ng-model="tournamentdata.tournamentnoofdays">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="tournamentdata.loginuser">
+					</div>
+
+                    
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>
