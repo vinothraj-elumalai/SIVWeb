@@ -197,6 +197,22 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/sportskitsstock.html",
         controller : "sportsKitsSockCtrl"
     })
+    .when("/sportsod", {
+        templateUrl : "templates/sportsodform.html",
+        controller : "sportsOdCtrl"
+    })
+    .when("/sportspddetail", {
+        templateUrl : "templates/sportspddetails.html",
+        controller : "sportsPdDetailCtrl"
+    })
+    .when("/librarymemberdetail", {
+        templateUrl : "templates/librarymemberdetail.html",
+        controller : "libraryMemberDetailEntryCtrl"
+    })
+    .when("/librarybookentry", {
+        templateUrl : "templates/librarybookdata.html",
+        controller : "libraryBookDataCtrl"
+    })
 
     .otherwise({
         templateUrl : "templates/dashboard.html",
