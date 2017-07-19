@@ -1,0 +1,101 @@
+<h1>LIBRARY MAGAZINE ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="librarymagazineentryform" ng-submit="libraryMagazineEntrySubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Enter Magazine Id</label>
+						<input class="form-control" type="text" name="magazineid" ng-model="librarymagazinedata.magazineid">
+					</div>
+					<div class="form-group">
+						<label>Enter Magazine Type</label>
+						<select class="form-control" ng-model="librarymagazinedata.magazinetype">
+							<option>Select Magazine Type</option>
+							<option>Daily Magazine</option>
+							<option>Weekly Magazine</option>
+							<option>Monthly Magazine</option>
+							<option>Yearly Magazine</option>
+						</select>
+					</div>
+                    
+                    <div class="form-group">
+						<label>Magazine Serial No</label>
+						<input class="form-control" type="text" name="magazineslno" ng-model="librarymagazinedata.magazineslno">
+					</div>
+                    <div class="form-group">
+						<label>Magazine Cub Board No</label>
+						<input class="form-control" type="text" name="cubboardno" ng-model="librarymagazinedata.cubboardno">
+					</div>
+
+                    <div class="form-group">
+						<label>Enter Magazine Name</label>
+						<input class="form-control" type="text" name="magazinename" ng-model="librarymagazinedata.magazinename">
+					</div>
+                    
+                    <div class="form-group">
+						<label>Enter Author Name</label>
+						<input class="form-control" type="text" name="authorname" ng-model="librarymagazinedata.authorname">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Publisher Name</label>
+						<input class="form-control" type="text" name="publishername" ng-model="librarymagazinedata.publishername">
+					</div>
+					<div class="form-group">
+						<label>Enter Purchased From</label>
+						<input class="form-control" type="text" name="purchasedfrom" ng-model="librarymagazinedata.purchasedfrom">
+					</div>
+					<div class="form-group">
+						<label>Enter Purchased Date</label>
+						<input class="form-control" type="text" name="purchaseddate" ng-model="librarymagazinedata.purchaseddate">
+					</div>
+					<div class="form-group">
+						<label>Enter Unit Price</label>
+						<input class="form-control" type="text" name="unitprice" ng-model="librarymagazinedata.unitprice">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Number of Copies</label>
+						<input class="form-control" type="text" name="noofcopies" ng-model="librarymagazinedata.noofcopies">
+					</div>
+					<div class="form-group">
+						<label>Enter Total Price </label>
+						<input class="form-control" type="text" name="totalprice" ng-model="librarymagazinedata.totalprice">
+					</div>
+					<div class="form-group">
+						<label>Enter Magazine Status</label>
+						<select class="form-control" ng-model="librarymagazinedata.magazinestatus">
+							<option>Select Book Status</option>
+							<option>Available</option>
+							<option>Not Available</option>
+							<option>Damaged</option>
+							<option>Missed</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Academic Year</label>
+						<select class="form-control" ng-model="librarymagazinedata.academicyear">
+							<option>Select Academi Year</option>
+							<option>2016-2017</option>
+							<option>2017-2018</option>
+							<option>2018-2019</option>
+							<option>2019-2020</option>
+						</select>
+					</div>
+
+
+                    <div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="librarymagazinedata.loginuser">
+					</div>
+                     
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>
