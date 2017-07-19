@@ -213,6 +213,34 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/librarybookdata.html",
         controller : "libraryBookDataCtrl"
     })
+    .when("/librarycdentry", {
+        templateUrl : "templates/librarycddata.html",
+        controller : "libraryCdDataCtrl"
+    })
+    .when("/librarymagazineentry", {
+        templateUrl : "templates/librarymagazinedata.html",
+        controller : "libraryMagazineDataCtrl"
+    })
+    .when("/librarybookissuereturn", {
+        templateUrl : "templates/librarybookissuereturn.html",
+        controller : "libraryBookIssueReturnDataCtrl"
+    })
+    .when("/libraryusage", {
+        templateUrl : "templates/libraryusage.html",
+        controller : "libraryUsageCtrl"
+    })
+    .when("/hostelstudent", {
+        templateUrl : "templates/hostelstudentdata.html",
+        controller : "hostelStudentDataCtrl"
+    })
+    .when("/hostelstudentleave", {
+        templateUrl : "templates/hostelstudentleaveform.html",
+        controller : "hostelStudentLeaveFormCtrl"
+    })
+    .when("/hostelstudentvisitor", {
+        templateUrl : "templates/hostelstudentvisitor.html",
+        controller : "hostelStudentVisitorCtrl"
+    })
 
     .otherwise({
         templateUrl : "templates/dashboard.html",

@@ -1,0 +1,182 @@
+<h1>HOSTEL STUDENT VISITORS DETAIL</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="hostelstudentvisitorform" ng-submit="hostelStudentVisitorFormSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Enter Date</label>
+						<input class="form-control" type="text" name="currentdate" ng-model="hostelstudentvisitordata.currentdate">
+					</div>
+					<div class="form-group">
+						<label>Enter Register Number</label>
+						<input class="form-control" type="text" name="regno" ng-model="hostelstudentvisitordata.regno">
+					</div>
+					<div class="form-group">
+						<label>Enter Name</label>
+						<input class="form-control" type="text" name="name" ng-model="name">
+					</div>
+					
+					<div class="form-group">
+						<label>Enter Branch</label>
+						<select class="form-control" ng-model="branch">
+							<option>Select Branch</option>
+							<option>Civil Engineering</option>
+							<option>Mecahnical Engineering</option>
+							<option>Automobile Engineering</option>
+
+						</select>
+					</div>
+                    <div class="form-group">
+						<label>Enter Branch Code</label>
+						<input class="form-control" type="text" name="branchcode" ng-model="hostelstudentvisitordata.branchcode">
+					</div>
+					
+                    <div class="form-group">
+						<label>Enter Batch</label>
+						<select class="form-control" ng-model="hostelstudentvisitordata.batch">
+							<option>Select Batch</option>
+							<option>Batch - I</option>
+							<option>Batch - II</option>
+							<option>Batch - III</option>
+
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Semester</label>
+						<select class="form-control" ng-model="hostelstudentvisitordata.semester">
+							<option>Select Semester</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Academic Year</label>
+						<select class="form-control" ng-model="hostelstudentvisitordata.academicyear">
+							<option>Select Semester</option>
+							<option>2016-2017</option>
+							<option>2017-2018</option>
+							<option>2018-2019</option>
+							<option>2019-2020</option>
+							<option>2020-2021</option>
+							<option>2021-2022</option>
+							<option>2022-2023</option>
+							<option>2023-2024</option>
+
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Visitor Type</label>
+						<select class="form-control" ng-model="hostelstudentvisitordata.visitortype">
+							<option>Select Visitor Type</option>
+							<option>Parent</option>
+							<option>Gaurdian1</option>
+							<option>Gaurdian2</option>
+							<option>Othres</option>
+						</select>
+					</div>
+
+                    <div class="form-group">
+						<label>Enter Visitor Name</label>
+						<input class="form-control" type="text" name="visitorname" ng-model="hostelstudentvisitordata.visitorname">
+					</div>
+					<div class="form-group">
+						<label>Enter Visitor Gender</label>
+						<select class="form-control" ng-model="hostelstudentvisitordata.visitorgender">
+							<option>Select Visitor Gender</option>
+							<option>Male</option>
+							<option>Fe-Male</option>
+							<option>Others</option>
+						</select>
+					</div>
+
+      				<div class="form-group">
+						<label>Enter Visitor Address</label>
+						<input class="form-control" type="text" name="visitoraddress1" ng-model="hostelstudentvisitordata.visitoraddress1">
+						<input class="form-control" type="text" name="visitoraddress2" ng-model="hostelstudentvisitordata.visitoraddress2">
+					</div>
+
+                    <div class="form-group">
+						<label>Enter Visitor Area</label>
+						<input class="form-control" type="text" name="visitorarea" ng-model="hostelstudentvisitordata.visitorarea">
+					</div>
+                    <div class="form-group">
+						<label>Enter Visitor PinCode</label>
+						<input class="form-control" type="text" name="visitorpincode" ng-model="hostelstudentvisitordata.visitorpincode">
+					</div>
+
+                    <div class="form-group">
+						<label>Enter Visitor State</label>
+						<select class="form-control" ng-model="hostelstudentvisitordata.visitorstate">
+							<option>Select Visitor State</option>
+							<option>Tamilnadu</option>
+							<option>Puduchery</option>
+							<option>Andhrapradesh</option>
+
+						</select>
+					</div>
+                    <div class="form-group">
+						<label>Enter Visitor Mobile Number</label>
+						<input class="form-control" type="text" name="visitormobilenumber" ng-model="hostelstudentvisitordata.visitormobilenumber">
+					</div>
+                    <div class="form-group">
+						<label>Enter Visitor Alternative Mobile Number</label>
+						<input class="form-control" type="text" name="visitoraltmobilenumber" ng-model="hostelstudentvisitordata.visitoraltmobilenumber">
+					</div>
+                    <div class="form-group">
+						<label>Enter Visitor Email</label>
+						<input class="form-control" type="text" name="visitoremail" ng-model="hostelstudentvisitordata.visitoremail">
+					</div>
+                    <div class="form-group">
+						<label>Enter Number of companians with Visitor</label>
+						<input class="form-control" type="text" name="noofvisitorcompanion" ng-model="hostelstudentvisitordata.noofvisitorcompanion">
+					</div>
+
+                    <div class="form-group">
+						<label>Enter Relationship of Visitor</label>
+						<select class="form-control" ng-model="hostelstudentvisitordata.visitorrelationship">
+							<option>Select Relationship of Visitor</option>
+							<option>Father</option>
+							<option>Mother</option>
+							<option>Brother</option>
+							<option>Sister</option>
+							<option>Uncle</option>
+							<option>Aunty</option>
+							<option>Others</option>
+
+						</select>
+					</div>
+                    <div class="form-group">
+						<label>Enter Visitor In-Time</label>
+						<input class="form-control" type="text" name="visitorintime" ng-model="hostelstudentvisitordata.visitorintime">
+					</div>
+                    <div class="form-group">
+						<label>Enter Visitor Out-Time</label>
+						<input class="form-control" type="text" name="visitorouttime" ng-model="hostelstudentvisitordata.visitorouttime">
+					</div>
+                    <div class="form-group">
+						<label>Enter Remarks</label>
+						<input class="form-control" type="text" name="remarks" ng-model="hostelstudentvisitordata.remarks">
+					</div>
+
+                    <div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="hostelstudentvisitordata.loginuser">
+					</div>
+                     
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>
