@@ -595,7 +595,7 @@ body.lightoverlay {
   position: relative;
   max-width: 194px;
   margin: 30px auto 45px;
-  padding-bottom: 52px; }
+  padding-bottom: 70px; }
 
 .custompricedrop-outerring {
   border-radius: 50%;
@@ -606,7 +606,6 @@ body.lightoverlay {
   -moz-box-shadow: 0 0 40px rgba(159, 168, 188, 0.4);
   box-shadow: 0 0 40px rgba(159, 168, 188, 0.4); }
   .custompricedrop-outerring .custompricedrop {
-    border-radius: 50%;
     height: 100%;
     width: 100%;
     background: #E6EAF3;
@@ -690,7 +689,7 @@ a.custompriceactions, .custompriceactions {
   .custompricecontent > img {
     max-height: 41px; }
   .custompricecontent .custompriceamount {
-    font-size: 48px;
+    font-size: 26px;
     font-weight: 300;
     line-height: 36px;
     margin-top: 10px; }
