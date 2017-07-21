@@ -185,6 +185,37 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/stenocircular.html",
         controller : "circularCtrl"
     })
+    .when("/transportidcard", {
+        templateUrl : "templates/transportidcard.html",
+        controller : "transportIdCardCtrl"
+    })
+
+    .when("/mtcconcession", {
+        templateUrl : "templates/mtcconcession.html",
+        controller : "mtcconcessionCtrl"
+    })
+    
+    .when("/trainconcession", {
+        templateUrl : "templates/trainconcession.html",
+        controller : "trainconcessionCtrl"
+    })
+
+    .when("/fuelfilling", {
+        templateUrl : "templates/fuelfilling.html",
+        controller : "fuelFillingCtrl"
+    })
+
+    .when("/transportinsurance", {
+        templateUrl : "templates/transportinsurance.html",
+        controller : "transportInsuranceCtrl"
+    })
+
+    .when("/transportfc", {
+        templateUrl : "templates/transportfc.html",
+        controller : "transportFCCtrl"
+    })
+
+
     .otherwise({
         templateUrl : "templates/dashboard.html",
         controller : "dashboardCtrl"
