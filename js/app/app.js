@@ -215,6 +215,74 @@ sivwebapp.config(function($routeProvider) {
         controller : "transportFCCtrl"
     })
 
+    .when("/campusscheduler", {
+        templateUrl : "templates/campusscheduler.html",
+        controller : "campusSchedulerCtrl"
+    })
+    .when("/tournamentdata", {
+        templateUrl : "templates/tournamentdata.html",
+        controller : "tournamentDataCtrl"
+    })
+    .when("/sportskitsstock", {
+        templateUrl : "templates/sportskitsstock.html",
+        controller : "sportsKitsSockCtrl"
+    })
+    .when("/sportsod", {
+        templateUrl : "templates/sportsodform.html",
+        controller : "sportsOdCtrl"
+    })
+    .when("/sportspddetail", {
+        templateUrl : "templates/sportspddetails.html",
+        controller : "sportsPdDetailCtrl"
+    })
+    .when("/librarymemberdetail", {
+        templateUrl : "templates/librarymemberdetail.html",
+        controller : "libraryMemberDetailEntryCtrl"
+    })
+    .when("/librarybookentry", {
+        templateUrl : "templates/librarybookdata.html",
+        controller : "libraryBookDataCtrl"
+    })
+    .when("/librarycdentry", {
+        templateUrl : "templates/librarycddata.html",
+        controller : "libraryCdDataCtrl"
+    })
+    .when("/librarymagazineentry", {
+        templateUrl : "templates/librarymagazinedata.html",
+        controller : "libraryMagazineDataCtrl"
+    })
+    .when("/librarybookissuereturn", {
+        templateUrl : "templates/librarybookissuereturn.html",
+        controller : "libraryBookIssueReturnDataCtrl"
+    })
+    .when("/libraryusage", {
+        templateUrl : "templates/libraryusage.html",
+        controller : "libraryUsageCtrl"
+    })
+    .when("/hostelstudent", {
+        templateUrl : "templates/hostelstudentdata.html",
+        controller : "hostelStudentDataCtrl"
+    })
+    .when("/hostelstudentleave", {
+        templateUrl : "templates/hostelstudentleaveform.html",
+        controller : "hostelStudentLeaveFormCtrl"
+    })
+    .when("/hostelstudentvisitor", {
+        templateUrl : "templates/hostelstudentvisitor.html",
+        controller : "hostelStudentVisitorCtrl"
+    })
+    .when("/parentfeedback", {
+        templateUrl : "templates/parentfeedback.html",
+        controller : "parentfeedbackCtrl"
+    })
+    .when("/securityvisitorpass", {
+        templateUrl : "templates/securityvisitorpass.html",
+        controller : "securityVisitorPassCtrl"
+    })
+    .when("/securityvehiclesinout", {
+        templateUrl : "templates/securityvehiclesinout.html",
+        controller : "securityVehiclesInOutCtrl"
+    })
 
     .otherwise({
         templateUrl : "templates/dashboard.html",

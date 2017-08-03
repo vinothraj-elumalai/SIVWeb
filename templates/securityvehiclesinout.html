@@ -1,0 +1,70 @@
+<h1>VEHICLES IN AND OUT</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="securityvehiclesinoutform" ng-submit="securityVehiclesInOutPassSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Date</label>
+						<input class="form-control" type="text" name="currentdate" ng-model="securityvehiclesinoutdata.currentdate">
+					</div>
+                    
+                    <div class="form-group">
+						<label>Vehicle Number</label>
+						<input class="form-control" type="text" name="vehicleno" ng-model="securityvehiclesinoutdata.vehicleno">
+					</div>
+					 <div class="form-group">
+						<label>Vehicle Type</label>
+						<select class="form-control" ng-model="securityvehiclesinoutdata.vehicletype">
+							<option>Select Type of Vehicle</option>
+							<option>Two-Wheeler</option>
+							<option>Three-Wheeler</option>
+							<option>Four-Wheeler</option>
+							<option>Bus</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Staff ID</label>
+						<input class="form-control" type="text" name="staffid" ng-model="securityvehiclesinoutdata.staffid">
+					</div>
+
+					<div class="form-group">
+						<label>Driver Name</label>
+						<input class="form-control" type="text" name="name" ng-model="securityvehiclesinoutdata.name">
+					</div>
+
+					<div class="form-group">
+						<label>Academic Year</label>
+						<input class="form-control" type="text" name="academicyear" ng-model="securityvehiclesinoutdata.academicyear">
+					</div>
+
+                    <div class="form-group">
+						<label>Reason</label>
+						<input class="form-control" type="text" name="reason" ng-model="securityvehiclesinoutdata.reason">
+					</div>
+ 
+                    <div class="form-group">
+						<label>Time - In</label>
+						<input class="form-control" type="text" name="timein" ng-model="securityvehiclesinoutdata.timein">
+					</div>
+                    <div class="form-group">
+						<label>Time - Out</label>
+						<input class="form-control" type="text" name="timeout" ng-model="securityvehiclesinoutdata.timeout">
+					</div>
+						
+
+                    <div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="securityvehiclesinoutdata.loginuser">
+					</div>
+                     
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>

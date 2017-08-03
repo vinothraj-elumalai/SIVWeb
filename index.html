@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SIV Web Application</title>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/icomoon.css" rel="stylesheet">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -17,86 +19,190 @@
     <![endif]-->
   </head>
   <body ng-controller="commonCtrl">
-    <div class="container">
-      <div id="wrapper">
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  		<div class="container-fluid">
-  			<div class="navbar-header">
-      			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          			<span class="sr-only">Toggle navigation</span>
-          			<span class="icon-bar"></span>
-          			<span class="icon-bar"></span>
-          			<span class="icon-bar"></span>
-      			</button>
-                  <div  class="navbar-brand">
-                      <a id="menu-toggle" href="#" class=" btn-menu toggle">
-                          <i class="fa fa-bars"></i>
-                      </a>
-      				<a href="#">Vision Cloud Campus</a>
-                  </div>
-  			</div>
-  			<div id="navbar" class="collapse navbar-collapse pull-right">
-  				<ul class="nav navbar-nav">
-  					<li><a href="#">Logout</a></li>
-
-  				</ul>
-  			</div><!--/.nav-collapse -->
-  		</div>
-  	</nav>
-      <!-- Sidebar -->
-      <div id="sidebar-wrapper">
-          <nav id="spy">
-              <ul class="sidebar-nav nav">
-                  <li class="sidebar-brand">
-                      <a href="#home"><span class="fa fa-home solo">Dashboard</span></a>
-                  </li>
-                  <li>
-                      <a href="#!login.html">
-                          <span class="fa fa-anchor solo">Application Followup</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#anch2">
-                          <span class="fa fa-anchor solo">College Fees</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#anch3">
-                          <span class="fa fa-anchor solo">hostel fees</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#anch4">
-                          <span class="fa fa-anchor solo">Students Food</span>
-                      </a>
-                  </li>
-              </ul>
-          </nav>
-      </div>
-      <!-- Page content -->
-      <div id="page-content-wrapper">
-          <div class="page-content">
-              <div class="container-fluid">
-                  <div class="row">
-                      <div class="col-md-12">
-                        <ng-view></ng-view>
-                      </div>
-                  </div>
-              </div>
+    <header>
+    <div class="">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <div class="navbar-header header-logo-wrap">
+            <div class="header-logo clearfix">
+              <a href="#menu-toggle" class="togglemenu" id="menu-toggle"><span class="icon-menu"></span></a>
+              <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Realtime"/></a>
+            </div>
           </div>
-      </div>
-  </div>
+          <h1>Dashboard</h1>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="notification"><span class="icon-ring"></span><span class="new-notify"></span></span></a></li>
+            <li class="dropdown profile">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Joe Blogs<img src="images/avatar.png" alt="Joe Blogs" class="avatar" />
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">My Profile</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="#" class="logout"><span class="icon-logout"></span></a></li> -->
+          </ul>
+        </div>
+      </nav>
     </div>
+  </header>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav sidemenu">
+
+                <li class="green">
+                    <a href="#"><span class="sidemenuico icon-money-bag"></span>Trade</a>
+                </li>
+                <li class="orange">
+                    <a href="#" data-toggle="modal" data-target="#preregistration"><span class="sidemenuico icon-line-chart"></span>Reports</a>
+                </li>
+                <li class="active violet">
+                    <a href="#"><span class="sidemenuico icon-settings"></span>Settings</a>
+                </li>
+                <li class="yellow">
+                    <a href="#"><span class="sidemenuico icon-man"></span>About</a>
+                </li>
+            </ul>
+            <div class="customprices-wrap">
+              <a data-toggle="collapse" data-target="#customprices" href="javascript:void(0)" class="custompricetitle"><span class="cpico icon-user" ></span> Custom Prices <i class="fa fa-caret-up" aria-hidden="true"></i></a>
+
+              <div id="customprices" class="collapse in customprices">
+                  <ul class="custompriceslist">
+                    <li>
+                      <div class="cplistinner draggable" id="draggable">
+                        <div class="cplistdragwrap">
+                        <img src="images/bpsmall.png" class="cplogo">
+                        <div class="cpright">
+                          <div class="price">114.73 <span class="icon-move"></span></div>
+                          <div class="cpdesc">
+                            <span class="cpdescname1">DIESEL</span>
+                            <span class="cpdescname2">23.56C</span>
+                            <span class="cpdescname3">MT</span>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="cplistinner draggable">
+                        <div class="cplistdragwrap">
+                        <img src="images/hpsmall.png" class="cplogo">
+                        <div class="cpright">
+                          <div class="price">115.34 <span class="icon-move"></span></div>
+                          <div class="cpdesc">
+                            <span class="cpdescname1">DIESEL</span>
+                            <span class="cpdescname2">23.56C</span>
+                            <span class="cpdescname3">MT</span>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="cplistinner draggable">
+                        <div class="cplistdragwrap">
+                        <img src="images/totalsmall.png" class="cplogo">
+                        <div class="cpright">
+                          <div class="price">114.12 <span class="icon-move"></span></div>
+                          <div class="cpdesc">
+                            <span class="cpdescname1">DIESEL</span>
+                            <span class="cpdescname2">23.56C</span>
+                            <span class="cpdescname3">MT</span>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="cplistinner draggable">
+                        <div class="cplistdragwrap">
+                        <img src="images/shellsmall.png" class="cplogo">
+                        <div class="cpright">
+                          <div class="price">114.18 <span class="icon-move"></span></div>
+                          <div class="cpdesc">
+                            <span class="cpdescname1">DIESEL</span>
+                            <span class="cpdescname2">23.56C</span>
+                            <span class="cpdescname3">MT</span>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+       <ng-view></ng-view>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+
+    <!-- Modal -->
+<div id="buynow" class="modal fade modalsmall" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Buy</h2>
+      </div>
+      <div class="modal-body">
+        <div class="formwrap-small">
+
+          <div class="form-group">
+            <label>Price</label>
+            <div class="form-flex-wrap">
+              <label class="labellight">USD$</label>
+              <div class="formcontrolwrap">
+                <span class="dollar">$</span>
+                <input type="text" placeholder="Enter your price" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Quantity</label>
+            <div class="rangebuttonsholder">
+              <a href="javascript:void(0)" class="roundbtn roundbtnleft" id="incQuantity"><span class="icon-plus"></span></a>
+              <input type="text"  class="form-control" id="quantity" value="0">
+              <a href="javascript:void(0)" class="roundbtn roundbtnright" id="decQuantity"><span class="icon-minus"></span></a>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Terms</label>
+            <input type="text" placeholder="" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="text-center">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Buy</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.js"></script>
     <script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <script src="js/app/app.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/controllers/controller.common.js"></script>
+    <script src="js/controllers/controller.dashboard.js"></script>
     <script src="js/controllers/controller.login.js"></script>
     <script src="js/controllers/controller.createuser.js"></script>
     <script src="js/controllers/controller.applicationsale.js"></script>
@@ -136,6 +242,8 @@
     <script src="js/controllers/controller.vendordetails.js"></script>
     <script src="js/controllers/controller.scholarship.js"></script>
     <script src="js/controllers/controller.stafftransport.js"></script>
+    <script src="js/controllers/controller.scholarship.js"></script>
+    <script src="js/controllers/controller.stafftransport.js"></script>
     <script src="js/controllers/controller.equivalencesubject.js"></script>
     <script src="js/controllers/controller.egovspellentry.js"></script>
     <script src="js/controllers/controller.stenoevents.js"></script>
@@ -146,5 +254,22 @@
     <script src="js/controllers/controller.fuelfilling.js"></script>
     <script src="js/controllers/controller.transportinsurance.js"></script>
     <script src="js/controllers/controller.transportfc.js"></script>
+    <script src="js/controllers/controller.campusscheduler.js"></script>
+    <script src="js/controllers/controller.tournamentdata.js"></script>
+    <script src="js/controllers/controller.sportskitsstock.js"></script>
+    <script src="js/controllers/controller.sportsodform.js"></script>
+    <script src="js/controllers/controller.sportspddetails.js"></script>
+    <script src="js/controllers/controller.librarymemberdetail.js"></script>
+    <script src="js/controllers/controller.librarybookdata.js"></script>
+    <script src="js/controllers/controller.librarycddata.js"></script>
+    <script src="js/controllers/controller.librarymagazinedata.js"></script>
+    <script src="js/controllers/controller.librarybookissuereturn.js"></script>
+    <script src="js/controllers/controller.libraryusage.js"></script>
+    <script src="js/controllers/controller.hostelstudentdata.js"></script>
+    <script src="js/controllers/controller.hostelstudentleaveform.js"></script>
+    <script src="js/controllers/controller.hostelstudentvisitor.js"></script>
+    <script src="js/controllers/controller.parentfeedback.js"></script>
+    <script src="js/controllers/controller.securityvisitorpass.js"></script>
+    <script src="js/controllers/controller.securityvehiclesinout.js"></script>
  </body>
 </html>
