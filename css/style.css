@@ -92,7 +92,7 @@ body {
   border: 0;
   border-bottom: 1px solid #EFF2F8;
   min-height: 84px;
-  background: #F7F7F9;
+  background: #FFFFFF;
   -webkit-box-shadow: 0 0 40px rgba(159, 168, 188, 0.2);
   -moz-box-shadow: 0 0 40px rgba(159, 168, 188, 0.2);
   box-shadow: 0 0 40px rgba(159, 168, 188, 0.2); }
@@ -103,7 +103,8 @@ body {
     width: 100%;
     text-align: center; }
     .navbar-brand img {
-      display: inline-block; }
+      display: inline-block;
+      height: 100%; }
   .navbar-right {
     height: 100%;
     padding: 16px 0 10px;
@@ -904,4 +905,98 @@ table{
 }
 .pagemaincontainer{
       padding: 20px 30px;
+}
+span.logoname {
+    color: #aaa;
+    font-size: 26px;
+    margin: 17px 0 0;
+    display: inline-block;
+}
+.navbar > .container-fluid .navbar-brand{
+  position: relative;
+}
+.navbar-brand img {
+    display: inline-block;
+    height: auto;
+    width: 50px;
+    position: absolute;
+    left: 85px;
+    top: 26px;
+
+}
+#page-content-wrapper {
+    background: #fff;
+    box-shadow: 4px 4px 15px #eee;
+}
+.panelhead {
+    text-align: center;
+    margin-bottom: 20px;
+}
+table.profiletable {
+    width: 100%;
+}
+.profiletable td{
+  background: #F7F7F9;
+}
+.dashboardcolor0 {
+  background: #2DA3AD;
+}
+.dashboardcolor1 {
+  background: #EC538D;
+}
+.dashboardcolor2 {
+  background: #77C046;
+}
+.dashboardcolor3 {
+  background: #FC5E13;
+}
+.dashboardcolor4 {
+  background: #EDA11B;
+}
+.dashboardcolor5 {
+  background: #E4444B;
+}
+.dashboardmenu {
+    text-align: center;
+    color: #fff;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all .4s;
+    box-shadow: 0px 0px 12px rgba(0,0,0,.5);
+    border-radius: 6px;
+}
+.dashboardmenu:hover{
+    transform: scale(1.1);
+}
+span.dashboardmenuicon {
+    font-size: 34px;
+}
+span.dashboardmentu-label {
+    font-size: 12px;
+    line-height: 14px;
+    display: block;
+    margin-top: 8px;
+}
+
+.loginwrap {
+    max-width: 500px;
+    margin: 10px auto 0;
+    background: #fff;
+    padding: 35px 35px 40px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 15px #eee;
+}
+
+.loginlogo-wrap{
+  text-align: center;
+}
+.loginlogo{
+  width: 190px;
+}
+.loginwrap h1{
+  text-align: center;
+}
+.loginbtncont{
+  text-align: center;
 }

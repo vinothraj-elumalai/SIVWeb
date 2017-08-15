@@ -12,4 +12,24 @@ sivwebapp.controller('storesPurchaseCtrl', function($scope, $http) {
             	
    			});
     }
+
+
+    /*table entry*/
+    $scope.storespurchasedataList = [];
+    $scope.additem= function(singlepurchasedetail){
+        console.log(singlepurchasedetail);
+        $scope.storespurchasedataList.push(
+            {
+                'hsncode':singlepurchasedetail.hsncode,
+                'itemname':singlepurchasedetail.itemname,
+                'quantity':singlepurchasedetail.quantity,
+                'price':singlepurchasedetail.price
+            }
+        );
+        $scope.storespurchase={};
+    }
+    $scope.deleteitem = function (item) {
+        $scope.storespurchasedataList.splice($scope.storespurchasedataList.indexOf(item), 1);
+    }
+    /*table entry*/
 });

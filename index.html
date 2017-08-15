@@ -26,11 +26,11 @@
           <div class="navbar-header header-logo-wrap">
             <div class="header-logo clearfix">
               <a href="#menu-toggle" class="togglemenu" id="menu-toggle"><span class="icon-menu"></span></a>
-              <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Realtime"/></a>
+              <a class="navbar-brand" href="#"><span class="logoname">SIV</span><img src="images/SIVlogo.png" alt="Realtime"/></a>
             </div>
           </div>
-          <h1>Dashboard</h1>
-          <ul class="nav navbar-nav navbar-right">
+          <h1 ng-if="logginStatus">Dashboard</h1>
+          <ul class="nav navbar-nav navbar-right" ng-if="logginStatus">
             <li><a href="#"><span class="notification"><span class="icon-ring"></span><span class="new-notify"></span></span></a></li>
             <li class="dropdown profile">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Joe Blogs<img src="images/avatar.png" alt="Joe Blogs" class="avatar" />
@@ -47,13 +47,15 @@
       </nav>
     </div>
   </header>
-    <div id="wrapper">
+    <div id="wrapper" ng-class="{'toggled' : istogglemenu}">
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
+        <div id="sidebar-wrapper" ng-if="logginStatus" sidenavnicescroll>
             <ul class="sidebar-nav sidemenu">
-
-                <li class="green">
+                <li ng-repeat="menu in menulist" ng-class="{'green': $index%4 == 1, 'orange': $index%4 == 2, 'violet': $index%4 == 3, 'yellow': $index%4 == 0}">
+                  <a ng-href="#!{{menu.href}}"><span class="sidemenuico {{menu.iconclass}}"></span>{{menu.menuitem}}</a>
+                </li>
+                <!-- <li class="green">
                     <a href="#"><span class="sidemenuico icon-money-bag"></span>Trade</a>
                 </li>
                 <li class="orange">
@@ -64,9 +66,9 @@
                 </li>
                 <li class="yellow">
                     <a href="#"><span class="sidemenuico icon-man"></span>About</a>
-                </li>
+                </li> -->
             </ul>
-            <div class="customprices-wrap">
+            <!-- <div class="customprices-wrap">
               <a data-toggle="collapse" data-target="#customprices" href="javascript:void(0)" class="custompricetitle"><span class="cpico icon-user" ></span> Custom Prices <i class="fa fa-caret-up" aria-hidden="true"></i></a>
 
               <div id="customprices" class="collapse in customprices">
@@ -133,7 +135,7 @@
                     </li>
                   </ul>
               </div>
-            </div>
+            </div> -->
         </div>
         <!-- /#sidebar-wrapper -->
 
@@ -144,10 +146,10 @@
 
 
     <!-- Modal -->
-<div id="buynow" class="modal fade modalsmall" role="dialog">
+<!-- <div id="buynow" class="modal fade modalsmall" role="dialog">
   <div class="modal-dialog">
 
-    <!-- Modal content-->
+    
     <div class="modal-content">
       <div class="modal-header">
         <h2 class="modal-title">Buy</h2>
@@ -188,7 +190,7 @@
     </div>
 
   </div>
-</div>
+</div> -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -199,6 +201,9 @@
     <script src="js/angular-route.js"></script>
     <script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <script src="js/app/app.js"></script>
+    <script src="js/app/directives.js"></script>
+    <script src="js/app/config.js"></script>
+    <script src="js/app/global.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/script.js"></script>
     <script src="js/controllers/controller.common.js"></script>

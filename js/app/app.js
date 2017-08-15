@@ -2,6 +2,10 @@ var sivwebapp = angular.module("sivweb", ["ngRoute"]);
 sivwebapp.config(function($routeProvider) {
     $routeProvider
     .when("/", {
+        templateUrl : "templates/login.html",
+        controller : "loginCtrl"
+    })
+    .when("/dashboard", {
         templateUrl : "templates/dashboard.html",
         controller : "dashboardCtrl"
     })
@@ -337,8 +341,8 @@ sivwebapp.config(function($routeProvider) {
     })
 
     .otherwise({
-        templateUrl : "templates/dashboard.html",
-        controller : "dashboardCtrl"
+        templateUrl : "templates/login.html",
+        controller : "loginCtrl"
     });
 
 });

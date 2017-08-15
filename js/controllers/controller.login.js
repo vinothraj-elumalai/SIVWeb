@@ -1,4 +1,4 @@
-sivwebapp.controller('loginCtrl', function($scope, $http, $location) {
+sivwebapp.controller('loginCtrl', function($scope, $http, $location,$rootScope) {
     $scope.loginSubmit = function(){
     	console.log($scope.logindata);
         $http({
@@ -8,12 +8,14 @@ sivwebapp.controller('loginCtrl', function($scope, $http, $location) {
                 data: $.param($scope.logindata)
             }).then(function(response) {
                 console.log(response);
-                $scope.userStatus=response.data;
-                if($scope.userStatus.errorMessage=="WRONG PASSWORD"){
+                $rootScope.userStatus=response.data;
+                if($rootScope.userStatus.errorMessage=="WRONG PASSWORD"){
                     alert("Invalid Username/Password");
                 }else{
-                    if($scope.userStatus.userRole != ""){
-                        $location.url("/createuser");
+                    if($rootScope.userStatus.userRole != ""){
+                        $location.url("/dashboard");
+                        $rootScope.logginStatus = true;
+                        $rootScope.istogglemenu = false;
                     }
                 }
             },function (error){

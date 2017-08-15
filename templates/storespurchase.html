@@ -23,7 +23,10 @@
 					<br/>
 					<br/>
 					<br/>
-
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
 					<table>
 							<tr>
 							<th>Serial No</th>
@@ -32,22 +35,34 @@
 							<th>Item Quantity</th>
 							<th>Unit Price</th>
 							<th>Total Price</th>
+							<th>Action</th>
 							</tr>
-
-							<tr ng-repeat= "storespurchasedata in storespurchasedataList">
-							<td>{{storespurchasedataList.serialNo}}</td>
-							<td>{{storespurchasedataList.hsnCode}}</td>
-							<td>{{storespurchasedataList.itemName}}</td>
-							<td>{{storespurchasedataList.itemQuantity}}</td>
-							<td>{{storespurchasedataList.unitPrice}}</td>
-							<td>{{storespurchasedataList.totalPrice}}</td>
+							<tr>
+								<td>#</td>
+								<td><input type="text" ng-model="storespurchase.hsncode" class="form-control" /></td>
+								<td><input type="text" ng-model="storespurchase.itemname" class="form-control" /></td>
+								<td><input type="text" ng-model="storespurchase.quantity" class="form-control" /></td>
+								<td><input type="text" ng-model="storespurchase.price" class="form-control" /></td>
+								<td><span>{{storespurchase.quantity*storespurchase.price}}</span></td>
+								<td><input type="button" value="Add" ng-click="additem(storespurchase)"/></td>
+							</tr>
+							<tr ng-repeat= "purchaseitem in storespurchasedataList">
+								<td>{{$index+1}}</td>
+								<td ng-bind="purchaseitem.hsncode"></td>
+								<td ng-bind="purchaseitem.itemname"></td>
+								<td ng-bind="purchaseitem.quantity"></td>
+								<td ng-bind="purchaseitem.price"></td>
+								<td>{{purchaseitem.quantity*purchaseitem.price}}</td>
+								<td><input type="button" value="Delete" ng-click="deleteitem(purchaseitem)"/></td>
 							</tr>
 					</table>
-
+				</div>
+			</div>
 					<br/>
 					<br/>
 					<br/>
-
+			<div class="row">
+				<div class="col-md-6">
    					<div class="form-group">
 						<label>Enter Total Amount</label>
 						<input class="form-control" type="text" name="totalamount" ng-model="storespurchasedata.totalamount">
