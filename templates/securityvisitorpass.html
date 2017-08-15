@@ -3,7 +3,12 @@
 	<div class="col-md-12">
 		<form name="securityvisitorpassform" ng-submit="securityVisitorPassSubmit()" novalidate>
 			<div class="row">
-				<div class="col-md-6">					
+				<div class="col-md-6">		
+					<div class="form-group">
+						<label>Visitor ID</label>
+						<input class="form-control" type="text" name="visitorid" ng-model="securityvisitorpassdata.visitorid">
+					</div>
+			
 					<div class="form-group">
 						<label>Date</label>
 						<input class="form-control" type="text" name="currentdate" ng-model="securityvisitorpassdata.currentdate">

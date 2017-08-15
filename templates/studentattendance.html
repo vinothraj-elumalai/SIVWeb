@@ -1,0 +1,129 @@
+<h1>STUDENT ATTENDANCE ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="securityvisitorpassform" ng-submit="getStudentListAttendance()" novalidate>
+			<div class="row">
+				<div class="col-md-6">	
+					<div class="form-group">
+						<label>Enter Date</label>
+						<input class="form-control" type="text" name="entrydate" ng-model="getStudentListData.entrydate">
+					</div>
+					<div class="form-group">
+						<label>Enter Day</label>
+						<input class="form-control" type="text" name="entryday" ng-model="getStudentListData.entryday">
+					</div>
+
+					<div class="form-group">
+						<label>Select Hour</label>
+						<select class="form-control" ng-model="getStudentListData.hour">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Branch</label>
+						<select class="form-control" ng-model="getStudentListData.branch">
+							<option>CIVIL ENGINEERING</option>
+							<option>MECHANICAL ENGINEERING</option>
+							<option>AUTOMOBILE ENGINEERING</option>
+							<option>ELECTRICAL AND ELECTRONICS ENGINEERING</option>
+							<option>ELECTRONICS AND COMMUNICATION ENGINEERING</option>
+							<option>COMPUTER ENGINEERING</option>
+							<option>INFORMATION TECHNOLOGY</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Branch Code</label>
+						<input class="form-control" type="text" name="branchcode" ng-model="getStudentListData.branchcode">
+					</div>
+					<div class="form-group">
+						<label>Batch</label>
+						<select class="form-control" ng-model="getStudentListData.batch">
+							<option>Batch - I</option>
+							<option>Batch - II</option>
+							<option>Batch - III</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Semester</label>
+						<select class="form-control" ng-model="getStudentListData.semester">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="getStudentListData.academicyear">
+							<option>2016-2017</option>
+							<option>2015-2016</option>
+							<option>2016-2017</option>
+							<option>2016-2017</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Student Type</label>
+						<select class="form-control" ng-model="getStudentListData.studenttype">
+							<option>Regular</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Total Present</label>
+						<input class="form-control" type="text" name="totalpresent" ng-model="getStudentListData.totalpresent">
+					</div>
+					<div class="form-group">
+						<label>Enter Total Absent</label>
+						<input class="form-control" type="text" name="totalbsent" ng-model="getStudentListData.totalabsent">
+					</div>
+					<div class="form-group">
+						<label>Enter Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="getStudentListData.loginuser">
+					</div>
+
+					<input type="submit" class="btn btn-primary" value="SUBMIT">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<table>
+	<tr>
+		<th>S.No.</th>
+		<th>Reg. No</th>
+		<th>Name</th>
+		<th>Attendance</th>
+	</tr>
+
+
+	<tr ng-repeat= "student in studentList">
+		<td>{{$index}}</td>
+		<td>{{student.regNo}}</td>
+		<td>{{student.studentName}}</td>
+		<td><input type="checkbox"/></td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+<br/>
+<button ng-click="" class="btn btn-primary">Submit Attendance</button>

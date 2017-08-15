@@ -885,3 +885,23 @@ hr.dashboardhr {
     top: 0; }
 
 /*# RealTime CSS Ends*/
+
+
+
+
+
+table th,td{
+  padding: 10px 20px;
+}
+th{
+  background: #ccc;
+}
+td{
+  border-top: 1px solid #666;
+}
+table{
+ border-bottom: 1px solid #666; 
+}
+.pagemaincontainer{
+      padding: 20px 30px;
+}

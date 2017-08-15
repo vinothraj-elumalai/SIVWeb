@@ -1,0 +1,91 @@
+<h1>OUT PASS ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="securityoutpassform" ng-submit="securityOutPassSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">	
+				<div class="form-group">
+						<label>Out Passs ID</label>
+						<input class="form-control" type="text" name="outpassid" ng-model="securityoutpassdata.outpassid">
+					</div>
+				
+					<div class="form-group">
+						<label>Date</label>
+						<input class="form-control" type="text" name="currentdate" ng-model="securityoutpassdata.currentdate">
+					</div>
+                    <div class="form-group">
+						<label>Type of Person</label>
+						<select class="form-control" ng-model="securityoutpassdata.typeofperson">
+							<option>Select Person To Meet</option>
+							<option>Staff</option>
+							<option>Student</option>
+						</select>
+					</div>
+
+                    <div class="form-group">
+						<label>Register Number/ Staff ID</label>
+						<input class="form-control" type="text" name="registerno" ng-model="securityoutpassdata.registerno">
+					</div>
+
+                    <div class="form-group">
+						<label>Name</label>
+						<input class="form-control" type="text" name="name" ng-model="name">
+					</div>
+					<div class="form-group">
+						<label>Branch Name</label>
+						<input class="form-control" type="text" name="branch" ng-model="branch">
+					</div>
+					<div class="form-group">
+						<label>Branch Code</label>
+						<input class="form-control" type="text" name="branchcode" ng-model="securityoutpassdata.branchcode">
+					</div>
+					<div class="form-group">
+						<label>Batch</label>
+						<input class="form-control" type="text" name="batch" ng-model="securityoutpassdata.batch">
+					</div>
+
+					<div class="form-group">
+						<label>Semester</label>
+						<input class="form-control" type="text" name="semester" ng-model="securityoutpassdata.semester">
+					</div>
+
+					<div class="form-group">
+						<label>Academic Year</label>
+						<input class="form-control" type="text" name="academicyear" ng-model="securityoutpassdata.academicyear">
+					</div>
+                    
+                    <div class="form-group">
+						<label>No of Times in this Month</label>
+						<input class="form-control" type="text" name="nooftimesmonth" ng-model="securityoutpassdata.nooftimesmonth">
+					</div>
+                    <div class="form-group">
+						<label>No of Times Overall</label>
+						<input class="form-control" type="text" name="nooftimesoverall" ng-model="securityoutpassdata.nooftimesoverall">
+					</div>
+
+
+                    <div class="form-group">
+						<label>Reason</label>
+						<input class="form-control" type="text" name="reason" ng-model="securityoutpassdata.reason">
+					</div>
+ 
+                    <div class="form-group">
+						<label>Time - Out</label>
+						<input class="form-control" type="text" name="timeout" ng-model="securityoutpassdata.timeout">
+					</div>
+						
+
+                    <div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="securityoutpassdata.loginuser">
+					</div>
+                     
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>

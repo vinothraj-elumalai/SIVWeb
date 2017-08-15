@@ -84,6 +84,38 @@
                      
 				</div>
 			</div>
+					<br/>
+					<br/>
+					<br/>
+
+					<table>
+							<tr>
+							<th>S.No.</th>
+							<th>Book Id</th>
+							<th>Book Sl.No</th>
+							<th>BookName</th>
+							<th>Return Date</th>
+							<th>Book Status</th>
+							<th>Fine Amount</th>
+							</tr>
+
+
+							<tr ng-repeat= "librarybookissret in librarybookissretList">
+							<td>{{$index}}</td>
+							<td>{{librarybookissret.bookId}}</td>
+							<td>{{librarybookissret.bookSlno}}</td>
+							<td>{{librarybookissret.bookName}}</td>
+							<td>{{librarybookissret.bookReturnDate}}</td>
+							<td>{{librarybookissret.bookStatus}}</td>
+							<td>{{librarybookissret.bookFine}}</td>
+							</tr>
+					</table>
+
+					<br/>
+					<br/>
+					<br/>
+
+
 			<div class="text-right">
 				<input type="button" class="btn btn-default" value="CLEAR">
 				<input type="submit" class="btn btn-primary" value="SUBMIT">
@@ -91,3 +123,5 @@
 		</form>
 	</div>
 </div>
+
+

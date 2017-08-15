@@ -1,0 +1,91 @@
+<h1>LATE COMERS ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="securitylatecomersform" ng-submit="securityLateComersSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">	
+				<div class="form-group">
+						<label>Late Come ID</label>
+						<input class="form-control" type="text" name="latecomeid" ng-model="securitylatecomersdata.latecomeid">
+					</div>
+				
+					<div class="form-group">
+						<label>Date</label>
+						<input class="form-control" type="text" name="currentdate" ng-model="securitylatecomersdata.currentdate">
+					</div>
+                    <div class="form-group">
+						<label>Type of Person</label>
+						<select class="form-control" ng-model="securitylatecomersdata.typeofperson">
+							<option>Select Person To Meet</option>
+							<option>Staff</option>
+							<option>Student</option>
+						</select>
+					</div>
+
+                    <div class="form-group">
+						<label>Register Number/ Staff ID</label>
+						<input class="form-control" type="text" name="registerno" ng-model="securitylatecomersdata.registerno">
+					</div>
+
+                    <div class="form-group">
+						<label>Name</label>
+						<input class="form-control" type="text" name="name" ng-model="name">
+					</div>
+					<div class="form-group">
+						<label>Branch Name</label>
+						<input class="form-control" type="text" name="branch" ng-model="branch">
+					</div>
+					<div class="form-group">
+						<label>Branch Code</label>
+						<input class="form-control" type="text" name="branchcode" ng-model="securitylatecomersdata.branchcode">
+					</div>
+					<div class="form-group">
+						<label>Batch</label>
+						<input class="form-control" type="text" name="batch" ng-model="securitylatecomersdata.batch">
+					</div>
+
+					<div class="form-group">
+						<label>Semester</label>
+						<input class="form-control" type="text" name="semester" ng-model="securitylatecomersdata.semester">
+					</div>
+
+					<div class="form-group">
+						<label>Academic Year</label>
+						<input class="form-control" type="text" name="academicyear" ng-model="securitylatecomersdata.academicyear">
+					</div>
+                    
+                    <div class="form-group">
+						<label>No of Times in this Month</label>
+						<input class="form-control" type="text" name="nooftimesmonth" ng-model="securitylatecomersdata.nooftimesmonth">
+					</div>
+                    <div class="form-group">
+						<label>No of Times Overall</label>
+						<input class="form-control" type="text" name="nooftimesoverall" ng-model="securitylatecomersdata.nooftimesoverall">
+					</div>
+
+
+                    <div class="form-group">
+						<label>Reason</label>
+						<input class="form-control" type="text" name="reason" ng-model="securitylatecomersdata.reason">
+					</div>
+ 
+                    <div class="form-group">
+						<label>Time - In</label>
+						<input class="form-control" type="text" name="timeout" ng-model="securitylatecomersdata.timein">
+					</div>
+						
+
+                    <div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="securitylatecomersdata.loginuser">
+					</div>
+                     
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>

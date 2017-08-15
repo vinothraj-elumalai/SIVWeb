@@ -1,0 +1,87 @@
+<h1>CORPORATE DETAIL ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="corporateentryform" ng-submit="corporateEntrySubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Enter Corporate Id</label>
+						<input class="form-control" type="text" name="corporateid" ng-model="corporatedata.corporateid">
+					</div>
+					<div class="form-group">
+						<label>Enter Corporate Name</label>
+						<input class="form-control" type="text" name="corporatename" ng-model="corporatedata.corporatename">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Corporate Type</label>
+						<select class="form-control" ng-model="corporatedata.corporatetype">
+							<option>Select Corporate Type</option>
+							<option>MNC</option>
+							<option>INDIAN COMPANY</option>
+							<option>SOFT SKILL TRAINERS</option>
+							<option>IN PLANT TRAINERS</option>
+							<option>OTHERS</option>
+						</select>
+					</div>
+                    
+                    <div class="form-group">
+						<label>H.R. Name</label>
+						<input class="form-control" type="text" name="hrname" ng-model="corporatedata.hrname">
+					</div>
+                    <div class="form-group">
+						<label>H.R. Contact No</label>
+						<input class="form-control" type="text" name="hrcontactnumber" ng-model="corporatedata.hrcontactnumber">
+					</div>
+
+                    <div class="form-group">
+						<label>Enter HR Alternater Contact No</label>
+						<input class="form-control" type="text" name="hralternatecontactno" ng-model="corporatedata.hralternatecontactno">
+					</div>
+                    
+                    <div class="form-group">
+						<label>Enter H.R. Mail Id</label>
+						<input class="form-control" type="text" name="hrmailid" ng-model="corporatedata.hrmailid">
+					</div>
+
+					<div class="form-group">
+						<label>Enter H.R. Alt Mail ID</label>
+						<input class="form-control" type="text" name="hraltmailid" ng-model="corporatedata.hraltmailid">
+					</div>
+					<br/>
+					<br/>
+					<br/>
+
+					<table>
+							<tr>
+							<th>Branch</th>
+							<th>Branch Code</th>
+							<th>Student Category</th>
+							</tr>
+
+							<tr ng-repeat= "corporatedata in corporatedataList">
+							<td>{{corporatedataList.Branch}}</td>
+							<td>{{corporatedataList.branchCode}}</td>
+							<td>{{corporatedataList.studentCategory}}</td>
+							</tr>
+					</table>
+
+					<br/>
+					<br/>
+					<br/>
+
+
+                    <div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="corporatedata.loginuser">
+					</div>
+                     
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>

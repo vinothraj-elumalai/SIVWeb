@@ -283,6 +283,58 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/securityvehiclesinout.html",
         controller : "securityVehiclesInOutCtrl"
     })
+    .when("/securityoutpass", {
+        templateUrl : "templates/securityoutpass.html",
+        controller : "securityOutPassCtrl"
+    })
+    .when("/securitylatecomers", {
+        templateUrl : "templates/securitylatecomers.html",
+        controller : "securityLateComersCtrl"
+    })
+    .when("/studentattendance", {
+        templateUrl : "templates/studentattendance.html",
+        controller : "studentAttendanceCtrl"
+    })
+    .when("/corporateentry", {
+        templateUrl : "templates/corporateentry.html",
+        controller : "corporateEntryCtrl"
+    })
+    .when("/campusrequest", {
+        templateUrl : "templates/campusrequest.html",
+        controller : "campusRequestCtrl"
+    })
+    .when("/securitymaterialinout", {
+        templateUrl : "templates/securitymaterialinout.html",
+        controller : "securityMaterialInOutPassCtrl"
+    })
+    .when("/sportsathelete", {
+        templateUrl : "templates/sportsathelete.html",
+        controller : "sportsAtheleteCtrl"
+    })
+    .when("/sportskitspurchase", {
+        templateUrl : "templates/sportskitspurchase.html",
+        controller : "sportsKitsPurchaseCtrl"
+    })
+    .when("/storespurchase", {
+        templateUrl : "templates/storespurchase.html",
+        controller : "storesPurchaseCtrl"
+    })
+    .when("/storessales", {
+        templateUrl : "templates/storessales.html",
+        controller : "storesSalesCtrl"
+    })
+    .when("/storesreturn", {
+        templateUrl : "templates/storesreturn.html",
+        controller : "storesReturnCtrl"
+    })
+    .when("/superintendentex2", {
+        templateUrl : "templates/superintendentex2.html",
+        controller : "superintendentEx2Ctrl"
+    })
+    .when("/staffattendance", {
+        templateUrl : "templates/superintendentstaffattendance.html",
+        controller : "superintendentStaffAttendanceCtrl"
+    })
 
     .otherwise({
         templateUrl : "templates/dashboard.html",

@@ -3,7 +3,12 @@
 	<div class="col-md-12">
 		<form name="securityvehiclesinoutform" ng-submit="securityVehiclesInOutPassSubmit()" novalidate>
 			<div class="row">
-				<div class="col-md-6">					
+				<div class="col-md-6">		
+					<div class="form-group">
+						<label>Vehilces In-Out ID</label>
+						<input class="form-control" type="text" name="vehiclesinoutid" ng-model="securityvehiclesinoutdata.vehiclesinoutid">
+					</div>
+			
 					<div class="form-group">
 						<label>Date</label>
 						<input class="form-control" type="text" name="currentdate" ng-model="securityvehiclesinoutdata.currentdate">

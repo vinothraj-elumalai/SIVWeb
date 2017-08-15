@@ -1,0 +1,149 @@
+<h1>Ex2 ENTRY DETAIL</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="superintendentex2form" ng-submit="superintendentEx2Submit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Enter Exam Date</label>
+						<input class="form-control" type="text" name="examdate" ng-model="superintendentex2data.examdate">
+					</div>
+                    <div class="form-group">
+						<label>Enter Exam Day</label>
+						<input class="form-control" type="text" name="examday" ng-model="superintendentex2data.examday">
+					</div>
+                    <div class="form-group">
+						<label>Select Exam Session</label>
+						<select class="form-control" ng-model="superintendentex2data.examsession">
+							<option>Select Exam Session</option>
+							<option>FORENOON</option>
+							<option>AFTERNOON</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Enter Month and Year of Exam</label>
+						<input class="form-control" type="text" name="monthandyearofexam" ng-model="superintendentex2data.monthandyearofexam">
+					</div>
+					<div class="form-group">
+						<label>Enter Question Code</label>
+						<input class="form-control" type="text" name="questioncode" ng-model="superintendentex2data.questioncode">
+					</div>
+					
+					<div class="form-group">
+						<label>Branch Name</label>
+						<select class="form-control" ng-model="branchname">
+							<option>Select Category</option>
+							<option>Civil Engineering</option>
+							<option>Mechanical Engineering</option>
+							<option>Automobile Engineering</option>
+							<option>Electrtical and Electronics Engg</option>
+							<option>Electronics and Communication</option>
+							<option>Computer Engineering</option>
+							<option>Information Technology</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Branch Code</label>
+						<input class="form-control" type="text" name="branchcode" ng-model="superintendentex2data.branchcode">
+					</div>
+                    <div class="form-group">
+						<label>Select Semester</label>
+						<select class="form-control" ng-model="superintendentex2data.semester">
+							<option>Select Semester</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+						</select>
+					</div>
+
+                    <div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="superintendentex2data.academicyear">
+							<option>Select Year</option>
+							<option>2016-2017</option>
+							<option>2017-2018</option>
+							<option>2018-2019</option>
+							<option>2019-2020</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Subject Column Number</label>
+						<input class="form-control" type="text" name="columnno" ng-model="superintendentex2data.columnno">
+						
+					</div>
+					
+					<div class="form-group">
+						<label>Subject Code</label>
+						<input class="form-control" type="text" name="subjectcode" ng-model="superintendentex2data.subjectcode">
+					</div>
+
+
+					<div class="form-group">
+						<label>Subject Name</label>
+						<input class="form-control" type="text" name="subjectname" ng-model="superintendentex2data.subjectname">
+					</div>
+					<br/>
+					<br/>
+					<br/>
+					
+
+						<table>
+							<tr>
+								<th>S.No.</th>
+								<th>Reg. No</th>
+								<th>Name</th>
+								<th>Attendance</th>
+							</tr>
+						
+						
+							<tr ng-repeat= "student in studentList">
+								<td>{{$index}}</td>
+								<td>{{student.regNo}}</td>
+								<td>{{student.studentName}}</td>
+								<td><input type="checkbox"/></td>
+							</tr>
+						</table>
+						
+					<br/>
+					<br/>
+					<br/>
+					<button ng-click="" class="btn btn-primary">Submit Attendance</button>
+
+                    <div class="form-group">
+						<label>Total Present</label>
+						<input class="form-control" type="text" name="totalpresent" ng-model="superintendentex2data.totalpresent">
+					</div>
+
+                    <div class="form-group">
+						<label>Total Absent</label>
+						<input class="form-control" type="text" name="totalabsent" ng-model="superintendentex2data.totalabsent">
+					</div>
+
+					<div class="form-group">
+						<label>Total Mal Practice</label>
+						<input class="form-control" type="text" name="totalmalpractice" ng-model="superintendentex2data.totalmalpractice">
+					</div>
+                                       
+
+                    <div class="form-group">
+						<label>LoginUser</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="superintendentex2data.loginuser">
+					</div>
+                    
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SAVE">
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,105 @@
+<h1>CAMPUS REQUEST ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="campusrequestform" ng-submit="campusRequestSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Enter Date</label>
+						<input class="form-control" type="text" name="entrydate" ng-model="campusrequestdata.entrydate">
+					</div>
+					<div class="form-group">
+						<label>Enter Request Id</label>
+						<input class="form-control" type="text" name="requestid" ng-model="campusrequestdata.requestid">
+					</div>
+					<div class="form-group">
+						<label>Enter Corporate Id</label>
+						<input class="form-control" type="text" name="corporateid" ng-model="campusrequestdata.corporateid">
+					</div>
+					<div class="form-group">
+						<label>Enter Corporate Name</label>
+						<input class="form-control" type="text" name="corporatename" ng-model="corporatename">
+					</div>
+
+					<div class="form-group">
+						<label>Select Request Typetegory</label>
+						<select class="form-control" ng-model="campusrequestdata.requesttype">
+							<option>Select Request Type</option>
+							<option> Campus Interview</option>
+							<option> Inplant Training</option>
+							<option> Soft Skill Training</option>
+							<option>Others </option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Possible From Date</label>
+						<input class="form-control" type="text" name="fromdate" ng-model="campusrequestdata.fromdate">
+					</div>
+					<div class="form-group">
+						<label>Enter Possible to Date</label>
+						<input class="form-control" type="text" name="todate" ng-model="campusrequestdata.todate">
+					</div>
+					<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="campusrequestdata.academicYear">
+							<option>Select Academic Year</option>
+							<option>2017-2018</option>
+							<option>2016-2017</option>
+							<option>2015-2016</option>
+							<option>2014-2015</option>
+							<option>2013-2014</option>
+							<option>2012-2013</option>
+							<option>2011-2012</option>
+							<option>2010-2011</option>
+						</select>
+					<div class="form-group">
+						<label>Enter Remarks</label>
+						<input class="form-control" type="text" name="remarks" ng-model="campusrequestdata.remarks">
+					</div>
+					<div class="form-group">
+						<label>Enter Follow up Date</label>
+						<input class="form-control" type="text" name="followupdate" ng-model="campusrequestdata.followupdate">
+					</div>
+					<br/>
+					<br/>
+					<br/>
+
+					<table>
+							<tr>
+							<th>Branch</th>
+							<th>Branch Code</th>
+							<th>Semester</th>
+							<th>Student Category</th>
+							<th>Type of Student</th>
+							<th>No of Students</th>
+							</tr>
+
+							<tr ng-repeat= "campusrequestdata in campusrequestdataList">
+							<td>{{campusrequestdataList.Branch}}</td>
+							<td>{{campusrequestdataList.branchCode}}</td>
+							<td>{{campusrequestdataList.semester}}</td>
+							<td>{{campusrequestdataList.studentCategory}}</td>
+							<td>{{campusrequestdataList.typeOfStudent}}</td>
+							<td>{{campusrequestdataList.noOfStudents}}</td>
+							</tr>
+					</table>
+
+					<br/>
+					<br/>
+					<br/>
+
+					</div>
+					<div class="form-group">
+						<label>Enter Login user</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="campusrequestdata.loginuser">
+					</div>
+
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="CREATE USER">
+			</div>
+		</form>
+	</div>
+</div>
