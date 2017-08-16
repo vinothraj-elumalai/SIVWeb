@@ -18,14 +18,30 @@ sivwebapp.service('constantService', function() {
             case "MGMT":
             	menulist = [
 		            	{'menuitem': 'Admission Counselling', 'iconclass': 'icon-class-group', 'href': '/admissioncounselling'},
-		            	{'menuitem': 'Admission Status', 'iconclass': 'icon-classroom', 'href': '/login'},
-		            	{'menuitem': 'College Fees Setting', 'iconclass': 'icon-classroom', 'href': '/login'},
-		            	{'menuitem': 'Admission Counselling', 'iconclass': 'icon-classroom', 'href': '/login'},
-		            	{'menuitem': 'Admission Status', 'iconclass': 'icon-classroom', 'href': '/login'},
-		            	{'menuitem': 'College Fees Setting', 'iconclass': 'icon-classroom', 'href': '/login'},
-		            	{'menuitem': 'Admission Counselling', 'iconclass': 'icon-classroom', 'href': '/login'},
-		            	{'menuitem': 'Admission Status', 'iconclass': 'icon-classroom', 'href': '/login'},
-		            	{'menuitem': 'College Fees Setting', 'iconclass': 'icon-classroom', 'href': '/login'}
+		            	{'menuitem': 'Admission Status', 'iconclass': 'icon-classroom', 'href': '/login'},  //NEED TO DESIGN
+		            	{'menuitem': 'College Fees Setting', 'iconclass': 'icon-classroom', 'href': '/collegefeessetting'},
+		            	{'menuitem': 'Transport Fees Setting', 'iconclass': 'icon-classroom', 'href': '/transportfeessetting'},
+		            	{'menuitem': 'Hostel Fees Setting', 'iconclass': 'icon-classroom', 'href': '/hostelfeessetting'},
+		            	{'menuitem': 'Food Fees Setting', 'iconclass': 'icon-classroom', 'href': '/foodfeessetting'},
+		            	{'menuitem': 'Staff Attendance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Student Attendance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Staff Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Department Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Salary Calculation', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Staff Requirement', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Locate Staff', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Admin Removal', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Placement Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Promote Staff', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Relieve Staff', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Approvals', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Events', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Transport Maintenance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Hostel', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Sports Performance', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+
+
             		];
             	return menulist;
                 // data.add(new Item("Admission Counselling",R.drawable.admission,".AdmissionCounsellingFragment"));
@@ -54,6 +70,23 @@ sivwebapp.service('constantService', function() {
                 break;
 
             case "PRPL":
+            	menulist = [
+		            	
+		            	{'menuitem': 'Staff Attendance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Student Attendance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Staff Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Department Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Staff Requirement', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Locate Staff', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Placement Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Events', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Hostel', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Sports Performance', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+
+
+            		];
+            	return menulist;
                 // data.add(new Item("Staff Attendance", R.drawable.staff_attendance,".PrincStaffAttendFragment"));
                 // data.add(new Item("Student Attendance", R.drawable.attendance,".PrincStudentAttendFragment"));
                 // data.add(new Item("Staff Performance", R.drawable.performance,".PrincStaffPerfFragment"));
@@ -68,6 +101,23 @@ sivwebapp.service('constantService', function() {
 
             //case "Office Admin":
             case "OADM":
+            	menulist = [
+		            	
+		            	{'menuitem': 'Staff Attendance', 'iconclass': 'icon-classroom', 'href': '/login'},
+		            	{'menuitem': 'Student Attendance', 'iconclass': 'icon-classroom', 'href': '/login'},
+		            	{'menuitem': 'Staff Performance', 'iconclass': 'icon-classroom', 'href': '/login'},
+		            	{'menuitem': 'Department Performance', 'iconclass': 'icon-classroom', 'href': '/login'},
+		            	{'menuitem': 'Staff Requirement', 'iconclass': 'icon-classroom', 'href': '/login'},
+		            	{'menuitem': 'Locate Staff', 'iconclass': 'icon-classroom', 'href': '/login'},
+		            	{'menuitem': 'Placement Performance', 'iconclass': 'icon-classroom', 'href': '/login'},
+		            	{'menuitem': 'Events', 'iconclass': 'icon-classroom', 'href': '/login'},
+		            	{'menuitem': 'Hostel', 'iconclass': 'icon-classroom', 'href': '/login'},
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'},
+		            	{'menuitem': 'Sports Performance', 'iconclass': 'icon-classroom', 'href': '/login'}
+
+
+            		];
+            	return menulist;
                 // data.add(new Item("Admission", R.drawable.admission,".OffAdmissionFragment"));
                 // data.add(new Item("Student Data", R.drawable.student,".OfficeStudentInfoUpdFragment"));
                 // data.add(new Item("Staff Data", R.drawable.staff,".OfficeStaffInfoFragment"));
@@ -84,6 +134,18 @@ sivwebapp.service('constantService', function() {
 
             //case "Office Admission":
             case "OADMSN":
+            	menulist = [
+		            	
+		            	{'menuitem': 'Application Sale', 'iconclass': 'icon-classroom', 'href': '/applicationsale'},
+		            	{'menuitem': 'Admission Entry', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Follow up', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'College ID', 'iconclass': 'icon-classroom', 'href': '/studentcollegeid'},
+		            	{'menuitem': 'Certificate Submission', 'iconclass': 'icon-classroom', 'href': '/certificatesubmission'},
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+
+
+            		];
+            	return menulist;
                 // data.add(new Item("Application Sale", R.drawable.application,".ApplicationSaleFragment"));
                 // data.add(new Item("Admission Entry", R.drawable.admissionent,".AdmissionEntryFragment"));
                 // data.add(new Item("Follow up", R.drawable.follower,".ApplicationFollowFragment"));
@@ -99,6 +161,13 @@ sivwebapp.service('constantService', function() {
 
             //case "Office Fees":
             case "FEES":
+            	menulist = [
+		            	
+		            	{'menuitem': 'Fees Payment', 'iconclass': 'icon-classroom', 'href': '/feespayment'},
+		            	{'menuitem': 'Exam Fees', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Follow up', 'iconclass': 'icon-classroom', 'href': '/feesfollowup'},
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+
                 // data.add(new Item("Fees Payment",R.drawable.feespayment,".FeesPaymentFragment"));
                 // data.add(new Item("Exam Fees", R.drawable.examfees,".ExamFeesFragment"));
                 // data.add(new Item("Follow up", R.drawable.follow,".FollowupFeesFragment"));
@@ -107,6 +176,31 @@ sivwebapp.service('constantService', function() {
 
             //case "Office Supdt":
             case "OSUPDT":
+            	menulist = [
+		            	
+		            	{'menuitem': 'Staff Personal', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Staff Academic', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Willing Subjects', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Staff Transport', 'iconclass': 'icon-classroom', 'href': '/stafftransport'},
+		            	{'menuitem': 'Staff Attendance', 'iconclass': 'icon-classroom', 'href': '/staffattendance'},
+		            	{'menuitem': 'Leave Entry', 'iconclass': 'icon-classroom', 'href': '/staffleaveletterentry'},
+		            	{'menuitem': 'Nominal Entry', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Equivalence Subject Entry', 'iconclass': 'icon-classroom', 'href': '/equivalencesubject'},
+		            	{'menuitem': 'Result Entry', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Ex-2 Entry', 'iconclass': 'icon-classroom', 'href': '/superintendentex2'},
+		            	{'menuitem': 'E-Gov Spell Entry', 'iconclass': 'icon-classroom', 'href': '/egovspellentry'},
+		            	{'menuitem': 'B-Forms', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Bonafide', 'iconclass': 'icon-classroom', 'href': '/bonafide'},
+		            	{'menuitem': 'TC', 'iconclass': 'icon-classroom', 'href': '/studentdiscontinuedtc'},//NEED TO DISCUSS
+		            	{'menuitem': 'Students Name List', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Staff Name List', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'First Aid', 'iconclass': 'icon-classroom', 'href': '/firstaid'},
+		            	{'menuitem': 'Scholarship', 'iconclass': 'icon-classroom', 'href': '/scholarship'},
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+
+
+            		];
+            	return menulist;
                 // data.add(new Item("Staff Personal", R.drawable.personalinf,".StaffPersonalFragment"));
                 // data.add(new Item("Staff Academic", R.drawable.academic,".StaffAcademicFragment"));
                 // data.add(new Item("Willing Subjects", R.drawable.subject,".WillingSubjectsFragment"));
@@ -125,6 +219,13 @@ sivwebapp.service('constantService', function() {
 
             //case "Office Steno":
             case "OSTN":
+            	menulist = [
+		            	
+		            	{'menuitem': 'Events Entry', 'iconclass': 'icon-classroom', 'href': '/stenoevents'},
+		            	{'menuitem': 'Circulars Entry', 'iconclass': 'icon-classroom', 'href': '/stenocircular'},
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+            		];
+            	return menulist;
                 // data.add(new Item("Fees Events", R.drawable.fees,".FeesEventsActivity"));
                 // data.add(new Item("Branch Events", R.drawable.branches,".BranchEventsActivity"));
                 // data.add(new Item("Exam Events", R.drawable.exam,".ExamEventsActivity"));
@@ -143,6 +244,16 @@ sivwebapp.service('constantService', function() {
 
             //case "Office Stores":
             case "OSTO":
+            	menulist = [
+		            	
+		            	{'menuitem': 'Stores Vendor', 'iconclass': 'icon-classroom', 'href': '/vendordetails'},
+		            	{'menuitem': 'Stores Purchase', 'iconclass': 'icon-classroom', 'href': '/storespurchase'},
+		            	{'menuitem': 'Stores Sales', 'iconclass': 'icon-classroom', 'href': '/storessales'},
+		            	{'menuitem': 'Stores Return', 'iconclass': 'icon-classroom', 'href': '/storesreturn'},
+		            	{'menuitem': 'Stock Details', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+            		];
+            	return menulist;		            	
                 // data.add(new Item("Stores Vendor", R.drawable.vendor,".VendorDetailsFragment"));
                 // data.add(new Item("Stores Purchase", R.drawable.stores,".PurchaseFragment"));
                 // data.add(new Item("Stores Sales", R.drawable.sale,".SalesFragment "));
@@ -151,6 +262,21 @@ sivwebapp.service('constantService', function() {
                 break;
             //case "Office Transport" :
             case "OTRAN" :
+            	menulist = [
+		            	
+		            	{'menuitem': 'Transport ID', 'iconclass': 'icon-classroom', 'href': '/transportidcard'},
+		            	{'menuitem': 'Route Change', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'MTC Concession', 'iconclass': 'icon-classroom', 'href': '/mtcconcession'},
+		            	{'menuitem': 'Train Concession', 'iconclass': 'icon-classroom', 'href': '/trainconcession'},
+		            	{'menuitem': 'Route Verification', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Fuel Filling', 'iconclass': 'icon-classroom', 'href': '/fuelfilling'},
+		            	{'menuitem': 'Transport Insurance', 'iconclass': 'icon-classroom', 'href': '/transportinsurance'},
+		            	{'menuitem': 'Transport FC', 'iconclass': 'icon-classroom', 'href': '/transportfc'},
+		            	{'menuitem': 'Driver Data', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Requirement Request', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+            		];
+            	return menulist;                
                 // data.add(new Item("Transport ID", R.drawable.idcard,".TransportIdFragment"));
                 // data.add(new Item("Route Change", R.drawable.admission,".RouteChangeFragment"));
                 // data.add(new Item("MTC Concession", R.drawable.admission,".MTCConcessionFragment"));
@@ -168,6 +294,21 @@ sivwebapp.service('constantService', function() {
 
             //case "Teaching Staff":
             case "TSTAFF":
+            	menulist = [
+		            	
+		            	{'menuitem': 'Student Attendance', 'iconclass': 'icon-classroom', 'href': '/studentattendance'},
+		            	{'menuitem': 'Exam Mark Entry', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'View Internal Mark', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Time Table', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Home Work Entry', 'iconclass': 'icon-classroom', 'href': '/studenthomework'},
+		            	{'menuitem': 'Question Entry', 'iconclass': 'icon-classroom', 'href': '/questionentry'},
+		            	{'menuitem': 'Requirements Request', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Leave Request', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Events', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+            		];
+            	return menulist;                
+
                 // data.add(new Item("Student Attendance", R.drawable.attendance,".TeachstaffStudAttEntryFragment"));
                 // data.add(new Item("Exam Mark Entry", R.drawable.admission,".TSExamMarkEntryFragment"));
                 // data.add(new Item("View Internal Mark", R.drawable.internal,".TSViewInternalFragment"));
@@ -182,6 +323,29 @@ sivwebapp.service('constantService', function() {
 
 
             case "HOD":
+            	menulist = [
+		            	
+		            	{'menuitem': 'Student Attendance', 'iconclass': 'icon-classroom', 'href': '/studentattendance'},
+		            	{'menuitem': 'Staff Attendance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Subject Entry', 'iconclass': 'icon-classroom', 'href': '/subjectentry'},
+		            	{'menuitem': 'Subject Allocation', 'iconclass': 'icon-classroom', 'href': '/subjectallocation'},
+		            	{'menuitem': 'Time Table', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Exam Time Table', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Exam Mark Entry', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'View Internal Mark', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Home Work Entry', 'iconclass': 'icon-classroom', 'href': '/studenthomework'},
+		            	{'menuitem': 'Question Entry', 'iconclass': 'icon-classroom', 'href': '/questionentry'},
+		            	{'menuitem': 'Question Set', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Attendance Entry Monitor', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Student Remarks', 'iconclass': 'icon-classroom', 'href': '/studentremarksentry'},
+		            	{'menuitem': 'Staff Leave Approval', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Requirements Request', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Leave Request', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Events', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+            		];
+            	return menulist;                
+
                 // data.add(new Item("Student Attendance", R.drawable.attendance,".StudentAttEntryActivity"));
                 // data.add(new Item("Subject Entry", R.drawable.subject,".SubjectEntryActivity"));
                 // data.add(new Item("Subject Allocation", R.drawable.subject,".SubjectAllocationActivity"));
@@ -201,6 +365,16 @@ sivwebapp.service('constantService', function() {
 
             //case "Placement officer":
             case "PLO":
+            	menulist = [
+		            	
+		            	{'menuitem': 'Corporates Detail', 'iconclass': 'icon-classroom', 'href': '/corporateentry'},
+		            	{'menuitem': 'Campus Request', 'iconclass': 'icon-classroom', 'href': '/campusrequest'},
+		            	{'menuitem': 'Schedules', 'iconclass': 'icon-classroom', 'href': '/campusscheduler'},
+		            	{'menuitem': 'Followup', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Job Links', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+            		];
+            	return menulist;
                 // data.add(new Item("Corporates Detail", R.drawable.corporates,".CorporateDetActivity"));
                 // data.add(new Item("Campus Request", R.drawable.campusreq,".CampusReqActivity"));
                 // data.add(new Item("Schedules", R.drawable.schedule,".SchedulesActivity"));
@@ -214,6 +388,19 @@ sivwebapp.service('constantService', function() {
 
             //case "Sports":
             case "SPRT":
+            	menulist = [
+		            	
+		            	{'menuitem': 'Athelete Data', 'iconclass': 'icon-classroom', 'href': '/sportsathelete'},
+		            	{'menuitem': 'Tournament Data', 'iconclass': 'icon-classroom', 'href': '/tournamentdata'},
+		            	{'menuitem': 'Kits Stock', 'iconclass': 'icon-classroom', 'href': '/sportskitsstock'},
+		            	{'menuitem': 'Kits Requirement', 'iconclass': 'icon-classroom', 'href': '/login'},
+		            	{'menuitem': 'Kits Purchase', 'iconclass': 'icon-classroom', 'href': '/sportskitspurchase'},
+		            	{'menuitem': 'O.D.Form', 'iconclass': 'icon-classroom', 'href': '/sportsod'},//NEED TO DESIGN
+		            	{'menuitem': 'Physical Director Details', 'iconclass': 'icon-classroom', 'href': '/sportspddetail'},
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+            		];
+            	return menulist;
+
                 // data.add(new Item("Athelete Data", R.drawable.athlete,".AtheleteDataActivity"));
                 // data.add(new Item("Tournament Data", R.drawable.tournament,".TournamentDataActivity"));
                 // data.add(new Item("Kits Stock", R.drawable.stockkit,".KitsStockActivity"));
@@ -225,6 +412,21 @@ sivwebapp.service('constantService', function() {
 
             //case "Library":
             case "LIB":
+            	menulist = [
+		            	
+		            	{'menuitem': 'Member Data', 'iconclass': 'icon-classroom', 'href': '/librarymemberdetail'},
+		            	{'menuitem': 'Books Data', 'iconclass': 'icon-classroom', 'href': '/librarybookentry'},
+		            	{'menuitem': 'CD Data', 'iconclass': 'icon-classroom', 'href': '/librarycdentry'},
+		            	{'menuitem': 'Magazines Data', 'iconclass': 'icon-classroom', 'href': '/librarymagazineentry'},
+		            	{'menuitem': 'Books Purchase', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Books Availability', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Issuing Books', 'iconclass': 'icon-classroom', 'href': '/librarybookissuereturn'},
+		            	{'menuitem': 'Returning Books', 'iconclass': 'icon-classroom', 'href': '/librarybookissuereturn'},
+		            	{'menuitem': 'Library Usage', 'iconclass': 'icon-classroom', 'href': '/libraryusage'},
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+            		];
+            	return menulist;
+
                 // data.add(new Item("Member Data", R.drawable.profile,".LibMemberDataFragment"));
                 // data.add(new Item("Books Data", R.drawable.book,".LibBooksDataFragment"));
                 // data.add(new Item("CD Data", R.drawable.cd,".LibCDDataFragment"));
@@ -240,6 +442,20 @@ sivwebapp.service('constantService', function() {
 
             //case "Hostel":
             case "HOS":
+            	menulist = [
+		            	
+		            	{'menuitem': 'Student Data', 'iconclass': 'icon-classroom', 'href': '/hostelstudent'},
+		            	{'menuitem': 'Facilities Data', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Payment Data', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Leave Data', 'iconclass': 'icon-classroom', 'href': '/hostelstudentleave'},
+		            	{'menuitem': 'Visitor Data', 'iconclass': 'icon-classroom', 'href': '/hostelstudentvisitor'},
+		            	{'menuitem': 'Food Data', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Medical Data', 'iconclass': 'icon-classroom', 'href': '/firstaid'},
+		            	{'menuitem': 'Remarks', 'iconclass': 'icon-classroom', 'href': '/studentremarksentry'},
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+            		];
+            	return menulist;
+
                 // data.add(new Item("Student Data", R.drawable.student,".HostelStudDataFragment"));
                 // data.add(new Item("Facilities Data", R.drawable.facility,".HostelFacilitiesDataFragment"));
                 // data.add(new Item("Payment Data", R.drawable.feespayment,".HostelPayDataFragment"));
@@ -254,6 +470,19 @@ sivwebapp.service('constantService', function() {
 
             //case "Parent":
             case "STUD":
+            	menulist = [
+		            	
+		            	{'menuitem': 'Profile', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Daily Attendance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Test Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Exam Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Fees Payment', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Home Work', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Leave Request', 'iconclass': 'icon-classroom', 'href': '/studentleaveletter'},
+		            	{'menuitem': 'Events', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Remarks', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+            		];
+            	return menulist;
                 // data.add(new Item("Profile", R.drawable.profile,".ParentProfileFragment"));
                 // data.add(new Item("Daily Attendance", R.drawable.attendance,".ParentDailyAttfragment"));
                 // data.add(new Item("Test Performance", R.drawable.performance,".ParentTestPerFragment"));
@@ -269,6 +498,15 @@ sivwebapp.service('constantService', function() {
 
             //case "System Admin":
             case "SYSADM":
+            	menulist = [
+		            	
+		            	{'menuitem': 'Add User', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Modify User', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Remove User', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+            		];
+            	return menulist;
+
                 // data.add(new Item("Add User", R.drawable.adduser,".AddUserFragment"));
                 // data.add(new Item("Modify User",R.drawable.edituser,".ModifyUserFragment"));
                 // data.add(new Item("Remove User", R.drawable.relievestaff,".RemoveUserFragment"));

@@ -74,7 +74,10 @@
 					<br/>
 					<br/>
 					<br/>
-    
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
 					<table>
 							<tr>
 							<th>Serial No</th>
@@ -83,18 +86,29 @@
 							<th>Item Quantity</th>
 							<th>Unit Price</th>
 							<th>Total Price</th>
+							<th>Action</th>
 							</tr>
-
-							<tr ng-repeat= "storessalesdata in storessalesdataList">
-							<td>{{storessalesdataList.serialNo}}</td>
-							<td>{{storessalesdataList.hsnCode}}</td>
-							<td>{{storessalesdataList.itemName}}</td>
-							<td>{{storessalesdataList.itemQuantity}}</td>
-							<td>{{storessalesdataList.unitPrice}}</td>
-							<td>{{storessalesdataList.totalPrice}}</td>
+							<tr>
+								<td>#</td>
+								<td><input type="text" ng-model="storessalesdata.hsncode" class="form-control" /></td>
+								<td><input type="text" ng-model="storessalesdata.itemname" class="form-control" /></td>
+								<td><input type="text" ng-model="storessalesdata.quantity" class="form-control" /></td>
+								<td><input type="text" ng-model="storessalesdata.price" class="form-control" /></td>
+								<td><span>{{storessalesdata.quantity*storessalesdata.price}}</span></td>
+								<td><input type="button" value="Add" ng-click="additem(storessalesdata)"/></td>
+							</tr>
+							<tr ng-repeat= "salesitem in storessalesdataList">
+								<td>{{$index+1}}</td>
+								<td ng-bind="salesitem.hsncode"></td>
+								<td ng-bind="salesitem.itemname"></td>
+								<td ng-bind="salesitem.quantity"></td>
+								<td ng-bind="salesitem.price"></td>
+								<td>{{salesitem.quantity*salesitem.price}}</td>
+								<td><input type="button" value="Delete" ng-click="deleteitem(salesitem)"/></td>
 							</tr>
 					</table>
-
+				</div>
+			</div>
 					<br/>
 					<br/>
 					<br/>

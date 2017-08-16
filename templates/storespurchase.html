@@ -39,12 +39,12 @@
 							</tr>
 							<tr>
 								<td>#</td>
-								<td><input type="text" ng-model="storespurchase.hsncode" class="form-control" /></td>
-								<td><input type="text" ng-model="storespurchase.itemname" class="form-control" /></td>
-								<td><input type="text" ng-model="storespurchase.quantity" class="form-control" /></td>
-								<td><input type="text" ng-model="storespurchase.price" class="form-control" /></td>
-								<td><span>{{storespurchase.quantity*storespurchase.price}}</span></td>
-								<td><input type="button" value="Add" ng-click="additem(storespurchase)"/></td>
+								<td><input type="text" ng-model="storespurchasedata.hsncode" class="form-control" /></td>
+								<td><input type="text" ng-model="storespurchasedata.itemname" class="form-control" /></td>
+								<td><input type="text" ng-model="storespurchasedataList.quantity" class="form-control" /></td>
+								<td><input type="text" ng-model="storespurchasedata.price" class="form-control" /></td>
+								<td><span>{{storespurchasedata.quantity*storespurchasedata.price}}</span></td>
+								<td><input type="button" value="Add" ng-click="additem(storespurchasedata)"/></td>
 							</tr>
 							<tr ng-repeat= "purchaseitem in storespurchasedataList">
 								<td>{{$index+1}}</td>
