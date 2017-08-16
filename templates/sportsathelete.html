@@ -60,32 +60,68 @@
 							<option>2019-2020</option>
 						</select>
 					</div>
+			
 					<br/>
 					<br/>
 					<br/>
-
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
 					<table>
 							<tr>
 							<th>Sports Type</th>
 							<th>Sports Code</th>
 							<th>Area in Sports</th>
 							<th>Performance Level</th>
-							<th>House</th>
+							<th>Action</th>
 							</tr>
-
+							<tr>
+								<td>#</td>
+								<td>
+								<select class="form-control" ng-model="sportsatheletedata.sportstype">
+								<option>Select sports type</option>
+								<option>CRICKET</option>
+								<option>FOOTBALL</option>
+								<option>VOLLEY BALL</option>
+								<option>BASKET BALL</option>
+								</select>
+								</td>
+								<td><input type="text" ng-model="sportsatheletedata.sportscode" class="form-control" /></td>
+								<td>
+								<select class="form-control" ng-model="sportsatheletedata.sportsarea">
+								<option>Select sports area</option>
+								<option>ALL ROUNDER</option>
+								<option>OTHERS</option>
+								</select></td>
+								<td>
+								<select class="form-control" ng-model="sportsatheletedata.performancelevel">
+								<option>Select Performance Level</option>
+								<option>CHAMPION</option>
+								<option>OUTSTANDING</option>
+								<option>AVERAGE</option>
+								<option>BEGINNER</option>
+								</select></td>
+								
+								<td><input type="button" value="Add" ng-click="additem(sportsatheletedata)"/></td>
+							</tr>
 							<tr ng-repeat= "sportsatheletedata in sportsatheletedataList">
-							<td>{{sportsatheletedataList.sportsType}}</td>
-							<td>{{sportsatheletedataList.sportsCode}}</td>
-							<td>{{sportsatheletedataList.areaInSports}}</td>
-							<td>{{sportsatheletedataList.performanceLevel}}</td>
-							<td>{{sportsatheletedataList.house}}</td>
+								<td>{{$index+1}}</td>
+								<td ng-bind="sportsatheletedata.sportstype"></td>
+								<td ng-bind="sportsatheletedata.sportscode"></td>
+								<td ng-bind="sportsatheletedata.sportsarea"></td>
+								<td ng-bind="sportsatheletedata.performancelevel"></td>
+								
+								<td><input type="button" value="Delete" ng-click="deleteitem(sportsatheletedata)"/></td>
 							</tr>
 					</table>
+				</div>
+			</div>
+					<br/>
+					<br/>
+					<br/>
 
-					<br/>
-					<br/>
-					<br/>
-					
+
 
                     <div class="form-group">
 						<label>LoginUser1</label>
