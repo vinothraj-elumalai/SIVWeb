@@ -11,7 +11,7 @@
           <div class="row">
             <div class="col-md-8">
               <div class="row">
-                <div class="col-sm-3" ng-repeat="menu in menulist">
+                <div class="col-sm-3" ng-repeat="menu in menulist" hasequalheight>
                   <div class="dashboardmenu {{'dashboardcolor'+($index%6)}}" ng-click='dashboardgoto(menu.href)'>
                     <span class="dashboardmenuicon {{menu.iconclass}}"></span>
                     <span class="dashboardmentu-label">{{menu.menuitem}}</span>

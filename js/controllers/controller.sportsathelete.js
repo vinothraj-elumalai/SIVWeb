@@ -12,4 +12,21 @@ sivwebapp.controller('sportsAtheleteCtrl', function($scope, $http) {
             	
    			});
     }
+    /*table entry*/
+    $scope.sportsatheletedataList = [];
+    $scope.additem= function(sportsatheletedata){
+        $scope.sportsatheletedataList.push(
+            {
+                'sportstype':sportsatheletedata.sportstype,
+                'sportscode':sportsatheletedata.sportscode,
+                'sportsarea':sportsatheletedata.sportsarea,
+                'performancelevel':sportsatheletedata.performancelevel
+            }
+        );
+        $scope.sportsatheletedata={};
+    }
+    $scope.deleteitem = function (item) {
+        $scope.sportsatheletedataList.splice($scope.sportsatheletedataList.indexOf(item), 1);
+    }
+    /*table entry*/
 });

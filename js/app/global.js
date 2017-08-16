@@ -17,7 +17,7 @@ sivwebapp.service('constantService', function() {
       switch(role){
             case "MGMT":
             	menulist = [
-		            	{'menuitem': 'Admission Counselling', 'iconclass': 'icon-class-group', 'href': '/admissioncounselling'},
+		            	{'menuitem': 'Admission Counselling', 'iconclass': 'icon-class-group', 'href': '/admissioncounselling', 'subcategory': 'admission'},
 		            	{'menuitem': 'Admission Status', 'iconclass': 'icon-classroom', 'href': '/login'},  //NEED TO DESIGN
 		            	{'menuitem': 'College Fees Setting', 'iconclass': 'icon-classroom', 'href': '/collegefeessetting'},
 		            	{'menuitem': 'Transport Fees Setting', 'iconclass': 'icon-classroom', 'href': '/transportfeessetting'},
@@ -167,7 +167,8 @@ sivwebapp.service('constantService', function() {
 		            	{'menuitem': 'Exam Fees', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
 		            	{'menuitem': 'Follow up', 'iconclass': 'icon-classroom', 'href': '/feesfollowup'},
 		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
-
+                        ];
+                        return menulist;
                 // data.add(new Item("Fees Payment",R.drawable.feespayment,".FeesPaymentFragment"));
                 // data.add(new Item("Exam Fees", R.drawable.examfees,".ExamFeesFragment"));
                 // data.add(new Item("Follow up", R.drawable.follow,".FollowupFeesFragment"));

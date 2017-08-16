@@ -28,6 +28,11 @@ sivwebapp.controller('admissionCounsellingCtrl', function($scope, $http) {
             });
     }
 
+    $scope.activestep = 1;
+    $scope.gotostep = function(position){
+        $scope.activestep = position;
+    }
+
 
 
 });
