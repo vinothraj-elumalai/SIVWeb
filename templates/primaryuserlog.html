@@ -1,0 +1,27 @@
+<h1>PRIMARY KEY ONE TO MANY USER ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="primaryuserlogform" ng-submit="primaryUserLogSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Admission No</label>
+						<input class="form-control" type="text" name="regno" ng-model="primaryuserlogdata.regno">
+					</div>
+                    
+                    <div class="form-group">
+						<label>Contact No</label>
+						<input class="form-control" type="text" name="Log" ng-model="primaryuserlogdata.Log">
+					</div>
+                    
+                    
+                   
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="CREATE USER">
+			</div>
+		</form>
+	</div>
+</div>

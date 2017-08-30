@@ -12,4 +12,23 @@ sivwebapp.controller('campusRequestCtrl', function($scope, $http) {
             	
    			});
     }
+
+            /*table entry*/
+    $scope.campusrequestdataList = [];
+    $scope.additem= function(campusrequestdata){
+        $scope.campusrequestdataList.push(
+            {
+                'branch':campusrequestdata.branch,
+                'branchcode':campusrequestdata.branchcode,
+                'semester':campusrequestdata.semester,
+                'studentcategory':campusrequestdata.studentcategory,
+                'noofstudents':campusrequestdata.noofstudents
+            }
+        );
+        $scope.campusrequestdata={};
+    }
+    $scope.deleteitem = function (item) {
+        $scope.campusrequestdataList.splice($scope.campusrequestdataList.indexOf(item), 1);
+    }
+    /*table entry*/
 });

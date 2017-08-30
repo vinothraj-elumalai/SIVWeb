@@ -84,36 +84,70 @@
                      
 				</div>
 			</div>
-					<br/>
-					<br/>
-					<br/>
 
+					<br/>
+					<br/>
+					<br/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
 					<table>
 							<tr>
-							<th>S.No.</th>
+							<th>S. No</th>
+							<th>Book Name</th>
 							<th>Book Id</th>
 							<th>Book Sl.No</th>
-							<th>BookName</th>
 							<th>Return Date</th>
 							<th>Book Status</th>
-							<th>Fine Amount</th>
+							<th>Fine</th>
+							<th>Action</th>
 							</tr>
+							<tr>
+								<td>#</td>
+								<td>
+								<select class="form-control" ng-model="librarybookissuereturndata.bookname">
+								<option>Select Book</option>
+								<option>C++ Programming</option>
+								<option>Java Programming</option>
+								<option>.net Programming</option>
+								<option>Software Engineering</option>
+								</select>
+								</td>
+								<td><input type="text" ng-model="librarybookissuereturndata.bookid" class="form-control" /></td>
+								<td><input type="text" ng-model="librarybookissuereturndata.bookslno" class="form-control" /></td>
+								<td><input type="text" ng-model="librarybookissuereturndata.returndate" class="form-control" /></td>	
+								<td>
+								<select class="form-control" ng-model="librarybookissuereturndata.bookstatus">
+								<option>Select Book Status</option>
+								<option>ISSUED AS GOOD</option>
+								<option>RETURNED AS GOOD</option>
+								<option>RETURNED AS DAMAGED</option>
+								<option>MISSED</option>
+								</select>
+								</td>
+								<td><input type="text" ng-model="librarybookissuereturndata.fine" class="form-control" /></td>							
+								<td><input type="button" value="Add" ng-click="additem(librarybookissuereturndata)"/></td>
+							</tr>
+							<tr ng-repeat= "librarybookissuereturndata in librarybookissuereturndataList">
+								<td>{{$index+1}}</td>
+								<td ng-bind="librarybookissuereturndata.bookname"></td>
+								<td ng-bind="librarybookissuereturndata.bookid"></td>
+								<td ng-bind="librarybookissuereturndata.bookslno"></td>
+								<td ng-bind="librarybookissuereturndata.returndate"></td>
+								<td ng-bind="librarybookissuereturndata.bookstatus"></td>
+								<td ng-bind="librarybookissuereturndata.fine"></td>
 
-
-							<tr ng-repeat= "librarybookissret in librarybookissretList">
-							<td>{{$index}}</td>
-							<td>{{librarybookissret.bookId}}</td>
-							<td>{{librarybookissret.bookSlno}}</td>
-							<td>{{librarybookissret.bookName}}</td>
-							<td>{{librarybookissret.bookReturnDate}}</td>
-							<td>{{librarybookissret.bookStatus}}</td>
-							<td>{{librarybookissret.bookFine}}</td>
+																
+								<td><input type="button" value="Delete" ng-click="deleteitem(librarybookissuereturndata)"/></td>
 							</tr>
 					</table>
+				</div>
+			</div>
+					<br/>
+					<br/>
+					<br/>
 
-					<br/>
-					<br/>
-					<br/>
 
 
 			<div class="text-right">

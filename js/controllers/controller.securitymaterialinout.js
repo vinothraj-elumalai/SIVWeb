@@ -12,4 +12,22 @@ sivwebapp.controller('securityMaterialInOutPassCtrl', function($scope, $http) {
             	
    			});
     }
+
+        /*table entry*/
+    $scope.securitymaterialinoutdataList = [];
+    $scope.additem= function(securitymaterialinoutdata){
+        $scope.securitymaterialinoutdataList.push(
+            {
+                'materialname':securitymaterialinoutdata.materialname,
+                'materialcode':securitymaterialinoutdata.materialcode,
+                'materialcondition':securitymaterialinoutdata.materialcondition,
+                'noofitems':securitymaterialinoutdata.noofitems
+            }
+        );
+        $scope.securitymaterialinoutdata={};
+    }
+    $scope.deleteitem = function (item) {
+        $scope.securitymaterialinoutdataList.splice($scope.securitymaterialinoutdataList.indexOf(item), 1);
+    }
+    /*table entry*/
 });

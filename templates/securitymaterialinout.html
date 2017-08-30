@@ -63,26 +63,59 @@
 					<br/>
 					<br/>
 					<br/>
-
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
 					<table>
 							<tr>
-							<th>Material Code</th>
+							<th>S. No</th>
 							<th>Material Name</th>
+							<th>Material Code</th>
 							<th>Material Condition</th>
 							<th>No of Items</th>
+							<th>Action</th>
 							</tr>
-
+							<tr>
+								<td>#</td>
+								<td>
+								<select class="form-control" ng-model="securitymaterialinoutdata.materialname">
+								<option>Select Material</option>
+								<option>COMPUTER</option>
+								<option>CRO</option>
+								<option>MICROPROCESSOR KIT</option>
+								<option>PRINTER</option>
+								</select>
+								</td>
+								<td><input type="text" ng-model="securitymaterialinoutdata.materialcode" class="form-control" /></td>
+								<td>
+								<select class="form-control" ng-model="securitymaterialinoutdata.materialcondition">
+								<option>Select Material Condition</option>
+								<option>WORKING</option>
+								<option>NOT WORKING</option>
+								<option>CONDEMED</option>
+								</select></td>
+								<td><input type="text" ng-model="securitymaterialinoutdata.noofitems" class="form-control" /></td>
+								
+								<td><input type="button" value="Add" ng-click="additem(securitymaterialinoutdata)"/></td>
+							</tr>
 							<tr ng-repeat= "securitymaterialinoutdata in securitymaterialinoutdataList">
-							<td>{{securitymaterialinoutdataList.materialCode}}</td>
-							<td>{{securitymaterialinoutdataList.materialName}}</td>
-							<td>{{securitymaterialinoutdataList.materialCondition}}</td>
-							<td>{{securitymaterialinoutdataList.noOfItems}}</td>
+								<td>{{$index+1}}</td>
+								<td ng-bind="securitymaterialinoutdata.materialname"></td>
+								<td ng-bind="securitymaterialinoutdata.materialcode"></td>
+								<td ng-bind="securitymaterialinoutdata.materialcondition"></td>
+								<td ng-bind="securitymaterialinoutdata.noofitems"></td>
+								
+								<td><input type="button" value="Delete" ng-click="deleteitem(securitymaterialinoutdata)"/></td>
 							</tr>
 					</table>
+				</div>
+			</div>
+					<br/>
+					<br/>
+					<br/>
 
-					<br/>
-					<br/>
-					<br/>
+
 
 					</div>
 					<div class="form-group">

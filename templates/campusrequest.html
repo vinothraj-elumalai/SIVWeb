@@ -60,33 +60,81 @@
 						<label>Enter Follow up Date</label>
 						<input class="form-control" type="text" name="followupdate" ng-model="campusrequestdata.followupdate">
 					</div>
-					<br/>
-					<br/>
-					<br/>
 
+					<br/>
+					<br/>
+					<br/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
 					<table>
 							<tr>
-							<th>Branch</th>
+							<th>S. No</th>
+							<th>Branch Name</th>
 							<th>Branch Code</th>
 							<th>Semester</th>
 							<th>Student Category</th>
-							<th>Type of Student</th>
 							<th>No of Students</th>
+							<th>Action</th>
 							</tr>
+							<tr>
+								<td>#</td>
+								<td>
+								<select class="form-control" ng-model="campusrequestdata.branch">
+								<option>Select Branch</option>
+								<option>CIVIL ENGINEERING</option>
+								<option>MECHANICAL ENGINEERING</option>
+								<option>AUTOMOBILE ENGINEERING</option>
+								<option>ELECTRICAL AND ELECTRONICS ENGINEERING</option>
+								</select>
+								</td>
+								<td><input type="text" ng-model="campusrequestdata.branchcode" class="form-control" /></td>
+								<td>
+								<select class="form-control" ng-model="campusrequestdata.semester">
+								<option>Select Semester</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								</select></td>
+								<td>
+								<select class="form-control" ng-model="campusrequestdata.studentcategory">
+								<option>Select Student Category</option>
+								<option>Regular All Student</option>
+								<option>Passed out All Student</option>
+								<option>Regular Student without Arrear</option>
+								<option>Passed out Student without Arrear</option>
+								<option>Regular Student With First Class</option>
+								<option>Passed Out Student With First Class</option>
+								</select></td>
 
+								<td><input type="text" ng-model="campusrequestdata.noofstudents" class="form-control" /></td>
+								
+								<td><input type="button" value="Add" ng-click="additem(campusrequestdata)"/></td>
+							</tr>
 							<tr ng-repeat= "campusrequestdata in campusrequestdataList">
-							<td>{{campusrequestdataList.Branch}}</td>
-							<td>{{campusrequestdataList.branchCode}}</td>
-							<td>{{campusrequestdataList.semester}}</td>
-							<td>{{campusrequestdataList.studentCategory}}</td>
-							<td>{{campusrequestdataList.typeOfStudent}}</td>
-							<td>{{campusrequestdataList.noOfStudents}}</td>
+								<td>{{$index+1}}</td>
+								<td ng-bind="campusrequestdata.branch"></td>
+								<td ng-bind="campusrequestdata.branchcode"></td>
+								<td ng-bind="campusrequestdata.semester"></td>
+								<td ng-bind="campusrequestdata.studentcategory"></td>
+								<td ng-bind="campusrequestdata.noofstudents"></td>
+								
+								<td><input type="button" value="Delete" ng-click="deleteitem(campusrequestdata)"/></td>
 							</tr>
 					</table>
+				</div>
+			</div>
+					<br/>
+					<br/>
+					<br/>
 
-					<br/>
-					<br/>
-					<br/>
+
 
 					</div>
 					<div class="form-group">

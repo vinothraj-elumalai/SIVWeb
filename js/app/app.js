@@ -245,7 +245,7 @@ sivwebapp.config(function($routeProvider) {
     })
     .when("/librarybookentry", {
         templateUrl : "templates/librarybookdata.html",
-        controller : "libraryBookDataCtrl"
+        controller : "libraryBookEntryCtrl"
     })
     .when("/librarycdentry", {
         templateUrl : "templates/librarycddata.html",
@@ -338,6 +338,18 @@ sivwebapp.config(function($routeProvider) {
     .when("/staffattendance", {
         templateUrl : "templates/superintendentstaffattendance.html",
         controller : "superintendentStaffAttendanceCtrl"
+    })
+    .when("/primarykeyuser", {
+        templateUrl : "templates/primarykeytestuser.html",
+        controller : "primaryKeyUserCtrl"
+    })
+    .when("/primaryusercontact", {
+        templateUrl : "templates/primaryusercontacts.html",
+        controller : "primaryUserContactCtrl"
+    })
+    .when("/primaryuserlog", {
+        templateUrl : "templates/primaryuserlog.html",
+        controller : "primaryUserLogCtrl"
     })
 
     .otherwise({

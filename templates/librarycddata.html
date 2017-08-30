@@ -84,25 +84,52 @@
 							<option>2019-2020</option>
 						</select>
 					</div>
-					<br/>
-					<br/>
-					<br/>
 
+					<br/>
+					<br/>
+					<br/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
 					<table>
 							<tr>
-							<th>Branch</th>
+							<th>S. No</th>
+							<th>Branch Name</th>
 							<th>Branch Code</th>
+							<th>Action</th>
 							</tr>
-
+							<tr>
+								<td>#</td>
+								<td>
+								<select class="form-control" ng-model="librarycddata.branch">
+								<option>Select Branch</option>
+								<option>CIVIL ENGINEERING</option>
+								<option>MECHANICAL ENGINEERING</option>
+								<option>AUTOMOBILE ENGINEERING</option>
+								<option>ELECTRICAL AND ELECTRONICS ENGINEERING</option>
+								</select>
+								</td>
+								<td><input type="text" ng-model="librarycddata.branchcode" class="form-control" /></td>
+								
+																
+								<td><input type="button" value="Add" ng-click="additem(librarycddata)"/></td>
+							</tr>
 							<tr ng-repeat= "librarycddata in librarycddataList">
-							<td>{{librarycddataList.Branch}}</td>
-							<td>{{librarycddataList.branchCode}}</td>
+								<td>{{$index+1}}</td>
+								<td ng-bind="librarycddata.branch"></td>
+								<td ng-bind="librarycddata.branchcode"></td>
+								
+																
+								<td><input type="button" value="Delete" ng-click="deleteitem(librarycddata)"/></td>
 							</tr>
 					</table>
+				</div>
+			</div>
+					<br/>
+					<br/>
+					<br/>
 
-					<br/>
-					<br/>
-					<br/>
 
 
                     <div class="form-group">

@@ -48,27 +48,64 @@
 						<label>Enter H.R. Alt Mail ID</label>
 						<input class="form-control" type="text" name="hraltmailid" ng-model="corporatedata.hraltmailid">
 					</div>
-					<br/>
-					<br/>
-					<br/>
 
+					<br/>
+					<br/>
+					<br/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
 					<table>
 							<tr>
-							<th>Branch</th>
+							<th>S. No</th>
+							<th>Branch Name</th>
 							<th>Branch Code</th>
 							<th>Student Category</th>
+							<th>Action</th>
 							</tr>
+							<tr>
+								<td>#</td>
+								<td>
+								<select class="form-control" ng-model="corporatedata.branch">
+								<option>Select Branch</option>
+								<option>CIVIL ENGINEERING</option>
+								<option>MECHANICAL ENGINEERING</option>
+								<option>AUTOMOBILE ENGINEERING</option>
+								<option>ELECTRICAL AND ELECTRONICS ENGINEERING</option>
+								</select>
+								</td>
+								<td><input type="text" ng-model="corporatedata.branchcode" class="form-control" /></td>
+								
+								<td>
+								<select class="form-control" ng-model="corporatedata.studentcategory">
+								<option>Select Student Category</option>
+								<option>Regular All Student</option>
+								<option>Passed out All Student</option>
+								<option>Regular Student without Arrear</option>
+								<option>Passed out Student without Arrear</option>
+								<option>Regular Student With First Class</option>
+								<option>Passed Out Student With First Class</option>
+								</select></td>
 
+								
+								<td><input type="button" value="Add" ng-click="additem(corporatedata)"/></td>
+							</tr>
 							<tr ng-repeat= "corporatedata in corporatedataList">
-							<td>{{corporatedataList.Branch}}</td>
-							<td>{{corporatedataList.branchCode}}</td>
-							<td>{{corporatedataList.studentCategory}}</td>
+								<td>{{$index+1}}</td>
+								<td ng-bind="corporatedata.branch"></td>
+								<td ng-bind="corporatedata.branchcode"></td>
+								<td ng-bind="corporatedata.studentcategory"></td>
+																
+								<td><input type="button" value="Delete" ng-click="deleteitem(corporatedata)"/></td>
 							</tr>
 					</table>
+				</div>
+			</div>
+					<br/>
+					<br/>
+					<br/>
 
-					<br/>
-					<br/>
-					<br/>
 
 
                     <div class="form-group">

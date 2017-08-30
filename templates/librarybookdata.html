@@ -85,26 +85,52 @@
 					<br/>
 					<br/>
 					<br/>
-
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
 					<table>
 							<tr>
-							<th>Branch</th>
+							<th>S. No</th>
+							<th>Branch Name</th>
 							<th>Branch Code</th>
+							<th>Action</th>
 							</tr>
-
+							<tr>
+								<td>#</td>
+								<td>
+								<select class="form-control" ng-model="librarybookdata.branch">
+								<option>Select Branch</option>
+								<option>CIVIL ENGINEERING</option>
+								<option>MECHANICAL ENGINEERING</option>
+								<option>AUTOMOBILE ENGINEERING</option>
+								<option>ELECTRICAL AND ELECTRONICS ENGINEERING</option>
+								</select>
+								</td>
+								<td><input type="text" ng-model="librarybookdata.branchcode" class="form-control" /></td>
+								
+																
+								<td><input type="button" value="Add" ng-click="additem(librarybookdata)"/></td>
+							</tr>
 							<tr ng-repeat= "librarybookdata in librarybookdataList">
-							<td>{{librarybookdata.Branch}}</td>
-							<td>{{librarybookdata.branchCode}}</td>
+								<td>{{$index+1}}</td>
+								<td ng-bind="librarybookdata.branch"></td>
+								<td ng-bind="librarybookdata.branchcode"></td>
+								
+																
+								<td><input type="button" value="Delete" ng-click="deleteitem(librarybookdata)"/></td>
 							</tr>
 					</table>
+				</div>
+			</div>
+					<br/>
+					<br/>
+					<br/>
 
-					<br/>
-					<br/>
-					<br/>
 
                     <div class="form-group">
 						<label>Login User</label>
-						<input class="form-control" type="text" name="loginuser" ng-model="librarymemberdata.loginuser">
+						<input class="form-control" type="text" name="loginuser" ng-model="librarybookdata.loginuser">
 					</div>
                      
 				</div>

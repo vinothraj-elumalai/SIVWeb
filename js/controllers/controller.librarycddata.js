@@ -12,4 +12,21 @@ sivwebapp.controller('libraryCdDataCtrl', function($scope, $http) {
             	
    			});
     }
+
+        /*table entry*/
+    $scope.librarycddataList = [];
+    $scope.additem= function(librarycddata){
+        $scope.librarycddataList.push(
+            {
+                'branch':librarycddata.branch,
+                'branchcode':librarycddata.branchcode
+                         
+            }
+        );
+        $scope.librarycddata={};
+    }
+    $scope.deleteitem = function (item) {
+        $scope.librarycddataList.splice($scope.librarycddataList.indexOf(item), 1);
+    }
+    /*table entry*/
 });

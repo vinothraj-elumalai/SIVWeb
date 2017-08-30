@@ -12,4 +12,22 @@ sivwebapp.controller('corporateEntryCtrl', function($scope, $http) {
             	
    			});
     }
+
+    /*table entry*/
+    $scope.corporatedataList = [];
+    $scope.additem= function(corporatedata){
+        $scope.corporatedataList.push(
+            {
+                'branch':corporatedata.branch,
+                'branchcode':corporatedata.branchcode,
+                'studentcategory':corporatedata.studentcategory
+                
+            }
+        );
+        $scope.corporatedata={};
+    }
+    $scope.deleteitem = function (item) {
+        $scope.corporatedataList.splice($scope.corporatedataList.indexOf(item), 1);
+    }
+    /*table entry*/
 });

@@ -12,4 +12,23 @@ sivwebapp.controller('sportsKitsPurchaseCtrl', function($scope, $http) {
             	
    			});
     }
+
+    /*table entry*/
+    $scope.sportsitempurchaseList = [];
+    $scope.additem= function(singlepurchasedetail){
+        console.log(singlepurchasedetail);
+        $scope.sportsitempurchaseList.push(
+            {
+                'hsncode':singlepurchasedetail.hsncode,
+                'itemname':singlepurchasedetail.itemname,
+                'quantity':singlepurchasedetail.quantity,
+                'price':singlepurchasedetail.price
+            }
+        );
+        $scope.sportskitspurchase={};
+    }
+    $scope.deleteitem = function (item) {
+        $scope.sportsitempurchaseList.splice($scope.sportsitempurchaseList.indexOf(item), 1);
+    }
+
 });
