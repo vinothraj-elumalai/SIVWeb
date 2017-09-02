@@ -3,7 +3,12 @@
 	<div class="col-md-12">
 		<form name="bonafideform" ng-submit="bonafideSubmit()" novalidate>
 			<div class="row">
-				<div class="col-md-6">					
+				<div class="col-md-6">	
+					<div class="form-group">
+						<label>Enter Bonafide Id</label>
+						<input class="form-control" type="text" name="bonafideid" ng-model="bonafidedata.bonafideid">
+					</div>
+
 					<div class="form-group">
 						<label>Enter RegNo</label>
 						<input class="form-control" type="text" name="regno" ng-model="bonafidedata.regno">

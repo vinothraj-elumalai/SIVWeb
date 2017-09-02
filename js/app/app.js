@@ -351,6 +351,10 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/primaryuserlog.html",
         controller : "primaryUserLogCtrl"
     })
+    .when("/studentpersonalinformationentry", {
+        templateUrl : "templates/studentpersonalinformationentry.html",
+        controller : "studentPersonalInformationEntryCtrl"
+    })
 
     .otherwise({
         templateUrl : "templates/login.html",

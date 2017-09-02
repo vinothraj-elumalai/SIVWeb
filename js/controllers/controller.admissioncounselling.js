@@ -15,14 +15,13 @@ sivwebapp.controller('admissionCounsellingCtrl', function($scope, $http) {
 
 
     $scope.searchAppNo = function(){
-        console.log($scope.applicationsaledata);
         $http({
                 url: "http://localhost:8080/api/v1/admissioncounselling/getApplcationDetail",
-                method: "GET",
+                method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                data: $.param($scope.applicationsaledata)
+                data: $.param($scope.searchAppnoData)
             }).then(function(success) {
-                
+                console.log(success.data);
             },function (error){
                 
             });

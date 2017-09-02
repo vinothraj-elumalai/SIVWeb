@@ -1,4 +1,4 @@
-<h1>STUDENT PERSONAL INFORMATION</h1> 
+<h1>STUDENT PERSONAL INFORMATION VIEW</h1> 
 <div class="row">
 	<div class="col-md-12">
 		<form name="studentpersonalinformationform" ng-submit="studentPersonalInformationSubmit()" novalidate>
@@ -6,16 +6,16 @@
 				<div class="col-md-6">					
 					<div class="form-group">
 						<label>Registration No</label>
-						<input class="form-control" type="text" name="regno" ng-model="studentpersonalinfodata.regno">
+						<input class="form-control" type="text" name="regno" ng-model="studentpersonalinfodata1.regno">
 					</div>
 					<div class="form-group">	
 					<div class="text-right">
-						<input type="button" class="btn btn-default" value="SEARCH">
+						<input type="button" class="btn btn-default" ng-click="getStudentPersonalInfo()" value="SEARCH">
 					</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group" ng-show="studentpersonalinfo.admissionno">
 						<label>Admission No</label>
-						<input class="form-control" type="text" name="admissionno" ng-model="studentpersonalinfodata.admissionno">
+						<p>{{studentpersonalinfo.admissionno}}</p>
 					</div>
 					<div class="form-group">
 						<label>Name</label>

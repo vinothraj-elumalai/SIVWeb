@@ -1,0 +1,123 @@
+<h1>STUDENT PERSONAL INFORMATION ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="studentpersonalinformationformentry" ng-submit="studentPersonalInformationEntrySubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Registration No</label>
+						<input class="form-control" type="text" name="regno" ng-model="studentpersonalinfodata1.regno">
+					</div>
+					<div class="form-group">
+						<label>Admission No</label>
+						<input class="form-control" type="text" name="admissionno" ng-model="studentpersonalinfodata1.admissionno"
+					</div>
+					<div class="form-group">
+						<label>Name</label>
+						<input class="form-control" type="text" name="name" ng-model="studentpersonalinfodata1.name">
+					</div>
+
+					<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="studentpersonalinfodata1.academicyear">
+							<option>Select Year</option>
+							<option>2016-2017</option>
+							<option>2017-2018</option>
+							<option>2018-2019</option>
+							<option>2019-2020</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Date Of Birth</label>
+						<input class="form-control" type="text" name="dateofbirth" ng-model="studentpersonalinfodata1.dateofbirth">
+					</div>
+					<div class="form-group">
+						<label>Gender</label>
+						<input class="form-control" type="text" name="gender" ng-model="studentpersonalinfodata1.gender">
+					</div>
+					<div class="form-group">
+						<label>Father Name</label>
+						<input class="form-control" type="text" name="fathername" ng-model="studentpersonalinfodata1.fathername">
+					</div>
+					<div class="form-group">
+						<label>Mother Name</label>
+						<input class="form-control" type="text" name="mothername" ng-model="studentpersonalinfodata1.mothername">
+					</div>
+					<div class="form-group">
+						<label>Present Address</label>
+						<input class="form-control" type="text" name="presentaddress1" ng-model="studentpersonalinfodata1.presentaddress1">
+						<input class="form-control" type="text" name="presentaddress2" ng-model="studentpersonalinfodata1.presentaddress2">
+					</div>
+					<div class="form-group">
+						<label>Area/City</label>
+						<input class="form-control" type="text" name="presentarea" ng-model="studentpersonalinfodata1.presentarea">
+					</div>
+					<div class="form-group">
+						<label>PinCode</label>
+						<input class="form-control" type="text" name="presentpincode" ng-model="studentpersonalinfodata1.presentpincode">
+					</div>
+
+					<div class="form-group">
+						<label>Mobile No</label>
+						<input class="form-control" type="text" name="presentmobileno" ng-model="studentpersonalinfodata1.presentmobileno">
+					</div>
+					<div class="form-group">
+						<label>Alternate Mobile No</label>
+						<input class="form-control" type="text" name="presentaltmobileno" ng-model="studentpersonalinfodata1.presentaltmobileno">
+					</div>
+					<div class="form-group">
+						<label>E-mail</label>
+						<input class="form-control" type="text" name="presentemail" ng-model="studentpersonalinfodata1.presentemail">
+					</div>
+					<div class="form-group">
+						<label>Alternate E-mail</label>
+						<input class="form-control" type="text" name="presentaltemail" ng-model="studentpersonalinfodata1.presentaltemail">
+					</div>
+					<div class="form-group">
+						<label>Permanent Address</label>
+						<input class="form-control" type="text" name="permanentaddress1" ng-model="studentpersonalinfodata1.permanentaddress1">
+						<input class="form-control" type="text" name="permanentaddress2" ng-model="studentpersonalinfodata1.permanentaddress2">
+					</div>
+					<div class="form-group">
+						<label>Area/City</label>
+						<input class="form-control" type="text" name="permanentarea" ng-model="studentpersonalinfodata1.permanentarea">
+					</div>
+					<div class="form-group">
+						<label>PinCode</label>
+						<input class="form-control" type="text" name="permanentpincode" ng-model="studentpersonalinfodata1.permanentpincode">
+					</div>
+					
+					<div class="form-group">
+						<label>Mobile No</label>
+						<input class="form-control" type="text" name="permanentmobileno" ng-model="studentpersonalinfodata1.permanentmobileno">
+					</div>
+					<div class="form-group">
+						<label>Alternate Mobile No</label>
+						<input class="form-control" type="text" name="permanentaltmobileno" ng-model="studentpersonalinfodata1.permanentaltmobileno">
+					</div>
+                    <div class="form-group">
+						<label>Email</label>
+						<input class="form-control" type="text" name="permanentemail" ng-model="studentpersonalinfodata1.permanentemail">
+					</div>
+                    <div class="form-group">
+						<label>Alternate Email</label>
+						<input class="form-control" type="text" name="permanentaltemail" ng-model="studentpersonalinfodata1.permanentaltemail">
+					</div>
+					<div class="form-group">
+						<label>Reference</label>
+						<input class="form-control" type="text" name="reference" ng-model="studentpersonalinfodata1.reference">
+					</div>
+					<div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="studentpersonalinfodata1.loginuser">
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="CREATE USER">
+			</div>
+		</form>
+	</div>
+</div>

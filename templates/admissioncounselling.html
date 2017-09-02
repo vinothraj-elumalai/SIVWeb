@@ -1,17 +1,16 @@
 <h1>ADMISSION COUNSELLING</h1>
 <div class="row">
 	<div class="col-md-12">
-		<form name="searchAppNo" ng-submit="searchAppNo()" novalidate>	
+		
 		<div class="form-group">
 			<label>Application No</label>
 			<input class="form-control" type="text" name="applno" ng-model="searchAppnoData.applno">
 		</div>
 		<div class="form-group">	
 		<div class="text-right">
-			<input type="button" class="btn btn-default" value="SEARCH">
+			<input type="button" ng-click="searchAppNo()" class="btn btn-default" value="SEARCH">
 		</div>
 		</div>
-		</form>
 		<form name="admissioncousellingform" ng-submit="admissionCounsellingSubmit()" novalidate>
 			<ul class="steps">
 				<li ng-class="{'active':activestep == 1}"><a href="javascript:void(0)"><span class="stepscount">1</span></a></li>
@@ -132,6 +131,22 @@
 									<label>Alternate Email</label>
 									<input class="form-control" type="text" name="permanentaltemail" ng-model="permanentaltemail">
 								</div>
+								<div class="form-group">
+									<label>Qualified Exam</label>
+									<input class="form-control" type="text" name="qualified" ng-model="qualified">
+								</div>
+								<div class="form-group">
+									<label>Preffered Course 1</label>
+									<input class="form-control" type="text" name="prefferedcour1" ng-model="prefferedcour1">
+								</div>
+								<div class="form-group">
+									<label>Preffered Course 2</label>
+									<input class="form-control" type="text" name="prefferedcour2" ng-model="prefferedcour2">
+								</div>
+								<div class="form-group">
+									<label>Preffered Course 3</label>
+									<input class="form-control" type="text" name="prefferedcour3" ng-model="prefferedcour3">
+								</div>
 							</div>
 						</div>
 
@@ -159,22 +174,7 @@
 
 
 
-						<div class="form-group">
-							<label>Qualified Exam</label>
-							<input class="form-control" type="text" name="qualified" ng-model="qualified">
-						</div>
-						<div class="form-group">
-							<label>Preffered Course 1</label>
-							<input class="form-control" type="text" name="prefferedcour1" ng-model="prefferedcour1">
-						</div>
-						<div class="form-group">
-							<label>Preffered Course 2</label>
-							<input class="form-control" type="text" name="prefferedcour2" ng-model="prefferedcour2">
-						</div>
-						<div class="form-group">
-							<label>Preffered Course 3</label>
-							<input class="form-control" type="text" name="prefferedcour3" ng-model="prefferedcour3">
-						</div>
+						
 						<div class="form-group">
 							<label>Select Admission Type</label>
 							<select class="form-control" ng-model="admissioncounsellingdata.admissiontype">
