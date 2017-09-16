@@ -17,25 +17,19 @@
 						<label>Admission No</label>
 						<p>{{studentpersonalinfo.admissionno}}</p>
 					</div>
-					<div class="form-group">
+					<div class="form-group" ng-show="studentpersonalinfo.name">
 						<label>Name</label>
-						<input class="form-control" type="text" name="name" ng-model="studentpersonalinfodata.name">
+						<p>{{studentpersonalinfo.name}}</p>
 					</div>
 
-					<div class="form-group">
+					<div class="form-group" ng-show="studentpersonalinfo.academicyear">
 						<label>Academic Year</label>
-						<select class="form-control" ng-model="studentpersonalinfodata.academicyear">
-							<option>Select Year</option>
-							<option>2016-2017</option>
-							<option>2017-2018</option>
-							<option>2018-2019</option>
-							<option>2019-2020</option>
-						</select>
+						<p>{{studentpersonalinfo.academicyear}}</p>
 					</div>
 
-					<div class="form-group">
+					<div class="form-group" ng-show ="studentpersonalinfo.dateofbirth">
 						<label>Date Of Birth</label>
-						<input class="form-control" type="text" name="dateofbirth" ng-model="studentpersonalinfodata.dateofbirth">
+						<p>{{studentpersonalinfo.dateofbirth}}</p>
 					</div>
 					<div class="form-group">
 						<label>Gender</label>
