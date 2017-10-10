@@ -1,0 +1,26 @@
+<h1>INSTITUTE TEST DETAIL ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="institutetestdetailsform" ng-submit="institutiontestdetailsSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">	
+					<div class="form-group">
+						<label>Enter Institute Id</label>
+						<input class="form-control" type="text" name="instituteid" ng-model="institutetestdetailsdata.instituteid">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Test Title</label>
+						<input class="form-control" type="text" name="testname" ng-model="institutetestdetailsdata.testname">
+					</div>
+
+                    
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>

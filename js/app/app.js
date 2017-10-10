@@ -355,6 +355,47 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/studentpersonalinformationentry.html",
         controller : "studentPersonalInformationEntryCtrl"
     })
+    .when("/staffbiodata", {
+        templateUrl : "templates/staffbiodata.html",
+        controller : "staffBioDataCtrl"
+    })
+    .when("/staffacademicdata", {
+        templateUrl : "templates/staffacademicinformation.html",
+        controller : "staffAcademicDataCtrl"
+    })
+    .when("/staffwillingsubjects", {
+        templateUrl : "templates/staffwillingsubjects.html",
+        controller : "staffWillingSubjectsCtrl"
+    })
+
+    .when("/institutedetails", {
+        templateUrl : "templates/institutedetails.html",
+        controller : "instituteDetailsCtrl"
+    })
+    .when("/institutecoursedetails", {
+        templateUrl : "templates/institutecoursedetails.html",
+        controller : "instituteCourseDetailsCtrl"
+    })
+    .when("/institutebatchdetails", {
+        templateUrl : "templates/institutebatchdetails.html",
+        controller : "instituteBatchDetailsCtrl"
+    })
+    .when("/institutetestdetails", {
+        templateUrl : "templates/institutetestdetails.html",
+        controller : "instituteTestDetailsCtrl"
+    })
+    .when("/instituteexamdetails", {
+        templateUrl : "templates/instituteexamdetails.html",
+        controller : "instituteExamDetailsCtrl"
+    })
+    .when("/institutebusnodetails", {
+        templateUrl : "templates/institutebusnodetails.html",
+        controller : "instituteBusnoDetailsCtrl"
+    })
+    .when("/institutebusroutedetails", {
+        templateUrl : "templates/institutebusroutedetails.html",
+        controller : "instituteBusrouteDetailsCtrl"
+    })
 
     .otherwise({
         templateUrl : "templates/login.html",
