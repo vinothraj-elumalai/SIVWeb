@@ -901,7 +901,7 @@ td{
   border-top: 1px solid #666;
 }
 table{
- border-bottom: 1px solid #666; 
+ border-bottom: 1px solid #666;
 }
 .pagemaincontainer{
       padding: 20px 30px;
@@ -1064,8 +1064,20 @@ span.dashboardmentu-label {
 .stepscontent {
     background: #fff;
     padding: 30px 35px;
-    border: 1px solid #ccc;
+    border: 1px solid  #ccc;
     border-radius: 11px;
     max-width: 600px;
     margin: 0 auto;
+}
+
+.student-form .ng-empty {
+  border: 1px solid red;
+}
+.student-form .validate-span {
+  color: red;
+  margin-top: 38px;
+}
+
+.gutter-top-30 {
+  margin-top: 30px;
 }
