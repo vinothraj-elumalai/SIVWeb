@@ -400,13 +400,17 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/applicationsaleplayschool.html",
         controller : "playSchoolapplicationSaleCtrl"
     })
-     .when("/PS-daily-attendence", {
-        templateUrl : "templates/PS-daily-attendence.html",
-        controller : "PS-daily-attendenceCtrl"
+     .when("/psdailyattendance", {
+        templateUrl : "templates/psdailyattendence.html",
+        controller : "psdailyattendenceCtrl"
     })
-      .when("/PS-childpickupdetails", {
-        templateUrl : "templates/PS-childpickupdetails.html",
+      .when("/pschildpickupdetails", {
+        templateUrl : "templates/pschildpickupdetails.html",
         controller : "childpickupdetailsCtrl"
+    })
+      .when("/admissionplayschool", {
+        templateUrl : "templates/admissionplayschool.html",
+        controller : "admissionPlaySchoolCtrl"
     })
 
     .otherwise({

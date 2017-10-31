@@ -1,0 +1,386 @@
+<h1>ADMISSION ENTRY</h1>
+<div class="row">
+	<div class="col-md-12">
+		
+		<div class="form-group">
+			<label>Application No</label>
+			<input class="form-control" type="text" name="applno" ng-model="searchAppnoData.applno">
+		</div>
+		<div class="form-group">	
+		<div class="text-right">
+			<input type="button" ng-click="searchAppNo()" class="btn btn-default" value="SEARCH">
+		</div>
+		</div>
+		<form name="admissionplayschoolform" ng-submit="admissionPlaySchoolSubmit()" novalidate>
+			<ul class="steps">
+				<li ng-class="{'active':activestep == 1}"><a href="javascript:void(0)"><span class="stepscount">1</span></a></li>
+				<li ng-class="{'active':activestep == 2}"><a href="javascript:void(0)"><span class="stepscount">2</span></a></li>
+				<li ng-class="{'active':activestep == 3}"><a href="javascript:void(0)"><span class="stepscount">3</span></a></li>
+			</ul>
+			<div class="row">
+				<div class="col-md-12">		
+					<div class="stepscontent" id="step1" ng-show="activestep == 1">
+
+
+
+
+						<div class="form-group">
+							<label>Application No</label>
+							<input class="form-control" type="text" name="applno" ng-model="admissionplayschooldata.applno">
+						</div>
+
+						<div class="form-group">
+							<label>Admission Date</label>
+							<input class="form-control" type="text" name="admissiondate" ng-model="admissionplayschooldata.admissiondate">
+						</div>
+
+						<div class="form-group">
+							<label>Application For</label>
+							<input class="form-control" type="text" name="applicationfor" ng-model="applicationfor">
+						</div>
+
+						<div class="form-group">
+							<label>Candidate's Name</label>
+							<input class="form-control" type="text" name="candname" ng-model="candname">
+						</div>
+						<div class="form-group">
+							<label>Date of Birth</label>
+							<input class="form-control" type="text" name="dateofbirth" ng-model="dateofbirth">
+						</div>
+						<div class="form-group">
+							<label>Age</label>
+							<input class="form-control" type="text" name="age" ng-model="age">
+						</div>
+
+						<div class="form-group">
+							<label>Gender</label>
+							<input class="form-control" type="text" name="gender" ng-model="gender">
+						</div>
+
+						<div class="form-group">
+							<label>Father's Name</label>
+							<input class="form-control" type="text" name="candfathername" ng-model="candfathername">
+						</div>
+						<div class="form-group">
+							<label>Mother's Name</label>
+							<input class="form-control" type="text" name="candmothername" ng-model="candmothername">
+						</div>
+						
+						
+
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label>Present Address</label>
+									<input class="form-control" type="text" name="presentaddress1" ng-model="presentaddress1">
+									<input class="form-control" type="text" name="presentaddress2" ng-model="presentaddress2">
+								</div>
+								<div class="form-group">
+									<label>Area/City</label>
+									<input class="form-control" type="text" name="presentarea" ng-model="presentarea">
+								</div>
+								<div class="form-group">
+									<label>PinCode</label>
+									<input class="form-control" type="text" name="presentpincode" ng-model="presentpincode">
+								</div>
+								<div class="form-group">
+									<label>State</label>
+									<input class="form-control" type="text" name="presentstate" ng-model="presentstate">
+								</div>
+
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label>Father's Mobile Number</label>
+									<input class="form-control" type="text" name="fathersmobileno" ng-model="fathersmobileno">
+								</div>
+								<div class="form-group">
+									<label>Father's Alternative Mobile Number</label>
+									<input class="form-control" type="text" name="fathersaltmobileno" ng-model="fathersaltmobileno">
+								</div>
+								<div class="form-group">
+									<label>Mother's Mobile Number</label>
+									<input class="form-control" type="text" name="mothersmobileno" ng-model="mothersmobileno">
+								</div>
+								<div class="form-group">
+									<label>Mother's Alternative Mobile Number</label>
+									<input class="form-control" type="text" name="mothersaltmobileno" ng-model="mothersaltmobno">
+								</div>
+								<div class="form-group">
+									<label>Father's Email</label>
+									<input class="form-control" type="text" name="fathersemail" ng-model="fathersemail">
+								</div>
+								<div class="form-group">
+									<label>Mother's E-mail</label>
+									<input class="form-control" type="text" name="mothersemail" ng-model="mothersemail">
+								</div>
+								<div class="form-group">
+									<label>Reference</label>
+									<input class="form-control" type="text" name="reference" ng-model="reference">
+								</div>
+								<div class="form-group">
+									<label>Remarks</label>
+									<input class="form-control" type="text" name="remarks" ng-model="remarks">
+								</div>
+							</div>
+						</div>
+
+						
+
+						<div class="text-right">
+							<input type="button" class="btn btn-primary" value="NEXT" ng-click="gotostep(2)">
+						</div>
+
+
+
+
+
+					</div>
+
+
+
+
+
+
+					<div class="stepscontent" id="step2" ng-show="activestep == 2">
+
+						
+						<div class="form-group">
+							<label>Father's Occupation</label>
+							<input class="form-control" type="text" name="fathersoccupation" ng-model="admissionplayschooldata.fathersoccupation">
+						</div>					
+						<div class="form-group">
+							<label>Father's Office Name</label>
+							<input class="form-control" type="text" name="fathersofficename" ng-model="admissionplayschooldata.fathersofficename">
+						</div>
+						<div class="form-group">
+							<label>Father's Office Address Line1</label>
+							<input class="form-control" type="text" name="fathersofficeaddress1" ng-model="admissionplayschooldata.fathersofficeaddress1">
+						</div>
+						<div class="form-group">
+							<label>Father's Office Address Line2</label>
+							<input class="form-control" type="text" name="fathersofficeaddress2" ng-model="admissionplayschooldata.fathersofficeaddress2">
+						</div>
+						<div class="form-group">
+							<label>Father's Office Area / City</label>
+							<input class="form-control" type="text" name="fathersofficearea" ng-model="admissionplayschooldata.fathersofficearea">
+						</div>
+						<div class="form-group">
+							<label>Father's Office Pincode</label>
+							<input class="form-control" type="text" name="fathersofficepincode" ng-model="admissionplayschooldata.fathersofficepincode">
+						</div>
+						<div class="form-group">
+							<label>Father's Office State</label>
+							<input class="form-control" type="text" name="fathersofficestate" ng-model="admissionplayschooldata.fathersofficestate">
+						</div>
+						<div class="form-group">
+							<label>Father's Office Phone Number</label>
+							<input class="form-control" type="text" name="fathersofficephoneno" ng-model="admissionplayschooldata.fathersofficephoneno">
+						</div>
+						<div class="form-group">
+							<label>Father's Office Alternative Phone Number</label>
+							<input class="form-control" type="text" name="fathersofficealtphoneno" ng-model="admissionplayschooldata.fathersofficealtphoneno">
+						</div>
+						<div class="form-group">
+							<label>Father's Office Extension No if Any</label>
+							<input class="form-control" type="text" name="fathersofficeextensionno" ng-model="admissionplayschooldata.fathersofficeextensionno ">
+						</div>
+
+						<div class="form-group">
+							<label>Mother's Occupation</label>
+							<input class="form-control" type="text" name="mothersoccupation" ng-model="admissionplayschooldata.mothersoccupation">
+						</div>					
+						<div class="form-group">
+							<label>Mother's Office Name</label>
+							<input class="form-control" type="text" name="mothersofficename" ng-model="admissionplayschooldata.mothersofficename">
+						</div>
+						<div class="form-group">
+							<label>Mother's Office Address Line1</label>
+							<input class="form-control" type="text" name="mothersofficeaddress1" ng-model="admissionplayschooldata.mothersofficeaddress1">
+						</div>
+						<div class="form-group">
+							<label>Mother's Office Address Line2</label>
+							<input class="form-control" type="text" name="mothersofficeaddress2" ng-model="admissionplayschooldata.mothersofficeaddress2">
+						</div>
+						<div class="form-group">
+							<label>Mother's Office Area / City</label>
+							<input class="form-control" type="text" name="mothersofficearea" ng-model="admissionplayschooldata.mothersofficearea">
+						</div>
+						<div class="form-group">
+							<label>Mother's Office Pincode</label>
+							<input class="form-control" type="text" name="mothersofficepincode" ng-model="admissionplayschooldata.mothersofficepincode">
+						</div>
+						<div class="form-group">
+							<label>Mother's Office State</label>
+							<input class="form-control" type="text" name="mothersofficestate" ng-model="admissionplayschooldata.mothersofficestate">
+						</div>
+						<div class="form-group">
+							<label>Mother's Office Phone Number</label>
+							<input class="form-control" type="text" name="mothersofficephoneno" ng-model="admissionplayschooldata.mothersofficephoneno">
+						</div>
+						<div class="form-group">
+							<label>Mother's Office Alternative Phone Number</label>
+							<input class="form-control" type="text" name="mothersofficealtphoneno" ng-model="admissionplayschooldata.mothersofficealtphoneno">
+						</div>
+						<div class="form-group">
+							<label>Mother's Office Extension No if Any</label>
+							<input class="form-control" type="text" name="mothersofficeextensionno" ng-model="admissionplayschooldata.mothersofficeextensionno ">
+						</div>
+
+						<div class="text-right">
+							<input type="button" class="btn btn-default" ng-click="gotostep(1)" value="BACK">
+							<input type="button" class="btn btn-primary" value="NEXT" ng-click="gotostep(3)">
+						</div>
+
+
+
+
+
+					</div>
+
+
+
+
+
+					<div class="stepscontent" id="step3" ng-show="activestep == 3">
+						<div class="form-group">
+							<label>Fathers Date of Birth</label>
+							<input class="form-control" type="text" name="fathersdob" ng-model="admissionplayschooldata.fathersdob">
+						</div>
+						<div class="form-group">
+							<label>Mothers Date of Birth</label>
+							<input class="form-control" type="text" name="mothersdob" ng-model="admissionplayschooldata.mothersdob">
+						</div>
+						<div class="form-group">
+							<label>Parents Wedding Date</label>
+							<input class="form-control" type="text" name="parentsweddingdate" ng-model="admissionplayschooldata.parentsweddingdate">
+						</div>
+
+						<div class="form-group">
+							<label>Guardian / Child's Pickup Person Name</label>
+							<input class="form-control" type="text" name="pickuppersonname" ng-model="admissionplayschooldata.pickuppersonname">
+						</div>
+
+						<div class="form-group">
+							<label>Guardian / Child's Pickup Person Contact Number</label>
+							<input class="form-control" type="text" name="pickuppersoncontactno" ng-model="admissionplayschooldata.pickuppersoncontactno">
+						</div>
+						<div class="form-group">
+							<label>Guardian / Child's Pickup Person Alternative Contact Number</label>
+							<input class="form-control" type="text" name="pickuppersonaltcontactno" ng-model="admissionplayschooldata.pickuppersonaltcontactno">
+						</div>
+						<div class="form-group">
+							<label>Select Guardians / Child's Pickup Person Relationship</label>
+							<select class="form-control" ng-model="admissionplayschooldata.pickuppersonrelationship">
+								<option>Select Relationship</option>
+								<option>GRAND FATHER</option>
+								<option>GRAND MOTHER</option>
+								<option>UNCLE</option>
+								<option>AUNTY</option>
+								<option>DRIVER</option>
+								</select>
+						</div>
+						<div class="form-group">
+							<label>Admission Status</label>
+							<select class="form-control" ng-model="admissionplayschooldata.admissionstatus">
+								<option>Select Admission Status</option>
+								<option>Admitted</option>
+								<option>Waiting List</option>
+								</select>
+						</div>
+						<div class="form-group">
+							<label>Register Number</label>
+							<input class="form-control" type="text" name="registernumber" ng-model="admissionplayschooldata.registernumber">
+						</div>
+
+
+						<div class="form-group">
+							<label>Admission Fees</label>
+							<input class="form-control" type="text" name="admissionfees" ng-model="admissionfees">
+						</div>
+						<div class="form-group">
+							<label>Select Transport Mode</label>
+							<select class="form-control" ng-model="admissionplayschooldata.transport">
+								<option>Select Route</option>
+								<option>PRIVATE</option>
+								<option>SCHOOL VAN</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Select Stage</label>
+							<select class="form-control" ng-model="admissionplayschooldata.transportstage">
+								<option>Select Stage</option>
+								<option>STAGE - I</option>
+								<option>STAGE - II</option>
+								<option>STAGE - III</option>
+								</select>
+						</div>
+						<div class="form-group">
+							<label>Transport Fees</label>
+							<input class="form-control" type="text" name="transportfees" ng-model="transportfees">
+						</div>
+						<div class="form-group">
+							<label>Total Fees</label>
+							<input class="form-control" type="text" name="totalfees" ng-model="totalfees">
+						</div>
+						<div class="form-group">
+							<label>Due Date For First Payment</label>
+							<input class="form-control" type="text" name="duedatefirstpayment" ng-model="duedatefirstpayment">
+						</div>
+
+
+						<div class="form-group">
+							<label>Term I School Fees</label>
+							<input class="form-control" type="text" name="term1schoolfees" ng-model="term1schoolfees">
+						</div>
+						<div class="form-group">
+							<label>Term I Transport Fees</label>
+							<input class="form-control" type="text" name="term1transportfees" ng-model="term1transportfees">
+						</div>
+						<div class="form-group">
+							<label>Term I Total Fees</label>
+							<input class="form-control" type="text" name="term1totalfees" ng-model="term1totalfees">
+						</div>
+						<div class="form-group">
+							<label>Term I Fees Due Date</label>
+							<input class="form-control" type="text" name="term1feesduedate" ng-model="term1feesduedate">
+						</div>
+						<div class="form-group">
+							<label>Term II School Fees</label>
+							<input class="form-control" type="text" name="term2schoolfees" ng-model="term2schoolfees">
+						</div>
+						<div class="form-group">
+							<label>Term II Transport Fees</label>
+							<input class="form-control" type="text" name="term2transportfees" ng-model="term2transportfees">
+						</div>
+						<div class="form-group">
+							<label>Term II Total Fees</label>
+							<input class="form-control" type="text" name="term2totalfees" ng-model="term2totalfees">
+						</div>
+						<div class="form-group">
+							<label>Term II Fees Due Date</label>
+							<input class="form-control" type="text" name="term2feesduedate" ng-model="term2feesduedate">
+						</div>
+
+
+						<div class="form-group">
+							<label>Login User</label>
+							<input class="form-control" type="text" name="loginuser" ng-model="admissionplayschooldata.loginuser">
+						</div>
+
+						<div class="text-right">
+							<input type="button" class="btn btn-default" ng-click="gotostep(2)" value="BACK">
+							<input type="submit" class="btn btn-primary" value="SAVE">
+						</div>
+
+
+					</div>
+					
+
+						
+				</div>
+			</div>
+			
+		</form>
+	</div>
+</div>

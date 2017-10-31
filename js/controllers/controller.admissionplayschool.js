@@ -1,22 +1,22 @@
-sivwebapp.controller('admissionCounsellingCtrl', function($scope, $http) {
-    $scope.admissionCounsellingSubmit = function(){
-    	console.log($scope.admissioncounsellingdata);
+sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http) {
+    $scope.admissionPlaySchoolSubmit = function(){
+        console.log($scope.admissionplayschooldata);
         $http({
-                url: ""//yet to get API,
+                url: "http://localhost:8080/api/v1/admissionplayschool",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                data: $.param($scope.admissioncounsellingdata)
+                data: $.param($scope.admissionplayschooldata)
             }).then(function(success) {
                 
             },function (error){
-            	
-   			});
+                
+            });
     }
 
 
     $scope.searchAppNo = function(){
         $http({
-                url: ""//yet to get API,
+                url: "http://localhost:8080/api/v1/admissionplayschool/getPlaySchoolApplcationDetail",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.searchAppnoData)
