@@ -412,6 +412,14 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/admissionplayschool.html",
         controller : "admissionPlaySchoolCtrl"
     })
+      .when("/schoolfeessettingplayschool", {
+        templateUrl : "templates/schoolfeessettingplayschool.html",
+        controller : "schoolFeesSettingPlaySchoolCtrl"
+    })
+      .when("/transportfeessettingplayschool", {
+        templateUrl : "templates/transportfeessettingplayschool.html",
+        controller : "playschoolTransportFeesSettingCtrl"
+    })
 
     .otherwise({
         templateUrl : "templates/login.html",

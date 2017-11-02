@@ -36,34 +36,34 @@
 
 						<div class="form-group">
 							<label>Application For</label>
-							<input class="form-control" type="text" name="applicationfor" ng-model="applicationfor">
+							<input class="form-control" type="text" name="admissionfor" ng-model="admissionplayschooldata.admissionfor">
 						</div>
 
 						<div class="form-group">
 							<label>Candidate's Name</label>
-							<input class="form-control" type="text" name="candname" ng-model="candname">
+							<input class="form-control" type="text" name="candidatename" ng-model="admissionplayschooldata.candidatename">
 						</div>
 						<div class="form-group">
 							<label>Date of Birth</label>
-							<input class="form-control" type="text" name="dateofbirth" ng-model="dateofbirth">
+							<input class="form-control" type="text" name="dateofbirth" ng-model="admissionplayschooldata.dateofbirth">
 						</div>
 						<div class="form-group">
 							<label>Age</label>
-							<input class="form-control" type="text" name="age" ng-model="age">
+							<input class="form-control" type="text" name="age" ng-model="admissionplayschooldata.age">
 						</div>
 
 						<div class="form-group">
 							<label>Gender</label>
-							<input class="form-control" type="text" name="gender" ng-model="gender">
+							<input class="form-control" type="text" name="gender" ng-model="admissionplayschooldata.gender">
 						</div>
 
 						<div class="form-group">
 							<label>Father's Name</label>
-							<input class="form-control" type="text" name="candfathername" ng-model="candfathername">
+							<input class="form-control" type="text" name="candfathername" ng-model="admissionplayschooldata.candfathername">
 						</div>
 						<div class="form-group">
 							<label>Mother's Name</label>
-							<input class="form-control" type="text" name="candmothername" ng-model="candmothername">
+							<input class="form-control" type="text" name="candmothername" ng-model="admissionplayschooldata.candmothername">
 						</div>
 						
 						
@@ -72,56 +72,61 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label>Present Address</label>
-									<input class="form-control" type="text" name="presentaddress1" ng-model="presentaddress1">
-									<input class="form-control" type="text" name="presentaddress2" ng-model="presentaddress2">
+									<input class="form-control" type="text" name="presentaddress1" ng-model="admissionplayschooldata.presentaddress1">
+									<input class="form-control" type="text" name="presentaddress2" ng-model="admissionplayschooldata.presentaddress2">
 								</div>
 								<div class="form-group">
 									<label>Area/City</label>
-									<input class="form-control" type="text" name="presentarea" ng-model="presentarea">
+									<input class="form-control" type="text" name="presentarea" ng-model="admissionplayschooldata.presentarea">
 								</div>
 								<div class="form-group">
 									<label>PinCode</label>
-									<input class="form-control" type="text" name="presentpincode" ng-model="presentpincode">
+									<input class="form-control" type="text" name="presentpincode" ng-model="admissionplayschooldata.presentpincode">
 								</div>
 								<div class="form-group">
 									<label>State</label>
-									<input class="form-control" type="text" name="presentstate" ng-model="presentstate">
+									<input class="form-control" type="text" name="presentstate" ng-model="admissionplayschooldata.presentstate">
 								</div>
 
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label>Father's Mobile Number</label>
-									<input class="form-control" type="text" name="fathersmobileno" ng-model="fathersmobileno">
+									<input class="form-control" type="text" name="fathersmobileno" ng-model="admissionplayschooldata.fathersmobileno">
 								</div>
 								<div class="form-group">
 									<label>Father's Alternative Mobile Number</label>
-									<input class="form-control" type="text" name="fathersaltmobileno" ng-model="fathersaltmobileno">
+									<input class="form-control" type="text" name="fathersaltmobno" ng-model="admissionplayschooldata.fathersaltmobno">
 								</div>
 								<div class="form-group">
 									<label>Mother's Mobile Number</label>
-									<input class="form-control" type="text" name="mothersmobileno" ng-model="mothersmobileno">
+									<input class="form-control" type="text" name="mothersmobileno" ng-model="admissionplayschooldata.mothersmobileno">
 								</div>
 								<div class="form-group">
 									<label>Mother's Alternative Mobile Number</label>
-									<input class="form-control" type="text" name="mothersaltmobileno" ng-model="mothersaltmobno">
+									<input class="form-control" type="text" name="mothersaltmobileno" ng-model="admissionplayschooldata.mothersaltmobno">
 								</div>
 								<div class="form-group">
 									<label>Father's Email</label>
-									<input class="form-control" type="text" name="fathersemail" ng-model="fathersemail">
+									<input class="form-control" type="text" name="fathersemail" ng-model="admissionplayschooldata.fathersemail">
 								</div>
 								<div class="form-group">
 									<label>Mother's E-mail</label>
-									<input class="form-control" type="text" name="mothersemail" ng-model="mothersemail">
+									<input class="form-control" type="text" name="mothersemail" ng-model="admissionplayschooldata.mothersemail">
 								</div>
 								<div class="form-group">
 									<label>Reference</label>
-									<input class="form-control" type="text" name="reference" ng-model="reference">
+									<input class="form-control" type="text" name="reference" ng-model="admissionplayschooldata.reference">
 								</div>
 								<div class="form-group">
 									<label>Remarks</label>
 									<input class="form-control" type="text" name="remarks" ng-model="remarks">
 								</div>
+								<div class="form-group">
+									<label>Academic Year</label>
+									<input class="form-control" type="academicyear" name="remarks" ng-model="admissionplayschooldata.academicyear">
+								</div>
+
 							</div>
 						</div>
 
@@ -183,7 +188,7 @@
 						</div>
 						<div class="form-group">
 							<label>Father's Office Extension No if Any</label>
-							<input class="form-control" type="text" name="fathersofficeextensionno" ng-model="admissionplayschooldata.fathersofficeextensionno ">
+							<input class="form-control" type="text" name="fathersoffficeextensionno" ng-model="admissionplayschooldata.fathersoffficeextensionno ">
 						</div>
 
 						<div class="form-group">
@@ -255,6 +260,10 @@
 							<label>Parents Wedding Date</label>
 							<input class="form-control" type="text" name="parentsweddingdate" ng-model="admissionplayschooldata.parentsweddingdate">
 						</div>
+						<div class="form-group">
+							<label>Religion</label>
+							<input class="form-control" type="text" name="religion" ng-model="admissionplayschooldata.religion">
+						</div>
 
 						<div class="form-group">
 							<label>Guardian / Child's Pickup Person Name</label>
@@ -292,11 +301,19 @@
 							<label>Register Number</label>
 							<input class="form-control" type="text" name="registernumber" ng-model="admissionplayschooldata.registernumber">
 						</div>
+						<div class="form-group">
+							<label>Select Section</label>
+							<select class="form-control" ng-model="admissionplayschooldata.section">
+								<option>Select Section</option>
+								<option>SECTION - A</option>
+								<option>SECTION - B List</option>
+								</select>
+						</div>
 
 
 						<div class="form-group">
 							<label>Admission Fees</label>
-							<input class="form-control" type="text" name="admissionfees" ng-model="admissionfees">
+							<input class="form-control" type="text" name="admissionfees" ng-model="admissionplayschooldata.admissionfees">
 						</div>
 						<div class="form-group">
 							<label>Select Transport Mode</label>
@@ -317,49 +334,53 @@
 						</div>
 						<div class="form-group">
 							<label>Transport Fees</label>
-							<input class="form-control" type="text" name="transportfees" ng-model="transportfees">
+							<input class="form-control" type="text" name="transportfees" ng-model="admissionplayschooldata.transportfees">
 						</div>
 						<div class="form-group">
 							<label>Total Fees</label>
-							<input class="form-control" type="text" name="totalfees" ng-model="totalfees">
+							<input class="form-control" type="text" name="total_admission_fees" ng-model="admissionplayschooldata.total_admission_fees">
 						</div>
 						<div class="form-group">
 							<label>Due Date For First Payment</label>
-							<input class="form-control" type="text" name="duedatefirstpayment" ng-model="duedatefirstpayment">
+							<input class="form-control" type="text" name="admission_fees_due_date" ng-model="admissionplayschooldata.admission_fees_due_date">
 						</div>
 
 
 						<div class="form-group">
 							<label>Term I School Fees</label>
-							<input class="form-control" type="text" name="term1schoolfees" ng-model="term1schoolfees">
+							<input class="form-control" type="text" name="term1fees" ng-model="admissionplayschooldata.term1fees">
 						</div>
 						<div class="form-group">
 							<label>Term I Transport Fees</label>
-							<input class="form-control" type="text" name="term1transportfees" ng-model="term1transportfees">
+							<input class="form-control" type="text" name="term1transportfees" ng-model="admissionplayschooldata.term1transportfees">
 						</div>
 						<div class="form-group">
 							<label>Term I Total Fees</label>
-							<input class="form-control" type="text" name="term1totalfees" ng-model="term1totalfees">
+							<input class="form-control" type="text" name="total_term1_fees" ng-model="admissionplayschooldata.total_term1_fees">
 						</div>
 						<div class="form-group">
 							<label>Term I Fees Due Date</label>
-							<input class="form-control" type="text" name="term1feesduedate" ng-model="term1feesduedate">
+							<input class="form-control" type="text" name="term1_fees_due_date" ng-model="admissionplayschooldata.term1_fees_due_date">
 						</div>
 						<div class="form-group">
 							<label>Term II School Fees</label>
-							<input class="form-control" type="text" name="term2schoolfees" ng-model="term2schoolfees">
+							<input class="form-control" type="text" name="term2fees" ng-model="admissionplayschooldata.term2fees">
 						</div>
 						<div class="form-group">
 							<label>Term II Transport Fees</label>
-							<input class="form-control" type="text" name="term2transportfees" ng-model="term2transportfees">
+							<input class="form-control" type="text" name="term2transportfees" ng-model="admissionplayschooldata.term2transportfees">
 						</div>
 						<div class="form-group">
 							<label>Term II Total Fees</label>
-							<input class="form-control" type="text" name="term2totalfees" ng-model="term2totalfees">
+							<input class="form-control" type="text" name="total_term2_fees" ng-model="admissionplayschooldata.total_term2_fees">
 						</div>
 						<div class="form-group">
 							<label>Term II Fees Due Date</label>
-							<input class="form-control" type="text" name="term2feesduedate" ng-model="term2feesduedate">
+							<input class="form-control" type="text" name="term2_fees_due_date" ng-model="admissionplayschooldata.term2_fees_due_date">
+						</div>
+						<div class="form-group">
+							<label>Grand Total Fees</label>
+							<input class="form-control" type="text" name="grand_total_fees" ng-model="admissionplayschooldata.grand_total_fees">
 						</div>
 
 
