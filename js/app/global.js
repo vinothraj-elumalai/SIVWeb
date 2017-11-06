@@ -69,6 +69,25 @@ sivwebapp.service('constantService', function() {
                 // data.add(new Item("Sports Performance", R.drawable.sports,".SportsPerformFragment"));
                 break;
 
+                case "PLAYSCHOOL":
+                menulist = [
+                        {'menuitem': 'Daily Attendance', 'iconclass': 'icon-class-group', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Daily Pickup', 'iconclass': 'icon-classroom', 'href': '/login'},  //NEED TO DESIGN
+                        {'menuitem': 'Photos Gallery', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Video Gallery', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Fees Payment', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Home Work', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Events', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Parents Feedback', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Remarks', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Emergency Alarm', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Settings', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+
+                    ];
+                return menulist;
+        
+                break;
+
             case "PRPL":
             	menulist = [
 		            	

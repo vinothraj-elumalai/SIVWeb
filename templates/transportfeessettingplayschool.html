@@ -1,0 +1,56 @@
+<h1>PLAYSCHOOL TRANSPORT FEES SETTING</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="playschooltransportfeessettingform" ng-submit="playschoolTransportFeesSettingSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Fees Setting Date</label>
+						<input class="form-control" type="text" name="fees_setting_date" ng-model="playschoolTransportfeessettingdata.fees_setting_date">
+					</div>
+					<div class="form-group">
+						<label>SELECT STAGE</label>
+						<select class="form-control" ng-model="playschoolTransportfeessettingdata.stage">
+							<option>Select Stage Name</option>
+							<option>STAGE - I</option>
+							<option>STAGE - II</option>
+							<option>STAGE - III</option>
+							<option>STAGE - IV</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="playschoolTransportfeessettingdata.academicyear">
+							<option>Select Year</option>
+							
+							<option>2017-2018</option>
+							<option>2018-2019</option>
+							<option>2019-2020</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Transport Initial Fees</label>
+						<input class="form-control" type="text" name="transport_initial_fees" ng-model="playschoolTransportfeessettingdata.transport_initial_fees">
+					</div>
+					<div class="form-group">
+						<label>Transport Term1 Fees</label>
+						<input class="form-control" type="text" name="transport_term1_fees" ng-model="playschoolTransportfeessettingdata.transport_term1_fees">
+					</div>
+					<div class="form-group">
+						<label>Transport Term2 Fees</label>
+						<input class="form-control" type="text" name="transport_term2_fees" ng-model="playschoolTransportfeessettingdata.transport_term2_fees">
+					</div>
+					<div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="playschoolTransportfeessettingdata.loginuser">
+					</div>
+					
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SAVE">
+			</div>
+		</form>
+	</div>
+</div>

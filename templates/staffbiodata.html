@@ -1,0 +1,338 @@
+<h1>STAFF BIO DATA</h1>
+<div class="row">
+	<div class="col-md-12">
+		
+		<div class="form-group">
+			<label>Staff ID</label>
+			<input class="form-control" type="text" name="staffid" ng-model="searchStaffData.staffid">
+		</div>
+		<div class="form-group">	
+		<div class="text-right">
+			<input type="button" ng-click="searchStaffId()" class="btn btn-default" value="SEARCH">
+		</div>
+		</div>
+		<form name="staffbiodataform" ng-submit="staffBioDataSubmit()" novalidate>
+			<ul class="steps">
+				<li ng-class="{'active':activestep == 1}"><a href="javascript:void(0)"><span class="stepscount">1</span></a></li>
+				<li ng-class="{'active':activestep == 2}"><a href="javascript:void(0)"><span class="stepscount">2</span></a></li>
+				<li ng-class="{'active':activestep == 3}"><a href="javascript:void(0)"><span class="stepscount">3</span></a></li>
+			</ul>
+			<div class="row">
+				<div class="col-md-12">		
+					<div class="stepscontent" id="step1" ng-show="activestep == 1">
+
+
+
+
+						<div class="form-group">
+							<label>Staff ID</label>
+							<input class="form-control" type="text" name="staffid" ng-model="staffbiodatadata.staffid">
+						</div>
+
+						<div class="form-group">
+							<label>Staff Name</label>
+							<input class="form-control" type="text" name="staffname" ng-model="staffbiodatadata.staffname">
+						</div>
+
+						<div class="form-group">
+							<label>Date of Join</label>
+							<input class="form-control" type="text" name="dateofjoin" ng-model="staffbiodatadata.dateofjoin">
+						</div>
+						<div class="form-group">
+							<label>Select Designation</label>
+							<select class="form-control" ng-model="staffbiodatadata.designation">
+								<option>Select Designation</option>
+								<option>PRINCIPAL</option>
+								<option>VICE-PRINCIPAL</option>
+								<option>ADMINISTRATIVE OFFICER</option>
+								<option>HEAD OF DEPARTMENT</option>
+								<option>PROFESSOR</option>
+								<option>ASSOSIATIVE PROFESSOR</option>
+								<option>SENIOR LECTURER</option>
+								<option>LECTURER</option>
+								<option>INSTRUCTOR</option>
+								<option>LAB ASSISTANT</option>
+								<option>LIBRARIAN</option>
+								<option>CASHIER</option>
+								<option>SUPERINTENTDENT</option>
+								<option>OFFICE ASSISTANT</option>
+								<option>TYPIST</option>
+								<option>STENO</option>
+								<option>PEON</option>
+								<option>SWEEPER</option>
+								<option>GARDENER</option>
+								<option>DRIVER</option>
+								<option>CLEANER</option>
+								<option>SECURITY OFFICER</option>
+								<option>SECURITY</option>
+
+								</select>
+						</div>
+						<div class="form-group">
+							<label>Select Branch</label>
+							<select class="form-control" ng-model="staffbiodatadata.branch">
+								<option>Select Branch</option>
+								<option>CIVIL ENGINEERING</option>
+								<option>MECHANICAL ENGINEERING</option>
+								<option>ELECTRICAL AND ELECTRONICS ENGINEERING</option>
+								</select>
+						</div>
+
+						<div class="form-group">
+							<label>Branch Code</label>
+							<input class="form-control" type="text" name="branchcode" ng-model="staffbiodatadata.branchcode">
+						</div>
+						<div class="form-group">
+							<label>Select Staff status</label>
+							<select class="form-control" ng-model="staffbiodatadata.staffstatus">
+								<option>Select Staff status</option>
+								<option>WORKING</option>
+								<option>RESIGNED</option>
+							</select>
+						</div>
+
+						<div class="text-right">
+							<input type="button" class="btn btn-primary" value="NEXT" ng-click="gotostep(2)">
+						</div>
+
+					</div>
+
+					<div class="stepscontent" id="step2" ng-show="activestep == 2">
+
+
+						<div class="form-group">
+							<label>Date of Birth</label>
+							<input class="form-control" type="text" name="dob" ng-model="staffbiodatadata.dob">
+						</div>
+						<div class="form-group">
+							<label>Age</label>
+							<input class="form-control" type="text" name="age" ng-model="staffbiodatadata.age">
+						</div>
+						<div class="form-group">
+							<label>Select Gender</label>
+							<select class="form-control" ng-model="staffbiodatadata.gender">
+								<option>Select Gender</option>
+								<option>Male</option>
+								<option>FeMale</option>
+								<option>Others</option>
+								</select>
+						</div>
+						<div class="form-group">
+							<label>Select Blood Group</label>
+							<select class="form-control" ng-model="staffbiodatadata.bloodgroup">
+								<option>Select Blood Group</option>
+								<option>A+</option>
+								<option>A-</option>
+								<option>B+</option>
+								<option>B-</option>
+								<option>AB+</option>
+								<option>AB-</option>
+								<option>O+</option>
+								<option>O-</option>
+								</select>
+						</div>
+						<div class="form-group">
+							<label>Select Physically Handicapped</label>
+							<select class="form-control" ng-model="staffbiodatadata.physicallyhandicapped">
+								<option>Select Physically Handicapped</option>
+								<option>Yes</option>
+								<option>No</option>
+								</select>
+						</div>
+
+						<div class="form-group">
+							<label>Aadhar Number</label>
+							<input class="form-control" type="text" name="aadharnumber" ng-model="staffbiodatadata.aadharnumber">
+						</div>
+						<div class="form-group">
+							<label>PAN No</label>
+							<input class="form-control" type="text" name="panno" ng-model="staffbiodatadata.panno">
+						</div>
+
+						<div class="form-group">
+							<label>Father's Name</label>
+							<input class="form-control" type="text" name="candfathername" ng-model="staffbiodatadata.candfathername">
+						</div>
+						<div class="form-group">
+							<label>Mother's Name</label>
+							<input class="form-control" type="text" name="candmothername" ng-model="staffbiodatadata.candmothername">
+						</div>
+						<div class="form-group">
+							<label>Fathers's Occupation</label>
+							<input class="form-control" type="text" name="fatheroccupation" ng-model="staffbiodatadata.fatheroccupation">
+						</div>
+						<div class="form-group">
+							<label>Select Maritial Status</label>
+							<select class="form-control" ng-model="staffbiodatadata.maritialstatus">
+								<option>Select Maritial Status</option>
+								<option>Married</option>
+								<option>Un-Married</option>
+							
+								</select>
+						</div>
+						<div class="form-group">
+							<label>Spouse Name</label>
+							<input class="form-control" type="text" name="spousename" ng-model="staffbiodatadata.spousename">
+						</div>
+						<div class="form-group">
+							<label>Spouse Occupation</label>
+							<input class="form-control" type="text" name="spouseoccupation" ng-model="staffbiodatadata.spouseoccupation">
+						</div>
+						
+						<div class="form-group">
+							<label>Place of Birth</label>
+							<input class="form-control" type="text" name="placeofbirth" ng-model="staffbiodatadata.placeofbirth">
+						</div>
+						<div class="form-group">
+							<label>Select Community</label>
+							<select class="form-control" ng-model="staffbiodatadata.community">
+								<option>Select Community</option>
+								<option>SC</option>
+								<option>BC</option>
+								<option>MBC</option>
+								<option>OC</option>
+							
+								</select>
+						</div>
+						<div class="form-group">
+							<label>Caste</label>
+							<input class="form-control" type="text" name="caste" ng-model="staffbiodatadata.caste">
+						</div>
+						<div class="form-group">
+							<label>Select Mother Toungue</label>
+							<select class="form-control" ng-model="staffbiodatadata.mothertoungue">
+								<option>Select Mother Toungue</option>
+								<option>Tamil</option>
+								<option>Telugu</option>
+								<option>Malyalam</option>
+								<option>Urudhu</option>
+								<option>Hindhi</option>
+								<option>English</option>
+							
+								</select>
+						</div>
+
+						<div class="form-group">
+							<label>Select Referenced By</label>
+							<select class="form-control" ng-model="staffbiodatadata.referencedby">
+								<option>Select Referenced By</option>
+								<option>Management</option>
+								<option>Staff</option>
+								<option>Student</option>
+								<option>Others</option>
+							
+								</select>
+						</div>
+
+						<div class="form-group">
+							<label>Referer ID</label>
+							<input class="form-control" type="text" name="refererid" ng-model="staffbiodatadata.refererid">
+						</div>
+						<div class="form-group">
+							<label>Referer Name</label>
+							<input class="form-control" type="text" name="referername" ng-model="staffbiodatadata.referername">
+						</div>
+						
+						<div class="text-right">
+							<input type="button" class="btn btn-default" ng-click="gotostep(1)" value="BACK">
+							<input type="button" class="btn btn-primary" value="NEXT" ng-click="gotostep(3)">
+						</div>
+
+
+
+
+
+					</div>
+
+					<div class="stepscontent" id="step3" ng-show="activestep == 3">
+
+
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label>Present Address</label>
+									<input class="form-control" type="text" name="presentaddress1" ng-model="staffbiodatadata.presentaddress1">
+									<input class="form-control" type="text" name="presentaddress2" ng-model="staffbiodatadata.presentaddress2">
+								</div>
+								<div class="form-group">
+									<label>Area/City</label>
+									<input class="form-control" type="text" name="presentarea" ng-model="staffbiodatadata.presentarea">
+								</div>
+								<div class="form-group">
+									<label>PinCode</label>
+									<input class="form-control" type="text" name="presentpincode" ng-model="staffbiodatadata.presentpincode">
+								</div>
+								<div class="form-group">
+									<label>State</label>
+									<input class="form-control" type="text" name="presentstate" ng-model="staffbiodatadata.presentstate">
+								</div>
+
+								<div class="form-group">
+									<label>Mobile No</label>
+									<input class="form-control" type="text" name="presentmobileno" ng-model="staffbiodatadata.presentmobileno">
+								</div>
+								<div class="form-group">
+									<label>Alternate Mobile No</label>
+									<input class="form-control" type="text" name="presentaltmobno" ng-model="staffbiodatadata.presentaltmobno">
+								</div>
+								<div class="form-group">
+									<label>E-mail</label>
+									<input class="form-control" type="text" name="presentemail" ng-model="staffbiodatadata.presentemail">
+								</div>
+								<div class="form-group">
+									<label>Alternate Email</label>
+									<input class="form-control" type="text" name="presentaltemail" ng-model="staffbiodatadata.presentaltemail">
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label>Permanent Address</label>
+									<input class="form-control" type="text" name="permanentaddress1" ng-model="staffbiodatadata.permanentaddress1">
+									<input class="form-control" type="text" name="permanentaddress2" ng-model="permanentaddress2">
+								</div>
+								<div class="form-group">
+									<label>Area/City</label>
+									<input class="form-control" type="text" name="permanentarea" ng-model="staffbiodatadata.permanentarea">
+								</div>
+								<div class="form-group">
+									<label>PinCode</label>
+									<input class="form-control" type="text" name="permanentpincode" ng-model="staffbiodatadata.permanentpincode">
+								</div>
+								<div class="form-group">
+									<label>State</label>
+									<input class="form-control" type="text" name="permanentstate" ng-model="staffbiodatadata.permanentstate">
+								</div>
+								<div class="form-group">
+									<label>Mobile No</label>
+									<input class="form-control" type="text" name="permanentmobileno" ng-model="staffbiodatadata.permanentmobileno">
+								</div>
+								<div class="form-group">
+									<label>Alternate Mobile No</label>
+									<input class="form-control" type="text" name="permanentaltmobno" ng-model="staffbiodatadata.permanentaltmobno">
+								</div>
+								<div class="form-group">
+									<label>E-mail</label>
+									<input class="form-control" type="text" name="permanentemail" ng-model="staffbiodatadata.permanentemail">
+								</div>
+								<div class="form-group">
+									<label>Alternate Email</label>
+									<input class="form-control" type="text" name="permanentaltemail" ng-model="staffbiodatadata.permanentaltemail">
+								</div>
+						
+
+						<div class="text-right">
+							<input type="button" class="btn btn-default" ng-click="gotostep(2)" value="BACK">
+							<input type="submit" class="btn btn-primary" value="SAVE">
+						</div>
+
+
+					</div>
+					
+
+						
+				</div>
+			</div>
+			
+		</form>
+	</div>
+</div>

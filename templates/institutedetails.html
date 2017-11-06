@@ -1,0 +1,80 @@
+<h1>INSTITUTE DETAIL ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="institutedetailsform" ng-submit="institutiondetailsSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">	
+					<div class="form-group">
+						<label>Enter Institute Id</label>
+						<input class="form-control" type="text" name="instituteid" ng-model="institutedetailsdata.instituteid">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Institute Code</label>
+						<input class="form-control" type="text" name="institutecode" ng-model="institutedetailsdata.institutecode">
+					</div>
+                    <div class="form-group">
+						<label>Enter Institute Name</label>
+						<input class="form-control" type="text" name="institutename" ng-model="institutedetailsdata.institutename">
+					</div>
+					<div class="form-group">
+						<label>Enter Institute Type</label>
+						<select class="form-control" ng-model="institutedetailsdata.institutetype">
+							<option>Select Institute Type</option>
+							<option>ENGINEERING COLLEGE</option>
+							<option>POLYTECHNIC COLLEGE</option>
+							<option>ARTS AND SCIENCE COLLEGE</option>
+							<option>SCHOOL</option>
+							<option>PLAY SCHOOL</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Institute Address Address</label>
+						<input class="form-control" type="text" name="instituteaddress1" ng-model="institutedetailsdata.instituteaddress1">
+						<input class="form-control" type="text" name="instituteaddress2" ng-model="institutedetailsdata.instituteaddress2">
+					</div>
+
+   					<div class="form-group">
+						<label>Enter Institute City</label>
+						<input class="form-control" type="text" name="institutecity" ng-model="institutedetailsdata.institutecity">
+					</div>
+					<div class="form-group">
+						<label>Enter Institute Pin Code</label>
+						<input class="form-control" type="text" name="institutepincode" ng-model="institutedetailsdata.institutepincode">
+					</div>
+					
+
+					<div class="form-group">
+						<label>Enter Institute State</label>
+						<input class="form-control" type="text" name="institutestate" ng-model="institutedetailsdata.institutestate">
+					</div>
+					<div class="form-group">
+						<label>Enter Institute Contact No</label>
+						<input class="form-control" type="text" name="institutecontactno1" ng-model="institutedetailsdata.institutecontactno1">
+					</div>
+					<div class="form-group">
+						<label>Enter Institute Alternate Contact No</label>
+						<input class="form-control" type="text" name="institutecontactno2" ng-model="institutedetailsdata.institutecontactno2">
+					</div>
+					<div class="form-group">
+						<label>Enter Institute Email-ID</label>
+						<input class="form-control" type="text" name="instituteemail1" ng-model="institutedetailsdata.instituteemail1">
+					</div>
+					<div class="form-group">
+						<label>Enter Institute Alternate Email-ID</label>
+						<input class="form-control" type="text" name="instituteemail2" ng-model="institutedetailsdata.instituteemail2">
+					</div>
+					<div class="form-group">
+						<label>Enter Institute Website Address</label>
+						<input class="form-control" type="text" name="instituteweb" ng-model="institutedetailsdata.instituteweb">
+					</div>
+                    
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>

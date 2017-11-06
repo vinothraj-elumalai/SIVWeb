@@ -1,0 +1,178 @@
+<h1>PLAY SCHOOL APPLICATION SALE</h1>
+<div class="row">
+	<div class="col-md-12">
+		<form name="playschoolapplicationsaleform" ng-submit="playSchoolApplicationSaleSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Category</label>
+						<select class="form-control" ng-model="playschoolapplicationsaledata.category">
+							<option>Select Category</option>
+							<option>Application Sale</option>
+							<option>Enquiry</option>
+							</select>
+					</div>
+					<div class="form-group">
+						<label>Application No. / Enquiry No</label>
+						<input class="form-control" type="text" name="applno" ng-model="playschoolapplicationsaledata.applno">
+					</div>
+					<div class="form-group">
+						<label>Sale Date</label>
+						<input class="form-control" type="text" name="saledate" ng-model="playschoolapplicationsaledata.saledate">
+					</div>
+					<div class="form-group">
+						<label>Application For</label>
+						<select class="form-control" ng-model="playschoolapplicationsaledata.appfor">
+							<option>Select Application For</option>
+							<option>TODDLER PROGRAM</option>
+							<option>PRE-KG</option>
+							<option>KG1</option>
+							<option>KG2</option>
+							</select>
+					</div>
+					<div class="form-group">
+						<label>Child's First Name</label>
+						<input class="form-control" type="text" name="candfirstname" ng-model="playschoolapplicationsaledata.candfirstname">
+					</div>
+					<div class="form-group">
+						<label>Child's Middle Name</label>
+						<input class="form-control" type="text" name="candmiddlename" ng-model="playschoolapplicationsaledata.candmiddlename">
+					</div>
+					<div class="form-group">
+						<label>Child's Last Name</label>
+						<input class="form-control" type="text" name="candlastname" ng-model="playschoolapplicationsaledata.candlastname">
+					</div>
+					<div class="form-group">
+						<label>Child's Date of Birth</label>
+						<input class="form-control" type="text" name="dateofbirth" ng-model="playschoolapplicationsaledata.dateofbirth">
+					</div>
+					<div class="form-group">
+						<label>Child's Age</label>
+						<input class="form-control" type="text" name="age" ng-model="playschoolapplicationsaledata.age">
+					</div>
+
+					<div class="form-group">
+						<label>Gender</label>
+						<select class="form-control" ng-model="playschoolapplicationsaledata.gender">
+							<option>Select Gender</option>
+							<option>Male</option>
+							<option>Female</option>
+							<option>Others</option>
+							</select>
+					</div>
+					<div class="form-group">
+						<label>Father's Name</label>
+						<input class="form-control" type="text" name="candfathername" ng-model="playschoolapplicationsaledata.candfathername">
+					</div>
+					<div class="form-group">
+						<label>Mother's Name</label>
+						<input class="form-control" type="text" name="candmothername" ng-model="playschoolapplicationsaledata.candmothername">
+					</div>
+					<div class="form-group">
+						<label>Present Address</label>
+						<input class="form-control" type="text" name="presentaddress1" ng-model="playschoolapplicationsaledata.presentaddress1">
+						<input class="form-control" type="text" name="presentaddress2" ng-model="playschoolapplicationsaledata.presentaddress2">
+					</div>
+					<div class="form-group">
+						<label>Area/City</label>
+						<input class="form-control" type="text" name="presentarea" ng-model="playschoolapplicationsaledata.presentarea">
+					</div>
+					<div class="form-group">
+						<label>PinCode</label>
+						<input class="form-control" type="text" name="presentpincode" ng-model="playschoolapplicationsaledata.presentpincode">
+					</div>
+					<div class="form-group">
+						<label>State</label>
+						<select class="form-control" ng-model="playschoolapplicationsaledata.presentstate">
+							<option>Select State</option>
+							<option>TamiNadu</option>
+							<option>Puducherry</option>
+							<option>Andhra Pradesh</option>
+							</select>
+					</div>
+					<div class="form-group">
+						<label>Fathers Mobile No</label>
+						<input class="form-control" type="text" name="fathersmobileno" ng-model="playschoolapplicationsaledata.fathersmobileno">
+					</div>
+					<div class="form-group">
+						<label>Fathers Alternate Mobile No</label>
+						<input class="form-control" type="text" name="fathersaltmobno" ng-model="playschoolapplicationsaledata.fathersaltmobno">
+					</div>
+					<div class="form-group">
+						<label>Mothers Mobile No</label>
+						<input class="form-control" type="text" name="mothersmobileno" ng-model="playschoolapplicationsaledata.mothersmobileno">
+					</div>
+					<div class="form-group">
+						<label>Mothers Alternate Mobile No</label>
+						<input class="form-control" type="text" name="mothersaltmobno" ng-model="playschoolapplicationsaledata.mothersaltmobno">
+					</div>
+
+
+					<div class="form-group">
+						<label>Fathers E-mail</label>
+						<input class="form-control" type="text" name="fathersemail" ng-model="playschoolapplicationsaledata.fathersemail">
+					</div>
+					<div class="form-group">
+						<label>Mothers Email</label>
+						<input class="form-control" type="text" name="mothersemail" ng-model="playschoolapplicationsaledata.mothersemail">
+					</div>
+					
+					<div class="form-group">
+						<label>Reference</label>
+						<input class="form-control" type="text" name="reference" ng-model="playschoolapplicationsaledata.reference">
+					</div>
+					<div class="form-group">
+						<label>Willing to Join</label>
+						<select class="form-control" ng-model="playschoolapplicationsaledata.willingtojoin">
+							<option>Select Willingness</option>
+							<option>Yes</option>
+							<option>No</option>
+							</select>
+					</div>
+					<div class="form-group">
+						<label>Date Committed to Join</label>
+						<input class="form-control" type="text" name="followupdate" ng-model="playschoolapplicationsaledata.followupdate">
+					</div>
+					<div class="form-group">
+						<label>Application Price</label>
+						<input class="form-control" type="text" name="applicationprice" ng-model="playschoolapplicationsaledata.applicationprice">
+					</div>
+					<div class="form-group">
+						<label>Application Amount Paid Mode</label>
+						<select class="form-control" ng-model="playschoolapplicationsaledata.applicationpaidmode">
+							<option>Select Paid Mode</option>
+							<option>Paid</option>
+							<option>Free</option>
+							</select>
+					</div>
+					<div class="form-group">
+						<label>Remarks</label>
+						<input class="form-control" type="text" name="remarks" ng-model="playschoolapplicationsaledata.remarks">
+					</div>
+					<div class="form-group">
+						<label>Select Academic Year</label>
+						<select class="form-control" ng-model="playschoolapplicationsaledata.academicyear">
+							<option>Select Academic Year</option>
+							<option>2017-2018</option>
+							<option>2018-2019</option>
+							</select>
+					</div>
+
+					<div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="user" ng-model="playschoolapplicationsaledata.loginuser">
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SAVE">
+			</div>
+		</form>
+	</div>
+</div>
+
+
+
+
+
