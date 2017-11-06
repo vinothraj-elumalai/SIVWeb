@@ -1,0 +1,184 @@
+<h1>FEES PAYMENT PLAYSCHOOL ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="feespaymentplayschool" ng-submit="feesPaymentPlaySchoolSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">					
+					<div class="form-group">
+						<label>Date</label>
+						<input class="form-control" type="text" name="billdate" ng-model="feespaymentplayschooldata.billdate">
+					</div>
+					<div class="form-group">
+						<label>Bill No</label>
+						<input class="form-control" type="text" name="billno" ng-model="feespaymentplayschooldata.billno">
+					</div>
+					<div class="form-group">
+						<label>Registration No</label>
+						<input class="form-control" type="text" name="registernumber" ng-model="feespaymentplayschooldata.registernumber">
+					</div>
+					<div class="form-group">
+						<label>Admission No</label>
+						<input class="form-control" type="text" name="name" ng-model="name">
+					</div>
+					<div class="form-group">
+						<label>Program</label>
+						<input class="form-control" type="text" name="program" ng-model="feespaymentplayschooldata.program">
+					</div>
+					<div class="form-group">
+						<label>Section</label>
+						<input class="form-control" type="text" name="section" ng-model="feespaymentplayschooldata.section">
+					</div>
+					<div class="form-group">
+						<label>Academic Year</label>
+						<input class="form-control" type="text" name="academicyear" ng-model="feespaymentplayschooldata.academicyear">
+					</div>
+				
+					<div class="form-group">
+						<label>School Fees Title</label>
+						<select class="form-control" ng-model="feespaymentplayschooldata.school_fees_title">
+							<option>Select School Fees Title</option>
+							<option>Admission Fees</option>
+							<option>Term - I</option>
+							<option>Term - II</option>
+							
+						</select>
+					</div>
+					<div class="form-group">
+						<label>School Fees</label>
+						<input class="form-control" type="text" name="school_fees" ng-model="feespaymentplayschooldata.school_fees">
+					</div>
+                    <div class="form-group">
+						<label>School Fees Paid</label>
+						<input class="form-control" type="text" name="school_fees_paid" ng-model="feespaymentplayschooldata.school_fees_paid">
+					</div>
+					<div class="form-group">
+						<label>Transport Fees Title</label>
+						<select class="form-control" ng-model="feespaymentplayschooldata.transport_fees_title">
+							<option>Select Transport Fees Title</option>
+							<option>Intial Fees</option>
+							<option>Term - I</option>
+							<option>Term - II</option>
+							
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Transport Fees </label>
+						<input class="form-control" type="text" name="transport_fees" ng-model="feespaymentplayschooldata.transport_fees">
+					</div>
+                    <div class="form-group">
+						<label>Transport Fees Paid</label>
+						<input class="form-control" type="text" name="transport_fees_paid" ng-model="feespaymentplayschooldata.transport_fees_paid">
+					</div>
+                    <div class="form-group">
+						<label>Total Fees </label>
+						<input class="form-control" type="text" name="totalfees" ng-model="feespaymentplayschooldata.totalfees">
+					</div>
+					<div class="form-group">
+						<label>Total Fees Paid</label>
+						<input class="form-control" type="text" name="total_fees_paid" ng-model="feespaymentplayschooldata.total_fees_paid">
+					</div>
+					<div class="form-group">
+						<label>Balance Fees</label>
+						<input class="form-control" type="text" name="balance" ng-model="feespaymentplayschooldata.balance">
+					</div>
+					<div class="form-group">
+						<label>Due Date</label>
+						<input class="form-control" type="text" name="duedate" ng-model="feespaymentplayschooldata.duedate">
+					</div>
+					<div class="form-group">
+						<label>Payment Method</label>
+						<select class="form-control" ng-model="feespaymentplayschooldata.payment_method">
+							<option>Select Payment Method</option>
+							<option>CASH</option>
+							<option>CHEQUE</option>
+							<option>ONLINE PAYMENT</option>
+							
+						</select>
+					</div>
+
+					
+					<div class="form-group">
+						<label>Cheque No</label>
+						<input class="form-control" type="text" name="chequeno" ng-model="feespaymentplayschooldata.chequeno">
+					</div>
+					<div class="form-group">
+						<label>Cheque Date</label>
+						<input class="form-control" type="text" name="chequedate" ng-model="feespaymentplayschooldata.chequedate">
+					</div>
+                    <div class="form-group">
+						<label>Bank Name</label>
+						<input class="form-control" type="text" name="bankname" ng-model="feespaymentplayschooldata.bankname">
+					</div>
+					<div class="form-group">
+						<label>Denomination</label>
+					</div>
+					<div class="form-group">
+						<label>2k</label>
+						<label>X</label>
+						<input type="text" name="text"  ng-model="text">
+						<label>=</label>
+						<input type="text" name="text" ng-model="text">
+					</div>
+					<div class="form-group">
+						<label>1k</label>
+						<label>X</label>
+						<input type="text" name="text"  ng-model="text">
+						<label>=</label>
+						<input type="text" name="text" ng-model="text">
+					</div>
+					<div class="form-group">
+						<label>500</label>
+						<label>X</label>
+						<input type="text" name="text"  ng-model="text">
+						<label>=</label>
+						<input type="text" name="text" ng-model="text">
+					</div>
+					<div class="form-group">
+						<label>100</label>
+						<label>X</label>
+						<input type="text" name="text"  ng-model="text">
+						<label>=</label>
+						<input type="text" name="text" ng-model="text">
+					</div>
+					<div class="form-group">
+						<label>50</label>
+						<label>X</label>
+						<input type="text" name="text"  ng-model="text">
+						<label>=</label>
+						<input type="text" name="text" ng-model="text">
+					</div>
+					<div class="form-group">
+						<label>20</label>
+						<label>X</label>
+						<input type="text" name="text"  ng-model="text">
+						<label>=</label>
+						<input type="text" name="text" ng-model="text">
+					</div>
+					<div class="form-group">
+						<label>10</label>
+						<label>X</label>
+						<input type="text" name="text"  ng-model="text">
+						<label>=</label>
+						<input type="text" name="text" ng-model="text">
+					</div>
+					<div class="form-group">
+						<label>coins</label>
+						<label>X</label>
+						<input type="text" name="text"  ng-model="text">
+						<label>=</label>
+						<input type="text" name="text" ng-model="text">
+					</div>
+					<div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="feespaymentplayschooldata.loginuser">
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="CREATE USER">
+			</div>
+		</form>
+	</div>
+</div>
