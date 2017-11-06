@@ -31,74 +31,108 @@
 						<label>Date Of Birth</label>
 						<p>{{studentpersonalinfo.dateofbirth}}</p>
 					</div>
-					<div class="form-group">
+					<div class="form-group" ng-show ="studentpersonalinfo.gender">
 						<label>Gender</label>
-						<input class="form-control" type="text" name="gender" ng-model="studentpersonalinfodata.gender">
-					</div>
-					<div class="form-group">
-						<label>Father Name</label>
-						<input class="form-control" type="text" name="fathername" ng-model="studentpersonalinfodata.fathername">
-					</div>
-					<div class="form-group">
-						<label>Mother Name</label>
-						<input class="form-control" type="text" name="mothername" ng-model="studentpersonalinfodata.mothername">
-					</div>
-					<div class="form-group">
-						<label>Present Address</label>
-						<input class="form-control" type="text" name="presentaddress1" ng-model="studentpersonalinfodata.presentaddress1">
-						<input class="form-control" type="text" name="presentaddress2" ng-model="studentpersonalinfodata.presentaddress2">
-					</div>
-					<div class="form-group">
-						<label>Area/City</label>
-						<input class="form-control" type="text" name="presentarea" ng-model="studentpersonalinfodata.presentarea">
-					</div>
-					<div class="form-group">
-						<label>PinCode</label>
-						<input class="form-control" type="text" name="presentpincode" ng-model="studentpersonalinfodata.presentpincode">
+						<p>{{studentpersonalinfo.gender}}</p>
 					</div>
 
-					<div class="form-group">
-						<label>Mobile No</label>
-						<input class="form-control" type="text" name="presentmobileno" ng-model="studentpersonalinfodata.presentmobileno">
+					<div class="form-group" ng-show ="studentpersonalinfo.fathername">
+						<label>Father Name</label>
+						<p>{{studentpersonalinfo.fathername}}</p>
 					</div>
-					<div class="form-group">
-						<label>Alternate Mobile No</label>
-						<input class="form-control" type="text" name="presentaltmobileno" ng-model="studentpersonalinfodata.presentaltmobileno">
+
+					<div class="form-group" ng-show ="studentpersonalinfo.mothername">
+						<label>Mother Name</label>
+						<p>{{studentpersonalinfo.mothername}}</p>
 					</div>
-					<div class="form-group">
-						<label>E-mail</label>
-						<input class="form-control" type="text" name="presentemail" ng-model="studentpersonalinfodata.presentemail">
+
+					<div class="form-group" ng-show ="studentpersonalinfo.presentaddress1">
+						<label>Present Address1</label>
+						<p>{{studentpersonalinfo.presentaddress1}}</p>
 					</div>
-					<div class="form-group">
-						<label>Alternate E-mail</label>
-						<input class="form-control" type="text" name="presentaltemail" ng-model="studentpersonalinfodata.presentaltemail">
-					</div>
-					<div class="form-group">
-						<label>Permanent Address</label>
-						<input class="form-control" type="text" name="permanentaddress1" ng-model="studentpersonalinfodata.permanentaddress1">
-						<input class="form-control" type="text" name="permanentaddress2" ng-model="studentpersonalinfodata.permanentaddress2">
-					</div>
-					<div class="form-group">
+
+					<div class="form-group" ng-show ="studentpersonalinfo.presentaddress2">
+						<label>Present Address2</label>
+						<p>{{studentpersonalinfo.presentaddress2}}</p>
+	                </div> 
+						
+
+					<div class="form-group" ng-show ="studentpersonalinfo.presentarea">
 						<label>Area/City</label>
-						<input class="form-control" type="text" name="permanentarea" ng-model="studentpersonalinfodata.permanentarea">
+						<p>{{studentpersonalinfo.presentarea}}</p>
+						
 					</div>
-					<div class="form-group">
+
+					<div class="form-group" ng-show ="studentpersonalinfo.presentpincode">
 						<label>PinCode</label>
-						<input class="form-control" type="text" name="permanentpincode" ng-model="studentpersonalinfodata.permanentpincode">
+						<p>{{studentpersonalinfo.presentpincode}</p>
+						
+					</div>
+
+					<div class="form-group" ng-show ="studentpersonalinfo.presentmobileno">
+						<label>Mobile No</label>
+						<p>{{studentpersonalinfo.presentmobileno}</p>
+						
+					</div>
+
+					<div class="form-group" ng-show ="studentpersonalinfo.presentaltmobileno">
+						<label>Alternate Mobile No</label>
+						<p>{{studentpersonalinfo.presentaltmobileno}</p>
+						
+					</div>
+
+					<div class="form-group" ng-show ="studentpersonalinfo.presentemail">
+						<label>E-mail</label>
+						<p>{{studentpersonalinfo.presentemail}</p>
+						
+					</div>
+
+					<div class="form-group" ng-show ="studentpersonalinfo.presentemail">
+						<label>Alternate E-mail</label>
+						<p>{{studentpersonalinfo.presentaltemail}</p>
+						
+					</div>
+
+					<div class="form-group" ng-show ="studentpersonalinfo.permanentaddress1">
+						<label>Permanent Address</label>
+						<p>{{studentpersonalinfo.permanentaddress1}</p>
+					</div>
+
+					<div class="form-group" ng-show ="studentpersonalinfo.permanentaddress2">
+						<label>Permanent Address</label>
+						<p>{{studentpersonalinfo.permanentaddress2}</p>
+					</div>
+						
+						
+					<div class="form-group" ng-show ="studentpersonalinfo.permanentarea">
+						<label>Area/City</label>
+						<p>{{studentpersonalinfo.permanentarea}</p>
+						
+					</div>
+
+					<div class="form-group" ng-show ="studentpersonalinfo.permanentpincode">
+						<label>PinCode</label>
+						<p>{{studentpersonalinfo.permanentpincode}</p>
 					</div>
 					
-					<div class="form-group">
+					<div class="form-group" ng-show ="studentpersonalinfo.permanentmobileno">
 						<label>Mobile No</label>
-						<input class="form-control" type="text" name="permanentmobileno" ng-model="studentpersonalinfodata.permanentmobileno">
+						<p>{{studentpersonalinfo.permanentmobileno}</p>
+						
 					</div>
-					<div class="form-group">
+
+					<div class="form-group" ng-show ="studentpersonalinfo.permanentaltmobileno">
 						<label>Alternate Mobile No</label>
-						<input class="form-control" type="text" name="permanentaltmobileno" ng-model="studentpersonalinfodata.permanentaltmobileno">
+						<p>{{studentpersonalinfo.permanentaltmobileno}</p>
+						
 					</div>
-                    <div class="form-group">
+
+                    <div class="form-group" ng-show ="studentpersonalinfo.permanentemail">
 						<label>Email</label>
-						<input class="form-control" type="text" name="permanentemail" ng-model="studentpersonalinfodata.permanentemail">
+						<p>{{studentpersonalinfo.permanentemail}</p>
+						
 					</div>
+					
                     <div class="form-group">
 						<label>Alternate Email</label>
 						<input class="form-control" type="text" name="permanentaltemail" ng-model="studentpersonalinfodata.permanentaltemail">
