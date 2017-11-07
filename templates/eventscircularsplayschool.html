@@ -1,0 +1,83 @@
+<h1>EVENT AND CIRCULARS ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="eventscircularsplayschoolform" ng-submit="eventsCircularsPlaySchoolSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">	
+				    <div class="form-group">
+						<label>Event Id</label>
+						<input class="form-control" type="text" name="eventid" ng-model="eventscircularssplayschooldata.eventid">
+					</div>				
+					<div class="form-group">	
+					<div class="text-right">
+						<input type="button" class="btn btn-default" value="SEARCH">
+					</div>
+					</div>
+
+					<div class="form-group">
+						<label>Enter Entry Date</label>
+						<input class="form-control" type="text" name="entrydate" ng-model="eventscircularssplayschooldata.entrydate">
+					</div>
+
+
+                    <div class="form-group">
+						<label>Event Date</label>
+						<input class="form-control" type="text" name="eventdate" ng-model="eventscircularssplayschooldata.eventdate">
+					</div>
+   					<div class="form-group">
+						<label>Event Day</label>
+						<input class="form-control" type="text" name="eventday" ng-model="eventscircularssplayschooldata.eventday">
+					</div>
+
+					<div class="form-group">
+						<label>Select Program</label>
+						<select class="form-control" ng-model="eventscircularssplayschooldata.program">
+							<option>Select Program</option>
+							<option>ALL</option>
+							<option>TODDLER PROGRAM</option>
+							<option>PREKG</option>
+							<option>KG1</option>
+							<option>KG2</option>
+							
+						</select>
+					</div>
+					
+					<div class="form-group">
+						<label>Select Section</label>
+						<select class="form-control" ng-model="eventscircularssplayschooldata.section">
+							<option>Select Section</option>
+							<option>SECTION - A</option>
+							<option>SECTION - B</option>
+							<option>SECTION - C</option>
+							<option>SECTION - D</option>
+						</select>
+					</div>
+
+
+                    <div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="eventscircularssplayschooldata.academicyear">
+							<option>Select Year</option>
+							<option>2016-2017</option>
+							<option>2017-2018</option>
+							<option>2018-2019</option>
+							<option>2019-2020</option>
+						</select>
+					</div>
+
+
+					<div class="form-group">
+						<label>Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="eventscircularssplayschooldata.loginuser">
+					</div>
+
+                    
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="CREATE USER">
+			</div>
+		</form>
+	</div>
+</div>
