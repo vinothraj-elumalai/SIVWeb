@@ -440,6 +440,38 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/staffpersonalinformationplayschool.html",
         controller : "staffPersonalInformationPlaySchoolCtrl"
     })
+      .when("/studenthomeworkplayschool", {
+        templateUrl : "templates/studenthomeworkplayschool.html",
+        controller : "studentHomeWorkPlaySchoolCtrl"
+    })
+      .when("/childspickupplayschoolentry", {
+        templateUrl : "templates/childspickupplayschoolentry.html",
+        controller : "childsPickupPlaySchoolEntryCtrl"
+    })
+      .when("/photosuploadplayschool", {
+        templateUrl : "templates/photosuploadplayschool.html",
+        controller : "photosUploadPlaySchoolCtrl"
+    })
+      .when("/videosuploadplayschool", {
+        templateUrl : "templates/videosuploadplayschool.html",
+        controller : "videosUploadPlaySchoolCtrl"
+    })
+      .when("/studentsnamelistplayschool", {
+        templateUrl : "templates/studentsnamelistplayschool.html",
+        controller : "studentsNameListPlaySchoolCtrl"
+    })
+      .when("/studentsmonthlyreportplayschool", {
+        templateUrl : "templates/studentsmonthlyreportplayschool.html",
+        controller : "studentsMonthlyReportPlaySchoolCtrl"
+    })
+      .when("/studentattendanceplayschoolmanagementview", {
+        templateUrl : "templates/studentattendanceplayschoolmanagentview.html",
+        controller : "studentAttendancePlaySchoolManagementViewCtrl"
+    })
+      .when("/dailyfeesreportmanagementplayschool", {
+        templateUrl : "templates/dailyfeesreportmanagementplayschool.html",
+        controller : "dailyfeesReportPlaySchoolCtrl"
+    })
 
     .otherwise({
         templateUrl : "templates/login.html",

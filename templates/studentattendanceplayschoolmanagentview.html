@@ -1,0 +1,63 @@
+<h1>PLAYSCHOOL STUDENT ATTENDANCE VIEW</h1>
+<div class="row">
+	<div class="col-md-12">
+		<form name="studentattendanceplayschoolmanagementviewform" ng-submit="getStudentAttendancePlaySchoolManagementViewSubmit()" novalidate>
+			<div class="row student-form">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Enter Date</label>
+						<input class="form-control" type="text" name="entrydate" ng-model="getPlaySchoolStudentAttendanceManagementViewData.entrydate" required>
+					</div>
+					<div class="form-group">
+						<label>Enter Day</label>
+						<input class="form-control" type="text" name="entryday" ng-model="getPlaySchoolStudentAttendanceManagementViewData.entryday" required>
+					</div>
+
+					<div class="form-group">
+						<label>PROGRAM</label>
+						<select class="form-control" ng-model="getPlaySchoolStudentAttendanceManagementViewData.branch" required>
+							<option>TODDLER PROGRAM</option>
+							<option>PREKG</option>
+							<option>KG1</option>
+							<option>KG2</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>SECTION</label>
+						<select class="form-control" ng-model="getPlaySchoolStudentAttendanceManagementViewData.batch" required>
+							<option>SECTION - A</option>
+							<option>SECTION - B</option>
+							<option>SECTION - C</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="getPlaySchoolStudentAttendanceManagementViewData.academicyear" required>
+							<option>2016-2017</option>
+							<option>2015-2016</option>
+							<option>2016-2017</option>
+							<option>2016-2017</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Total Present</label>
+						<input class="form-control" type="text" name="totalpresent" ng-model="getPlaySchoolStudentListData.totalpresent" required>
+					</div>
+					<div class="form-group">
+						<label>Enter Total Absent</label>
+						<input class="form-control" type="text" name="totalbsent" ng-model="getPlaySchoolStudentListData.totalabsent" required>
+					</div>
+					<div class="form-group">
+						<label>Enter Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="getPlaySchoolStudentListData.loginuser" required>
+					</div>
+
+					<button ng-disabled="studentattendanceplayschoolform.$invalid" class="btn btn-primary">View Attendance</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+

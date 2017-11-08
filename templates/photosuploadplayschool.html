@@ -1,0 +1,83 @@
+<h1>PLAYSCHOOL STUDENT PHOTOS UPLOAD</h1>
+<div class="row">
+	<div class="col-md-12">
+		<form name="photosuploadplayschoolform" ng-submit="photosUploadPlaySchoolSubmit()" novalidate>
+			<div class="row student-form">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Enter Date</label>
+						<input class="form-control" type="text" name="entrydate" ng-model="photosuploadPlaySchoolData.entrydate" required>
+					</div>
+					<div class="form-group">
+						<label>Enter Day</label>
+						<input class="form-control" type="text" name="entryday" ng-model="photosuploadPlaySchoolData.entryday" required>
+					</div>
+
+					<div class="form-group">
+						<label>PROGRAM</label>
+						<select class="form-control" ng-model="photosuploadPlaySchoolData.program" required>
+							<option>TODDLER PROGRAM</option>
+							<option>PREKG</option>
+							<option>KG1</option>
+							<option>KG2</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>SECTION</label>
+						<select class="form-control" ng-model="photosuploadPlaySchoolData.section" required>
+							<option>SECTION - A</option>
+							<option>SECTION - B</option>
+							<option>SECTION - C</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="photosuploadPlaySchoolData.academicyear" required>
+							<option>2016-2017</option>
+							<option>2015-2016</option>
+							<option>2016-2017</option>
+							<option>2016-2017</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="photosuploadPlaySchoolData.loginuser" required>
+					</div>
+
+					<button ng-disabled="photosuploadplayschoolform.$invalid" class="btn btn-primary">SELECT STUDENTS</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<table>
+	<tr>
+		<th>S.No.</th>
+		<th>Reg. No</th>
+		<th>Name</th>
+		<th>Attendance</th>
+	</tr>
+
+
+	<tr ng-repeat= "student in studentList">
+		<td>{{$index}}</td>
+		<td>{{student.regNo}}</td>
+		<td>{{student.studentName}}</td>
+		<td><input type="checkbox"/></td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+<br/>
+
+<label>HERE WE HAVE TO PLACE IMAGE CONTROL AND ATTACH MORE BUTTON</label>
+<button ng-click="" class="btn btn-primary">Upload Images</button>
