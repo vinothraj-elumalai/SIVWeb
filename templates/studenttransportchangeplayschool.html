@@ -1,12 +1,12 @@
 <h1>STUDENT TRANSPORT CHANGE</h1> 
 <div class="row">
 	<div class="col-md-12">
-		<form name="studenttransportchangeplayschoolform" ng-submit="studentTransportChangePlaySchoolSubmit()" novalidate>
+		<form name="studenttransportchangeplayschoolform" ng-submit="studentTransportChangePlaySchoolSubmit()" novalidate class="form-validation">
 			<div class="row">
 				<div class="col-md-6">					
 					<div class="form-group">
-						<label>Enter Transport Chang ID</label>
-						<input class="form-control" type="text" name="transport_change_id" ng-model="studentTransportChangePlaySchoolData.transport_change_id">
+						<label>Enter Transport Change ID</label>
+						<input class="form-control" type="text" name="transport_change_id" ng-model="studentTransportChangePlaySchoolData.transport_change_id" required>
 					</div>
 					<div class="form-group">	
 					<div class="text-right">
@@ -15,21 +15,21 @@
 					</div>
 					<div class="form-group">
 						<label>Enter Date</label>
-						<input class="form-control" type="text" name="entrydate" ng-model="studentTransportChangePlaySchoolData.entrydate">
+						<input class="form-control" type="text" name="entrydate" ng-model="studentTransportChangePlaySchoolData.entrydate" required>
 					</div>
 
 					<div class="form-group">
 						<label>Enter Register Number</label>
-						<input class="form-control" type="text" name="registernumber" ng-model="studentTransportChangePlaySchoolData.registernumber">
+						<input class="form-control" type="text" name="registernumber" ng-model="studentTransportChangePlaySchoolData.registernumber" required>
 					</div>
 					<div class="form-group">
 						<label>Enter Name</label>
-						<input class="form-control" type="text" name="name" ng-model="studentTransportChangePlaySchoolData.name">
+						<input class="form-control" type="text" name="name" ng-model="studentTransportChangePlaySchoolData.name" required>
 					</div>
 
 					<div class="form-group">
 						<label>Select Program</label>
-						<select class="form-control" ng-model="studentTransportChangePlaySchoolData.program">
+						<select class="form-control" ng-model="studentTransportChangePlaySchoolData.program" required>
 							<option>Select Program</option>
 							<option>TODDLER PROGRAM</option>
 							<option>PREKG</option>
@@ -39,7 +39,7 @@
 					</div>
 					<div class="form-group">
 						<label>Select Section</label>
-						<select class="form-control" ng-model="studentTransportChangePlaySchoolData.section">
+						<select class="form-control" ng-model="studentTransportChangePlaySchoolData.section" required>
 							<option>Select Section</option>
 							<option>SECTION - A</option>
 							<option>SECTION - B</option>
@@ -50,7 +50,7 @@
 
 					<div class="form-group">
 						<label>Academic Year</label>
-						<select class="form-control" ng-model="studentTransportChangePlaySchoolData.academicYear">
+						<select class="form-control" ng-model="studentTransportChangePlaySchoolData.academicYear" required>
 							<option>Select Academic Year</option>
 							<option>2017-2018</option>
 							<option>2016-2017</option>
@@ -65,7 +65,7 @@
 
 					<div class="form-group">
 						<label>Select Required Transport From</label>
-						<select class="form-control" ng-model="studentTransportChangePlaySchoolData.transport_required">
+						<select class="form-control" ng-model="studentTransportChangePlaySchoolData.transport_required" required>
 							<option>Select Required Transport</option>
 							<option>OPENING DATE</option>
 							<option>TERM - I</option>
@@ -74,7 +74,7 @@
 					</div>
 					<div class="form-group">
 						<label>Select Stage</label>
-						<select class="form-control" ng-model="studentTransportChangePlaySchoolData.transport_required">
+						<select class="form-control" ng-model="studentTransportChangePlaySchoolData.transport_required" required>
 							<option>Select Stage</option>
 							<option>Stage - I</option>
 							<option>Stage - II</option>
@@ -83,34 +83,34 @@
 					</div>
 					<div class="form-group">
 						<label>Enter Transport Initial Fees</label>
-						<input class="form-control" type="text" name="transport_init_fees" ng-model="studentTransportChangePlaySchoolData.transport_init_fees">
+						<input class="form-control" type="text" name="transport_init_fees" ng-model="studentTransportChangePlaySchoolData.transport_init_fees" required>
 					</div>
 					<div class="form-group">
 						<label>Enter Transport Term-I Fees</label>
-						<input class="form-control" type="text" name="transport_term1_fees" ng-model="studentTransportChangePlaySchoolData.transport_term1_fees">
+						<input class="form-control" type="text" name="transport_term1_fees" ng-model="studentTransportChangePlaySchoolData.transport_term1_fees" required>
 					</div>
 					<div class="form-group">
 						<label>Enter Transport Term-II Fees</label>
-						<input class="form-control" type="text" name="transport_term2_fees" ng-model="studentTransportChangePlaySchoolData.transport_term2_fees">
+						<input class="form-control" type="text" name="transport_term2_fees" ng-model="studentTransportChangePlaySchoolData.transport_term2_fees" required>
 					</div>
 					<div class="form-group">
 						<label>Enter Transport Total Fees</label>
-						<input class="form-control" type="text" name="transport_total_fees" ng-model="studentTransportChangePlaySchoolData.transport_total_fees">
+						<input class="form-control" type="text" name="transport_total_fees" ng-model="studentTransportChangePlaySchoolData.transport_total_fees" required>
 					</div>
 					<div class="form-group">
 						<label>Enter Remarks about Change</label>
-						<input class="form-control" type="text" name="remarks" ng-model="studentTransportChangePlaySchoolData.remarks">
+						<input class="form-control" type="text" name="remarks" ng-model="studentTransportChangePlaySchoolData.remarks" required>	
 					</div>
 					<div class="form-group">
 						<label>Login User</label>
-						<input class="form-control" type="text" name="loginuser" ng-model="studentTransportChangePlaySchoolData.loginuser">
+						<input class="form-control" type="text" name="loginuser" ng-model="studentTransportChangePlaySchoolData.loginuser" required>
 					</div>
 
 				</div>
 			</div>
 			<div class="text-right">
 				<input type="button" class="btn btn-default" value="CLEAR">
-				<input type="submit" class="btn btn-primary" value="SUBMIT">
+				<input ng-disabled="studenttransportchangeplayschoolform.$invalid" type="submit" class="btn btn-primary" value="SUBMIT">
 			</div>
 		</form>
 	</div>
