@@ -1082,6 +1082,10 @@ span.dashboardmentu-label {
   margin-top: 30px;
 }
 
+.gutter-top-20 {
+  margin-top: 20px;
+}
+
 .form-validation input.ng-invalid.ng-touched {
   border-color: #FA787E;
 }
