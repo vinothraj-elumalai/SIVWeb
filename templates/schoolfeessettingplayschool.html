@@ -1,16 +1,16 @@
 <h1>PLAYSCHOOL SCHOOL FEES SETTING</h1> 
 <div class="row">
 	<div class="col-md-12">
-		<form name="playschoolfeessettingform" ng-submit="playschoolFeesSettingSubmit()" novalidate>
+		<form name="playschoolfeessettingform" ng-submit="playschoolFeesSettingSubmit()" novalidate class="form-validation">
 			<div class="row">
 				<div class="col-md-6">					
 					<div class="form-group">
 						<label>Fees Setting Date</label>
-						<input class="form-control" type="text" name="feessettingdate" ng-model="playschoolfeessettingdata.feessettingdate">
+						<input class="form-control" type="text" name="feessettingdate" ng-model="playschoolfeessettingdata.feessettingdate" required>
 					</div>
 					<div class="form-group">
 						<label>PROGRAMME NAME</label>
-						<select class="form-control" ng-model="playschoolfeessettingdata.program">
+						<select class="form-control" ng-model="playschoolfeessettingdata.program" required>
 							<option>Select Program Name</option>
 							<option>TODDLER PROGRAM</option>
 							<option>PRE KG</option>
@@ -20,7 +20,7 @@
 					</div>
 					<div class="form-group">
 						<label>Academic Year</label>
-						<select class="form-control" ng-model="playschoolfeessettingdata.academicyear">
+						<select class="form-control" ng-model="playschoolfeessettingdata.academicyear" required>
 							<option>Select Year</option>
 							
 							<option>2017-2018</option>
@@ -30,42 +30,42 @@
 					</div>
 					<div class="form-group">
 						<label>Admission Fees</label>
-						<input class="form-control" type="text" name="admissionfees" ng-model="playschoolfeessettingdata.admissionfees">
+						<input class="form-control" type="text" name="admissionfees" ng-model="playschoolfeessettingdata.admissionfees" required>
 					</div>
 					<div class="form-group">
 						<label>Admission Fees Due Date</label>
-						<input class="form-control" type="text" name="admissionfees_due_date" ng-model="playschoolfeessettingdata.admissionfees_due_date">
+						<input class="form-control" type="text" name="admissionfees_due_date" ng-model="playschoolfeessettingdata.admissionfees_due_date" required>
 					</div>
 					<div class="form-group">
 						<label>Term1 School Fees</label>
-						<input class="form-control" type="text" name="term1fees" ng-model="playschoolfeessettingdata.term1fees">
+						<input class="form-control" type="text" name="term1fees" ng-model="playschoolfeessettingdata.term1fees" required>
 					</div>
 					<div class="form-group">
 						<label>Term1 School Fees Due Date</label>
-						<input class="form-control" type="text" name="term1fees_due_date" ng-model="playschoolfeessettingdata.term1fees_due_date">
+						<input class="form-control" type="text" name="term1fees_due_date" ng-model="playschoolfeessettingdata.term1fees_due_date" required>
 					</div>
 					<div class="form-group">
 						<label>Term2 School Fees</label>
-						<input class="form-control" type="text" name="term2fees" ng-model="playschoolfeessettingdata.term2fees">
+						<input class="form-control" type="text" name="term2fees" ng-model="playschoolfeessettingdata.term2fees" required>
 					</div>
 					<div class="form-group">
 						<label>Term2 School Fees Due Date</label>
-						<input class="form-control" type="text" name="term2fees_due_date" ng-model="playschoolfeessettingdata.term2fees_due_date">
+						<input class="form-control" type="text" name="term2fees_due_date" ng-model="playschoolfeessettingdata.term2fees_due_date" required>
 					</div>
 					<div class="form-group">
 						<label>Grand Total Fees</label>
-						<input class="form-control" type="text" name="grandtotalfees" ng-model="playschoolfeessettingdata.grandtotalfees">
+						<input class="form-control" type="text" name="grandtotalfees" ng-model="playschoolfeessettingdata.grandtotalfees" required>
 					</div>
 					<div class="form-group">
 						<label>Login User</label>
-						<input class="form-control" type="text" name="loginuser" ng-model="playschoolfeessettingdata.loginuser">
+						<input class="form-control" type="text" name="loginuser" ng-model="playschoolfeessettingdata.loginuser" required>
 					</div>
 					
 				</div>
 			</div>
 			<div class="text-right">
 				<input type="button" class="btn btn-default" value="CLEAR">
-				<input type="submit" class="btn btn-primary" value="SAVE">
+				<input ng-disabled="playschoolfeessettingform.$invalid" type="submit" class="btn btn-primary" value="SAVE">
 			</div>
 		</form>
 	</div>
