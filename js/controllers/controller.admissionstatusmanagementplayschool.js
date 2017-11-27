@@ -2,7 +2,7 @@ sivwebapp.controller('admissionStatusManagementPlaySchoolCtrl', function($scope,
     $scope.getAdmissionStatusPlaySchoolSubmit = function(){
     	console.log($scope.getAdmissionStatusManagementData);
         $http({
-                url: "http://localhost:8080/api/v1/applicationfollowup",
+                url: "http://localhost:8080/api/v1/admissionStatusManagementPlaySchool",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.getAdmissionStatusManagementData)
