@@ -400,12 +400,12 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/applicationsaleplayschool.html",
         controller : "playSchoolapplicationSaleCtrl"
     })
-     .when("/psdailyattendance", {
-        templateUrl : "templates/psdailyattendence.html",
+     .when("/studentdailyattendenceplayschool", {
+        templateUrl : "templates/studentdailyattendenceplayschool.html",
         controller : "psdailyattendenceCtrl"
     })
-      .when("/pschildpickupdetails", {
-        templateUrl : "templates/pschildpickupdetails.html",
+      .when("/childpickupdetailsplayschool", {
+        templateUrl : "templates/childpickupdetailsplayschool.html",
         controller : "childpickupdetailsCtrl"
     })
       .when("/admissionplayschool", {
@@ -475,6 +475,22 @@ sivwebapp.config(function($routeProvider) {
       .when("/admissionstatusmanagementplayschool", {
         templateUrl : "templates/admissionstatusmanagementplayschool.html",
         controller : "admissionStatusManagementPlaySchoolCtrl"
+    })
+      .when("/individualstudentprogressviewplayschool", {
+        templateUrl : "templates/individualstudentprogressviewplayschool.html",
+        controller : "studentIndividualProgressViewCtrl"
+    })
+      .when("/studentprofileviewplayschool", {
+        templateUrl : "templates/studentprofileviewplayschool.html",
+        controller : "studentProfileViewPlaySchoolCtrl"
+    })
+      .when("/studentfeespaymenthistoryplayschool", {
+        templateUrl : "templates/studentfeespaymenthistoryplayschool.html",
+        controller : "studentFeesPaymentHistoryPlaySchoolCtrl"
+    })
+      .when("/studenthomeworkviewplayschool", {
+        templateUrl : "templates/studenthomeworkviewplayschool.html",
+        controller : "studentHomeWorkPlaySchoolCtrl"
     })
 
     .otherwise({
