@@ -400,12 +400,12 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/applicationsaleplayschool.html",
         controller : "playSchoolapplicationSaleCtrl"
     })
-     .when("/psdailyattendance", {
-        templateUrl : "templates/psdailyattendence.html",
+     .when("/studentdailyattendenceplayschool", {
+        templateUrl : "templates/studentdailyattendenceplayschool.html",
         controller : "psdailyattendenceCtrl"
     })
-      .when("/pschildpickupdetails", {
-        templateUrl : "templates/pschildpickupdetails.html",
+      .when("/childpickupdetailsplayschool", {
+        templateUrl : "templates/childpickupdetailsplayschool.html",
         controller : "childpickupdetailsCtrl"
     })
       .when("/admissionplayschool", {
@@ -427,6 +427,70 @@ sivwebapp.config(function($routeProvider) {
       .when("/feespaymentplayschool", {
         templateUrl : "templates/feespaymentplayschool.html",
         controller : "feesPaymentPlaySchoolCtrl"
+    })
+      .when("/transportchangeplayschool", {
+        templateUrl : "templates/studenttransportchangeplayschool.html",
+        controller : "studentTransportChangePlaySchoolCtrl"
+    })
+      .when("/eventscircularsplayschool", {
+        templateUrl : "templates/eventscircularsplayschool.html",
+        controller : "eventsCircularsPlaySchoolCtrl"
+    })
+      .when("/staffpersonalinformationplayschool", {
+        templateUrl : "templates/staffpersonalinformationplayschool.html",
+        controller : "staffPersonalInformationPlaySchoolCtrl"
+    })
+      .when("/studenthomeworkplayschool", {
+        templateUrl : "templates/studenthomeworkplayschool.html",
+        controller : "studentHomeWorkPlaySchoolCtrl"
+    })
+      .when("/childspickupplayschoolentry", {
+        templateUrl : "templates/childspickupplayschoolentry.html",
+        controller : "childsPickupPlaySchoolEntryCtrl"
+    })
+      .when("/photosuploadplayschool", {
+        templateUrl : "templates/photosuploadplayschool.html",
+        controller : "photosUploadPlaySchoolCtrl"
+    })
+      .when("/videosuploadplayschool", {
+        templateUrl : "templates/videosuploadplayschool.html",
+        controller : "videosUploadPlaySchoolCtrl"
+    })
+      .when("/studentsnamelistplayschool", {
+        templateUrl : "templates/studentsnamelistplayschool.html",
+        controller : "studentsNameListPlaySchoolCtrl"
+    })
+      .when("/studentsmonthlyreportplayschool", {
+        templateUrl : "templates/studentsmonthlyreportplayschool.html",
+        controller : "studentsMonthlyReportPlaySchoolCtrl"
+    })
+      .when("/studentattendanceplayschoolmanagementview", {
+        templateUrl : "templates/studentattendanceplayschoolmanagentview.html",
+        controller : "studentAttendancePlaySchoolManagementViewCtrl"
+    })
+      .when("/dailyfeesreportmanagementplayschool", {
+        templateUrl : "templates/dailyfeesreportmanagementplayschool.html",
+        controller : "dailyfeesReportPlaySchoolCtrl"
+    })
+      .when("/admissionstatusmanagementplayschool", {
+        templateUrl : "templates/admissionstatusmanagementplayschool.html",
+        controller : "admissionStatusManagementPlaySchoolCtrl"
+    })
+      .when("/individualstudentprogressviewplayschool", {
+        templateUrl : "templates/individualstudentprogressviewplayschool.html",
+        controller : "studentIndividualProgressViewCtrl"
+    })
+      .when("/studentprofileviewplayschool", {
+        templateUrl : "templates/studentprofileviewplayschool.html",
+        controller : "studentProfileViewPlaySchoolCtrl"
+    })
+      .when("/studentfeespaymenthistoryplayschool", {
+        templateUrl : "templates/studentfeespaymenthistoryplayschool.html",
+        controller : "studentFeesPaymentHistoryPlaySchoolCtrl"
+    })
+      .when("/studenthomeworkviewplayschool", {
+        templateUrl : "templates/studenthomeworkviewplayschool.html",
+        controller : "studentHomeWorkPlaySchoolCtrl"
     })
 
     .otherwise({
