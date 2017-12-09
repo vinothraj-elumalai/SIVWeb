@@ -6,7 +6,7 @@
 				<div class="col-md-6">					
 					<div class="form-group">
 						<label>Date of Join</label>
-						<input class="form-control" type="text" name="date_of_join" ng-model="staffpersonalinformationplayschooldata.date_of_join">
+						<input class="form-control" type="text" name="dateofjoin" ng-model="staffpersonalinformationplayschooldata.dateofjoin">
 					</div>
 					<div class="form-group">
 						<label>Staff ID</label>
@@ -39,6 +39,16 @@
 						<input class="form-control" type="text" name="age" ng-model="staffpersonalinformationplayschooldata.age">
 				    </div>
                     <div class="form-group">
+						<label>Select Gender</label>
+						<select class="form-control" ng-model="staffpersonalinformationplayschooldata.gender">
+							<option>Select Gender</option>
+							<option>Male</option>
+							<option>FeMale</option>
+							<option>Others</option>
+						</select>
+					</div>
+
+                    <div class="form-group">
 						<label>Blood Group</label>
 						<input class="form-control" type="text" name="bloodgroup" ng-model="staffpersonalinformationplayschooldata.bloodgroup">
 				    </div>
@@ -46,6 +56,15 @@
 						<label>Marital Status</label>
 						<input class="form-control" type="text" name="maritalstatus" ng-model="staffpersonalinformationplayschooldata.maritalstatus">
 				    </div>
+                    <div class="form-group">
+						<label>Aadhar Number</label>
+						<input class="form-control" type="text" name="aadharnumber" ng-model="staffpersonalinformationplayschooldata.aadharnumber">
+				    </div>
+                    <div class="form-group">
+						<label>PAN Number</label>
+						<input class="form-control" type="text" name="panno" ng-model="staffpersonalinformationplayschooldata.panno">
+				    </div>
+
                     <div class="form-group">
 						<label>Father's Name</label>
 						<input class="form-control" type="text" name="fathersname" ng-model="staffpersonalinformationplayschooldata.fathersname">
@@ -112,7 +131,7 @@
 				    </div>
 				    <div class="form-group">
 						<label>Month and Year of Pass</label>
-						<input class="form-control" type="text" name="month_year_of_pass" ng-model="staffpersonalinformationplayschooldata.month_year_of_pass">
+						<input class="form-control" type="text" name="monthyearofpass" ng-model="staffpersonalinformationplayschooldata.monthyearofpass">
 				    </div>
 				    <div class="form-group">
 						<label>Experience if any</label>
@@ -120,7 +139,7 @@
 				    </div>
 				    <div class="form-group">
 						<label>Number of years experience</label>
-						<input class="form-control" type="text" name="no_of_years" ng-model="staffpersonalinformationplayschooldata.no_of_years">
+						<input class="form-control" type="text" name="noofyears" ng-model="staffpersonalinformationplayschooldata.noofyears">
 				    </div>
 
 
