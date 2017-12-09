@@ -6,4 +6,5 @@ pg_dump -U postgres testdb >>C:\wamp\www\SIVWeb\database\10102017.sql
 
 to extract dump
 
-psql -U postgres -h localhost -d testdb -f C:\wamp\www\SIVWeb\database\10102017.sql
+psql -U postgres -h localhost -d testdb -f C:\wamp\www\SIVWeb\database\06112017.sql
+
