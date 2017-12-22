@@ -1,8 +1,8 @@
-sivwebapp.controller('circularCtrl', function($scope, $http) {
+sivwebapp.controller('circularCtrl', function($scope, $http, hosturl) {
     $scope.circularSubmit = function(){
     	console.log($scope.circulardata);
         $http({
-                url: "http://localhost:8080/api/v1/stenocircular",
+                url: hosturl+"/api/v1/stenocircular",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.circulardata)

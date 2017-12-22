@@ -1,8 +1,8 @@
-sivwebapp.controller('libraryMemberDetailEntryCtrl', function($scope, $http) {
+sivwebapp.controller('libraryMemberDetailEntryCtrl', function($scope, $http, hosturl) {
     $scope.libraryMemberEntrySubmit = function(){
     	console.log($scope.librarymemberdata);
         $http({
-                url: "http://localhost:8080/api/v1/librarymemberdetail",
+                url: hosturl+"/api/v1/librarymemberdetail",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.librarymemberdata)

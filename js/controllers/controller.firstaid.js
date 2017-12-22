@@ -1,8 +1,8 @@
-sivwebapp.controller('firstaidEntryCtrl', function($scope, $http) {
+sivwebapp.controller('firstaidEntryCtrl', function($scope, $http, hosturl) {
     $scope.firstaidEntrySubmit = function(){
     	console.log($scope.firstaidentrtydata);
         $http({
-                url: "http://localhost:8080/api/v1/firstaidentry",
+                url: hosturl+"/api/v1/firstaidentry",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.firstaidentrtydata)

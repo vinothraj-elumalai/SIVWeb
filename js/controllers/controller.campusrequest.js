@@ -1,8 +1,8 @@
-sivwebapp.controller('campusRequestCtrl', function($scope, $http) {
+sivwebapp.controller('campusRequestCtrl', function($scope, $http, hosturl) {
     $scope.campusRequestSubmit = function(){
     	console.log($scope.campusrequestdata);
         $http({
-                url: "http://localhost:8080/api/v1/campusrequest",
+                url: hosturl+"/api/v1/campusrequest",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.campusrequestdata)

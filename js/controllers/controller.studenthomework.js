@@ -1,8 +1,8 @@
-sivwebapp.controller('studentHomeWorkCtrl', function($scope, $http) {
+sivwebapp.controller('studentHomeWorkCtrl', function($scope, $http, hosturl) {
     $scope.studentHomeWorkSubmit = function(){
     	console.log($scope.studenthomeworkdata);
         $http({
-                url: "http://localhost:8080/api/v1/studenthomework",
+                url: hosturl+"/api/v1/studenthomework",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.studenthomeworkdata)

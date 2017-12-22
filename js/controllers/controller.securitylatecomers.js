@@ -1,8 +1,8 @@
-sivwebapp.controller('securityLateComersCtrl', function($scope, $http) {
+sivwebapp.controller('securityLateComersCtrl', function($scope, $http, hosturl) {
     $scope.securityLateComersSubmit = function(){
     	console.log($scope.securitylatecomersdata);
         $http({
-                url: "http://localhost:8080/api/v1/securitylatecomers",
+                url: hosturl+"/api/v1/securitylatecomers",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.securitylatecomersdata)

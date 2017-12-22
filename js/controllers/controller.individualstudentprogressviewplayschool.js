@@ -1,8 +1,8 @@
-sivwebapp.controller('studentIndividualProgressViewCtrl', function($scope, $http) {
+sivwebapp.controller('studentIndividualProgressViewCtrl', function($scope, $http, hosturl) {
     $scope.individualStudentProgressViewPlaySchoolSubmit = function(){
     	console.log($scope.studentprogressinfoview);
         $http({
-                url: "http://localhost:8080/api/v1/studentpersonalinformation",
+                url: hosturl+"/api/v1/studentpersonalinformation",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.studentprogressinfoview)
@@ -15,7 +15,7 @@ sivwebapp.controller('studentIndividualProgressViewCtrl', function($scope, $http
 
      $scope.getStudentProgressInfoView = function(){
         $http({
-                url: "http://localhost:8080/api/v1/studentpersonalinformation/getStudentPersonalInformationDetail",
+                url: hosturl+"/api/v1/studentpersonalinformation/getStudentPersonalInformationDetail",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.studentpersonalinfodata1)

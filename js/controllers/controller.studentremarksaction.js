@@ -1,8 +1,8 @@
-sivwebapp.controller('studentRemarksActionCtrl', function($scope, $http) {
+sivwebapp.controller('studentRemarksActionCtrl', function($scope, $http, hosturl) {
     $scope.studentRemarksActionSubmit = function(){
     	console.log($scope.stutentremarkactiondata);
         $http({
-                url: "http://localhost:8080/api/v1/studentremarksaction",
+                url: hosturl+"/api/v1/studentremarksaction",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.stutentremarkactiondata)

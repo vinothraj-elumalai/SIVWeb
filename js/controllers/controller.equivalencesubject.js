@@ -1,8 +1,8 @@
-sivwebapp.controller('equivalenceSubjectCtrl', function($scope, $http) {
+sivwebapp.controller('equivalenceSubjectCtrl', function($scope, $http, hosturl) {
     $scope.equivalenceSubjectSubmit = function(){
     	console.log($scope.equivalencesubjectdata);
         $http({
-                url: "http://localhost:8080/api/v1/equivalencesubject",
+                url: hosturl+"/api/v1/equivalencesubject",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.equivalencesubjectdata)

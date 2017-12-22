@@ -1,8 +1,8 @@
-sivwebapp.controller('trainconcessionCtrl', function($scope, $http) {
+sivwebapp.controller('trainconcessionCtrl', function($scope, $http, hosturl) {
     $scope.trainconcessionSubmit = function(){
     	console.log($scope.trainconcessiondata);
         $http({
-                url: "http://localhost:8080/api/v1/trainconcession",
+                url: hosturl+"/api/v1/trainconcession",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.trainconcessiondata)

@@ -1,8 +1,8 @@
-sivwebapp.controller('diplomaBranchBoardExamTimetableCtrl', function($scope, $http) {
+sivwebapp.controller('diplomaBranchBoardExamTimetableCtrl', function($scope, $http, hosturl) {
     $scope.diplomaBranchBoardExamTimeTableSubmit = function(){
     	console.log($scope.diplomaBranchboardexamtimetabledata);
         $http({
-                url: "http://localhost:8080/api/v1/diplomabranchboardexamtimetableheader",
+                url: hosturl+"/api/v1/diplomabranchboardexamtimetableheader",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.diplomaBranchboardexamtimetabledata)

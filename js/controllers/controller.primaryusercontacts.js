@@ -1,8 +1,8 @@
-sivwebapp.controller('primaryUserContactCtrl', function($scope, $http) {
+sivwebapp.controller('primaryUserContactCtrl', function($scope, $http, hosturl) {
     $scope.primaryUserContactSubmit = function(){
     	console.log($scope.primaryusercontactdata);
         $http({
-                url: "http://localhost:8080/api/v1/primaryusercontact",
+                url: hosturl+"/api/v1/primaryusercontact",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.primaryusercontactdata)

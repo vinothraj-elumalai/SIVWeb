@@ -1,8 +1,8 @@
-sivwebapp.controller('admissionCounsellingCtrl', function($scope, $http) {
+sivwebapp.controller('admissionCounsellingCtrl', function($scope, $http, hosturl) {
     $scope.admissionCounsellingSubmit = function(){
     	console.log($scope.admissioncounsellingdata);
         $http({
-                url: "http://localhost:8080/api/v1/admissioncounselling",
+                url: hosturl+"/api/v1/admissioncounselling",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.admissioncounsellingdata)
@@ -16,7 +16,7 @@ sivwebapp.controller('admissionCounsellingCtrl', function($scope, $http) {
 
     $scope.searchAppNo = function(){
         $http({
-                url: "http://localhost:8080/api/v1/admissioncounselling/getApplcationDetail",
+                url: hosturl+"/api/v1/admissioncounselling/getApplcationDetail",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.searchAppnoData)

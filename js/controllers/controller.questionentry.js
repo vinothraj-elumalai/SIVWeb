@@ -1,8 +1,8 @@
-sivwebapp.controller('questionEntryCtrl', function($scope, $http) {
+sivwebapp.controller('questionEntryCtrl', function($scope, $http, hosturl) {
     $scope.questionEntrySubmit = function(){
     	console.log($scope.questionentrydata);
         $http({
-                url: "http://localhost:8080/api/v1/questionentry",
+                url: hosturl+"/api/v1/questionentry",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.questionentrydata)

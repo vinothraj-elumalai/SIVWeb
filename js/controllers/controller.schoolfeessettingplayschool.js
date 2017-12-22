@@ -1,8 +1,8 @@
-sivwebapp.controller('schoolFeesSettingPlaySchoolCtrl', function($scope, $http) {
+sivwebapp.controller('schoolFeesSettingPlaySchoolCtrl', function($scope, $http, hosturl) {
     $scope.playschoolFeesSettingSubmit = function(){
     	console.log($scope.playschoolfeessettingdata);
         $http({
-                url: "http://localhost:8080/api/v1/playschoolschoolfeessetting",
+                url: hosturl+"/api/v1/playschoolschoolfeessetting",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.playschoolfeessettingdata)

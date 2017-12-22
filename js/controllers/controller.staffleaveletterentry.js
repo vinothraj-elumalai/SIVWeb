@@ -1,8 +1,8 @@
-sivwebapp.controller('staffLeaveLetterEntryCtrl', function($scope, $http) {
+sivwebapp.controller('staffLeaveLetterEntryCtrl', function($scope, $http, hosturl) {
     $scope.staffLeaveLetterEntrySubmit = function(){
     	console.log($scope.staffleaveletterentrydata);
         $http({
-                url: "http://localhost:8080/api/v1/staffleaveletterentry",
+                url: hosturl+"/api/v1/staffleaveletterentry",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.staffleaveletterentrydata)

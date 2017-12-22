@@ -1,4 +1,4 @@
-sivwebapp.controller('dashboardCtrl', function(constantService, $scope, $location, $rootScope) {
+sivwebapp.controller('dashboardCtrl', function(constantService, $scope, $location, $rootScope, hosturl) {
   // $scope.menulist= constantService.usermenu('MGMT');
   $scope.menulist= constantService.usermenu($rootScope.userStatus.userRole);
 

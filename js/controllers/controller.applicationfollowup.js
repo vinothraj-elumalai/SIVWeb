@@ -1,8 +1,8 @@
-sivwebapp.controller('applicationFollowUpCtrl', function($scope, $http) {
+sivwebapp.controller('applicationFollowUpCtrl', function($scope, $http, hosturl) {
     $scope.applicationFollowUpSubmit = function(){
     	console.log($scope.applicationfollowupdata);
         $http({
-                url: "http://localhost:8080/api/v1/applicationfollowup",
+                url: hosturl+"/api/v1/applicationfollowup",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.applicationfollowupdata)

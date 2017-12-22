@@ -6,89 +6,104 @@
 				<div class="col-md-6">					
 					<div class="form-group">
 						<label>Date</label>
+						<label class="label-error-message" ng-bind="billDateErrMsg" ng-show="showbillDateErr"></label>
 						<input class="form-control" type="text" name="billdate" ng-model="feespaymentplayschooldata.billdate">
 					</div>
 					<div class="form-group">
-						<label>Bill No</label>
-						<input class="form-control" type="text" name="billno" ng-model="feespaymentplayschooldata.billno">
-					</div>
-					<div class="form-group">
 						<label>Registration No</label>
+						<label class="label-error-message" ng-bind="registerNumberErrMsg" ng-show="showRegisterNumberErr"></label>
 						<input class="form-control" type="text" name="registernumber" ng-model="feespaymentplayschooldata.registernumber">
 					</div>
 					<div class="form-group">
-						<label>Admission No</label>
+						<label>Candidate Name</label>
+						<label class="label-error-message" ng-bind="candidateNameErrMsg" ng-show="showCandidateNameErr"></label>
 						<input class="form-control" type="text" name="name" ng-model="name">
 					</div>
 					<div class="form-group">
 						<label>Program</label>
+						<label class="label-error-message" ng-bind="programErrMsg" ng-show="showProgramErr"></label>
 						<input class="form-control" type="text" name="program" ng-model="feespaymentplayschooldata.program">
 					</div>
 					<div class="form-group">
 						<label>Section</label>
+						<label class="label-error-message" ng-bind="sectionErrMsg" ng-show="showSectionErr"></label>
 						<input class="form-control" type="text" name="section" ng-model="feespaymentplayschooldata.section">
 					</div>
 					<div class="form-group">
 						<label>Academic Year</label>
+						<label class="label-error-message" ng-bind="academicyearErrMsg" ng-show="showAcademicyearErr"></label>
 						<input class="form-control" type="text" name="academicyear" ng-model="feespaymentplayschooldata.academicyear">
 					</div>
 				
 					<div class="form-group">
 						<label>School Fees Title</label>
-						<select class="form-control" ng-model="feespaymentplayschooldata.school_fees_title">
+						<label class="label-error-message" ng-bind="schoolFeesTitleErrMsg" ng-show="showSchoolFeesTitleErr"></label>
+						<select class="form-control" ng-model="feespaymentplayschooldata.schoolfeestitle">
 							<option>Select School Fees Title</option>
-							<option>Admission Fees</option>
-							<option>Term - I</option>
-							<option>Term - II</option>
+							<option>Registration Fees</option>
+							<option>First Installment</option>
+							<option>Second Installment</option>
+							<option>Full Fees</option>
 							
 						</select>
 					</div>
 					<div class="form-group">
-						<label>School Fees</label>
-						<input class="form-control" type="text" name="school_fees" ng-model="feespaymentplayschooldata.school_fees">
+						<label>Material Kit Fees</label>
+						<label class="label-error-message" ng-bind="matierialkitFeesErrMsg" ng-show="showMaterilaKitFeesErr"></label>
+						<input class="form-control" type="text" name="materialkitfees" ng-model="feespaymentplayschooldata.materialkitfees">
 					</div>
                     <div class="form-group">
-						<label>School Fees Paid</label>
-						<input class="form-control" type="text" name="school_fees_paid" ng-model="feespaymentplayschooldata.school_fees_paid">
-					</div>
-					<div class="form-group">
-						<label>Transport Fees Title</label>
-						<select class="form-control" ng-model="feespaymentplayschooldata.transport_fees_title">
-							<option>Select Transport Fees Title</option>
-							<option>Intial Fees</option>
-							<option>Term - I</option>
-							<option>Term - II</option>
-							
-						</select>
+						<label>Material Kit Fees Paid</label>
+						<label class="label-error-message" ng-bind="materialkitFeesPaidErrMsg" ng-show="showMaterialKitFeesPaidErr"></label>
+						<input class="form-control" type="text" name="materialkitfeespaid" ng-model="feespaymentplayschooldata.materialkitfeespaid">
 					</div>
 
 					<div class="form-group">
-						<label>Transport Fees </label>
-						<input class="form-control" type="text" name="transport_fees" ng-model="feespaymentplayschooldata.transport_fees">
+						<label>Activity Fees </label>
+						<label class="label-error-message" ng-bind="activityFeesMsg" ng-show="showActivityFeesErr"></label>
+						<input class="form-control" type="text" name="activityfees" ng-model="feespaymentplayschooldata.activityfees">
 					</div>
                     <div class="form-group">
-						<label>Transport Fees Paid</label>
-						<input class="form-control" type="text" name="transport_fees_paid" ng-model="feespaymentplayschooldata.transport_fees_paid">
+						<label>Activity Fees Paid</label>
+						<label class="label-error-message" ng-bind="activityFeesPaidErrMsg" ng-show="showActivityFeesPaidErr"></label>
+						<input class="form-control" type="text" name="activityfeespaid" ng-model="feespaymentplayschooldata.activityfeespaid">
 					</div>
                     <div class="form-group">
-						<label>Total Fees </label>
+						<label>Tuition Fees </label>
+						<label class="label-error-message" ng-bind="tutionFeesErrMsg" ng-show="showTuitionFeesErr"></label>
+						<input class="form-control" type="text" name="tuitionfees" ng-model="feespaymentplayschooldata.tuitionfees">
+					</div>
+					<div class="form-group">
+						<label>Tuition Fees Paid</label>
+						<label class="label-error-message" ng-bind="tuitionFeesPaidErrMsg" ng-show="showTuitionFeesPaidErr"></label>
+						<input class="form-control" type="text" name="tuitionfeespaid" ng-model="feespaymentplayschooldata.tuitionfeespaid">
+					</div>
+					<div class="form-group">
+						<label>Total Fees</label>
+						<label class="label-error-message" ng-bind="totalFeesErrMsg" ng-show="showTotalFeesErr"></label>
 						<input class="form-control" type="text" name="totalfees" ng-model="feespaymentplayschooldata.totalfees">
 					</div>
 					<div class="form-group">
 						<label>Total Fees Paid</label>
-						<input class="form-control" type="text" name="total_fees_paid" ng-model="feespaymentplayschooldata.total_fees_paid">
+						<label class="label-error-message" ng-bind="totalFeesPaidErrMsg" ng-show="showTotalFeesPaidErr"></label>
+						<input class="form-control" type="text" name="totalfeespaid" ng-model="feespaymentplayschooldata.totalfeespaid">
 					</div>
+
 					<div class="form-group">
 						<label>Balance Fees</label>
-						<input class="form-control" type="text" name="balance" ng-model="feespaymentplayschooldata.balance">
+						<label class="label-error-message" ng-bind="balanceFeesErrMsg" ng-show="showBalanceFeesErr"></label>
+						<input class="form-control" type="text" name="balancefees" ng-model="feespaymentplayschooldata.balancefees">
 					</div>
+
 					<div class="form-group">
 						<label>Due Date</label>
+						<label class="label-error-message" ng-bind="dueDateErrMsg" ng-show="showDueDateErr"></label>
 						<input class="form-control" type="text" name="duedate" ng-model="feespaymentplayschooldata.duedate">
 					</div>
 					<div class="form-group">
 						<label>Payment Method</label>
-						<select class="form-control" ng-model="feespaymentplayschooldata.payment_method">
+						<label class="label-error-message" ng-bind="paymentMethodErrMsg" ng-show="showPaymentMethodErr"></label>
+						<select class="form-control" ng-model="feespaymentplayschooldata.paymentmethod">
 							<option>Select Payment Method</option>
 							<option>CASH</option>
 							<option>CHEQUE</option>
@@ -108,66 +123,8 @@
 					</div>
                     <div class="form-group">
 						<label>Bank Name</label>
+
 						<input class="form-control" type="text" name="bankname" ng-model="feespaymentplayschooldata.bankname">
-					</div>
-					<div class="form-group">
-						<label>Denomination</label>
-					</div>
-					<div class="form-group">
-						<label>2k</label>
-						<label>X</label>
-						<input type="text" name="text"  ng-model="text">
-						<label>=</label>
-						<input type="text" name="text" ng-model="text">
-					</div>
-					<div class="form-group">
-						<label>1k</label>
-						<label>X</label>
-						<input type="text" name="text"  ng-model="text">
-						<label>=</label>
-						<input type="text" name="text" ng-model="text">
-					</div>
-					<div class="form-group">
-						<label>500</label>
-						<label>X</label>
-						<input type="text" name="text"  ng-model="text">
-						<label>=</label>
-						<input type="text" name="text" ng-model="text">
-					</div>
-					<div class="form-group">
-						<label>100</label>
-						<label>X</label>
-						<input type="text" name="text"  ng-model="text">
-						<label>=</label>
-						<input type="text" name="text" ng-model="text">
-					</div>
-					<div class="form-group">
-						<label>50</label>
-						<label>X</label>
-						<input type="text" name="text"  ng-model="text">
-						<label>=</label>
-						<input type="text" name="text" ng-model="text">
-					</div>
-					<div class="form-group">
-						<label>20</label>
-						<label>X</label>
-						<input type="text" name="text"  ng-model="text">
-						<label>=</label>
-						<input type="text" name="text" ng-model="text">
-					</div>
-					<div class="form-group">
-						<label>10</label>
-						<label>X</label>
-						<input type="text" name="text"  ng-model="text">
-						<label>=</label>
-						<input type="text" name="text" ng-model="text">
-					</div>
-					<div class="form-group">
-						<label>coins</label>
-						<label>X</label>
-						<input type="text" name="text"  ng-model="text">
-						<label>=</label>
-						<input type="text" name="text" ng-model="text">
 					</div>
 					<div class="form-group">
 						<label>Login User</label>
@@ -177,7 +134,11 @@
 			</div>
 			<div class="text-right">
 				<input type="button" class="btn btn-default" value="CLEAR">
-				<input type="submit" class="btn btn-primary" value="CREATE USER">
+				<input type="submit" class="btn btn-primary" ng-click="autogenerate()"value="SAVE">
+			</div>
+			<div class="" ng-if="successmsgflag">
+				<p style="color: green">{{successmsg}}</p>
+				<p>Bill No: <strong style="color: red">{{generatedBillNo}}</strong></p>
 			</div>
 		</form>
 	</div>

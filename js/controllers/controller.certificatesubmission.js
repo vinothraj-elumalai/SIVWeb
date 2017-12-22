@@ -1,8 +1,8 @@
-sivwebapp.controller('certificateSubmissionCtrl', function($scope, $http) {
+sivwebapp.controller('certificateSubmissionCtrl', function($scope, $http, hosturl) {
     $scope.certificateSubmissionSubmit = function(){
     	console.log($scope.certificatesubmissiondata);
         $http({
-                url: "http://localhost:8080/api/v1/certificatesubmission",
+                url: hosturl+"/api/v1/certificatesubmission",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.certificatesubmissiondata)

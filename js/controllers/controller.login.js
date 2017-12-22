@@ -1,8 +1,8 @@
-sivwebapp.controller('loginCtrl', function($scope, $http, $location,$rootScope) {
+sivwebapp.controller('loginCtrl', function($scope, $http, $location,$rootScope, hosturl) {
     $scope.loginSubmit = function(){
     	console.log($scope.logindata);
         $http({
-                url: "http://localhost:8080/api/v1/user",
+                url: hosturl+"/api/v1/user",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.logindata)

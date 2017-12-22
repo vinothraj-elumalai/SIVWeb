@@ -1,8 +1,8 @@
-sivwebapp.controller('corporateEntryCtrl', function($scope, $http) {
+sivwebapp.controller('corporateEntryCtrl', function($scope, $http, hosturl) {
     $scope.corporateEntrySubmit = function(){
     	console.log($scope.corporatedata);
         $http({
-                url: "http://localhost:8080/api/v1/corporateentry",
+                url: hosturl+"/api/v1/corporateentry",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.corporatedata)

@@ -1,8 +1,8 @@
-sivwebapp.controller('transportInsuranceCtrl', function($scope, $http) {
+sivwebapp.controller('transportInsuranceCtrl', function($scope, $http, hosturl) {
     $scope.transportInsuranceSubmit = function(){
     	console.log($scope.transportinsurancedata);
         $http({
-                url: "http://localhost:8080/api/v1/transportinsurance",
+                url: hosturl+"/api/v1/transportinsurance",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.transportinsurancedata)

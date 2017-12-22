@@ -1,4 +1,4 @@
-sivwebapp.controller('commonCtrl', function($scope,constantService, $rootScope) {
+sivwebapp.controller('commonCtrl', function($scope,constantService, $rootScope, hosturl) {
     $scope.USERNAME = "testdata";
     $scope.menulist= constantService.usermenu('MGMT');
 

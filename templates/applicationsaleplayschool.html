@@ -1,3 +1,6 @@
+<head>
+<link href="css/style.css" rel="stylesheet">
+</head>
 <h1>PLAY SCHOOL APPLICATION SALE</h1>
 <div class="row">
 	<div class="col-md-12">
@@ -6,7 +9,8 @@
 				<div class="col-md-6">					
 					<div class="form-group">
 						<label>Category</label>
-						<select class="form-control" ng-model="playschoolapplicationsaledata.category" required>
+						<label class="label-error-message" ng-bind="categoryErrMsg" ng-show="showCategoryErr"></label>
+						<select class="form-control" ng-model="playschoolapplicationsaledata.category" required ng-change = "autogenerate()">
 							<option>Select Category</option>
 							<option>Application Sale</option>
 							<option>Enquiry</option>
@@ -14,14 +18,17 @@
 					</div>
 					<div class="form-group">
 						<label>Application No. / Enquiry No</label>
+						<label class="label-error-message" ng-bind="applnNumberErrMsg" ng-show="showApplnErr"></label>
 						<input class="form-control" type="text" name="applno" ng-model="playschoolapplicationsaledata.applno" required>
 					</div>
 					<div class="form-group">
 						<label>Sale Date</label>
+						<label class="label-error-message" ng-bind="saleDateErrMsg" ng-show="showSaleDateErr"></label>
 						<input class="form-control" type="text" name="saledate" ng-model="playschoolapplicationsaledata.saledate" required>
 					</div>
 					<div class="form-group">
 						<label>Application For</label>
+						<label class="label-error-message" ng-bind="saleAppforMsg" ng-show="showAppForErr"></label>
 						<select class="form-control" ng-model="playschoolapplicationsaledata.appfor" required>
 							<option>Select Application For</option>
 							<option>TODDLER PROGRAM</option>
@@ -31,28 +38,34 @@
 							</select>
 					</div>
 					<div class="form-group">
+
 						<label>Child's First Name</label>
+						<label class="label-error-message"ng-bind="candFirstNameMsg" ng-show="showCandFirstNameErr"></label>
 						<input class="form-control" type="text" name="candfirstname" ng-model="playschoolapplicationsaledata.candfirstname" required>
 					</div>
 					<div class="form-group">
 						<label>Child's Middle Name</label>
-						<input class="form-control" type="text" name="candmiddlename" ng-model="playschoolapplicationsaledata.candmiddlename" required>
+						<input class="form-control" type="text" name="candmiddlename" ng-model="playschoolapplicationsaledata.candmiddlename" >
 					</div>
 					<div class="form-group">
 						<label>Child's Last Name</label>
+						<label class="label-error-message" ng-bind="candLastNameMsg" ng-show="showCandLastNameErr"></label>
 						<input class="form-control" type="text" name="candlastname" ng-model="playschoolapplicationsaledata.candlastname" required>
 					</div>
 					<div class="form-group">
 						<label>Child's Date of Birth</label>
+						<label class="label-error-message" ng-bind="candDOBMsg" ng-show="showCandDOBErr"></label>
 						<input class="form-control" type="text" name="dateofbirth" ng-model="playschoolapplicationsaledata.dateofbirth" required>
 					</div>
 					<div class="form-group">
 						<label>Child's Age</label>
-						<input class="form-control" type="text" name="age" ng-model="playschoolapplicationsaledata.age" required>
+						<label class="label-error-message" ng-bind="candAgeMsg" ng-show="showCandAgeErr"></label>
+						<input class="form-control" type="text" name="age" ng-model="playschoolapplicationsaledata.age" allow-only-numbers required>
 					</div>
 
 					<div class="form-group">
 						<label>Gender</label>
+						<label class="label-error-message" ng-bind="genderMsg" ng-show="showGenderErr"></label>
 						<select class="form-control" ng-model="playschoolapplicationsaledata.gender" required>
 							<option>Select Gender</option>
 							<option>Male</option>
@@ -62,27 +75,34 @@
 					</div>
 					<div class="form-group">
 						<label>Father's Name</label>
+						<label class="label-error-message" ng-bind="candFathersNameMsg" ng-show="showCandFathersNameErr"></label>
 						<input class="form-control" type="text" name="candfathername" ng-model="playschoolapplicationsaledata.candfathername" required>
 					</div>
 					<div class="form-group">
 						<label>Mother's Name</label>
+						<label class="label-error-message" ng-bind="candMothersNameMsg" ng-show="showCandMothersNameErr"></label>
 						<input class="form-control" type="text" name="candmothername" ng-model="playschoolapplicationsaledata.candmothername" required>
 					</div>
 					<div class="form-group">
 						<label>Present Address</label>
+						<label class="label-error-message" ng-bind="candPresentAddr1Msg" ng-show="showPresentAddr1Err"></label>
 						<input class="form-control" type="text" name="presentaddress1" ng-model="playschoolapplicationsaledata.presentaddress1" required>
+						<label class="label-error-message" ng-bind="candPresentAddr2Msg" ng-show="showCandPresentAddr2Err"></label>
 						<input class="form-control gutter-top-20" type="text" name="presentaddress2" ng-model="playschoolapplicationsaledata.presentaddress2" required>
 					</div>
 					<div class="form-group">
 						<label>Area/City</label>
+						<label class="label-error-message" ng-bind="candPresentAreaMsg" ng-show="showPresentAreaErr"></label>
 						<input class="form-control" type="text" name="presentarea" ng-model="playschoolapplicationsaledata.presentarea" required>
 					</div>
 					<div class="form-group">
 						<label>PinCode</label>
-						<input class="form-control" type="text" name="presentpincode" ng-model="playschoolapplicationsaledata.presentpincode" required>
+						<label class="label-error-message" ng-bind="candpresentpincodeMsg" ng-show="showpresentpincodeErr"></label>
+						<input class="form-control" type="text" name="presentpincode" ng-model="playschoolapplicationsaledata.presentpincode" allow-only-numbers required>
 					</div>
 					<div class="form-group">
 						<label>State</label>
+						<label class="label-error-message" ng-bind="presentstateMsg" ng-show="showpresentstateErr"></label>
 						<select class="form-control" ng-model="playschoolapplicationsaledata.presentstate" required>
 							<option>Select State</option>
 							<option>TamiNadu</option>
@@ -92,37 +112,45 @@
 					</div>
 					<div class="form-group">
 						<label>Fathers Mobile No</label>
-						<input class="form-control" type="text" name="fathersmobileno" ng-model="playschoolapplicationsaledata.fathersmobileno" required>
+						<label class="label-error-message" ng-bind="candfathersmobnoMsg" ng-show="showfathersmobnoErr"></label>
+						<input class="form-control" type="text" name="fathersmobileno" ng-model="playschoolapplicationsaledata.fathersmobileno" allow-only-numbers required>
 					</div>
 					<div class="form-group">
 						<label>Fathers Alternate Mobile No</label>
-						<input class="form-control" type="text" name="fathersaltmobno" ng-model="playschoolapplicationsaledata.fathersaltmobno" required>
+						<label class="label-error-message" ng-bind="candfathersaltmobnoMsg" ng-show="showfathersaltmobnoErr"></label>
+						<input class="form-control" type="text" name="fathersaltmobno" ng-model="playschoolapplicationsaledata.fathersaltmobno" allow-only-numbers required>
 					</div>
 					<div class="form-group">
 						<label>Mothers Mobile No</label>
-						<input class="form-control" type="text" name="mothersmobileno" ng-model="playschoolapplicationsaledata.mothersmobileno" required>
+						<label class="label-error-message" ng-bind="candmothersmobnoMsg" ng-show="showmothersmobnoErr"></label>
+						<input class="form-control" type="text" name="mothersmobileno" ng-model="playschoolapplicationsaledata.mothersmobileno" allow-only-numbers required>
 					</div>
 					<div class="form-group">
 						<label>Mothers Alternate Mobile No</label>
-						<input class="form-control" type="text" name="mothersaltmobno" ng-model="playschoolapplicationsaledata.mothersaltmobno" required>
+						<label class="label-error-message" ng-bind="candmothersaltmobnoMsg" ng-show="showmothersaltmobnoErr"></label>
+						<input class="form-control" type="text" name="mothersaltmobno" ng-model="playschoolapplicationsaledata.mothersaltmobno" allow-only-numbers required>
 					</div>
 
 
 					<div class="form-group">
 						<label>Fathers E-mail</label>
+						
 						<input class="form-control" type="text" name="fathersemail" ng-model="playschoolapplicationsaledata.fathersemail" required>
 					</div>
 					<div class="form-group">
 						<label>Mothers Email</label>
+						
 						<input class="form-control" type="text" name="mothersemail" ng-model="playschoolapplicationsaledata.mothersemail" required>
 					</div>
 					
 					<div class="form-group">
 						<label>Reference</label>
+						
 						<input class="form-control" type="text" name="reference" ng-model="playschoolapplicationsaledata.reference" required>
 					</div>
 					<div class="form-group">
 						<label>Willing to Join</label>
+						<label class="label-error-message" ng-bind="willingtojoinMsg" ng-show="showwillingtojoinErr"></label>
 						<select class="form-control" ng-model="playschoolapplicationsaledata.willingtojoin" required>
 							<option>Select Willingness</option>
 							<option>Yes</option>
@@ -131,14 +159,17 @@
 					</div>
 					<div class="form-group">
 						<label>Date Committed to Join</label>
+						<label class="label-error-message" ng-bind="datecommittedjoinMsg" ng-show="showdatecommittedjoinErr"></label>
 						<input class="form-control" type="text" name="followupdate" ng-model="playschoolapplicationsaledata.followupdate" required>
 					</div>
 					<div class="form-group">
 						<label>Application Price</label>
-						<input class="form-control" type="text" name="applicationprice" ng-model="playschoolapplicationsaledata.applicationprice" required>
+						<label class="label-error-message" ng-bind="applicationpriceMsg" ng-show="applicationpriceErr"></label>
+						<input class="form-control" type="text" name="applicationprice" ng-model="playschoolapplicationsaledata.applicationprice" allow-only-numbers required>
 					</div>
 					<div class="form-group">
 						<label>Application Amount Paid Mode</label>
+						<label class="label-error-message" ng-bind="applicationpaidmodeMsg" ng-show="showapplicationpaidmodeErr"></label>
 						<select class="form-control" ng-model="playschoolapplicationsaledata.applicationpaidmode" required>
 							<option>Select Paid Mode</option>
 							<option>Paid</option>
@@ -147,10 +178,12 @@
 					</div>
 					<div class="form-group">
 						<label>Remarks</label>
+
 						<input class="form-control" type="text" name="remarks" ng-model="playschoolapplicationsaledata.remarks" required>
 					</div>
 					<div class="form-group">
 						<label>Select Academic Year</label>
+						<label class="label-error-message" ng-bind="academicyearMsg" ng-show="academicyearErr"></label>
 						<select class="form-control" ng-model="playschoolapplicationsaledata.academicyear" required>
 							<option>Select Academic Year</option>
 							<option>2017-2018</option>
@@ -166,7 +199,8 @@
 			</div>
 			<div class="text-right">
 				<input type="button" class="btn btn-default" value="CLEAR">
-				<input ng-disabled="playschoolapplicationsaleform.$invalid" type="submit" class="btn btn-primary" value="SAVE">
+				<!-- ng-disabled="playschoolapplicationsaleform.$invalid" -->
+				<input  type="submit" class="btn btn-primary" value="SAVE">
 			</div>
 		</form>
 	</div>

@@ -17,29 +17,30 @@ sivwebapp.service('constantService', function() {
       switch(role){
             case "MGMT":
             	menulist = [
-		            	{'menuitem': 'Admission Counselling', 'iconclass': 'icon-class-group', 'href': '/admissioncounselling', 'subcategory': 'admission'},
-		            	{'menuitem': 'Admission Status', 'iconclass': 'icon-classroom', 'href': '/login'},  //NEED TO DESIGN
-		            	{'menuitem': 'College Fees Setting', 'iconclass': 'icon-classroom', 'href': '/collegefeessetting'},
-		            	{'menuitem': 'Transport Fees Setting', 'iconclass': 'icon-classroom', 'href': '/transportfeessetting'},
-		            	{'menuitem': 'Hostel Fees Setting', 'iconclass': 'icon-classroom', 'href': '/hostelfeessetting'},
-		            	{'menuitem': 'Food Fees Setting', 'iconclass': 'icon-classroom', 'href': '/foodfeessetting'},
+               //          {'menuitem': 'Admission Counselling', 'iconclass': 'icon-class-group', 'href': '/admissioncounselling', 'subcategory': 'admission'},
+		            	// {'menuitem': 'Admission Counselling', 'iconclass': 'icon-class-group', 'href': '/admissioncounselling', 'subcategory': 'admission'},
+		            	// {'menuitem': 'Admission Status', 'iconclass': 'icon-classroom', 'href': '/login'},  //NEED TO DESIGN
+		            	{'menuitem': 'School Fees Setting', 'iconclass': 'icon-classroom', 'href': '/schoolfeessettingplayschool'},
+		            	{'menuitem': 'Transport Fees Setting', 'iconclass': 'icon-classroom', 'href': '/transportfeessettingplayschool'},
+		            	{'menuitem': 'Daily Fees Report', 'iconclass': 'icon-classroom', 'href': '/dailyfeesreportmanagementplayschool'},
+		            	{'menuitem': 'Admission Status', 'iconclass': 'icon-classroom', 'href': '/admissionstatusmanagementplayschool'},
 		            	{'menuitem': 'Staff Attendance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
 		            	{'menuitem': 'Student Attendance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Staff Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Department Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Salary Calculation', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Staff Requirement', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Locate Staff', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Admin Removal', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Placement Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Promote Staff', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Relieve Staff', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Approvals', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Events', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Transport Maintenance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Hostel', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Student Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Parents Feed Back', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Salary Calculation', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Staff Requirement', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Locate Staff', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Admin Removal', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Placement Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Promote Staff', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Relieve Staff', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Approvals', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Events', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Transport Maintenance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Hostel', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
 		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Sports Performance', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+		            	// {'menuitem': 'Sports Performance', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
 
 
             		];
@@ -155,11 +156,14 @@ sivwebapp.service('constantService', function() {
             case "OADMSN":
             	menulist = [
 		            	
-		            	{'menuitem': 'Application Sale', 'iconclass': 'icon-classroom', 'href': '/applicationsale'},
-		            	{'menuitem': 'Admission Entry', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Follow up', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'College ID', 'iconclass': 'icon-classroom', 'href': '/studentcollegeid'},
-		            	{'menuitem': 'Certificate Submission', 'iconclass': 'icon-classroom', 'href': '/certificatesubmission'},
+		            	{'menuitem': 'Application Sale', 'iconclass': 'icon-classroom', 'href': '/applicationsaleplayschool'},
+		            	{'menuitem': 'Admission Entry', 'iconclass': 'icon-classroom', 'href': '/admissionplayschool'},//NEED TO DESIGN
+		            	{'menuitem': 'Cash Counter', 'iconclass': 'icon-classroom', 'href': '/feespaymentplayschool'},//NEED TO DESIGN
+		            	{'menuitem': 'Transport Change', 'iconclass': 'icon-classroom', 'href': '/transportchangeplayschool'},
+		            	{'menuitem': 'Events Circulars', 'iconclass': 'icon-classroom', 'href': '/eventscircularsplayschool'},
+                        {'menuitem': 'Emergency Message', 'iconclass': 'icon-classroom', 'href': '/eventscircularsplayschool'},
+                        {'menuitem': 'Name List', 'iconclass': 'icon-classroom', 'href': '/studentsnamelistplayschool'},
+                        {'menuitem': 'Staff BioData', 'iconclass': 'icon-classroom', 'href': '/staffpersonalinformationplayschool'},
 		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
 
 
@@ -316,15 +320,15 @@ sivwebapp.service('constantService', function() {
             case "TSTAFF":
             	menulist = [
 		            	
-		            	{'menuitem': 'Student Attendance', 'iconclass': 'icon-classroom', 'href': '/studentattendance'},
-		            	{'menuitem': 'Exam Mark Entry', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'View Internal Mark', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Time Table', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Home Work Entry', 'iconclass': 'icon-classroom', 'href': '/studenthomework'},
-		            	{'menuitem': 'Question Entry', 'iconclass': 'icon-classroom', 'href': '/questionentry'},
-		            	{'menuitem': 'Requirements Request', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Leave Request', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Events', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Student Attendance', 'iconclass': 'icon-classroom', 'href': '/studentattendanceplayschoolentry'},
+//		            	{'menuitem': 'Exam Mark Entry', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Child Pick up', 'iconclass': 'icon-classroom', 'href': '/childspickupplayschoolentry'},//NEED TO DESIGN
+		            	{'menuitem': 'Photo Upload', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	{'menuitem': 'Home Work Entry', 'iconclass': 'icon-classroom', 'href': '/studenthomeworkplayschool'},
+		            	{'menuitem': 'Video Upload', 'iconclass': 'icon-classroom', 'href': '/login'},
+		            	{'menuitem': 'Student Progress', 'iconclass': 'icon-classroom', 'href': '/photosuploadplayschool'},//NEED TO DESIGN
+		            	// {'menuitem': 'Leave Request', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Events', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
 		            	{'menuitem': 'Reports', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
             		];
             	return menulist;                
@@ -491,16 +495,27 @@ sivwebapp.service('constantService', function() {
             //case "Parent":
             case "STUD":
             	menulist = [
+                        {'menuitem': 'Daily Attendance', 'iconclass': 'icon-class-group', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Daily Pickup', 'iconclass': 'icon-classroom', 'href': '/login'},  //NEED TO DESIGN
+                        {'menuitem': 'Photos Gallery', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Video Gallery', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Fees Payment', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Home Work', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Events', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Parents Feedback', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Remarks', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Emergency Alarm', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+                        {'menuitem': 'Settings', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
 		            	
-		            	{'menuitem': 'Profile', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Daily Attendance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Test Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Exam Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Fees Payment', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Home Work', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Leave Request', 'iconclass': 'icon-classroom', 'href': '/studentleaveletter'},
-		            	{'menuitem': 'Events', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
-		            	{'menuitem': 'Remarks', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
+		            	// {'menuitem': 'Profile', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Daily Attendance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Test Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Exam Performance', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Fees Payment', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Home Work', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Leave Request', 'iconclass': 'icon-classroom', 'href': '/studentleaveletter'},
+		            	// {'menuitem': 'Events', 'iconclass': 'icon-classroom', 'href': '/login'},//NEED TO DESIGN
+		            	// {'menuitem': 'Remarks', 'iconclass': 'icon-classroom', 'href': '/login'}//NEED TO DESIGN
             		];
             	return menulist;
                 // data.add(new Item("Profile", R.drawable.profile,".ParentProfileFragment"));

@@ -1,8 +1,8 @@
-sivwebapp.controller('subjectTimeTableCtrl', function($scope, $http) {
+sivwebapp.controller('subjectTimeTableCtrl', function($scope, $http, hosturl) {
     $scope.subjectTimeTableSubmit = function(){
     	console.log($scope.subjecttimetabledata);
         $http({
-                url: "http://localhost:8080/api/v1/subjecttimetable",
+                url: hosturl+"/api/v1/subjecttimetable",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.subjecttimetabledata)

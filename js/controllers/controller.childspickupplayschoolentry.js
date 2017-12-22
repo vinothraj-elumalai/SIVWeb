@@ -1,8 +1,8 @@
-sivwebapp.controller('childsPickupPlaySchoolEntryCtrl', function($scope, $http) {
+sivwebapp.controller('childsPickupPlaySchoolEntryCtrl', function($scope, $http, hosturl) {
     $scope.childsPickupPlaySchoolEntrySubmit = function(){
     	console.log($scope.childspickupplayschoolentrydata);
         $http({
-                url: "http://localhost:8080/api/v1/childspickupplayschool",
+                url: hosturl+"/api/v1/childspickupplayschool",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.childspickupplayschoolentrydata)

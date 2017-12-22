@@ -1,8 +1,8 @@
-sivwebapp.controller('libraryBookIssueReturnDataCtrl', function($scope, $http) {
+sivwebapp.controller('libraryBookIssueReturnDataCtrl', function($scope, $http, hosturl) {
     $scope.libraryBooksIssueReturnSubmit = function(){
     	console.log($scope.librarybookissuereturndata);
         $http({
-                url: "http://localhost:8080/api/v1/librarybookissuereturnentry",
+                url: hosturl+"/api/v1/librarybookissuereturnentry",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.librarybookissuereturndata)

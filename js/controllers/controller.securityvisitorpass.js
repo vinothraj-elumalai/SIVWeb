@@ -1,8 +1,8 @@
-sivwebapp.controller('securityVisitorPassCtrl', function($scope, $http) {
+sivwebapp.controller('securityVisitorPassCtrl', function($scope, $http, hosturl) {
     $scope.securityVisitorPassSubmit = function(){
     	console.log($scope.securityvisitorpassdata);
         $http({
-                url: "http://localhost:8080/api/v1/securityvisitorpass",
+                url: hosturl+"/api/v1/securityvisitorpass",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.securityvisitorpassdata)

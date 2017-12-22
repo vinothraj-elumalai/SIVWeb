@@ -1,8 +1,8 @@
-sivwebapp.controller('collegeFeesSettingCtrl', function($scope, $http) {
+sivwebapp.controller('collegeFeesSettingCtrl', function($scope, $http, hosturl) {
     $scope.collegeFeesSettingSubmit = function(){
     	console.log($scope.collegefeessettingdata);
         $http({
-                url: "http://localhost:8080/api/v1/collegefeessetting",
+                url: hosturl+"/api/v1/collegefeessetting",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.collegefeessettingdata)

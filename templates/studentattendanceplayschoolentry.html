@@ -8,23 +8,19 @@
 						<label>Enter Date</label>
 						<input class="form-control" type="text" name="entrydate" ng-model="getPlaySchoolStudentListData.entrydate" required>
 					</div>
-					<div class="form-group">
-						<label>Enter Day</label>
-						<input class="form-control" type="text" name="entryday" ng-model="getPlaySchoolStudentListData.entryday" required>
-					</div>
 
 					<div class="form-group">
 						<label>PROGRAM</label>
-						<select class="form-control" ng-model="getPlaySchoolStudentListData.branch" required>
+						<select class="form-control" ng-model="getPlaySchoolStudentListData.standardstudying" required>
 							<option>TODDLER PROGRAM</option>
 							<option>PREKG</option>
-							<option>KG1</option>
+							<option>LKG</option>
 							<option>KG2</option>
 						</select>
 					</div>
 					<div class="form-group">
 						<label>SECTION</label>
-						<select class="form-control" ng-model="getPlaySchoolStudentListData.batch" required>
+						<select class="form-control" ng-model="getPlaySchoolStudentListData.section" required>
 							<option>SECTION - A</option>
 							<option>SECTION - B</option>
 							<option>SECTION - C</option>
@@ -34,29 +30,17 @@
 					<div class="form-group">
 						<label>Academic Year</label>
 						<select class="form-control" ng-model="getPlaySchoolStudentListData.academicyear" required>
+							<option>2017-2018</option>
 							<option>2016-2017</option>
 							<option>2015-2016</option>
-							<option>2016-2017</option>
-							<option>2016-2017</option>
 						</select>
 					</div>
 					<div class="form-group">
 						<label>Student Status</label>
-						<select class="form-control" ng-model="getPlaySchoolStudentListData.student_status" required>
+						<select class="form-control" ng-model="getPlaySchoolStudentListData.studentstatus" required>
 							<option>Regular</option>
+							<option>Admitted</option>
 						</select>
-					</div>
-					<div class="form-group">
-						<label>Enter Total Present</label>
-						<input class="form-control" type="text" name="totalpresent" ng-model="getPlaySchoolStudentListData.totalpresent" required>
-					</div>
-					<div class="form-group">
-						<label>Enter Total Absent</label>
-						<input class="form-control" type="text" name="totalbsent" ng-model="getPlaySchoolStudentListData.totalabsent" required>
-					</div>
-					<div class="form-group">
-						<label>Enter Login User</label>
-						<input class="form-control" type="text" name="loginuser" ng-model="getPlaySchoolStudentListData.loginuser" required>
 					</div>
 
 					<button ng-disabled="studentattendanceplayschoolform.$invalid" class="btn btn-primary">Submit</button>
@@ -71,25 +55,26 @@
 <br/>
 <br/>
 
-
+<form name="studentattendancesubmitplayschoolform" ng-submit="submitStudentAttendance()" novalidate>
 <table>
 	<tr>
 		<th>S.No.</th>
 		<th>Reg. No</th>
 		<th>Name</th>
-		<th>Attendance</th>
+		<th>Present</th>
 	</tr>
 
 
-	<tr ng-repeat= "student in studentList">
-		<td>{{$index}}</td>
-		<td>{{student.regNo}}</td>
-		<td>{{student.studentName}}</td>
-		<td><input type="checkbox"/></td>
+	<tr ng-repeat= "student in playschoolstudentList" | orderBy>
+		<td>{{$index+1}}</td>
+		<td>{{student.registernumber}}</td>
+		<td>{{student.candidatename}}</td>
+		<td><input type="checkbox" ng-init="student.presentstatus = 1" ng-model="student.presentstatus" ng-true-value="1" ng-false-value="0" /></td>
 	</tr>
 </table>
 
 <br/>
 <br/>
 <br/>
-<button ng-click="" class="btn btn-primary">Submit Attendance</button>
+<button class="btn btn-primary">Submit Attendance</button>
+</form>

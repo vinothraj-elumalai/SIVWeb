@@ -66,6 +66,13 @@ header {
 body {
   padding-top: 85px; }
 
+.label-error-message
+{
+font: normal 12px courier !important;
+color: red;
+
+}
+
 #page-content-wrapper h1 {
   margin-top: 0; }
 

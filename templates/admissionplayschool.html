@@ -8,7 +8,8 @@
 		</div>
 		<div class="form-group">	
 		<div class="text-right">
-			<input type="button" ng-click="searchAppNo()" class="btn btn-default" value="SEARCH">
+
+			<input type="button" ng-click="searchAppNo()" class="btn btn-default"  value="SEARCH">
 		</div>
 		</div>
 		<form name="admissionplayschoolform" ng-submit="admissionPlaySchoolSubmit()" novalidate class="form-validation">
@@ -26,103 +27,108 @@
 
 						<div class="form-group">
 							<label>Application No</label>
-							<input class="form-control" type="text" name="applno" ng-model="admissionplayschooldata.applno" required>
-						</div>
-
-						<div class="form-group">
-							<label>Admission Date</label>
-							<input class="form-control" type="text" name="admissiondate" ng-model="admissionplayschooldata.admissiondate" required>
+							<label class="label-error-message" ng-bind="ApplicationNoErrMsg" ng-show="showApplicationNoErr"></label>
+							<input class="form-control" type="text" name="applno" ng-model="admissionplayschooldata.applno"  required ng-disabled="true">
 						</div>
 
 						<div class="form-group">
 							<label>Application For</label>
-							<input class="form-control" type="text" name="admissionfor" ng-model="admissionplayschooldata.admissionfor" required>
+							<input class="form-control" type="text" name="appfor" ng-model="admissionplayschooldata.appfor" required ng-disabled="true">
 						</div>
 
 						<div class="form-group">
-							<label>Candidate's Name</label>
-							<input class="form-control" type="text" name="candidatename" ng-model="admissionplayschooldata.candidatename" required>
+							<label>Candidate's First Name</label>
+							<input class="form-control" type="text" name="candfirstname" ng-model="admissionplayschooldata.candfirstname" required ng-disabled="true">
 						</div>
 						<div class="form-group">
+							<label>Candidate's Middle Name</label>
+							<input class="form-control" type="text" name="candmiddlename" ng-model="admissionplayschooldata.candmiddlename" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Candidate's Last Name</label>
+							<input class="form-control" type="text" name="candlastname" ng-model="admissionplayschooldata.candlastname" required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
 							<label>Date of Birth</label>
-							<input class="form-control" type="text" name="dateofbirth" ng-model="admissionplayschooldata.dateofbirth" required>
+							<input class="form-control" type="text" name="dateofbirth" ng-model="admissionplayschooldata.dateofbirth" required >
 						</div>
 						<div class="form-group">
 							<label>Age</label>
-							<input class="form-control" type="text" name="age" ng-model="admissionplayschooldata.age" required> 
+							<input class="form-control" type="text" name="age" ng-model="admissionplayschooldata.age" required ng-disabled="true"> 
 						</div>
 
 						<div class="form-group">
 							<label>Gender</label>
-							<input class="form-control" type="text" name="gender" ng-model="admissionplayschooldata.gender" required>
+							<input class="form-control" type="text" name="gender" ng-model="admissionplayschooldata.gender" required ng-disabled="true">
 						</div>
 
 						<div class="form-group">
 							<label>Father's Name</label>
-							<input class="form-control" type="text" name="candfathername" ng-model="admissionplayschooldata.candfathername" required>
+							<input class="form-control" type="text" name="candfathername" ng-model="admissionplayschooldata.candfathername" required ng-disabled="true">
 						</div>
 						<div class="form-group">
 							<label>Mother's Name</label>
-							<input class="form-control" type="text" name="candmothername" ng-model="admissionplayschooldata.candmothername" required>
+							<input class="form-control" type="text" name="candmothername" ng-model="admissionplayschooldata.candmothername" required ng-disabled="true">
 						</div>
 						
 						
 						<div class="form-group">
 							<label>Present Address</label>
-							<input class="form-control" type="text" name="presentaddress1" ng-model="admissionplayschooldata.presentaddress1" required>
+							<input class="form-control" type="text" name="presentaddress1" ng-model="admissionplayschooldata.presentaddress1" required ng-disabled="true">
 							
 						</div>
 						<div class="form-group">
 							<label>Second Address</label>
-							<input class="form-control" type="text" name="presentaddress2" ng-model="admissionplayschooldata.presentaddress2" required>
+							<input class="form-control" type="text" name="presentaddress2" ng-model="admissionplayschooldata.presentaddress2" required ng-disabled="true">
 						</div>
 						<div class="form-group">
 							<label>Area/City</label>
-							<input class="form-control" type="text" name="presentarea" ng-model="admissionplayschooldata.presentarea" required>
+							<input class="form-control" type="text" name="presentarea" ng-model="admissionplayschooldata.presentarea" required ng-disabled="true">
 						</div>
 						<div class="form-group">
 							<label>PinCode</label>
-							<input class="form-control" type="text" name="presentpincode" ng-model="admissionplayschooldata.presentpincode" required>
+							<input class="form-control" type="text" name="presentpincode" ng-model="admissionplayschooldata.presentpincode" required ng-disabled="true">
 						</div>
 						<div class="form-group">
 							<label>State</label>
-							<input class="form-control" type="text" name="presentstate" ng-model="admissionplayschooldata.presentstate" required>
+							<input class="form-control" type="text" name="presentstate" ng-model="admissionplayschooldata.presentstate" required ng-disabled="true">
 						</div>
 						<div class="form-group">
 							<label>Father's Mobile Number</label>
-							<input class="form-control" type="text" name="fathersmobileno" ng-model="admissionplayschooldata.fathersmobileno" required>
+							<input class="form-control" type="text" name="fathersmobileno" ng-model="admissionplayschooldata.fathersmobileno" required ng-disabled="true">
 						</div>
 						<div class="form-group">
 							<label>Father's Alternative Mobile Number</label>
-							<input class="form-control" type="text" name="fathersaltmobno" ng-model="admissionplayschooldata.fathersaltmobno" required>
+							<input class="form-control" type="text" name="fathersaltmobno" ng-model="admissionplayschooldata.fathersaltmobno" required ng-disabled="true">
 						</div>
 						<div class="form-group">
 							<label>Mother's Mobile Number</label>
-							<input class="form-control" type="text" name="mothersmobileno" ng-model="admissionplayschooldata.mothersmobileno" required>
+							<input class="form-control" type="text" name="mothersmobileno" ng-model="admissionplayschooldata.mothersmobileno" required ng-disabled="true">
 						</div>
 						<div class="form-group">
 							<label>Mother's Alternative Mobile Number</label>
-							<input class="form-control" type="text" name="mothersaltmobileno" ng-model="admissionplayschooldata.mothersaltmobno" required>
+							<input class="form-control" type="text" name="mothersaltmobileno" ng-model="admissionplayschooldata.mothersaltmobno" required ng-disabled="true">
 						</div>
 						<div class="form-group">
 							<label>Father's Email</label>
-							<input class="form-control" type="text" name="fathersemail" ng-model="admissionplayschooldata.fathersemail" required>
+							<input class="form-control" type="text" name="fathersemail" ng-model="admissionplayschooldata.fathersemail" required ng-disabled="true">
 						</div>
 						<div class="form-group">
 							<label>Mother's E-mail</label>
-							<input class="form-control" type="text" name="mothersemail" ng-model="admissionplayschooldata.mothersemail" required>
+							<input class="form-control" type="text" name="mothersemail" ng-model="admissionplayschooldata.mothersemail" required ng-disabled="true">
 						</div>
 						<div class="form-group">
 							<label>Reference</label>
-							<input class="form-control" type="text" name="reference" ng-model="admissionplayschooldata.reference" required>
+							<input class="form-control" type="text" name="reference" ng-model="admissionplayschooldata.reference" required ng-disabled="true">
 						</div>
 						<div class="form-group">
 							<label>Remarks</label>
-							<input class="form-control" type="text" name="remarks" ng-model="remarks" required>
+							<input class="form-control" type="text" name="remarks" ng-model="admissionplayschooldata.remarks" required ng-disabled="true">
 						</div>
 						<div class="form-group">
 							<label>Academic Year</label>
-							<input class="form-control" type="academicyear" name="remarks" ng-model="admissionplayschooldata.academicyear" required>
+							<input class="form-control" type="academicyear" name="remarks" ng-model="admissionplayschooldata.academicyear" required ng-disabled="true" >
 						</div>
 
 							
@@ -130,7 +136,7 @@
 						
 
 						<div class="text-right">
-							<input ng-disabled="admissionplayschoolform.$invalid" type="button" class="btn btn-primary" value="NEXT" ng-click="gotostep(2)">
+							<input  type="button" class="btn btn-primary" value="NEXT" ng-click="gotostep(2)">
 						</div>
 
 
@@ -149,43 +155,51 @@
 						
 						<div class="form-group">
 							<label>Father's Occupation</label>
+							<label class="label-error-message" ng-bind="fathersOccupationErrMsg" ng-show="showFathersOccupationErr"></label>
 							<input class="form-control" type="text" name="fathersoccupation" ng-model="admissionplayschooldata.fathersoccupation">
 						</div>					
 						<div class="form-group">
 							<label>Father's Office Name</label>
+							<label class="label-error-message" ng-bind="fathersOfficeNameErrMsg" ng-show="showfathersOfficeNameErr"></label>
 							<input class="form-control" type="text" name="fathersofficename" ng-model="admissionplayschooldata.fathersofficename">
 						</div>
 						<div class="form-group">
 							<label>Father's Office Address Line1</label>
+							<label class="label-error-message" ng-bind="fathersOffAdd1ErrMsg" ng-show="showfathersOffAdd1Err"></label>
 							<input class="form-control" type="text" name="fathersofficeaddress1" ng-model="admissionplayschooldata.fathersofficeaddress1">
 						</div>
 						<div class="form-group">
 							<label>Father's Office Address Line2</label>
+							
 							<input class="form-control" type="text" name="fathersofficeaddress2" ng-model="admissionplayschooldata.fathersofficeaddress2">
 						</div>
 						<div class="form-group">
 							<label>Father's Office Area / City</label>
+							<label class="label-error-message" ng-bind="fathersOffAreaErrMsg" ng-show="showfathersOffAreaErr"></label>
 							<input class="form-control" type="text" name="fathersofficearea" ng-model="admissionplayschooldata.fathersofficearea">
 						</div>
 						<div class="form-group">
 							<label>Father's Office Pincode</label>
-							<input class="form-control" type="text" name="fathersofficepincode" ng-model="admissionplayschooldata.fathersofficepincode">
+							<label class="label-error-message" ng-bind="fathersOffPinCodeErrMsg" ng-show="showFathersOffPinCodeErr"></label>
+							<input class="form-control" type="text" name="fathersofficepincode" ng-model="admissionplayschooldata.fathersofficepincode" allow-only-numbers required>
 						</div>
 						<div class="form-group">
 							<label>Father's Office State</label>
+							<label class="label-error-message" ng-bind="fathersOffStateErrMsg" ng-show="showFathersOffStateErr"></label>
 							<input class="form-control" type="text" name="fathersofficestate" ng-model="admissionplayschooldata.fathersofficestate">
 						</div>
 						<div class="form-group">
 							<label>Father's Office Phone Number</label>
-							<input class="form-control" type="text" name="fathersofficephoneno" ng-model="admissionplayschooldata.fathersofficephoneno">
+
+							<input class="form-control" type="text" name="fathersofficephoneno" ng-model="admissionplayschooldata.fathersofficephoneno" allow-only-numbers>
 						</div>
 						<div class="form-group">
 							<label>Father's Office Alternative Phone Number</label>
-							<input class="form-control" type="text" name="fathersofficealtphoneno" ng-model="admissionplayschooldata.fathersofficealtphoneno">
+							<input class="form-control" type="text" name="fathersofficealtphoneno" ng-model="admissionplayschooldata.fathersofficealtphoneno" allow-only-numbers>
 						</div>
 						<div class="form-group">
 							<label>Father's Office Extension No if Any</label>
-							<input class="form-control" type="text" name="fathersoffficeextensionno" ng-model="admissionplayschooldata.fathersoffficeextensionno ">
+							<input class="form-control" type="text" name="fathersoffficeextensionno" ng-model="admissionplayschooldata.fathersoffficeextensionno " allow-only-numbers>
 						</div>
 
 						<div class="form-group">
@@ -210,7 +224,7 @@
 						</div>
 						<div class="form-group">
 							<label>Mother's Office Pincode</label>
-							<input class="form-control" type="text" name="mothersofficepincode" ng-model="admissionplayschooldata.mothersofficepincode">
+							<input class="form-control" type="text" name="mothersofficepincode" ng-model="admissionplayschooldata.mothersofficepincode" allow-only-numbers>
 						</div>
 						<div class="form-group">
 							<label>Mother's Office State</label>
@@ -218,15 +232,15 @@
 						</div>
 						<div class="form-group">
 							<label>Mother's Office Phone Number</label>
-							<input class="form-control" type="text" name="mothersofficephoneno" ng-model="admissionplayschooldata.mothersofficephoneno">
+							<input class="form-control" type="text" name="mothersofficephoneno" ng-model="admissionplayschooldata.mothersofficephoneno" allow-only-numbers>
 						</div>
 						<div class="form-group">
 							<label>Mother's Office Alternative Phone Number</label>
-							<input class="form-control" type="text" name="mothersofficealtphoneno" ng-model="admissionplayschooldata.mothersofficealtphoneno">
+							<input class="form-control" type="text" name="mothersofficealtphoneno" ng-model="admissionplayschooldata.mothersofficealtphoneno" allow-only-numbers>
 						</div>
 						<div class="form-group">
 							<label>Mother's Office Extension No if Any</label>
-							<input class="form-control" type="text" name="mothersofficeextensionno" ng-model="admissionplayschooldata.mothersofficeextensionno ">
+							<input class="form-control" type="text" name="mothersofficeextensionno" ng-model="admissionplayschooldata.mothersofficeextensionno " allow-only-numbers>
 						</div>
 
 						<div class="text-right">
@@ -247,36 +261,45 @@
 					<div class="stepscontent" id="step3" ng-show="activestep == 3">
 						<div class="form-group">
 							<label>Fathers Date of Birth</label>
+							<label class="label-error-message" ng-bind="fathersDobErrMsg" ng-show="showFathersDobErr"></label>
 							<input class="form-control" type="text" name="fathersdob" ng-model="admissionplayschooldata.fathersdob">
 						</div>
 						<div class="form-group">
 							<label>Mothers Date of Birth</label>
+							<label class="label-error-message" ng-bind="mothersDobErrMsg" ng-show="showMothersDobErr"></label>
 							<input class="form-control" type="text" name="mothersdob" ng-model="admissionplayschooldata.mothersdob">
 						</div>
 						<div class="form-group">
 							<label>Parents Wedding Date</label>
+							<label class="label-error-message" ng-bind="parentsWedDayErrMsg" ng-show="showParentsWedDayErr"></label>
 							<input class="form-control" type="text" name="parentsweddingdate" ng-model="admissionplayschooldata.parentsweddingdate">
 						</div>
 						<div class="form-group">
 							<label>Religion</label>
+							<label class="label-error-message" ng-bind="religionErrMsg" ng-show="showReligionErr"></label>
 							<input class="form-control" type="text" name="religion" ng-model="admissionplayschooldata.religion">
 						</div>
 
 						<div class="form-group">
 							<label>Guardian / Child's Pickup Person Name</label>
+							<label class="label-error-message" ng-bind="pickupPersonNameErrMsg" ng-show="showPickupPersonNameErr"></label>
 							<input class="form-control" type="text" name="pickuppersonname" ng-model="admissionplayschooldata.pickuppersonname">
 						</div>
 
 						<div class="form-group">
 							<label>Guardian / Child's Pickup Person Contact Number</label>
-							<input class="form-control" type="text" name="pickuppersoncontactno" ng-model="admissionplayschooldata.pickuppersoncontactno">
+							<label class="label-error-message" ng-bind="pickuppersoncontactNoErrMsg" ng-show="showPickuppersonContactnoErr"></label>
+							<input class="form-control" type="text" name="pickuppersoncontactno" ng-model="admissionplayschooldata.pickuppersoncontactno" allow-only-numbers required>
 						</div>
 						<div class="form-group">
 							<label>Guardian / Child's Pickup Person Alternative Contact Number</label>
-							<input class="form-control" type="text" name="pickuppersonaltcontactno" ng-model="admissionplayschooldata.pickuppersonaltcontactno">
+							<label class="label-error-message" ng-bind="pickupPersonaltnoErrMsg" ng-show="showPickupPersonAltnoErr"></label>
+							<input class="form-control" type="text" name="pickuppersonaltcontactno" ng-model="admissionplayschooldata.pickuppersonaltcontactno" allow-only-numbers>
+
 						</div>
 						<div class="form-group">
 							<label>Select Guardians / Child's Pickup Person Relationship</label>
+							<label class="label-error-message" ng-bind="pickuppersonrelationshipErrMsg" ng-show="showPickuppersonrelationshipErr"></label>
 							<select class="form-control" ng-model="admissionplayschooldata.pickuppersonrelationship">
 								<option>Select Relationship</option>
 								<option>GRAND FATHER</option>
@@ -287,8 +310,15 @@
 								</select>
 						</div>
 						<div class="form-group">
+							<label>Admission Date</label>
+							<label class="label-error-message" ng-bind="admissionDateErrMsg" ng-show="showAdmissionDateErr"></label>
+							<input class="form-control" type="text" name="admissiondate" ng-model="admissionplayschooldata.admissiondate" required>
+						</div>
+
+						<div class="form-group">
 							<label>Admission Status</label>
-							<select class="form-control" ng-model="admissionplayschooldata.admissionstatus">
+							<label class="label-error-message" ng-bind="admissionStatusErrMsg" ng-show="showAdmissionStatusErr"></label>
+							<select class="form-control" ng-model="admissionplayschooldata.admissionstatus" required ng-change = "fetchlasttoddlerprogramno()">
 								<option>Select Admission Status</option>
 								<option>Admitted</option>
 								<option>Waiting List</option>
@@ -296,10 +326,12 @@
 						</div>
 						<div class="form-group">
 							<label>Register Number</label>
+							<label class="label-error-message" ng-bind="registerNumberErrMsg" ng-show="showRegisterNumberErr"></label>
 							<input class="form-control" type="text" name="registernumber" ng-model="admissionplayschooldata.registernumber">
 						</div>
 						<div class="form-group">
 							<label>Select Section</label>
+							<label class="label-error-message" ng-bind="sectionErrMsg" ng-show="showSectionErr"></label>
 							<select class="form-control" ng-model="admissionplayschooldata.section">
 								<option>Select Section</option>
 								<option>SECTION - A</option>
@@ -307,13 +339,9 @@
 								</select>
 						</div>
 
-
-						<div class="form-group">
-							<label>Admission Fees</label>
-							<input class="form-control" type="text" name="admissionfees" ng-model="admissionplayschooldata.admissionfees">
-						</div>
 						<div class="form-group">
 							<label>Select Transport Mode</label>
+							<label class="label-error-message" ng-bind="transportErrMsg" ng-show="showTransportErr"></label>
 							<select class="form-control" ng-model="admissionplayschooldata.transport">
 								<option>Select Route</option>
 								<option>PRIVATE</option>
@@ -322,6 +350,7 @@
 						</div>
 						<div class="form-group">
 							<label>Select Stage</label>
+							<label class="label-error-message" ng-bind="stageErrMsg" ng-show="showStageErr"></label>
 							<select class="form-control" ng-model="admissionplayschooldata.transportstage">
 								<option>Select Stage</option>
 								<option>STAGE - I</option>
@@ -330,54 +359,67 @@
 								</select>
 						</div>
 						<div class="form-group">
-							<label>Transport Fees</label>
-							<input class="form-control" type="text" name="transportfees" ng-model="admissionplayschooldata.transportfees">
+							<label>Transprot Fees Method</label>
+							<label class="label-error-message" ng-bind="transportfeesmethodErrMsg" ng-show="showTransportFeesMethodErr"></label>
+							<select class="form-control" ng-model="admissionplayschooldata.transportfeesmethod">
+								<option>Select Transport Fees Payment Method</option>
+								<option>Monthly</option>
+								<option>Termly</option>
+								<option>Yearly</option>
+								</select>
+						</div>
+
+						<div class="form-group">
+							<label>Material Kit Fees Fees</label>
+							<label class="label-error-message" ng-bind="matierialkitFeesErrMsg" ng-show="showMaterilaKitFeesErr"></label>
+							<input class="form-control" type="text" name="materialkitfees" ng-model="admissionplayschooldata.materialkitfees" allow-only-numbers required>
+						</div>
+						<div class="form-group">
+							<label>Activity Fees</label>
+							<label class="label-error-message" ng-bind="activityFeesErrMsg" ng-show="showActivityFeesErr"></label>
+							<input class="form-control" type="text" name="activityfees" ng-model="admissionplayschooldata.activityfees" allow-only-numbers>
+						</div>
+						<div class="form-group">
+							<label>Tuition Fees</label>
+							<label class="label-error-message" ng-bind="tuitionFeesErrMsg" ng-show="showTuitionFeesErr"></label>
+							<input class="form-control" type="text" name="tuitionfees" ng-model="admissionplayschooldata.tuitionfees" allow-only-numbers>
 						</div>
 						<div class="form-group">
 							<label>Total Fees</label>
-							<input class="form-control" type="text" name="total_admission_fees" ng-model="admissionplayschooldata.total_admission_fees">
-						</div>
-						<div class="form-group">
-							<label>Due Date For First Payment</label>
-							<input class="form-control" type="text" name="admission_fees_due_date" ng-model="admissionplayschooldata.admission_fees_due_date">
+							<label class="label-error-message" ng-bind="totalFeesErrMsg" ng-show="showTotalFeesErr"></label>
+							<input class="form-control" type="text" name="totalfees" ng-model="admissionplayschooldata.totalfees" allow-only-numbers required>
 						</div>
 
+						<div class="form-group">
+							<label>Installment1 Fees</label>
+							<label class="label-error-message" ng-bind="installment1ErrMsg" ng-show="showInstallment1FeesErr"></label>
+							<input class="form-control" type="text" name="installment1fees" ng-model="admissionplayschooldata.installment1fees" allow-only-numbers>
+						</div>
+						<div class="form-group">
+							<label>Installment1 Due Date </label>
+							<label class="label-error-message" ng-bind="installment1DueDateErrMsg" ng-show="showinstallment1DueDateErr"></label>
+							<input class="form-control" type="text" name="installment1duedate" ng-model="admissionplayschooldata.installment1duedate">
+						</div>
 
 						<div class="form-group">
-							<label>Term I School Fees</label>
-							<input class="form-control" type="text" name="term1fees" ng-model="admissionplayschooldata.term1fees">
+							<label>Installment2 Fees</label>
+							<label class="label-error-message" ng-bind="installment2ErrMsg" ng-show="showInstallment2FeesErr"></label>
+							<input class="form-control" type="text" name="installment2fees" ng-model="admissionplayschooldata.installment2fees" allow-only-numbers>
 						</div>
 						<div class="form-group">
-							<label>Term I Transport Fees</label>
-							<input class="form-control" type="text" name="term1transportfees" ng-model="admissionplayschooldata.term1transportfees">
+							<label>Installment2 Due Date </label>
+							<label class="label-error-message" ng-bind="installment2DueDateErrMsg" ng-show="showinstallment2DueDateErr"></label>
+							<input class="form-control" type="text" name="installment2duedate" ng-model="admissionplayschooldata.installment2duedate">
 						</div>
 						<div class="form-group">
-							<label>Term I Total Fees</label>
-							<input class="form-control" type="text" name="total_term1_fees" ng-model="admissionplayschooldata.total_term1_fees">
+							<label>Transport Fees</label>
+							<label class="label-error-message" ng-bind="transportFeesErrMsg" ng-show="showTransportFeesErr"></label>
+							<input class="form-control" type="text" name="transportfees" ng-model="admissionplayschooldata.transportfees" allow-only-numbers required>
 						</div>
 						<div class="form-group">
-							<label>Term I Fees Due Date</label>
-							<input class="form-control" type="text" name="term1_fees_due_date" ng-model="admissionplayschooldata.term1_fees_due_date">
-						</div>
-						<div class="form-group">
-							<label>Term II School Fees</label>
-							<input class="form-control" type="text" name="term2fees" ng-model="admissionplayschooldata.term2fees">
-						</div>
-						<div class="form-group">
-							<label>Term II Transport Fees</label>
-							<input class="form-control" type="text" name="term2transportfees" ng-model="admissionplayschooldata.term2transportfees">
-						</div>
-						<div class="form-group">
-							<label>Term II Total Fees</label>
-							<input class="form-control" type="text" name="total_term2_fees" ng-model="admissionplayschooldata.total_term2_fees">
-						</div>
-						<div class="form-group">
-							<label>Term II Fees Due Date</label>
-							<input class="form-control" type="text" name="term2_fees_due_date" ng-model="admissionplayschooldata.term2_fees_due_date">
-						</div>
-						<div class="form-group">
-							<label>Grand Total Fees</label>
-							<input class="form-control" type="text" name="grand_total_fees" ng-model="admissionplayschooldata.grand_total_fees">
+							<label>Grand Total Fees for First Installment</label>
+							<label class="label-error-message" ng-bind="grandTotalFeesErrMsg" ng-show="showGrandTotalFeesErr"></label>
+							<input class="form-control" type="text" name="grandtotalfees" ng-model="grandtotalfees" allow-only-numbers required>
 						</div>
 
 

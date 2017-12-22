@@ -1,8 +1,8 @@
-sivwebapp.controller('sportsPdDetailCtrl', function($scope, $http) {
+sivwebapp.controller('sportsPdDetailCtrl', function($scope, $http, hosturl) {
     $scope.sportsPdDetailSubmit = function(){
     	console.log($scope.sportspddetaildata);
         $http({
-                url: "http://localhost:8080/api/v1/sportspddetail",
+                url: hosturl+"/api/v1/sportspddetail",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.sportspddetaildata)

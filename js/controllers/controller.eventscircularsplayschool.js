@@ -1,8 +1,8 @@
-sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http) {
+sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http, hosturl) {
     $scope.eventsCircularsPlaySchoolSubmit = function(){
     	console.log($scope.eventscircularssplayschooldata);
         $http({
-                url: "http://localhost:8080/api/v1/eventscircularsplayschool",
+                url: hosturl+"/api/v1/eventscircularsplayschool",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.eventscircularssplayschooldata)

@@ -1,8 +1,8 @@
-sivwebapp.controller('studentPersonalInformationCtrl', function($scope, $http) {
+sivwebapp.controller('studentPersonalInformationCtrl', function($scope, $http, hosturl) {
     $scope.studentPersonalInformationSubmit = function(){
     	console.log($scope.studentpersonalinfodata);
         $http({
-                url: "http://localhost:8080/api/v1/studentpersonalinformation",
+                url: hosturl+"/api/v1/studentpersonalinformation",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.studentpersonalinfodata)
@@ -15,7 +15,7 @@ sivwebapp.controller('studentPersonalInformationCtrl', function($scope, $http) {
 
      $scope.getStudentPersonalInfo = function(){
         $http({
-                url: "http://localhost:8080/api/v1/studentpersonalinformation/getStudentPersonalInformationDetail",
+                url: hosturl+"/api/v1/studentpersonalinformation/getStudentPersonalInformationDetail",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.studentpersonalinfodata1)
