@@ -500,6 +500,6 @@ sivwebapp.config(function($routeProvider) {
 
 });
 
-//sivwebapp.constant('hosturl', 'http://localhost:8080');
+sivwebapp.constant('hosturl', 'http://localhost:8080');
 //sivwebapp.constant('hosturl', 'http://ec2-18-220-235-33.us-east-2.compute.amazonaws.com:8080');
-sivwebapp.constant('hosturl', 'http://ec2-18-221-7-74.us-east-2.compute.amazonaws.com:8080');
+//sivwebapp.constant('hosturl', 'http://ec2-18-221-7-74.us-east-2.compute.amazonaws.com:8080');
