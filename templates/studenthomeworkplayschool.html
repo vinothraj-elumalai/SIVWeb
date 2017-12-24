@@ -6,20 +6,24 @@
 				<div class="col-md-6">					
 					<div class="form-group">
 						<label>Enter HomeWork Id</label>
+						<label class="label-error-message" ng-bind="homeworkIdErrMsg" ng-show="showHomeWorkIdErr"></label>
 						<input class="form-control" type="text" name="homeworkid" ng-model="studenthomeworkplayschooldata.homeworkid">
 					</div>
 
 					<div class="form-group">
 						<label>Enter Date</label>
+						<label class="label-error-message" ng-bind="entryDateErrMsg" ng-show="showEntryDateErr"></label>
 						<input class="form-control" type="text" name="entrydate" ng-model="studenthomeworkplayschooldata.entrydate">
 					</div>
 					<div class="form-group">
 						<label>Enter Day</label>
+						<label class="label-error-message" ng-bind="entryDayErrMsg" ng-show="showEntryDayErr"></label>
 						<input class="form-control" type="text" name="entryday" ng-model="studenthomeworkplayschooldata.entryday">
 					</div>
 
 					<div class="form-group">
 						<label>Select Program</label>
+						<label class="label-error-message" ng-bind="programErrMsg" ng-show="showProgramErr"></label>
 						<select class="form-control" ng-model="studenthomeworkplayschooldata.program">
 							<option>Select Program</option>
 							<option>TODDLER PROGRAM</option>
@@ -30,6 +34,7 @@
 					</div>
 					<div class="form-group">
 						<label>SELECT SECTION</label>
+						<label class="label-error-message" ng-bind="sectionErrMsg" ng-show="showSectionErr"></label>
 						<select class="form-control" ng-model="studenthomeworkplayschooldata.section">
 							<option>Select Section</option>
 							<option>SECTION - A</option>
@@ -41,6 +46,7 @@
 
 					<div class="form-group">
 						<label>Academic Year</label>
+						<label class="label-error-message" ng-bind="academicYearErrMsg" ng-show="showAcademicYearErr"></label>
 						<select class="form-control" ng-model="studenthomeworkplayschooldata.academicyear">
 							<option>Select Academic Year</option>
 							<option>2017-2018</option>
@@ -55,6 +61,7 @@
 					</div>
 					<div class="form-group">
 						<label>SELECT SUBJECT CATEGORY</label>
+						<label class="label-error-message" ng-bind="subjectCategoryErrMsg" ng-show="showSubjectCategoryErr"></label>
 						<select class="form-control" ng-model="studenthomeworkplayschooldata.subjectcategory">
 							<option>Select Subject Category</option>
 							<option>TAMIL</option>
@@ -66,6 +73,7 @@
 
 					<div class="form-group">
 						<label>Enter Home Work Content</label>
+						<label class="label-error-message" ng-bind="homeworkContentErrMsg" ng-show="showHomeWorkContentErr"></label>
 						<input class="form-control" type="text" name="homeworkcontent" ng-model="studenthomeworkplayschooldata.homeworkcontent">
 					</div>
 					<div class="form-group">

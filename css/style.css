@@ -1100,3 +1100,9 @@ span.dashboardmentu-label {
  .form-validation input.ng-valid.ng-touched {
     border-color: #78FA89;
   }
+
+
+  #wrapper{
+    background: url(../images/bgnew.jpg) center center no-repeat fixed;
+    background-size: 100% auto;
+  }
