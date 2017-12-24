@@ -45,7 +45,7 @@ sivwebapp.directive('sidenavnicescroll', function() {
                 } else if (event.which >= 96 && event.which <= 105) {   
                     // to allow numpad number   
                     return true;   
-                } else if ([8, 13, 27, 37, 38, 39, 40].indexOf(event.which) > -1) {   
+                } else if ([8, 9, 13, 27, 37, 38, 39, 40].indexOf(event.which) > -1) {   
                     // to allow backspace, enter, escape, arrows   
                     return true;   
                 } else {   
