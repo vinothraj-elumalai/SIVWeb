@@ -6,6 +6,33 @@
 			<label>Application No</label>
 			<input class="form-control" type="text" name="applno" ng-model="searchAppnoData.applno">
 		</div>
+
+		<div class="form-group">
+			<label>Application For<font color="red">**</font></label>
+			<label class="label-error-message" ng-bind="saleAppforMsg" ng-show="showAppForErr"></label>
+			<select class="form-control" ng-model="searchAppnoData.appfor" required>
+				<option>Select Application For</option>
+				<option>TODDLER PROGRAM</option>
+				<option>PRE-KG</option>
+				<option>KG1</option>
+				<option>KG2</option>
+				</select>
+		</div>
+
+		<div class="form-group">
+			<label>Academic Year<font color="red">**</font></label>
+			<label class="label-error-message" ng-bind="academicyearMsg" ng-show="showAcademicYearErr"></label>
+			<select class="form-control" ng-model="searchAppnoData.academicyear" required>
+				<option>Select Academic Year</option>
+				<option>2017-2018</option>
+				<option>2018-2019</option>
+				<option>2019-2020</option>
+				<option>2020-2021</option>
+				</select>
+		</div>
+
+<!-- 			<input class="form-control" type="text" name="applicationno" ng-model="admissionplayschooldata.applicationno">
+ -->		 	
 		<div class="form-group">	
 		<div class="text-right">
 

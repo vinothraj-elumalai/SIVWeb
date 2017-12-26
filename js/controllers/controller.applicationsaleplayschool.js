@@ -10,7 +10,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
         clearFields();
         $scope.lastEnquiryNumber = {};
         fetchlastenquiryno();
-        FillSaleDate();
+//       FillSaleDate();
 
         $scope.CalculateAge = function()
         {
@@ -107,16 +107,16 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
 
        }
 
-        function FillSaleDate()
-        {
-            var currentDate = $filter('date')(new Date(), 'dd/MM/yyyy');
-            if($scope.playschoolapplicationsaledata == null || $scope.playschoolapplicationsaledata == undefined)
-            {   
-                $scope.playschoolapplicationsaledata = {};
-            }
-            $scope.playschoolapplicationsaledata.saledate = currentDate;    
-            $scope.appSaleDate = currentDate;
-        }
+        // function FillSaleDate()
+        // {
+        //     var currentDate = $filter('date')(new Date(), 'dd/MM/yyyy');
+        //     if($scope.playschoolapplicationsaledata == null || $scope.playschoolapplicationsaledata == undefined)
+        //     {   
+        //         $scope.playschoolapplicationsaledata = {};
+        //     }
+        //     $scope.playschoolapplicationsaledata.saledate = currentDate;    
+        //     $scope.appSaleDate = currentDate;
+        // }
 
 
        $scope.autogenerate = function()
@@ -133,6 +133,23 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
         }
 
        }
+
+        // $scope.searchAppNo = function(){
+        //     $http({
+        //         url: hosturl+"/api/v1/playschoolapplicationsale/getPlaySchoolApplcationDetail",
+        //         method: "POST",
+        //         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        //         data: $.param($scope.searchAppnoData)
+        //     }).then(function(success) {
+        //         console.log(success.data);
+        //         $scope.playschoolapplicationsaledata = success.data;
+
+        //         //$scope.admissionplayschooldata.applno = $scope.applicationData.applno;
+        //     },function (error){
+                
+        //     });
+        // }
+
 
         $scope.playSchoolApplicationSaleSubmit = function(){
     	console.log($scope.playschoolapplicationsaledata);
@@ -485,8 +502,8 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
         $scope.applnNumberErrMsg='';
         $scope.showApplnErr=false;
 
-        $scope.saleDateErrMsg='';
-        $scope.showSaleDateErr=false;
+         $scope.saleDateErrMsg='';
+         $scope.showSaleDateErr=false;
 
         $scope.candFirstNameMsg='';
         $scope.showCandFirstNameErr=false;
