@@ -159,15 +159,23 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl)
 
 
     $scope.searchAppNo = function(){
+
+         // $scope.feesDetailsRequest = {
+         //         applno :$scope.searchAppnoData.applno, 
+         //         program:$scope.searchAppnoData.appfor,
+         //         academicyear:$scope.searchAppnoData.academicyear
+         // };
+
         $http({
-                url: hosturl+"/api/v1/playschoolapplicationsale/getPlaySchoolApplcationDetail",
+                url: hosturl+"api/v1/playschoolapplicationsale/getApplicationFeesDetails",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.searchAppnoData)
+                //data: $.param($scope.feesDetailsRequest)
             }).then(function(success) {
                 console.log(success.data);
                 $scope.admissionplayschooldata = success.data;
-
+                //fetchFeesDetails();
                 //$scope.admissionplayschooldata.applno = $scope.applicationData.applno;
             },function (error){
                 
@@ -193,7 +201,44 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl)
     $scope.activestep = 1;
     $scope.gotostep = function(position){
         $scope.activestep = position;
+        if (position == 3)
+        {
+//fetchFeesDetails();
+        }
     }
+
+//     fetchFeesDetails = function()
+//     {
+//         $scope.feesDetailsRequest = {
+//                 program:$scope.admissionplayschooldata.appfor,
+//                 academicyear:$scope.admissionplayschooldata.academicyear
+//         };
+
+
+//         $http({
+//                 url: hosturl+"/api/v1/playschoolschoolfeessetting/getPlaySchoolFeesDetail",
+//                 method: "POST",
+//                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+//                 data: $.param($scope.feesDetailsRequest)
+//             }).then(function(success) {
+//                 console.log(success.data);
+// //                $scope.feesDetailsResponse = success.data;
+//                 $scope.admissionplayschooldata = success.data;
+
+//                 // if($scope.feesDetailsResponse != null) // && $scope.feesDetailsResponse.enquiryno != undefined )
+//                 // {
+//                 //     alert('Fees Details Received');
+//                 //     //$scope.playschoolapplicationsaledata.applno = 'ENQ'+ $scope.lastEnquiryNumber.enquiryno;
+//                 // }
+
+//                 //$scope.admissionplayschooldata.applno = $scope.applicationData.applno;
+//             },function (error){
+                
+//             });
+    
+
+     //}
+
 
     function validateAdmission(playschlAdmissionObj )
     {

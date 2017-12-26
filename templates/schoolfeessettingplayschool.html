@@ -5,11 +5,15 @@
 			<div class="row">
 				<div class="col-md-6">					
 					<div class="form-group">
-						<label>Fees Setting Date</label>
+						<label>Fees Setting Date<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="feesSettingDateErrMsg" ng-show="showFeesSettingDateErr"></label>
+
 						<input class="form-control" type="text" name="feessettingdate" ng-model="playschoolfeessettingdata.feessettingdate" required>
 					</div>
 					<div class="form-group">
-						<label>PROGRAMME NAME</label>
+						<label>PROGRAMME NAME<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="programErrMsg" ng-show="showprogramErr"></label>
+
 						<select class="form-control" ng-model="playschoolfeessettingdata.program" required>
 							<option>Select Program Name</option>
 							<option>TODDLER PROGRAM</option>
@@ -19,9 +23,11 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label>Academic Year</label>
+						<label>Academic Year<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="academicYearErrMsg" ng-show="showAcademicYearErr"></label>
+
 						<select class="form-control" ng-model="playschoolfeessettingdata.academicyear" required>
-							<option>Select Year</option>
+							<option>Select Academic Year</option>
 							
 							<option>2017-2018</option>
 							<option>2018-2019</option>
@@ -29,37 +35,60 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label>Admission Fees</label>
+						<label>Registration Fees<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="regisrationFeesErrMsg" ng-show="showRegistrationFeesErr"></label>
+
+						<input class="form-control" type="text" name="registrationfees" ng-model="playschoolfeessettingdata.registrationfees" required>
+					</div>
+
+					<div class="form-group">
+						<label>Material Kit Fees<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="materialKitFeesErrMsg" ng-show="showMaterialKitFeesErr"></label>
+
 						<input class="form-control" type="text" name="materialkitfees" ng-model="playschoolfeessettingdata.materialkitfees" required>
 					</div>
 					<div class="form-group">
-						<label>Activity Fees</label>
+						<label>Activity Fees<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="activityFeesErrMsg" ng-show="showActivityFeesErr"></label>
+
 						<input class="form-control" type="text" name="activityfees" ng-model="playschoolfeessettingdata.activityfees" required>
 					</div>
 					<div class="form-group">
-						<label>Tuition Fees</label>
+						<label>Tuition Fees<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="tuitionFeesErrMsg" ng-show="showTuitionFeesErr"></label>
+
 						<input class="form-control" type="text" name="tuitionfees" ng-model="playschoolfeessettingdata.tuitionfees" required>
 					</div>
 					<div class="form-group">
-						<label>First Installment Amount</label>
+						<label>First Installment Amount<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="firstInstallmentfeesErrMsg" ng-show="showFirstInstallmentfeesErr"></label>
+
 						<input class="form-control" type="text" name="installment1fees" ng-model="playschoolfeessettingdata.installment1fees" required>
 					</div>
 					<div class="form-group">
-						<label>First Installment Amount Due Date</label>
+						<label>First Installment Amount Due Date<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="installment1DueDateErrMsg" ng-show="showInstallment1DueDateErr"></label>
+
 						<input class="form-control" type="text" name="installment1duedate" ng-model="playschoolfeessettingdata.installment1duedate" required>
 					</div>
 					<div class="form-group">
-						<label>Second Installment Amount</label>
+						<label>Second Installment Amount<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="installment2FeesErrMsg" ng-show="showInstallment2FeesErr"></label>
+
 						<input class="form-control" type="text" name="installment2fees" ng-model="playschoolfeessettingdata.installment2fees" required>
 					</div>
 					<div class="form-group">
-						<label>Second Installment Amount Due Date</label>
+						<label>Second Installment Amount Due Date<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="installment2DueDateErrMsg" ng-show="showInstallment2DueDateErr"></label>
+
 						<input class="form-control" type="text" name="installment2duedate" ng-model="playschoolfeessettingdata.installment2duedate" required>
 					</div>
 
 
 					<div class="form-group">
-						<label>Grand Total Fees</label>
+						<label>Grand Total Fees<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="grandTotalErrMsg" ng-show="showGrandTotalErr"></label>
+
 						<input class="form-control" type="text" name="totalfees" ng-model="playschoolfeessettingdata.totalfees" required>
 					</div>
 					<div class="form-group">
