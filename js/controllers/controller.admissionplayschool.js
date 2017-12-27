@@ -1,4 +1,4 @@
-sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl) {
+sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl, constantService) {
 
     clearFields();
 
@@ -167,18 +167,56 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl)
          // };
 
         $http({
-                url: hosturl+"api/v1/playschoolapplicationsale/getApplicationFeesDetails",
+                url: hosturl+"/api/v1/playschoolapplicationsale/getApplicationFeesDetails",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.searchAppnoData)
                 //data: $.param($scope.feesDetailsRequest)
             }).then(function(success) {
                 console.log(success.data);
-                $scope.admissionplayschooldata = success.data;
+                $scope.admissionplayschooldata={
+                    "applno": success.data[0].applno,  
+                    "appfor": success.data[0].appfor, 
+                    "candfirstname": success.data[0].candfirstname, 
+                    "candmiddlename": success.data[0].candmiddlename, 
+                    "candlastname": success.data[0].candlastname,
+                    "dateofbirth": constantService.toDateFormat(success.data[0].dateofbirth),
+                    "age": success.data[0].age,
+                    "gender": success.data[0].gender,
+                    "candfathername": success.data[0].candfathername,
+                    "candmothername": success.data[0].candmothername,
+                    "presentaddress1": success.data[0].presentaddress1,
+                    "presentaddress2": success.data[0].presentaddress2,
+                    "presentarea": success.data[0].presentarea,
+                    "presentpincode": success.data[0].presentpincode,
+                    "presentstate": success.data[0].presentstate,
+                    "fathersmobileno": success.data[0].fathersmobileno, 
+                    "fathersaltmobno": success.data[0].fathersaltmobno,
+                    "mothersmobileno": success.data[0].mothersmobileno,      
+                    "mothersaltmobno": success.data[0].mothersaltmobno,
+                    "fathersemail": success.data[0].fathersemail,  
+                    "mothersemail": success.data[0].mothersemail,  
+                    "reference": success.data[0].reference,
+                    "remarks": success.data[0].remarks,                                                                                                                                                                                             
+                    "academicyear": success.data[0].academicyear,
+     
+                    "registrationfees": success.data[1].registrationfees,
+                    "materialkitfees": success.data[1].materialkitfees,
+                    "activityfees": success.data[1].activityfees,
+                    "tuitionfees": success.data[1].tuitionfees,
+                    "totalfees": success.data[1].totalfees,
+                    "installment1fees": success.data[1].installment1fees,
+                    "installment1duedate":constantService.toDateFormat(success.data[1].installment1duedate),
+                    "installment2fees": success.data[1].installment2fees,
+                    "installment2duedate":constantService.toDateFormat(success.data[1].installment2duedate)
+                   
+                }
+                // $scope.admissionplayschooldata. = 
+                // $scope.admissionplayschooldata.activityfees = ;
                 //fetchFeesDetails();
                 //$scope.admissionplayschooldata.applno = $scope.applicationData.applno;
             },function (error){
-                
+                console.log("test2");
             });
     }
 
@@ -413,6 +451,13 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl)
                 return false;
             }
 
+            if(playschlAdmissionObj.registrationfees == undefined || playschlAdmissionObj.registrationfees ==  null || playschlAdmissionObj.registrationfees == '')
+            {
+                $scope.showRegistrationFeesErr = true;
+                $scope.registrationFeesErrMsg = "(Please enter Registration Fees";
+                return false;
+            }
+
             if(playschlAdmissionObj.materialkitfees == undefined || playschlAdmissionObj.materialkitfees ==  null || playschlAdmissionObj.materialkitfees == '')
             {
                 $scope.showMaterilaKitFeesErr = true;
@@ -562,6 +607,9 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl)
 
         $scope.transportfeesmethodErrMsg='';
         $scope.showTransportFeesMethodErr=false;
+
+        $scope.registrationFeesErrMsg='';
+        $scope.showRegistrationFeesErr=false;
 
         $scope.matierialkitFeesErrMsg='';
         $scope.showMaterilaKitFeesErr=false;

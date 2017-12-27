@@ -925,10 +925,10 @@ span.logoname {
 .navbar-brand img {
     display: inline-block;
     height: auto;
-    width: 50px;
+    width: 110px;
     position: absolute;
     left: 85px;
-    top: 26px;
+    top: 6px;
 
 }
 #page-content-wrapper {

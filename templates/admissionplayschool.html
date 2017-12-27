@@ -18,7 +18,7 @@
 				<option>KG2</option>
 				</select>
 		</div>
-
+     
 		<div class="form-group">
 			<label>Academic Year<font color="red">**</font></label>
 			<label class="label-error-message" ng-bind="academicyearMsg" ng-show="showAcademicYearErr"></label>
@@ -395,9 +395,14 @@
 								<option>Yearly</option>
 								</select>
 						</div>
+						<div class="form-group">
+							<label>Registration Fees</label>
+							<label class="label-error-message" ng-bind="registrationFeesErrMsg" ng-show="showRegistrationFeesErr"></label>
+							<input class="form-control" type="text" name="registrationfees" ng-model="admissionplayschooldata.registrationfees" allow-only-numbers required>
+						</div>
 
 						<div class="form-group">
-							<label>Material Kit Fees Fees</label>
+							<label>Material Kit Fees</label>
 							<label class="label-error-message" ng-bind="matierialkitFeesErrMsg" ng-show="showMaterilaKitFeesErr"></label>
 							<input class="form-control" type="text" name="materialkitfees" ng-model="admissionplayschooldata.materialkitfees" allow-only-numbers required>
 						</div>

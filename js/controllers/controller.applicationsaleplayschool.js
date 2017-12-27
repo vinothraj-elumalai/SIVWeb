@@ -160,8 +160,8 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
 
             if(validateApplication(playschlAppObj))
             {
-                try
-                {
+                //try
+               // {
                     $scope.playschoolapplicationsaledata.idno = 1;
                     if($scope.playschoolapplicationsaledata.category == 'Enquiry')
                         $scope.playschoolapplicationsaledata.enquiryno = $scope.lastEnquiryNumber.enquiryno+1;
@@ -180,12 +180,12 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                     alert(error);
                 
                     });        
-                }
-                catch(ex)
-                {
-                    alert(ex);
-                    console.log(ex);
-                }
+                //}
+                //catch(ex)
+                //{
+                //    alert(ex);
+                //    console.log(ex);
+                //}
             }
             else
             {
