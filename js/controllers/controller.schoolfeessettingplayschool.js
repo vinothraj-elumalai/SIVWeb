@@ -5,9 +5,9 @@ sivwebapp.controller('schoolFeesSettingPlaySchoolCtrl', function($scope, $http, 
     	console.log($scope.playschoolfeessettingdata);
         var playschlschlfeessetObj = $scope.playschoolfeessettingdata;
 
-        if(playschlAppObj != undefined && playschlAppObj != null )
+        if(playschlschlfeessetObj != undefined && playschlschlfeessetObj != null )
             {
-                if(validateApplication(playschlAppObj))
+                if(validateApplication(playschlschlfeessetObj))
                 {
                 try
                 {
@@ -70,7 +70,7 @@ sivwebapp.controller('schoolFeesSettingPlaySchoolCtrl', function($scope, $http, 
         {    
              clearFields();
 
-            if(playschlschlfeessetObj.feessettingdate == undefined || playschlschlfeessetObj.feessettingdate ==  null || playschlschlfeessetObj.feessettingdate == '' || playschlAppObj.category == 'Select Category')
+            if(playschlschlfeessetObj.feessettingdate == undefined || playschlschlfeessetObj.feessettingdate ==  null || playschlschlfeessetObj.feessettingdate == '' || playschlschlfeessetObj.category == 'Select Category')
              {
                 $scope.showFeesSettingDateErr = true;
                 $scope.feesSettingDateErrMsg = "(Please Enter Fees Setting Date)";
@@ -92,7 +92,7 @@ sivwebapp.controller('schoolFeesSettingPlaySchoolCtrl', function($scope, $http, 
                 return false;
             }   
 
-            if(playschlschlfeessetObj.registrationfees == undefined || playschlschlfeessetObj.registrationfees ==  null || playschlschlfeessetObj.registrationfees == '' || playschlAppObj.appfor == 'Select Application For')
+            if(playschlschlfeessetObj.registrationfees == undefined || playschlschlfeessetObj.registrationfees ==  null || playschlschlfeessetObj.registrationfees == '')
             {       
                 $scope.showRegistrationFeesErr = true;
                 $scope.regisrationFeesErrMsg = "(Please Enter Registration Fees)";
