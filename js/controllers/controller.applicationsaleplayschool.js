@@ -1,4 +1,4 @@
-sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $filter, hosturl) {
+sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $filter, $window, hosturl) {
 
     // $scope.showApplnErr = false;
     // $scope.applnNumberErrMsg="";
@@ -176,6 +176,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                     }).then(function(success) {
                     alert('Record Saved.');
                     ClearDataFields();
+                    $window.scrollTo(0, 0);
                     },function (error){
                     alert(error);
                 

@@ -6,7 +6,7 @@
 			<label>Application No</label>
 			<input class="form-control" type="text" name="applno" ng-model="searchAppnoData.applno">
 		</div>
-<<<<<<< HEAD
+
 
 		<div class="form-group">
 			<label>Application For<font color="red">**</font></label>
@@ -34,8 +34,7 @@
 
 <!-- 			<input class="form-control" type="text" name="applicationno" ng-model="admissionplayschooldata.applicationno">
  -->		 	
-=======
->>>>>>> c975d6cc268927d850e099ba50423a3e52601719
+
 		<div class="form-group">	
 		<div class="text-right">
 
@@ -372,7 +371,7 @@
 						<div class="form-group">
 							<label>Select Transport Mode</label>
 							<label class="label-error-message" ng-bind="transportErrMsg" ng-show="showTransportErr"></label>
-							<select class="form-control" ng-model="admissionplayschooldata.transport">
+							<select class="form-control" ng-model="admissionplayschooldata.transport" ng-change="schoolvansetting()">
 								<option>Select Route</option>
 								<option>PRIVATE</option>
 								<option>SCHOOL VAN</option>
@@ -381,7 +380,7 @@
 						<div class="form-group">
 							<label>Select Stage</label>
 							<label class="label-error-message" ng-bind="stageErrMsg" ng-show="showStageErr"></label>
-							<select class="form-control" ng-model="admissionplayschooldata.transportstage">
+							<select class="form-control" ng-model="admissionplayschooldata.transportstage" ng-disabled="admissionplayschooldata.transport == 'PRIVATE'">
 								<option>Select Stage</option>
 								<option>STAGE - I</option>
 								<option>STAGE - II</option>
@@ -391,13 +390,14 @@
 								</select>
 						</div>
 						<div class="form-group">
-							<label>Transprot Fees Method</label>
+							<label>Transport Fees Method</label>
 							<label class="label-error-message" ng-bind="transportfeesmethodErrMsg" ng-show="showTransportFeesMethodErr"></label>
-							<select class="form-control" ng-model="admissionplayschooldata.transportfeesmethod">
+							<select class="form-control" ng-model="admissionplayschooldata.transportfeesmethod" ng-disabled="admissionplayschooldata.transport == 'PRIVATE'">
 								<option>Select Transport Fees Payment Method</option>
 								<option>Monthly</option>
 								<option>Termly</option>
 								<option>Yearly</option>
+								<option>Not Applicable</option>
 								</select>
 						</div>
 						<div class="form-group">
@@ -451,19 +451,21 @@
 						<div class="form-group">
 							<label>Transport Fees</label>
 							<label class="label-error-message" ng-bind="transportFeesErrMsg" ng-show="showTransportFeesErr"></label>
-							<input class="form-control" type="text" name="transportfees" ng-model="admissionplayschooldata.transportfees" allow-only-numbers required>
+							<input class="form-control" type="text" name="transportfees" ng-model="admissionplayschooldata.transportfees" allow-only-numbers required  ng-disabled="admissionplayschooldata.transport == 'PRIVATE'">
 						</div>
-						<div class="form-group">
-							<label>Grand Total Fees for First Installment</label>
-							<label class="label-error-message" ng-bind="grandTotalFeesErrMsg" ng-show="showGrandTotalFeesErr"></label>
-							<input class="form-control" type="text" name="grandtotalfees" ng-model="grandtotalfees" allow-only-numbers required>
-						</div>
-
-
 						<div class="form-group">
 							<label>Login User</label>
 							<input class="form-control" type="text" name="loginuser" ng-model="admissionplayschooldata.loginuser">
 						</div>
+						<div class="form-group">
+							<h4><label style="color: #ff6600">Grand Total Fees for First Installment</label></h4>
+							<label class="label-error-message" ng-bind="grandTotalFeesErrMsg" ng-show="showGrandTotalFeesErr"></label>
+							<h3 style="color: #ff6600"><label><strong>Rs.{{ (admissionplayschooldata.totalfees*1) + (admissionplayschooldata.transportfees*1) }}</strong></label></h3>
+							<!-- <input class="form-control" type="text" name="grandtotalfees" ng-model="(admissionplayschooldata.totalfees|number)+(admissionplayschooldata.transportfees|number)" allow-only-numbers required> -->
+						</div>
+
+
+						
 
 						<div class="text-right">
 							<input type="button" class="btn btn-default" ng-click="gotostep(2)" value="BACK">

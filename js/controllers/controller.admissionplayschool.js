@@ -12,7 +12,22 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
  //      {
             //fetchlasttoddlerprogramno();
 //       }
-
+    $scope.schoolvansetting=function(){
+        if($scope.admissionplayschooldata.transport == "PRIVATE"){
+             $scope.admissionplayschooldata.transportstage = "NO SCHOOL VAN";
+             $scope.admissionplayschooldata.transportfeesmethod = "Not Applicable";
+             $scope.admissionplayschooldata.transportfees = 0;
+            // $scope.admissionplayschooldata = {
+            //     "transportstage" : "NO SCHOOL VAN",
+            //     "transportfeesmethod": "Not Applicable",
+            //     "transportfees": 0
+            // }
+        } else{
+            $scope.admissionplayschooldata.transportstage = "Select Stage";
+            $scope.admissionplayschooldata.transportfeesmethod = "Select Transport Fees Payment Method";
+            $scope.admissionplayschooldata.transportfees = "";
+        }
+    };
 
     
     $scope.lastToddlerProgramNumber = {};
@@ -129,12 +144,13 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
                     method: "POST",
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                     data: $.param($scope.admissionplayschooldata)
-                    }).then(function(success) {
+                    }).then(fun;ction(success) {
                         alert('Record Saved');
-                
+                        $scope.gotostep(1);
+                        $scope.admissionplayschooldata={};
                     },function (error){
-                        alert(error);
-                
+                        alert(error);$scope.
+;                
                     });
 
 

@@ -20,7 +20,10 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http, ho
                         $scope.lastHomeWorkId = success.data;
                         if($scope.lastHomeWorkId != null && $scope.lastHomeWorkId.homeworkid != undefined )
                         {
-                           $scope.studenthomeworkplayschooldata.homeworkid = 'HW'+ $scope.lastHomeWorkId.homeworkid;
+                           //$scope.studenthomeworkplayschooldata.homeworkid = 'HW'+ $scope.lastHomeWorkId.homeworkid;
+                           $scope.studenthomeworkplayschooldata = {
+                            "homeworkid": 'HW'+ $scope.lastHomeWorkId.homeworkid
+                           }
                         }
                     },function (error){
                     alert(error);
