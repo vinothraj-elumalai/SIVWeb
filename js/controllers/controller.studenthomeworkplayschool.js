@@ -27,6 +27,7 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http, ho
                         }
                     },function (error){
                     alert(error);
+                    
                 
                     });        
 
@@ -34,7 +35,7 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http, ho
 
        $scope.autogenerate = function()
        {
-            if($scope.lastHomeWorkId != null && $scope.lastHomeWorkId.enquiryno != undefined )
+            if($scope.lastHomeWorkId != null && $scope.lastHomeWorkId.homeworkid != undefined )
             {
                 $scope.studenthomeworkplayschooldata.homeworkid = 'HW'+ $scope.lastEnquiryNumber.homeworkid;
             }
@@ -62,6 +63,7 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http, ho
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                     data: $.param($scope.studenthomeworkplayschooldata)
                     }).then(function(success) {
+                        alert('Record Saved');
                 
                     },function (error){
                 
@@ -120,7 +122,6 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http, ho
             {       
                 $scope.showEntryDayErr = true;
                 $scope.entryDayErrMsg = "(Please Enter Entry Day)";
-               
                 return false;
             }
             if(playschlHomeWorkObj.program == undefined || playschlHomeWorkObj.program ==  null || playschlHomeWorkObj.program == '')

@@ -310,48 +310,48 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
                     
              }
 
-            if(playschlAdmissionObj.fathersoccupation == undefined || playschlAdmissionObj.fathersoccupation ==  null || playschlAdmissionObj.fathersoccupation == '')
-            {
-                alert('1');
-                $scope.showFathersOccupationErr = true;
-                $scope.fathersOccupationErrMsg = "(Please enter Father Occupation)";
-                return false;
+            // if(playschlAdmissionObj.fathersoccupation == undefined || playschlAdmissionObj.fathersoccupation ==  null || playschlAdmissionObj.fathersoccupation == '')
+            // {
+            //     alert('1');
+            //     $scope.showFathersOccupationErr = true;
+            //     $scope.fathersOccupationErrMsg = "(Please enter Father Occupation)";
+            //     return false;
 
-            }   
-            if(playschlAdmissionObj.fathersofficename == undefined || playschlAdmissionObj.fathersofficename ==  null || playschlAdmissionObj.fathersofficename == '')
-            {       
-                $scope.showfathersOfficeNameErr = true;
-                $scope.fathersOfficeNameErrMsg = "(Please Enter Father Office Name)";
-                alert('2');
-                return false;
-            }
-            if(playschlAdmissionObj.fathersofficeaddress1 == undefined || playschlAdmissionObj.fathersofficeaddress1 ==  null || playschlAdmissionObj.fathersofficeaddress1 == '')
-            {
-                $scope.showfathersOffAdd1Err = true;
-                $scope.fathersOffAdd1ErrMsg = "(Please enter Father office Address )";
-                return false;
-            }
+            // }   
+            // if(playschlAdmissionObj.fathersofficename == undefined || playschlAdmissionObj.fathersofficename ==  null || playschlAdmissionObj.fathersofficename == '')
+            // {       
+            //     $scope.showfathersOfficeNameErr = true;
+            //     $scope.fathersOfficeNameErrMsg = "(Please Enter Father Office Name)";
+            //     alert('2');
+            //     return false;
+            // }
+            // if(playschlAdmissionObj.fathersofficeaddress1 == undefined || playschlAdmissionObj.fathersofficeaddress1 ==  null || playschlAdmissionObj.fathersofficeaddress1 == '')
+            // {
+            //     $scope.showfathersOffAdd1Err = true;
+            //     $scope.fathersOffAdd1ErrMsg = "(Please enter Father office Address )";
+            //     return false;
+            // }
 
-            if(playschlAdmissionObj.fathersofficearea == undefined || playschlAdmissionObj.fathersofficearea ==  null || playschlAdmissionObj.fathersofficearea == '')
-            {
-                $scope.showfathersOffAreaErr = true;
-                $scope.fathersOffAreaErrMsg = "(Please enter Father office City)";
-                return false;
-            }
+            // if(playschlAdmissionObj.fathersofficearea == undefined || playschlAdmissionObj.fathersofficearea ==  null || playschlAdmissionObj.fathersofficearea == '')
+            // {
+            //     $scope.showfathersOffAreaErr = true;
+            //     $scope.fathersOffAreaErrMsg = "(Please enter Father office City)";
+            //     return false;
+            // }
 
-            if(playschlAdmissionObj.fathersofficepincode == undefined || playschlAdmissionObj.fathersofficepincode ==  null || playschlAdmissionObj.fathersofficepincode == '')
-            {
-                $scope.showFathersOffPinCodeErr = true;
-                $scope.fathersOffPinCodeErrMsg = "(Please enter Fathers Office Pin Code)";
-                return false;
-            }
+            // if(playschlAdmissionObj.fathersofficepincode == undefined || playschlAdmissionObj.fathersofficepincode ==  null || playschlAdmissionObj.fathersofficepincode == '')
+            // {
+            //     $scope.showFathersOffPinCodeErr = true;
+            //     $scope.fathersOffPinCodeErrMsg = "(Please enter Fathers Office Pin Code)";
+            //     return false;
+            // }
 
-            if(playschlAdmissionObj.fathersofficestate == undefined || playschlAdmissionObj.fathersofficestate ==  null || playschlAdmissionObj.fathersofficestate == '')
-            {
-                $scope.showFathersOffStateErr = true;
-                $scope.fathersOffStateErrMsg = "(Please enter Fathers Office Pin Code)";
-                return false;
-            }
+            // if(playschlAdmissionObj.fathersofficestate == undefined || playschlAdmissionObj.fathersofficestate ==  null || playschlAdmissionObj.fathersofficestate == '')
+            // {
+            //     $scope.showFathersOffStateErr = true;
+            //     $scope.fathersOffStateErrMsg = "(Please enter Fathers Office Pin Code)";
+            //     return false;
+            // }
 
             if(playschlAdmissionObj.fathersdob == undefined || playschlAdmissionObj.fathersdob ==  null || playschlAdmissionObj.fathersdob == '')
             {
@@ -561,23 +561,23 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
         $scope.ApplicationNoErrMsg='';
         $scope.showApplicationNoErr=false;
 
-        $scope.fathersOccupationErrMsg='';
-        $scope.showFathersOccupationErr=false;
+        // $scope.fathersOccupationErrMsg='';
+        // $scope.showFathersOccupationErr=false;
 
-        $scope.fathersOfficeNameErrMsg='';
-        $scope.fathersofficename=false;
+        // $scope.fathersOfficeNameErrMsg='';
+        // $scope.fathersofficename=false;
 
-        $scope.fathersOffAdd1ErrMsg='';
-        $scope.showfathersOffAdd1Err=false;
+        // $scope.fathersOffAdd1ErrMsg='';
+        // $scope.showfathersOffAdd1Err=false;
 
-        $scope.fathersOffAreaErrMsg='';
-        $scope.showfathersOffAreaErr=false;
+        // $scope.fathersOffAreaErrMsg='';
+        // $scope.showfathersOffAreaErr=false;
 
-        $scope.fathersOffPinCodeErrMsg='';
-        $scope.showFathersOffPinCodeErr=false;
+        // $scope.fathersOffPinCodeErrMsg='';
+        // $scope.showFathersOffPinCodeErr=false;
 
-        $scope.fathersOffStateErrMsg='';
-        $scope.showFathersOffStateErr=false;
+        // $scope.fathersOffStateErrMsg='';
+        // $scope.showFathersOffStateErr=false;
 
         $scope.fathersDobErrMsg='';
         $scope.showFathersDobErr=false;
