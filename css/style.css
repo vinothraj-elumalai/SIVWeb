@@ -906,6 +906,7 @@ th{
 }
 td{
   border-top: 1px solid #666;
+  background: #fff;
 }
 table{
  border-bottom: 1px solid #666;
@@ -1106,3 +1107,30 @@ span.dashboardmentu-label {
     background: url(../images/bgnew.jpg) center center no-repeat fixed;
     background-size: 100% auto;
   }
+td.studentnameatt{
+  font-weight: bold;
+}
+.presentrow td.studentnameatt {
+    color: green;
+    font-weight: bold;
+}
+.absentrow td.studentnameatt {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.scrolltable td{
+  padding: 10px 9px;
+}
+.scrolltable table{
+  width: 1185px;
+}
+
+.rowedit td{
+  background: #ff6600;
+}
+textarea.form-control {
+    border-radius: 0;
+    resize: none;
+    min-height: 200px;
+}

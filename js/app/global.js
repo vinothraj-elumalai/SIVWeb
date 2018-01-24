@@ -15,7 +15,7 @@ sivwebapp.service('constantService', function() {
         var todate=new Date(timestamp).getDate();
         var tomonth=new Date(timestamp).getMonth()+1;
         var toyear=new Date(timestamp).getFullYear();
-        var original_date=tomonth+'/'+todate+'/'+toyear;
+        var original_date=todate+'/'+tomonth+'/'+toyear;
 
         return original_date;
     }
@@ -166,7 +166,8 @@ sivwebapp.service('constantService', function() {
 		            	
 		            	{'menuitem': 'Application Sale', 'iconclass': 'icon-classroom', 'href': '/applicationsaleplayschool'},
 		            	{'menuitem': 'Admission Entry', 'iconclass': 'icon-classroom', 'href': '/admissionplayschool'},//NEED TO DESIGN
-		            	{'menuitem': 'Cash Counter', 'iconclass': 'icon-classroom', 'href': '/feespaymentplayschool'},//NEED TO DESIGN
+		            	{'menuitem': 'Edit Student Data', 'iconclass': 'icon-classroom', 'href': '/studentpersonalinformationviewplayschool'},//NEED TO DESIGN
+                        {'menuitem': 'Cash Counter', 'iconclass': 'icon-classroom', 'href': '/feespaymentplayschool'},
 		            	{'menuitem': 'Transport Change', 'iconclass': 'icon-classroom', 'href': '/transportchangeplayschool'},
 		            	{'menuitem': 'Events Circulars', 'iconclass': 'icon-classroom', 'href': '/eventscircularsplayschool'},
                         {'menuitem': 'Emergency Message', 'iconclass': 'icon-classroom', 'href': '/eventscircularsplayschool'},

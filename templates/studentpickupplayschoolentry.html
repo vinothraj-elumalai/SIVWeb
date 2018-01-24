@@ -1,4 +1,4 @@
-<h1>PLAYSCHOOL STUDENT ATTENDANCE ENTRY</h1>
+<h1>PLAYSCHOOL CHILD PICKUP ENTRY</h1>
 <div class="row">
 	<div class="col-md-12">
 		<form name="studentattendanceplayschoolform" ng-submit="getStudentListAttendance()" novalidate>
@@ -43,10 +43,9 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label>Enter Institute Id</label>
+						<label>Institute Id</label>
 						<input class="form-control" type="text" name="instituteid" ng-model="getPlaySchoolStudentListData.instituteid" required>
 					</div>
-
 					<button ng-disabled="studentattendanceplayschoolform.$invalid" class="btn btn-primary">Submit</button>
 				</div>
 			</div>
@@ -59,49 +58,61 @@
 <br/>
 <br/>
 
-<form name="studentattendancesubmitplayschoolform" ng-submit="submitStudentAttendance()" novalidate>
+<form name="studentattendancesubmitplayschoolform" ng-submit="submitPickupDetails()" novalidate>
 
 <div class="row">
-	<div class="col-md-6">
+	<div class="col-md-12">
+	<div class="table-responsive scrolltable">
 		<table>
 			<tr>
 				<th>S.No.</th>
 				<th>Reg. No</th>
 				<th>Name</th>
-				<th>Present</th>
+				<th>Pickup Person Name</th>
+				<th>Pickup Contact No</th>
+				<th>Relationship</th>
+				<th>PickUp Time</th>
+				<th>Remarks</th>
+				<th>Action</th>
 			</tr>
 
 
-			<tr ng-repeat= "student in playschoolstudentList" ng-init="student.presentstatus = 1" ng-class="{'absentrow': student.presentstatus == 0 , 'presentrow': student.presentstatus == 1}">
+			<tr ng-repeat= "student in playschoolstudentList" ng-init="student.presentstatus = 1" ng-class="{'rowedit': student.iseditstatus == 1}">
 				<td>{{$index+1}}</td>
 				<td>{{student.registernumber}}</td>
 				<td class="studentnameatt">{{student.candidatename}}</td>
-				<td><input type="checkbox" ng-model="student.presentstatus" ng-true-value="1" ng-false-value="0"/>
+				<td ng-init="student.iseditstatus=0">
+					<span ng-if="student.iseditstatus==0">
+						{{student.play_school_student_personal_regno.pickuppersonname}}
+					</span>
+					<span ng-if="student.iseditstatus==1">
+						<input type="text" ng-model="student.play_school_student_personal_regno.pickuppersonname">
+					</span>
+				</td>
+				<td>
+					<span ng-if="student.iseditstatus==0">
+						{{student.play_school_student_personal_regno.pickuppersoncontactno}}
+					</span>
+					<span ng-if="student.iseditstatus==1">
+						<input type="text" ng-model="student.play_school_student_personal_regno.pickuppersoncontactno">
+					</span>
+				</td>
+				<td>
+					<span ng-if="student.iseditstatus==0">
+						{{student.play_school_student_personal_regno.pickuppersonrelationship}}
+					</span>
+					<span ng-if="student.iseditstatus==1">
+						<input type="text" ng-model="student.play_school_student_personal_regno.pickuppersonrelationship">
+					</span>
+				</td>
+				<td><input type="text" ng-model="student.pickuptime" ng-init="student.pickuptime=currenttime"></td>
+				<td><input type="text" ng-model="student.remarks" ng-init="student.remarks='NIL'"></td>
+				<td><label>Edit: </label><input type="checkbox" ng-model="student.iseditstatus" ng-true-value="1" ng-false-value="0"/>
 				</td>
 				
 			</tr>
 		</table>
-	</div>
-	<div class="col-md-6">
-	<h4>Absentee List</h4>
-		<table>
-			<tr>
-				<th>Reg. No</th>
-				<th>Name</th>
-			</tr>
-
-
-			<tr ng-repeat= "student in playschoolstudentList" ng-if="student.presentstatus == 0" ng-class="{'absentrow': student.presentstatus == 0 , 'presentrow': student.presentstatus == 1}">
-				
-				<td>{{student.registernumber}}</td>
-				<td class="studentnameatt">{{student.candidatename}}</td>
-				</td>
-				
-			</tr>
-		</table>
-		<br/>
-		<br/>
-		<input type="button" class="btn btn-primary" ng-click="confirmAbsentee=true" value="Confirm Absentee">
+		</div>
 	</div>
 </div>
 
@@ -110,5 +121,5 @@
 <br/>
 <br/>
 <p>Note: Please Click Confirm Absentee button to submit</p>
-<button class="btn btn-primary" ng-disabled="!confirmAbsentee">Submit Attendance</button>
+<button class="btn btn-primary">Submit Attendance</button>
 </form>

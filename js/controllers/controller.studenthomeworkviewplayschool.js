@@ -1,4 +1,4 @@
-sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http, hosturl) {
+sivwebapp.controller('studentHomeWorkViewPlaySchoolCtrl', function($scope, $http, hosturl) {
     $scope.studentHomeWorkPlaySchoolSubmit = function(){
     	console.log($scope.studenthomeworkplayschooldata);
         $http({

@@ -61,6 +61,7 @@ sivwebapp.controller('schoolFeesSettingPlaySchoolCtrl', function($scope, $http, 
         $scope.playschoolfeessettingdata.installment2fees="";
         $scope.playschoolfeessettingdata.installment2duedate="";
         $scope.playschoolfeessettingdata.totalfees="";
+        $scope.playschoolfeessettingdata.instituteid="";
     }
 
 
@@ -154,6 +155,12 @@ sivwebapp.controller('schoolFeesSettingPlaySchoolCtrl', function($scope, $http, 
                 $scope.grandTotalErrMsg = "(Please enter Total Fees)";
                 return false;
             }
+            if(playschlschlfeessetObj.instituteid == undefined || playschlschlfeessetObj.instituteid ==  null || playschlschlfeessetObj.instituteid == '')
+            {
+                $scope.showInstituteIdErr = true;
+                $scope.instituteIdErrMsg = "(Please enter Institute ID)";
+                return false;
+            }
 
 
             }
@@ -204,6 +211,9 @@ sivwebapp.controller('schoolFeesSettingPlaySchoolCtrl', function($scope, $http, 
             
         $scope.grandTotalErrMsg = false;
         $scope.showGrandTotalErr = '';
+
+        $scope.instituteIdErrMsg = false;
+        $scope.showInstituteIdErr = '';
 
     }
 

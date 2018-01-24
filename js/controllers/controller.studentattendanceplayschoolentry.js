@@ -7,7 +7,16 @@ sivwebapp.controller('studentAttendancePlayschoolCtrl', function($scope, $http, 
                 data: $.param($scope.getPlaySchoolStudentListData)
             }).then(function(success) {
                 console.log(success.data);
-                $scope.playschoolstudentList = success.data;
+                if(success.data == "" || success.data == null){
+                    alert("Record already entered!");
+                }else{
+                    $scope.playschoolstudentList = success.data;
+                    $scope.$watch('playschoolstudentList', function(newVal, oldVal){
+                        console.log('changed');
+                        $scope.confirmAbsentee=false;
+                    }, true);
+                }
+                
             },function (error){
                 
          });
@@ -28,6 +37,8 @@ sivwebapp.controller('studentAttendancePlayschoolCtrl', function($scope, $http, 
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.setattendancedetaildata)
             }).then(function(success) {
+                alert("Record Saved!");
+                $scope.playschoolstudentList = [];
                 // console.log(success.data);
                 // $scope.playschoolstudentList = success.data;
             },function (error){

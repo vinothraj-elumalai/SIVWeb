@@ -17,7 +17,7 @@
 						<select class="form-control" ng-model="playschoolfeessettingdata.program" required>
 							<option>Select Program Name</option>
 							<option>TODDLER PROGRAM</option>
-							<option>PRE KG</option>
+							<option>PRE-KG</option>
 							<option>KG1</option>
 							<option>KG2</option>
 						</select>
@@ -94,6 +94,11 @@
 					<div class="form-group">
 						<label>Login User</label>
 						<input class="form-control" type="text" name="loginuser" ng-model="playschoolfeessettingdata.loginuser" required>
+					</div>
+					<div class="form-group">
+						<label>Instiute ID</label>
+						<label class="label-error-message" ng-bind="instituteIdErrMsg" ng-show="showInstituteIdErr"></label>
+						<input class="form-control" type="text" name="instituteid" ng-model="playschoolfeessettingdata.instituteid" required>
 					</div>
 					
 				</div>

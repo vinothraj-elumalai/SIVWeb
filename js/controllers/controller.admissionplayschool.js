@@ -144,13 +144,12 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
                     method: "POST",
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                     data: $.param($scope.admissionplayschooldata)
-                    }).then(fun;ction(success) {
+                    }).then(function(success) {
                         alert('Record Saved');
                         $scope.gotostep(1);
                         $scope.admissionplayschooldata={};
                     },function (error){
-                        alert(error);$scope.
-;                
+                        alert(error);                
                     });
 
 
@@ -227,6 +226,8 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
                     "installment2duedate":constantService.toDateFormat(success.data[1].installment2duedate)
                    
                 }
+
+                $scope.admissionplayschooldata.siblingage='0.0';
                 // $scope.admissionplayschooldata. = 
                 // $scope.admissionplayschooldata.activityfees = ;
                 //fetchFeesDetails();
@@ -293,6 +294,54 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
 
      //}
 
+             function validateDate(dateStr) {
+           var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+            var isValid=true;
+            // Match the date format through regular expression
+            if (dateStr.match(dateformat)) {
+                //document.form1.text1.focus();
+                //Test which seperator is used '/' or '-'
+                var opera1 = dateStr.split('/');
+                var opera2 = dateStr.split('-');
+                lopera1 = opera1.length;
+                lopera2 = opera2.length;
+                // Extract the string into month, date and year
+                if (lopera1 > 1) {
+                    var pdate = dateStr.split('/');
+                } else if (lopera2 > 1) {
+                    var pdate = dateStr.split('-');
+                }
+                var dd = parseInt(pdate[0]);
+                var mm = parseInt(pdate[1]);
+                var yy = parseInt(pdate[2]);
+                // Create list of days of a month [assume there is no leap year by default]
+                var ListofDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+                if (mm == 1 || mm > 2) {
+                    if (dd > ListofDays[mm - 1]) {
+                        isValid=false;
+                        return false;
+                    }
+                }
+                if (mm == 2) {
+                    var lyear = false;
+                    if ((!(yy % 4) && yy % 100) || !(yy % 400)) {
+                        lyear = true;
+                    }
+                    if ((lyear == false) && (dd >= 29)) {
+                        isValid=false;
+                        return false;
+                    }
+                    if ((lyear == true) && (dd > 29)) {
+                        isValid=false;
+                        return false;
+                    }
+                }
+            } else {
+                isValid=false;
+                return false;
+            }
+            return isValid;
+        }
 
     function validateAdmission(playschlAdmissionObj )
     {
@@ -359,6 +408,19 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
                 $scope.fathersDobErrMsg = "(Please enter Fathers Date of Birth)";
                 return false;
             }
+            else
+            {
+                 var isValidDate=validateDate(playschlAdmissionObj.fathersdob);
+                if( isValidDate == null || isValidDate == false) 
+                {
+                    $scope.showFathersDobErr = true;
+                    $scope.fathersDobErrMsg = "(Invalid Date)";
+                    return false;
+                }
+
+            }
+
+
 
             if(playschlAdmissionObj.mothersdob == undefined || playschlAdmissionObj.mothersdob ==  null || playschlAdmissionObj.mothersdob == '')
             {
@@ -366,6 +428,18 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
                 $scope.mothersDobErrMsg = "(Please enter Mothers Date of Birth)";
                 return false;
             }
+            else
+            {
+                 var isValidDate=validateDate(playschlAdmissionObj.mothersdob);
+                if( isValidDate == null || isValidDate == false) 
+                {
+                    $scope.showMothersDobErr = true;
+                    $scope.fathersDobErrMsg = "(Invalid Date)";
+                    return false;
+                }
+
+            }
+
 
             if(playschlAdmissionObj.parentsweddingdate == undefined || playschlAdmissionObj.parentsweddingdate ==  null || playschlAdmissionObj.parentsweddingdate == '')
             {
@@ -373,6 +447,19 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
                 $scope.parentsWedDayErrMsg = "(Please enter Parents Wedding Date)";
                 return false;
             }
+            else
+            {
+                 var isValidDate=validateDate(playschlAdmissionObj.parentsweddingdate);
+                if( isValidDate == null || isValidDate == false) 
+                {
+                    $scope.showParentsWedDayErr = true;
+                    $scope.parentsWedDayErrMsg = "(Invalid Date)";
+                    return false;
+                }
+
+            }
+
+
 
             if(playschlAdmissionObj.religion == undefined || playschlAdmissionObj.religion ==  null || playschlAdmissionObj.religion == '')
             {
@@ -423,6 +510,17 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
                 $scope.showAdmissionDateErr = true;
                 $scope.admissionDateErrMsg = "(Please enter Admission Date)";
                 return false;
+            }
+            else
+            {
+                 var isValidDate=validateDate(playschlAdmissionObj.admissiondate);
+                if( isValidDate == null || isValidDate == false) 
+                {
+                    $scope.showAdmissionDateErr = true;
+                    $scope.admissionDateErrMsg = "(Invalid Date)";
+                    return false;
+                }
+
             }
 
             if(playschlAdmissionObj.admissionstatus == undefined || playschlAdmissionObj.admissionstatus ==  null || playschlAdmissionObj.admissionstatus == '')
@@ -544,6 +642,12 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
                 $scope.grandTotalFeesErrMsg = "(Please enter Grand Total of First Installment Fees)";
                 return false;
             }
+            if(playschlAdmissionObj.instituteid == undefined || playschlAdmissionObj.instituteid ==  null || playschlAdmissionObj.instituteid == '')
+            {
+                $scope.ShowInsituteIdErr = true;
+                $scope.instituteIdMsg = "(Please enter Institute ID)";
+                return false;
+            }
 
         }
         catch(ex)
@@ -656,6 +760,9 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
 
         $scope.grandTotalFeesErrMsg='';
         $scope.showGrandTotalFeesErr=false;
+
+        $scope.instituteIdMsg='';
+        $scope.ShowInsituteIdErr=false;
 
     }    
 

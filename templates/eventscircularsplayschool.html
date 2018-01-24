@@ -5,8 +5,9 @@
 			<div class="row">
 				<div class="col-md-6">	
 				    <div class="form-group">
-						<label>Event Id</label>
-						<input class="form-control" type="text" name="eventid" ng-model="eventscircularssplayschooldata.eventid">
+						<label>Event Id<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="eventIdSearchErrMsg" ng-show="showEventIdSearchErr"></label>						
+						<input class="form-control" type="text" name="eventidsearch" ng-model="eventscircularsearch.eventidsearch">
 					</div>				
 					<div class="form-group">	
 					<div class="text-right">
@@ -15,27 +16,38 @@
 					</div>
 
 					<div class="form-group">
-						<label>Enter Entry Date</label>
+						<label>Enter Event Id<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="eventIdErrMsg" ng-show="showEventIdErr"></label>						
+						<input class="form-control" type="text" name="eventid" ng-model="eventscircularssplayschooldata.eventid" ng-disabled = "true">
+					</div>
+
+
+					<div class="form-group">
+						<label>Enter Entry Date<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="entryDateErrMsg" ng-show="showentryDateErr"></label>						
 						<input class="form-control" type="text" name="entrydate" ng-model="eventscircularssplayschooldata.entrydate">
 					</div>
 
 
                     <div class="form-group">
-						<label>Event Date</label>
+						<label>Event Date<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="eventDateErrMsg" ng-show="showEventDateErr"></label>						
 						<input class="form-control" type="text" name="eventdate" ng-model="eventscircularssplayschooldata.eventdate">
 					</div>
    					<div class="form-group">
-						<label>Event Day</label>
+						<label>Event Day<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="eventDayErrMsg" ng-show="showEventDayErr"></label>						
 						<input class="form-control" type="text" name="eventday" ng-model="eventscircularssplayschooldata.eventday">
 					</div>
 
 					<div class="form-group">
-						<label>Select Program</label>
+						<label>Select Program<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="programErrMsg" ng-show="showProgramErr"></label>						
 						<select class="form-control" ng-model="eventscircularssplayschooldata.program">
 							<option>Select Program</option>
 							<option>ALL</option>
 							<option>TODDLER PROGRAM</option>
-							<option>PREKG</option>
+							<option>PRE-KG</option>
 							<option>KG1</option>
 							<option>KG2</option>
 							
@@ -43,26 +55,23 @@
 					</div>
 					
 					<div class="form-group">
-						<label>Select Section</label>
+						<label>Select Section<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="sectionErrMsg" ng-show="showSectionErr"></label>						
 						<select class="form-control" ng-model="eventscircularssplayschooldata.section">
 							<option>Select Section</option>
+							<option>ALL</option>
 							<option>SECTION - A</option>
 							<option>SECTION - B</option>
 							<option>SECTION - C</option>
 							<option>SECTION - D</option>
 						</select>
 					</div>
-					<div class="form-group">
-						<label>Enter Message</label>
-						<input class="form-control" type="text" name="message" ng-model="eventscircularssplayschooldata.message">
-					</div>
-
 
                     <div class="form-group">
-						<label>Academic Year</label>
+						<label>Academic Year<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="academicYearErrMsg" ng-show="showAcademicYearErr"></label>						
 						<select class="form-control" ng-model="eventscircularssplayschooldata.academicyear">
 							<option>Select Year</option>
-							<option>2016-2017</option>
 							<option>2017-2018</option>
 							<option>2018-2019</option>
 							<option>2019-2020</option>
@@ -71,16 +80,35 @@
 
 
 					<div class="form-group">
+						<label>Enter Event / Circular Title<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="eventTitleErrMsg" ng-show="showEventTitleErr"></label>						
+						<input class="form-control" type="text" name="eventtitle" ng-model="eventscircularssplayschooldata.eventtitle">
+					</div>
+
+					<div class="form-group">
+						<label>Enter Message<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="messageErrMsg" ng-show="showMessageErr"></label>			
+						<textarea class="form-control" ng-model="eventscircularssplayschooldata.message"></textarea>			
+						<!-- <input class="form-control" type="text" name="message" ng-model="eventscircularssplayschooldata.message"> -->
+					</div>
+
+
+					<div class="form-group">
 						<label>Login User</label>
 						<input class="form-control" type="text" name="loginuser" ng-model="eventscircularssplayschooldata.loginuser">
 					</div>
 
+					<div class="form-group">
+						<label>Institute ID</label>
+						<label class="label-error-message" ng-bind="instituteIdErrMsg" ng-show="showInstituteIdErr"></label>
+						<input class="form-control" type="text" name="instituteid" ng-model="eventscircularssplayschooldata.instituteid">
+					</div>
                     
 				</div>
 			</div>
 			<div class="text-right">
 				<input type="button" class="btn btn-default" value="CLEAR">
-				<input type="submit" class="btn btn-primary" value="CREATE USER">
+				<input type="submit" class="btn btn-primary" value="SAVE">
 			</div>
 		</form>
 	</div>

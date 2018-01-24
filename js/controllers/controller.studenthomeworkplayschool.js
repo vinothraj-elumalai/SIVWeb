@@ -1,10 +1,11 @@
-sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http, hosturl) {
+sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$window, hosturl) {
 
     clearFields();
 
     $scope.lastHomeWorkId = {};
 
     fetchlasthomeworkid();
+
        function fetchlasthomeworkid() {
             $scope.idNumber = {
                 idno: 1
@@ -18,11 +19,11 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http, ho
                     }).then(function(success) {
                         console.log(success.data);
                         $scope.lastHomeWorkId = success.data;
-                        if($scope.lastHomeWorkId != null && $scope.lastHomeWorkId.homeworkid != undefined )
+                        if($scope.lastHomeWorkId != null && $scope.lastHomeWorkId.hwid != undefined )
                         {
                            //$scope.studenthomeworkplayschooldata.homeworkid = 'HW'+ $scope.lastHomeWorkId.homeworkid;
                            $scope.studenthomeworkplayschooldata = {
-                            "homeworkid": 'HW'+ $scope.lastHomeWorkId.homeworkid
+                            "homeworkid": 'HW'+ $scope.lastHomeWorkId.hwid
                            }
                         }
                     },function (error){
@@ -35,9 +36,9 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http, ho
 
        $scope.autogenerate = function()
        {
-            if($scope.lastHomeWorkId != null && $scope.lastHomeWorkId.homeworkid != undefined )
+            if($scope.lastHomeWorkId != null && $scope.lastHomeWorkId.hwid != undefined )
             {
-                $scope.studenthomeworkplayschooldata.homeworkid = 'HW'+ $scope.lastEnquiryNumber.homeworkid;
+                $scope.studenthomeworkplayschooldata.homeworkid = 'HW'+ $scope.lastHomeWorkId.hwid;
             }
 
 
@@ -52,11 +53,12 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http, ho
 
         if(playschlHomeWorkObj != undefined && playschlHomeWorkObj != null )
         {
-            if(validateAdmission(playschlHomeWorkObj) || true)
+            if(validateAdmission(playschlHomeWorkObj))
             {
                 try
                 {
-                    $scope.studenthomeworkplayschooldata.homeworkid = $scope.lastHomeWorkId.homeworkid+1;
+                    $scope.studenthomeworkplayschooldata.idno = 1;
+                    $scope.studenthomeworkplayschooldata.hwid = $scope.lastHomeWorkId.hwid+1;
                     $http({
                     url: hosturl+"/api/v1/studenthomeworkplayschool",
                     method: "POST",
@@ -64,6 +66,10 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http, ho
                     data: $.param($scope.studenthomeworkplayschooldata)
                     }).then(function(success) {
                         alert('Record Saved');
+                        fetchlasthomeworkid();
+                        ClearDataFields();
+
+                        
                 
                     },function (error){
                 
@@ -94,6 +100,55 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http, ho
     }
 
 
+        function validateDate(dateStr) {
+           var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+            var isValid=true;
+            // Match the date format through regular expression
+            if (dateStr.match(dateformat)) {
+                //document.form1.text1.focus();
+                //Test which seperator is used '/' or '-'
+                var opera1 = dateStr.split('/');
+                var opera2 = dateStr.split('-');
+                lopera1 = opera1.length;
+                lopera2 = opera2.length;
+                // Extract the string into month, date and year
+                if (lopera1 > 1) {
+                    var pdate = dateStr.split('/');
+                } else if (lopera2 > 1) {
+                    var pdate = dateStr.split('-');
+                }
+                var dd = parseInt(pdate[0]);
+                var mm = parseInt(pdate[1]);
+                var yy = parseInt(pdate[2]);
+                // Create list of days of a month [assume there is no leap year by default]
+                var ListofDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+                if (mm == 1 || mm > 2) {
+                    if (dd > ListofDays[mm - 1]) {
+                        isValid=false;
+                        return false;
+                    }
+                }
+                if (mm == 2) {
+                    var lyear = false;
+                    if ((!(yy % 4) && yy % 100) || !(yy % 400)) {
+                        lyear = true;
+                    }
+                    if ((lyear == false) && (dd >= 29)) {
+                        isValid=false;
+                        return false;
+                    }
+                    if ((lyear == true) && (dd > 29)) {
+                        isValid=false;
+                        return false;
+                    }
+                }
+            } else {
+                isValid=false;
+                return false;
+            }
+            return isValid;
+        }
+
 
         function validateAdmission(playschlHomeWorkObj )
     {
@@ -117,7 +172,20 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http, ho
                 $scope.entryDateErrMsg = "(Please enter Entry Date)";
                 return false;
 
-            }   
+            }
+            else
+            {
+                var isValidDate=validateDate(playschlHomeWorkObj.entrydate);
+                if( isValidDate == null || isValidDate == false) 
+                {
+                    $scope.showEntryDateErr = true;
+                    $scope.entryDateErrMsg = "(Invalid Committed Date)";
+                    return false;
+                }
+               
+            }
+
+               
             if(playschlHomeWorkObj.entryday == undefined || playschlHomeWorkObj.entryday ==  null || playschlHomeWorkObj.entryday == '')
             {       
                 $scope.showEntryDayErr = true;
@@ -156,6 +224,12 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http, ho
             {
                 $scope.showHomeWorkContentErr = true;
                 $scope.homeworkContentErrMsg = "(Please enter Home Work Content)";
+                return false;
+            }
+            if(playschlHomeWorkObj.instituteid == undefined || playschlHomeWorkObj.instituteid ==  null || playschlHomeWorkObj.instituteid == '')
+            {
+                $scope.showInstituteIdErr = true;
+                $scope.institueIdErrMsg = "(Please enter Institute Id)";
                 return false;
             }
 
@@ -197,7 +271,23 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http, ho
         $scope.homeworkContentErrMsg='';
         $scope.showHomeWorkContentErr=false;
 
+        $scope.institueIdErrMsg='';
+        $scope.showInstituteIdErr=false;
+
 
     }    
+
+        function ClearDataFields()
+    {
+        $scope.studenthomeworkplayschooldata.entrydate="";
+        $scope.studenthomeworkplayschooldata.entryday="";
+        $scope.studenthomeworkplayschooldata.program="Select Program";
+        $scope.studenthomeworkplayschooldata.section="Select Section";
+        $scope.studenthomeworkplayschooldata.academicyear="Select Academic Year";
+        $scope.studenthomeworkplayschooldata.subjectcategory="Select Subject Category";
+        $scope.studenthomeworkplayschooldata.homeworkcontent="";
+        $scope.studenthomeworkplayschooldata.instituteid="";
+    }
+
 
 });

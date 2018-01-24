@@ -1,0 +1,337 @@
+<h1>STUDENT PERSONAL INFORMATION EDIT</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="studentpersonalinformationplayschoolform" ng-submit="studentpersonalinformationPlaySchoolSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">	
+				    <div class="form-group">
+						<label>Register Number<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="registerNumberSearchErrMsg" ng-show="showRegisterNumberSearchErr"></label>						
+						<input class="form-control" type="text" name="registernumbersearch" ng-model="studentpersonalinformationsearch.registernumbersearch">
+					</div>				
+					<div class="form-group">	
+					<div class="text-right">
+						<input type="button" ng-click="getStudentProfileInfoView()" class="btn btn-default" value="SEARCH">
+					</div>
+					</div>
+
+					<div class="form-group">
+						<label>Entered Register Number <font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="registerNumberErrMsg" ng-show="showRegisterNumberErr"></label>						
+						<input class="form-control" type="text" name="registernumber" ng-model="studentpersonalinformationeditplayschooldata.registernumber" ng-disabled = "true">
+					</div>
+
+
+					<div class="form-group">
+						<label>Entered Candidate Name<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="candidateNameErrMsg" ng-show="showcandidateNameErr"></label>						
+						<input class="form-control" type="text" name="candidatename" ng-model="studentpersonalinformationeditplayschooldata.candidatename">
+					</div>
+
+
+                    <div class="form-group">
+						<label>Entered Date of Birth<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="dateofbirthErrMsg" ng-show="showDateofBirthErr"></label>						
+						<input class="form-control" type="text" name="dateofbirth" ng-model="studentpersonalinformationeditplayschooldata.dateofbirth">
+					</div>
+   					<div class="form-group">
+						<label>Entered Age<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="ageErrMsg" ng-show="showAgeErr"></label>						
+						<input class="form-control" type="text" name="age" ng-model="studentpersonalinformationeditplayschooldata.age">
+					</div>
+   					<div class="form-group">
+						<label>Entered Gender<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="genderErrMsg" ng-show="showGenderErr"></label>						
+						<!-- <input class="form-control" type="text" name="gender" ng-model="studentpersonalinformationeditplayschooldata.gender"> -->
+						<select class="form-control" ng-model="studentpersonalinformationeditplayschooldata.gender">
+								<option>Select Gender</option>
+								<option>Male</option>
+								<option>Female</option>
+								<option>Others</option>
+								</select>
+					</div>
+
+					<div class="form-group">
+						<label>Entered Candidate Father Name<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="candidateFatherNameErrMsg" ng-show="showCandidateFatherNameErr"></label>						
+						<input class="form-control" type="text" name="candfathername" ng-model="studentpersonalinformationeditplayschooldata.candfathername">
+					</div>
+
+					<div class="form-group">
+						<label>Entered Candidate Mother Name<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="candidateMotherNameErrMsg" ng-show="showcandidateMotherNameErr"></label>
+						<input class="form-control" type="text" name="candmothername" ng-model="studentpersonalinformationeditplayschooldata.candmothername">
+					</div>
+
+					<div class="form-group">
+						<label>Entered Present Address1<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="presentaddress1ErrMsg" ng-show="showPresentAddress1Err"></label>
+						<input class="form-control" type="text" name="presentaddress1" ng-model="studentpersonalinformationeditplayschooldata.presentaddress1">
+					</div>
+					<div class="form-group">
+						<label>Entered Present Address2<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="presentaddress2ErrMsg" ng-show="showPresentAddress2Err"></label>
+						<input class="form-control" type="text" name="presentaddress2" ng-model="studentpersonalinformationeditplayschooldata.presentaddress2">
+					</div>
+					<div class="form-group">
+						<label>Entered Present Area<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="presentareaErrMsg" ng-show="showPresentareaErr"></label>
+						<input class="form-control" type="text" name="presentarea" ng-model="studentpersonalinformationeditplayschooldata.presentarea">
+					</div>
+					<div class="form-group">
+						<label>Entered Present Pin Code<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="presentpincodeErrMsg" ng-show="showPresentpincodeErr"></label>
+						<input class="form-control" type="text" name="presentpincode" ng-model="studentpersonalinformationeditplayschooldata.presentpincode">
+					</div>
+					<div class="form-group">
+						<label>Entered Present State</label>
+						<label class="label-error-message" ng-bind="presentstateErrMsg" ng-show="showPresentstateErr"></label>
+						<input class="form-control" type="text" name="presentstate" ng-model="studentpersonalinformationeditplayschooldata.presentstate">
+					</div>
+					<div class="form-group">
+						<label>Entered Fathers Mobile Number<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="fathersmobilenoErrMsg" ng-show="showFathersMobileNoErr"></label>
+						<input class="form-control" type="text" name="fathersmobileno" ng-model="studentpersonalinformationeditplayschooldata.fathersmobileno">
+					</div>
+					<div class="form-group">
+						<label>Entered Fathers Alternative Mobile Number</label>
+						<label class="label-error-message" ng-bind="fathersaltmobilenoErrMsg" ng-show="showFathersaltMobileNoErr"></label>
+						<input class="form-control" type="text" name="fathersaltmobno" ng-model="studentpersonalinformationeditplayschooldata.fathersaltmobno">
+					</div>
+					<div class="form-group">
+						<label>Entered Mothers Mobile Number<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="mothersmobilenoErrMsg" ng-show="showMothersMobileNoErr"></label>
+						<input class="form-control" type="text" name="mothersmobileno" ng-model="studentpersonalinformationeditplayschooldata.mothersmobileno">
+					</div>
+					<div class="form-group">
+						<label>Entered Mothers Alternative Mobile Number</label>
+						<label class="label-error-message" ng-bind="mothersaltmobilenoErrMsg" ng-show="showMothersAltMobileNoErr"></label>
+						<input class="form-control" type="text" name="mothersaltmobno" ng-model="studentpersonalinformationeditplayschooldata.mothersaltmobno">
+					</div>
+					<div class="form-group">
+						<label>Entered Fathers Email</label>
+						<label class="label-error-message" ng-bind="fathersemailErrMsg" ng-show="showFathersemailErr"></label>
+						<input class="form-control" type="text" name="fathersemail" ng-model="studentpersonalinformationeditplayschooldata.fathersemail">
+					</div>
+					<div class="form-group">
+						<label>Entered Mothers Email</label>
+						<label class="label-error-message" ng-bind="mothersemailErrMsg" ng-show="showMothersemailErr"></label>
+						<input class="form-control" type="text" name="mothersemail" ng-model="studentpersonalinformationeditplayschooldata.mothersemail">
+					</div>
+					<div class="form-group">
+						<label>Entered Reference</label>
+						<label class="label-error-message" ng-bind="referenceErrMsg" ng-show="showReferenceErr"></label>
+						<input class="form-control" type="text" name="reference" ng-model="studentpersonalinformationeditplayschooldata.reference">
+					</div>
+					<div class="form-group">
+						<label>Entered Fathers Occupation</label>
+						<input class="form-control" type="text" name="fathersoccupation" ng-model="studentpersonalinformationeditplayschooldata.fathersoccupation">
+					</div>
+					<div class="form-group">
+						<label>Entered Fathers Office Name</label>
+						<input class="form-control" type="text" name="fathersofficename" ng-model="studentpersonalinformationeditplayschooldata.fathersofficename">
+					</div>
+					<div class="form-group">
+						<label>Entered Fathers Office Address1</label>
+						<input class="form-control" type="text" name="fathersofficeaddress1" ng-model="studentpersonalinformationeditplayschooldata.fathersofficeaddress1">
+					</div>
+					<div class="form-group">
+						<label>Entered Fathers Office Address2</label>
+						<input class="form-control" type="text" name="fathersofficeaddress2" ng-model="studentpersonalinformationeditplayschooldata.fathersofficeaddress2">
+					</div>
+					<div class="form-group">
+						<label>Entered Fathers Office Area</label>
+						<input class="form-control" type="text" name="fathersofficearea" ng-model="studentpersonalinformationeditplayschooldata.fathersofficearea">
+					</div>
+					<div class="form-group">
+						<label>Entered Fathers Office Pin Code</label>
+						<input class="form-control" type="text" name="fathersofficepincode" ng-model="studentpersonalinformationeditplayschooldata.fathersofficepincode">
+					</div>
+					<div class="form-group">
+						<label>Entered Fathers Office State</label>
+						<input class="form-control" type="text" name="fathersofficestate" ng-model="studentpersonalinformationeditplayschooldata.fathersofficestate">
+					</div>
+					<div class="form-group">
+						<label>Entered Fathers Office Phone Number</label>
+						<input class="form-control" type="text" name="fathersofficephoneno" ng-model="studentpersonalinformationeditplayschooldata.fathersofficephoneno">
+					</div>
+					<div class="form-group">
+						<label>Entered Fathers Office Alternative Phone Number</label>
+						<input class="form-control" type="text" name="fathersofficealtphoneno" ng-model="studentpersonalinformationeditplayschooldata.fathersofficealtphoneno">
+					</div>
+					<div class="form-group">
+						<label>Entered Fathers Office Extension Number</label>
+						<input class="form-control" type="text" name="fathersofficeextensionno" ng-model="studentpersonalinformationeditplayschooldata.fathersofficeextensionno">
+					</div>
+					<div class="form-group">
+						<label>Entered Mothers Occupation</label>
+						<input class="form-control" type="text" name="mothersoccupation" ng-model="studentpersonalinformationeditplayschooldata.mothersoccupation">
+					</div>
+					<div class="form-group">
+						<label>Entered Mothers Office Name</label>
+						<input class="form-control" type="text" name="mothersofficename" ng-model="studentpersonalinformationeditplayschooldata.mothersofficename">
+					</div>
+					<div class="form-group">
+						<label>Entered Mothers Office Address1</label>
+						<input class="form-control" type="text" name="mothersofficeaddress1" ng-model="studentpersonalinformationeditplayschooldata.mothersofficeaddress1">
+					</div>
+					<div class="form-group">
+						<label>Entered Mothers Office Address2</label>
+						<input class="form-control" type="text" name="mothersofficeaddress2" ng-model="studentpersonalinformationeditplayschooldata.mothersofficeaddress2">
+					</div>
+					<div class="form-group">
+						<label>Entered Mothers Office Area</label>
+						<input class="form-control" type="text" name="mothersofficearea" ng-model="studentpersonalinformationeditplayschooldata.mothersofficearea">
+					</div>
+					<div class="form-group">
+						<label>Entered Mothers Office Pin Code</label>
+						<input class="form-control" type="text" name="mothersofficepincode" ng-model="studentpersonalinformationeditplayschooldata.mothersofficepincode">
+					</div>
+					<div class="form-group">
+						<label>Entered Mothers Office State</label>
+						<input class="form-control" type="text" name="mothersofficestate" ng-model="studentpersonalinformationeditplayschooldata.mothersofficestate">
+					</div>
+					<div class="form-group">
+						<label>Entered Mothers Office Phone Number</label>
+						<input class="form-control" type="text" name="mothersofficephoneno" ng-model="studentpersonalinformationeditplayschooldata.mothersofficephoneno">
+					</div>
+					<div class="form-group">
+						<label>Entered Mothers Office Alternative Phone Number</label>
+						<input class="form-control" type="text" name="mothersofficealtphoneno" ng-model="studentpersonalinformationeditplayschooldata.mothersofficealtphoneno">
+					</div>
+					<div class="form-group">
+						<label>Entered Mothers Office Extension Number</label>
+						<input class="form-control" type="text" name="mothersofficeextensionno" ng-model="studentpersonalinformationeditplayschooldata.mothersofficeextensionno">
+					</div>
+
+					<div class="form-group">
+						<label>Entered Sibling Available</label>
+						<!-- <input class="form-control" type="text" name="siblings" ng-model="studentpersonalinformationeditplayschooldata.siblings"> -->
+						<select class="form-control" ng-model="studentpersonalinformationeditplayschooldata.siblings">
+								<option>Select Siblings</option>
+								<option>Yes</option>
+								<option>No</option>
+								</select>
+					</div>
+
+					<div class="form-group">
+						<label>Entered Sibling Name</label>
+						<input class="form-control" type="text" name="siblingname" ng-model="studentpersonalinformationeditplayschooldata.siblingname">
+					</div>
+					<div class="form-group">
+						<label>Entered Sibling Date of Birth</label>
+						<input class="form-control" type="text" name="siblingdob" ng-model="studentpersonalinformationeditplayschooldata.siblingdob">
+					</div>
+					<div class="form-group">
+						<label>Entered Sibling Age</label>
+						<input class="form-control" type="text" name="siblingage" ng-model="studentpersonalinformationeditplayschooldata.siblingage">
+					</div>
+					<div class="form-group">
+						<label>Entered Students Medical Details</label>
+						<input class="form-control" type="text" name="medicaldetails" ng-model="studentpersonalinformationeditplayschooldata.medicaldetails">
+					</div>
+					<div class="form-group">
+						<label>Entered Students Allergies</label>
+						<input class="form-control" type="text" name="allergies" ng-model="studentpersonalinformationeditplayschooldata.allergies">
+					</div>
+					<div class="form-group">
+						<label>Entered Students Fathers Date of Birth<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="fathersDobErrMsg" ng-show="showFathersDobErr"></label>
+						<input class="form-control" type="text" name="fathersdob" ng-model="studentpersonalinformationeditplayschooldata.fathersdob">
+					</div>
+					<div class="form-group">
+						<label>Entered Students Mothers Date of Birth<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="mothersDobErrMsg" ng-show="showMothersDobErr"></label>
+						<input class="form-control" type="text" name="mothersdob" ng-model="studentpersonalinformationeditplayschooldata.mothersdob">
+					</div>
+					<div class="form-group">
+						<label>Entered Students Parents Wedding Date<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="parentWeddingDateErrMsg" ng-show="showParentWeddingDateErr"></label>
+						<input class="form-control" type="text" name="parentsweddingdate" ng-model="studentpersonalinformationeditplayschooldata.parentsweddingdate">
+					</div>
+					<div class="form-group">
+						<label>Entered Students Religion<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="religionErrMsg" ng-show="showreligionErr"></label>
+						<input class="form-control" type="text" name="religion" ng-model="studentpersonalinformationeditplayschooldata.religion">
+					</div>
+					<div class="form-group">
+						<label>Entered Pickup Person Name<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="pickupPersonNameErrMsg" ng-show="showPickupPersonNameErr"></label>
+						<input class="form-control" type="text" name="pickuppersonname" ng-model="studentpersonalinformationeditplayschooldata.pickuppersonname">
+					</div>
+					<div class="form-group">
+						<label>Entered Pickup Person Contact Number<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="pickupPersonContactNoErrMsg" ng-show="showpickupPersonContactNoErr"></label>
+						<input class="form-control" type="text" name="pickuppersoncontactno" ng-model="studentpersonalinformationeditplayschooldata.pickuppersoncontactno">
+					</div>
+
+					<div class="form-group">
+						<label>Entered Pickup Person Relationship<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="pickupPersonRelationshipErrMsg" ng-show="showpickupPersonRelationshipErr"></label>
+						<!-- <input class="form-control" type="text" name="pickuppersonrelationship" ng-model="studentpersonalinformationeditplayschooldata.pickuppersonrelationship"> -->
+						<select class="form-control" ng-model="studentpersonalinformationeditplayschooldata.pickuppersonrelationship">
+								<option>Select Relationship</option>
+								<option>PARENT</option>
+								<option>GRAND FATHER</option>
+								<option>GRAND MOTHER</option>
+								<option>UNCLE</option>
+								<option>AUNTY</option>
+								<option>DRIVER</option>
+								<option>GUARDIAN</option>
+								</select>
+					</div>
+
+
+<!-- 						<div class="form-group">
+							<label>Entered Students Pickup Person Relationship<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="pickuppersonrelationshipErrMsg" ng-show="showPickuppersonrelationshipErr"></label>
+							<select class="form-control" ng-model="studentpersonalinformationeditplayschooldata.pickuppersonrelationship">
+								<option>Select Relationship</option>
+								<option>PARENT</option>
+								<option>GRAND FATHER</option>
+								<option>GRAND MOTHER</option>
+								<option>UNCLE</option>
+								<option>AUNTY</option>
+								<option>DRIVER</option>
+								<option>GUARDIAN</option>
+								</select>
+						</div>
+ -->
+					<div class="form-group">
+						<label>Entered Student Transport Mode<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="transportModeErrMsg" ng-show="showtransportModeErr"></label>
+						<input class="form-control" type="text" name="transport" ng-model="studentpersonalinformationeditplayschooldata.transport" ng-disabled = "true">
+					</div>
+
+					<div class="form-group">
+						<label>Entered Student Transport Stage<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="transportStageErrMsg" ng-show="showtransportStageErr"></label>
+						<input class="form-control" type="text" name="transportstage" ng-model="studentpersonalinformationeditplayschooldata.transportstage" ng-disabled = "true">
+					</div>
+
+					<div class="form-group">
+						<label>Entered Student Academic Year<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="academicYearErrMsg" ng-show="showacademicYearErr"></label>
+						<input class="form-control" type="text" name="academicyear" ng-model="studentpersonalinformationeditplayschooldata.academicyear" ng-disabled = "true">
+					</div>
+
+					<div class="form-group">
+						<label>Entered Login User</label>
+						<input class="form-control" type="text" name="loginuser" ng-model="studentpersonalinformationeditplayschooldata.loginuser" ng-disabled = "true">
+					</div>
+
+					<div class="form-group">
+						<label>Entered Student Institute ID<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="instituteidErrMsg" ng-show="showinstituteIdErr"></label>
+						<input class="form-control" type="text" name="instituteid" ng-model="studentpersonalinformationeditplayschooldata.instituteid" ng-disabled = "true">
+					</div>
+                    
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SAVE">
+			</div>
+		</form>
+	</div>
+</div>

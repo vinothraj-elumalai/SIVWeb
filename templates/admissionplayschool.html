@@ -32,6 +32,12 @@
 				</select>
 		</div>
 
+		<div class="form-group">
+			<label>Institute ID</label>
+			<input class="form-control" type="text" name="instituteid" ng-model="searchAppnoData.instituteid">
+		</div>
+
+
 <!-- 			<input class="form-control" type="text" name="applicationno" ng-model="admissionplayschooldata.applicationno">
  -->		 	
 		<div class="form-group">	
@@ -365,6 +371,7 @@
 							<label class="label-error-message" ng-bind="pickuppersonrelationshipErrMsg" ng-show="showPickuppersonrelationshipErr"></label>
 							<select class="form-control" ng-model="admissionplayschooldata.pickuppersonrelationship">
 								<option>Select Relationship</option>
+								<option>PARENT</option>
 								<option>GRAND FATHER</option>
 								<option>GRAND MOTHER</option>
 								<option>UNCLE</option>
@@ -418,9 +425,9 @@
 							<select class="form-control" ng-model="admissionplayschooldata.transportstage" ng-disabled="admissionplayschooldata.transport == 'PRIVATE'">
 								<option>Select Stage</option>
 								<option>NO SCHOOL BUS</option>
-								<option>STAGE - I</option>
-								<option>STAGE - II</option>
-								<option>STAGE - III</option>
+								<option>UPTO 1 KM</option>
+								<option>UPTO 2 KM</option>
+								<option>UPTO 3 KM</option>
 								<option>NO SCHOOL VAN</option>
 
 								</select>
@@ -494,6 +501,13 @@
 							<label>Login User</label>
 							<input class="form-control" type="text" name="loginuser" ng-model="admissionplayschooldata.loginuser">
 						</div>
+						<div class="form-group">
+							<label>Institute ID</label>
+							<label class="label-error-message" ng-bind="instituteIdMsg" ng-show="ShowInsituteIdErr"></label>
+
+							<input class="form-control" type="text" name="instituteid" ng-model="admissionplayschooldata.instituteid" required>
+						</div>
+
 						<div class="form-group">
 							<h4><label style="color: #ff6600">Grand Total Fees for First Installment</label></h4>
 							<label>Grand Total Fees for First Installment<font color="red">**</font></label>

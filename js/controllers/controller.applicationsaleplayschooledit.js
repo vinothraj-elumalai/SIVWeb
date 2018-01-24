@@ -1,4 +1,4 @@
-sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $filter, $window, hosturl) {
+sivwebapp.controller('playSchoolapplicationSaleEditCtrl', function($scope, $http, $filter, $window, hosturl) {
 
     // $scope.showApplnErr = false;
     // $scope.applnNumberErrMsg="";
@@ -14,9 +14,9 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
 
         $scope.CalculateAge = function()
         {
-            if($scope.playschoolapplicationsaledata.dateofbirth != undefined && $scope.playschoolapplicationsaledata.dateofbirth !=  null || $scope.playschoolapplicationsaledata.dateofbirth != '')
+            if($scope.playschoolapplicationsaleeditdata.dateofbirth != undefined && $scope.playschoolapplicationsaleeditdata.dateofbirth !=  null || $scope.playschoolapplicationsaleeditdata.dateofbirth != '')
             {
-                var givenDob = $scope.playschoolapplicationsaledata.dateofbirth;
+                var givenDob = $scope.playschoolapplicationsaleeditdata.dateofbirth;
 
                 var isValidDate=validateDate(givenDob);
                 if( isValidDate == null || isValidDate == false) 
@@ -25,7 +25,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                     $scope.candDOBMsg = "(Invalid Date)";
 
                     $scope.childDob = '';
-                    $scope.playschoolapplicationsaledata.age ='';
+                    $scope.playschoolapplicationsaleeditdata.age ='';
                     return;
                 }
                 else
@@ -33,16 +33,16 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                     $scope.showCandDOBErr = false;
                     $scope.candDOBMsg = "";
                 }
-                // givenDob = $filter('date')(new Date(givenDob), 'dd/MM/yyyy');
-                var dobarray = givenDob.split("/");
-                var givenDob = new Date(dobarray[2], dobarray[1] - 1, dobarray[0]);
+
+                givenDob = $filter('date')(new Date(givenDob), 'yyyy/MM/dd');
+
                 var today = new Date();
                 var birthDate = new Date(givenDob);
                 var yr = today.getFullYear() - birthDate.getFullYear();
                 var m = today.getMonth() - birthDate.getMonth();
                 var da = today.getDate() - birthDate.getDate();
                 if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                    $scope.playschoolapplicationsaledata.age--;
+                    age--;
                 }
                 if(m<0){
                     m +=12;
@@ -51,64 +51,37 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                     da +=30;
                 }
 
-                if($scope.playschoolapplicationsaledata == null || $scope.playschoolapplicationsaledata == undefined)
+                if($scope.playschoolapplicationsaleeditdata == null || $scope.playschoolapplicationsaleeditdata == undefined)
                 {   
-                    $scope.playschoolapplicationsaledata = {};
+                    $scope.playschoolapplicationsaleeditdata = {};
                 }
                 $scope.childDob = yr + "." + Math.abs(m);
-                $scope.playschoolapplicationsaledata.age = yr + "." + Math.abs(m);
+                $scope.playschoolapplicationsaleeditdata.age = yr + "." + Math.abs(m);
                 
                 //alert(age+" years "+ Math.abs(m) + "months"+ Math.abs(da) + " days");
             }
         }
 
         function validateDate(dateStr) {
-           var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
-            var isValid=true;
-            // Match the date format through regular expression
-            if (dateStr.match(dateformat)) {
-                //document.form1.text1.focus();
-                //Test which seperator is used '/' or '-'
-                var opera1 = dateStr.split('/');
-                var opera2 = dateStr.split('-');
-                lopera1 = opera1.length;
-                lopera2 = opera2.length;
-                // Extract the string into month, date and year
-                if (lopera1 > 1) {
-                    var pdate = dateStr.split('/');
-                } else if (lopera2 > 1) {
-                    var pdate = dateStr.split('-');
-                }
-                var dd = parseInt(pdate[0]);
-                var mm = parseInt(pdate[1]);
-                var yy = parseInt(pdate[2]);
-                // Create list of days of a month [assume there is no leap year by default]
-                var ListofDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-                if (mm == 1 || mm > 2) {
-                    if (dd > ListofDays[mm - 1]) {
-                        isValid=false;
-                        return false;
-                    }
-                }
-                if (mm == 2) {
-                    var lyear = false;
-                    if ((!(yy % 4) && yy % 100) || !(yy % 400)) {
-                        lyear = true;
-                    }
-                    if ((lyear == false) && (dd >= 29)) {
-                        isValid=false;
-                        return false;
-                    }
-                    if ((lyear == true) && (dd > 29)) {
-                        isValid=false;
-                        return false;
-                    }
-                }
-            } else {
-                isValid=false;
-                return false;
-            }
-            return isValid;
+           const regExp = /^(\d\d?)\/(\d\d?)\/(\d{4})$/;
+           var matches = dateStr.match(regExp);
+           var isValid = matches;
+           var maxDate = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+           
+           if (matches) {
+             const month = parseInt(matches[1]);
+             const date = parseInt(matches[2]);
+             const year = parseInt(matches[3]);
+             
+             isValid = month <= 12 && month > 0;
+             isValid &= date <= maxDate[month] && date > 0;
+             
+             const leapYear = (year % 400 == 0)
+                || (year % 4 == 0 && year % 100 != 0);
+             isValid &= month != 2 || leapYear || date <= 28; 
+           }
+           
+           return isValid
         }
 
        function fetchlastenquiryno() {
@@ -128,7 +101,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                         //    $scope.playschoolapplicationsaledata.applno = 'ENQ'+ $scope.lastEnquiryNumber.enquiryno;
                         // }
                     },function (error){
-                   // alert(error);
+                    alert(error);
                 
                     });        
 
@@ -148,12 +121,12 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
 
        $scope.autogenerate = function()
        {
-        var category = $scope.playschoolapplicationsaledata.category;
+        var category = $scope.playschoolapplicationsaleeditdata.category;
         if (category == 'Enquiry')
         {
             if($scope.lastEnquiryNumber != null && $scope.lastEnquiryNumber.enquiryno != undefined )
             {
-                $scope.playschoolapplicationsaledata.applno = 'ENQ'+ $scope.lastEnquiryNumber.enquiryno;
+                $scope.playschoolapplicationsaleeditdata.applno = 'ENQ'+ $scope.lastEnquiryNumber.enquiryno;
             }
 
 
@@ -179,8 +152,8 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
 
 
         $scope.playSchoolApplicationSaleSubmit = function(){
-    	console.log($scope.playschoolapplicationsaledata);
-        var playschlAppObj = $scope.playschoolapplicationsaledata;
+    	console.log($scope.playschoolapplicationsaleeditdata);
+        var playschlAppObj = $scope.playschoolapplicationsaleeditdata;
 
         if(playschlAppObj != undefined && playschlAppObj != null )
         {
@@ -189,23 +162,23 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
             {
                 //try
                // {
-                    $scope.playschoolapplicationsaledata.idno = 1;
-                    if($scope.playschoolapplicationsaledata.category == 'Enquiry')
-                        $scope.playschoolapplicationsaledata.enquiryno = $scope.lastEnquiryNumber.enquiryno+1;
+                    $scope.playschoolapplicationsaleeditdata.idno = 1;
+                    if($scope.playschoolapplicationsaleeditdata.category == 'Enquiry')
+                        $scope.playschoolapplicationsaleeditdata.enquiryno = $scope.lastEnquiryNumber.enquiryno+1;
                     else
-                        $scope.playschoolapplicationsaledata.enquiryno = $scope.lastEnquiryNumber.enquiryno;    
+                        $scope.playschoolapplicationsaleeditdata.enquiryno = $scope.lastEnquiryNumber.enquiryno;    
 
                     $http({
                         url: hosturl+"/api/v1/playschoolapplicationsale",
                         method: "POST",
                         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                        data: $.param($scope.playschoolapplicationsaledata)
+                        data: $.param($scope.playschoolapplicationsaleeditdata)
                     }).then(function(success) {
                     alert('Record Saved.');
                     ClearDataFields();
                     $window.scrollTo(0, 0);
                     },function (error){
-                   // alert(error);
+                    alert(error);
                 
                     });        
                 //}
@@ -230,36 +203,35 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
 
     function ClearDataFields()
     {
-        $scope.playschoolapplicationsaledata.category="Select Category";
-        $scope.playschoolapplicationsaledata.applno="";
-        $scope.playschoolapplicationsaledata.appfor="Select Application For";
-        $scope.playschoolapplicationsaledata.candfirstname="";
-        $scope.playschoolapplicationsaledata.candmiddlename="";
-        $scope.playschoolapplicationsaledata.candlastname="";
-        $scope.playschoolapplicationsaledata.dateofbirth="";
-        $scope.playschoolapplicationsaledata.age="";
-        $scope.playschoolapplicationsaledata.gender="Select Gender";
-        $scope.playschoolapplicationsaledata.candfathername="";
-        $scope.playschoolapplicationsaledata.candmothername="";
-        $scope.playschoolapplicationsaledata.presentaddress1="";
-        $scope.playschoolapplicationsaledata.presentaddress2="";
-        $scope.playschoolapplicationsaledata.presentarea="";
-        $scope.playschoolapplicationsaledata.presentpincode="";
-        $scope.playschoolapplicationsaledata.presentstate="TamilNadu";
-        $scope.playschoolapplicationsaledata.fathersmobileno="";
-        $scope.playschoolapplicationsaledata.fathersaltmobno="";
-        $scope.playschoolapplicationsaledata.mothersmobileno="";
-        $scope.playschoolapplicationsaledata.mothersaltmobno="";
-        $scope.playschoolapplicationsaledata.fathersemail="";
-        $scope.playschoolapplicationsaledata.mothersemail="";
-        $scope.playschoolapplicationsaledata.reference="";
-        $scope.playschoolapplicationsaledata.willingtojoin="Select Willingness";
-        $scope.playschoolapplicationsaledata.followupdate="";
-        $scope.playschoolapplicationsaledata.applicationprice="";
-        $scope.playschoolapplicationsaledata.applicationpaidmode="Select Paid Mode";
-        $scope.playschoolapplicationsaledata.remarks="";
-        $scope.playschoolapplicationsaledata.academicyear="Select Academic Year";
-        $scope.playschoolapplicationsaledata.institueid="";
+        $scope.playschoolapplicationsaleeditdata.category="Select Category";
+        $scope.playschoolapplicationsaleeditdata.applno="";
+        $scope.playschoolapplicationsaleeditdata.appfor="Select Application For";
+        $scope.playschoolapplicationsaleeditdata.candfirstname="";
+        $scope.playschoolapplicationsaleeditdata.candmiddlename="";
+        $scope.playschoolapplicationsaleeditdata.candlastname="";
+        $scope.playschoolapplicationsaleeditdata.dateofbirth="";
+        $scope.playschoolapplicationsaleeditdata.age="";
+        $scope.playschoolapplicationsaleeditdata.gender="Select Gender";
+        $scope.playschoolapplicationsaleeditdata.candfathername="";
+        $scope.playschoolapplicationsaleeditdata.candmothername="";
+        $scope.playschoolapplicationsaleeditdata.presentaddress1="";
+        $scope.playschoolapplicationsaleeditdata.presentaddress2="";
+        $scope.playschoolapplicationsaleeditdata.presentarea="";
+        $scope.playschoolapplicationsaleeditdata.presentpincode="";
+        $scope.playschoolapplicationsaleeditdata.presentstate="TamilNadu";
+        $scope.playschoolapplicationsaleeditdata.fathersmobileno="";
+        $scope.playschoolapplicationsaleeditdata.fathersaltmobno="";
+        $scope.playschoolapplicationsaleeditdata.mothersmobileno="";
+        $scope.playschoolapplicationsaleeditdata.mothersaltmobno="";
+        $scope.playschoolapplicationsaleeditdata.fathersemail="";
+        $scope.playschoolapplicationsaleeditdata.mothersemail="";
+        $scope.playschoolapplicationsaleeditdata.reference="";
+        $scope.playschoolapplicationsaleeditdata.willingtojoin="Select Willingness";
+        $scope.playschoolapplicationsaleeditdata.followupdate="";
+        $scope.playschoolapplicationsaleeditdata.applicationprice="";
+        $scope.playschoolapplicationsaleeditdata.applicationpaidmode="Select Paid Mode";
+        $scope.playschoolapplicationsaleeditdata.remarks="";
+        $scope.playschoolapplicationsaleeditdata.academicyear="Select Academic Year";
     }
 
     function validateApplication(playschlAppObj )
@@ -294,7 +266,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
             {       
                 $scope.showAppForErr = true;
                 $scope.saleAppforMsg = "(Please Select Application For)";
-                //alert('2');
+                alert('2');
                 return false;
             }
             if(playschlAppObj.candfirstname == undefined || playschlAppObj.candfirstname ==  null || playschlAppObj.candfirstname == '')
@@ -514,17 +486,11 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                 $scope.categoryErrMsg = "(Please Select Category)";
                 return false;
             }
-            if(playschlAppObj.instituteid == undefined || playschlAppObj.instituteid ==  null || playschlAppObj.instituteid == '')
-            {
-                $scope.ShowInsituteIdErr = true;
-                $scope.instituteIdMsg = "(Please Enter Institute ID)";
-                return false;
-            }
 
             }
             catch(ex)
             {
-                //alert('Exception in validation '+ ex);
+                alert('Exception in validation '+ ex);
                 console.log(ex);
                 return false;
             }
@@ -608,9 +574,6 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
 
         $scope.showCategoryErr = false;
         $scope.categoryErrMsg = '';
-
-        $scope.ShowInsituteIdErr = false;
-        $scope.instituteIdMsg = '';
 
     }
 

@@ -7,7 +7,7 @@
 					<div class="form-group">
 						<label>Enter HomeWork Id <font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="homeworkIdErrMsg" ng-show="showHomeWorkIdErr"></label>
-						<input class="form-control" type="text" name="homeworkid" ng-model="studenthomeworkplayschooldata.homeworkid">
+						<input class="form-control" type="text" name="homeworkid" ng-model="studenthomeworkplayschooldata.homeworkid" ng-disabled = "true">
 					</div>
 
 					<div class="form-group">
@@ -27,7 +27,7 @@
 						<select class="form-control" ng-model="studenthomeworkplayschooldata.program">
 							<option>Select Program</option>
 							<option>TODDLER PROGRAM</option>
-							<option>PREKG</option>
+							<option>PRE-KG</option>
 							<option>KG1</option>
 							<option>KG2</option>
 							</select>
@@ -50,13 +50,7 @@
 						<select class="form-control" ng-model="studenthomeworkplayschooldata.academicyear">
 							<option>Select Academic Year</option>
 							<option>2017-2018</option>
-							<option>2016-2017</option>
-							<option>2015-2016</option>
-							<option>2014-2015</option>
-							<option>2013-2014</option>
-							<option>2012-2013</option>
-							<option>2011-2012</option>
-							<option>2010-2011</option>
+							<option>2018-2019</option>
 						</select>
 					</div>
 					<div class="form-group">
@@ -67,6 +61,7 @@
 							<option>TAMIL</option>
 							<option>ENGLISH</option>
 							<option>MATHS</option>
+							<option>HINDI</option>
 							<option>OTHERS</option>
 						</select>
 					</div>
@@ -80,11 +75,17 @@
 						<label>Enter Login User</label>
 						<input class="form-control" type="text" name="loginuser" ng-model="studenthomeworkplayschooldata.loginuser">
 					</div>
+					<div class="form-group">
+						<label>Enter Institute Id</label>
+						<label class="label-error-message" ng-bind="institueIdErrMsg" ng-show="showInstituteIdErr"></label>
+						<input class="form-control" type="text" name="instituteid" ng-model="studenthomeworkplayschooldata.instituteid">
+					</div>
+
 				</div>
 			</div>
 			<div class="text-right">
 				<input type="button" class="btn btn-default" value="CLEAR">
-				<input type="submit" class="btn btn-primary" value="SUBMIT">
+				<input type="submit" class="btn btn-primary" value="SUBMIT" ng-click="reloadPage();">
 			</div>
 		</form>
 	</div>

@@ -445,7 +445,7 @@ sivwebapp.config(function($routeProvider) {
         controller : "studentHomeWorkPlaySchoolCtrl"
     })
       .when("/childspickupplayschoolentry", {
-        templateUrl : "templates/childspickupplayschoolentry.html",
+        templateUrl : "templates/studentpickupplayschoolentry.html",
         controller : "childsPickupPlaySchoolEntryCtrl"
     })
       .when("/photosuploadplayschool", {
@@ -491,6 +491,13 @@ sivwebapp.config(function($routeProvider) {
       .when("/studenthomeworkviewplayschool", {
         templateUrl : "templates/studenthomeworkviewplayschool.html",
         controller : "studentHomeWorkPlaySchoolCtrl"
+    }).when("/studentpickupplayschool", {
+        templateUrl : "templates/studentpickupplayschoolentry.html",
+        controller : "childsPickupPlaySchoolEntryCtrl"
+    })
+    .when("/studentpersonalinformationviewplayschool", {
+        templateUrl : "templates/studentpersonalinformationeditplayschool.html",
+        controller : "studentPersonalInformationEditPlaySchoolCtrl"
     })
 
     .otherwise({
@@ -501,9 +508,4 @@ sivwebapp.config(function($routeProvider) {
 });
 
 sivwebapp.constant('hosturl', 'http://localhost:8080');
-
-//old//sivwebapp.constant('hosturl', 'http://ec2-18-220-235-33.us-east-2.compute.amazonaws.com:8080');
-
-//sivwebapp.constant('hosturl', 'http://ec2-18-220-235-33.us-east-2.compute.amazonaws.com:8080');
-
-//sivwebapp.constant('hosturl', 'http://ec2-18-221-7-74.us-east-2.compute.amazonaws.com:8080');
+// sivwebapp.constant('hosturl', 'http://api.gbcorp.in:8080');

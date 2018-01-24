@@ -232,6 +232,12 @@ sivwebapp.controller('feesPaymentPlaySchoolCtrl', function($scope, $http, hostur
                 $scope.paymentMethodErrMsg = "(Please enter Payment Method";
                 return false;
             }
+            if(playschlFeesPayObj.instituteid == undefined || playschlFeesPayObj.instituteid ==  null || playschlFeesPayObj.instituteid == '')
+            {
+                $scope.showInstituteIDErr = true;
+                $scope.instituteIdErrMsg = "(Please enter Instute ID";
+                return false;
+            }
 
 
         }
@@ -304,6 +310,8 @@ sivwebapp.controller('feesPaymentPlaySchoolCtrl', function($scope, $http, hostur
         $scope.paymentMethodErrMsg='';
         $scope.showPaymentMethodErr=false;
 
+        $scope.instituteIdErrMsg='';
+        $scope.showInstituteIDErr=false;
 
     }    
 
