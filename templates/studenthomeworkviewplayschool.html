@@ -1,15 +1,30 @@
 <h2>Home Work Details</h2>
 
-<table class="table table-striped gutter-top-30">
+<!-- <table class="table table-striped gutter-top-30">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Day</th>
+                <th>HomeWork Date</th>
+                <th>Subject</th>
+                <th>Homework Content</th>
                 
             </tr>
         </thead>
-    </table>
+        <tr ng-repeat="homework in homeworklist">
+            <td>{{homework.entrydate}}</td>
+            <td>{{homework.subjectcategory}}</td>
+            <td>{{homework.homeworkcontent}}</td>
+        </tr>
+    </table> -->
     <div class="form-group">
-    <label>NEEDS TO DISPLAY THE LIST OF HOME WORKS OF TODAY</label>
-                        
+        <label>Enter Homework Date</label>
+        <input type="text" class="form-control" placeholder="Enter Homework Date" ng-model="homeworkDate">
+    </div>
+    <input type="button" ng-click="getHomework()" class="btn btn-primary" value="Submit">
+    <br/>
+    <br/>
+    <br/>
+    <div class="customalert norecordtext" ng-show="!homeworklist.length"><i class="fa fa-warning"></i> No Records Found!</div>
+    <div class="panelrow" ng-repeat="homework in homeworklist">
+        <div class="paneltitle">{{homework.subjectcategory}} <span class="paneldate">{{homework.entrydate | dateFormat}}</span> <span class="panelday">{{homework.entrydate | dayOfDate}}</span></div>
+        <div class="panelcontent">{{homework.homeworkcontent}}</div>
     </div>

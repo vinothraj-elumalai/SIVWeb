@@ -30,6 +30,11 @@
 							<option>PRE-KG</option>
 							<option>KG1</option>
 							<option>KG2</option>
+							<option>I STD</option>
+							<option>II STD</option>
+							<option>III STD</option>
+							<option>IV STD</option>
+							<option>V STD</option>
 							</select>
 					</div>
 					<div class="form-group">
@@ -49,6 +54,7 @@
 						<label class="label-error-message" ng-bind="academicYearErrMsg" ng-show="showAcademicYearErr"></label>
 						<select class="form-control" ng-model="studenthomeworkplayschooldata.academicyear">
 							<option>Select Academic Year</option>
+							<option>2018-2019</option>
 							<option>2017-2018</option>
 							<option>2018-2019</option>
 						</select>
@@ -69,7 +75,9 @@
 					<div class="form-group">
 						<label>Enter Home Work Content<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="homeworkContentErrMsg" ng-show="showHomeWorkContentErr"></label>
-						<input class="form-control" type="text" name="homeworkcontent" ng-model="studenthomeworkplayschooldata.homeworkcontent">
+						<textarea class="form-control" ng-model="studenthomeworkplayschooldata.homeworkcontent"></textarea>
+						
+<!-- 						<input class="form-control" type="text" name="homeworkcontent" ng-model="studenthomeworkplayschooldata.homeworkcontent"> -->
 					</div>
 					<div class="form-group">
 						<label>Enter Login User</label>

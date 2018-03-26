@@ -1,4 +1,4 @@
-<h1>PLAYSCHOOL STUDENT ATTENDANCE ENTRY</h1>
+<h1>STUDENT ATTENDANCE ENTRY</h1>
 <div class="row">
 	<div class="col-md-12">
 		<form name="studentattendanceplayschoolform" ng-submit="getStudentListAttendance()" novalidate>
@@ -16,6 +16,11 @@
 							<option>PRE-KG</option>
 							<option>KG1</option>
 							<option>KG2</option>
+							<option>I STD</option>
+							<option>II STD</option>
+							<option>III STD</option>
+							<option>IV STD</option>
+							<option>V STD</option>
 						</select>
 					</div>
 					<div class="form-group">
@@ -30,6 +35,7 @@
 					<div class="form-group">
 						<label>Academic Year</label>
 						<select class="form-control" ng-model="getPlaySchoolStudentListData.academicyear" required>
+							<option>2018-2019</option>
 							<option>2017-2018</option>
 							<option>2016-2017</option>
 							<option>2015-2016</option>

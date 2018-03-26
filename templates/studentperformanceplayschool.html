@@ -1,0 +1,340 @@
+<h1>ASSESSMENT ENTRY</h1>
+<div class="row">
+	<div class="col-md-12">
+		
+		<div class="form-group">
+			<label>Register No</label>
+			<input class="form-control" type="text" name="registernumber" ng-model="searchRegnoData.registernumber">
+		</div>
+
+
+		<div class="form-group">
+			<label>Application For<font color="red">**</font></label>
+			<label class="label-error-message" ng-bind="saleAppforMsg" ng-show="showAppForErr"></label>
+			<select class="form-control" ng-model="searchAppnoData.appfor" required>
+				<option>Select Application For</option>
+				<option>TODDLER PROGRAM</option>
+				<option>PRE-KG</option>
+				<option>KG1</option>
+				<option>KG2</option>
+				</select>
+		</div>
+     
+		<div class="form-group">
+			<label>Academic Year<font color="red">**</font></label>
+			<label class="label-error-message" ng-bind="academicyearMsg" ng-show="showAcademicYearErr"></label>
+			<select class="form-control" ng-model="searchAppnoData.academicyear" required>
+				<option>Select Academic Year</option>
+				<option>2017-2018</option>
+				<option>2018-2019</option>
+				<option>2019-2020</option>
+				<option>2020-2021</option>
+				</select>
+		</div>
+
+		<div class="form-group">
+			<label>Institute ID</label>
+			<input class="form-control" type="text" name="instituteid" ng-model="searchAppnoData.instituteid">
+		</div>
+
+
+<!-- 			<input class="form-control" type="text" name="applicationno" ng-model="admissionplayschooldata.applicationno">
+ -->		 	
+		<div class="form-group">	
+		<div class="text-right">
+
+			<input type="button" ng-click="searchAppNo()" class="btn btn-default"  value="SEARCH">
+		</div>
+		</div>
+		<form name="assessmentplayschoolform" ng-submit="assessmentPlaySchoolSubmit()" novalidate class="form-validation">
+			<ul class="steps">
+				<li ng-class="{'active':activestep == 1}"><a href="javascript:void(0)"><span class="stepscount">1</span></a></li>
+				<li ng-class="{'active':activestep == 2}"><a href="javascript:void(0)"><span class="stepscount">2</span></a></li>
+				<li ng-class="{'active':activestep == 3}"><a href="javascript:void(0)"><span class="stepscount">3</span></a></li>
+			</ul>
+			<div class="row">
+				<div class="col-md-12">		
+					<div class="stepscontent" id="step1" ng-show="activestep == 1">
+
+						<div class="form-group">
+							<label>Entry Date</label>
+							<input class="form-control" type="text" name="entrydate" ng-model="assessmentplayschooldata.entrydate" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Assessment For<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="assessmentforMsg" ng-show="showAssessmentForErr"></label>
+							<select class="form-control" ng-model="assessmentplayschooldata.assessmentfor" required>
+								<option>Select Assessment For</option>
+								<option>TERM - I</option>
+								<option>TERM - II</option>
+								<option>TERM - III</option>
+								</select>
+						</div>
+
+
+
+						<div class="form-group">
+							<label>Register Number</label>
+							<label class="label-error-message" ng-bind="RegisterNumberErrMsg" ng-show="showRegisterNumberErr"></label>
+							<input class="form-control" type="text" name="registernumber" ng-model="assessmentplayschooldata.registernumber"  required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Name</label>
+							<input class="form-control" type="text" name="name" ng-model="assessmentplayschooldata.name" required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Program</label>
+							<input class="form-control" type="text" name="program" ng-model="assessmentplayschooldata.program" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Section</label>
+							<input class="form-control" type="text" name="section" ng-model="assessmentplayschooldata.section" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Academic Year</label>
+							<input class="form-control" type="text" name="academicyear" ng-model="assessmentplayschooldata.academicyear" required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Gross Motor Skills</label>
+							<input class="form-control" type="text" name="grossmotorskills" ng-model="assessmentplayschooldata.grossmotorskills" required ng-disabled="true" >
+						</div>
+						<div class="form-group">
+							<label>Fine Motor Skills</label>
+							<input class="form-control" type="text" name="finemotorskills" ng-model="assessmentplayschooldata.finemotorskills" required ng-disabled="true"> 
+						</div>
+
+						<div class="form-group">
+							<label>Concept Knowledge</label>
+							<input class="form-control" type="text" name="conceptknowledge" ng-model="assessmentplayschooldata.conceptknowledge" required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Activity Participation</label>
+							<input class="form-control" type="text" name="activityparticipation" ng-model="assessmentplayschooldata.activityparticipation" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Social Behavior</label>
+							<input class="form-control" type="text" name="socialbehavior" ng-model="assessmentplayschooldata.socialbehavior" required ng-disabled="true">
+						</div>
+						
+						
+						<div class="form-group">
+							<label>Dining Etiquettes</label>
+							<input class="form-control" type="text" name="diningetiquettes" ng-model="assessmentplayschooldata.diningetiquettes" required ng-disabled="true">
+							
+						</div>
+						<div class="form-group">
+							<label>Language Skills</label>
+							<input class="form-control" type="text" name="languageskills" ng-model="assessmentplayschooldata.languageskills" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Listening Skills</label>
+							<input class="form-control" type="text" name="listeningskills" ng-model="assessmentplayschooldata.listeningskills" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>No of Working Days</label>
+							<input class="form-control" type="text" name="noofworkingdays" ng-model="assessmentplayschooldata.noofworkingdays" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>No of Days Attended</label>
+							<input class="form-control" type="text" name="noofdaysattended" ng-model="assessmentplayschooldata.noofdaysattended" required ng-disabled="true">
+						</div>
+					
+
+						
+
+						<div class="text-right">
+							<input  type="button" class="btn btn-primary" value="NEXT" ng-click="gotostep(2)">
+						</div>
+
+
+
+
+
+					</div>
+
+
+
+
+
+
+					<div class="stepscontent" id="step2" ng-show="activestep == 2">
+
+						
+						<div class="form-group">
+							<label>General Abilities</label>
+						</div>	
+
+						<div class="form-group">
+							<label>READING</label>
+						</div>	
+
+
+						<div class="form-group">
+							<label>Fluency</label>
+							<label class="label-error-message" ng-bind="fluencyErrMsg" ng-show="showfluencyErr"></label>
+							<input class="form-control" type="text" name="fluency" ng-model="assessmentplayschooldata.fluency">
+						</div>
+						<div class="form-group">
+							<label>Accuracy</label>
+							<label class="label-error-message" ng-bind="accuracyErrMsg" ng-show="showaccuracyErr"></label>
+							<input class="form-control" type="text" name="accuracy" ng-model="assessmentplayschooldata.accuracy">
+						</div>
+						<div class="form-group">
+							<label>Clarity</label>
+							
+							<input class="form-control" type="text" name="clarity" ng-model="assessmentplayschooldata.clarity">
+						</div>
+
+						<div class="form-group">
+							<label>WRITING</label>
+						</div>	
+
+						<div class="form-group">
+							<label>Legibility</label>
+							<label class="label-error-message" ng-bind="legibilityErrMsg" ng-show="showlegibilityErr"></label>
+							<input class="form-control" type="text" name="legibility" ng-model="assessmentplayschooldata.legibility">
+						</div>
+						<div class="form-group">
+							<label>Neatness</label>
+							<label class="label-error-message" ng-bind="neatnessErrMsg" ng-show="showneatnessErr"></label>
+							<input class="form-control" type="text" name="neatness" ng-model="assessmentplayschooldata.neatness" allow-only-numbers required>
+						</div>
+
+						<div class="form-group">
+							<label>CO-CURRICULAR ACTIVITIES</label>
+						</div>	
+
+
+						<div class="form-group">
+							<label>Games</label>
+							<label class="label-error-message" ng-bind="gamesErrMsg" ng-show="showgamesErr"></label>
+							<input class="form-control" type="text" name="games" ng-model="assessmentplayschooldata.games" ng-disabled="true"  required>
+						</div>
+						<div class="form-group">
+							<label>Arts and Crafts</label>
+
+							<input class="form-control" type="text" name="artsandcrafts" ng-model="assessmentplayschooldata.artsandcrafts" allow-only-numbers>
+						</div>
+
+						<div class="form-group">
+							<label>TRAITS AND VALUES</label>
+						</div>	
+
+
+						<div class="form-group">
+							<label>Obedience</label>
+							<input class="form-control" type="text" name="obedience" ng-model="assessmentplayschooldata.obedience" allow-only-numbers>
+						</div>
+						<div class="form-group">
+							<label>Responsibility</label>
+							<input class="form-control" type="text" name="responsibility" ng-model="assessmentplayschooldata.responsibility " allow-only-numbers>
+						</div>
+
+						<div class="form-group">
+							<label>Punctuality</label>
+							<input class="form-control" type="text" name="punctuality" ng-model="assessmentplayschooldata.punctuality">
+						</div>					
+						<div class="form-group">
+							<label>Regularity</label>
+							<input class="form-control" type="text" name="regularity" ng-model="assessmentplayschooldata.regularity">
+						</div>
+						<div class="form-group">
+							<label>Home Work</label>
+							<input class="form-control" type="text" name="homework" ng-model="assessmentplayschooldata.homework">
+						</div>
+						<div class="form-group">
+							<label>Hand Writing</label>
+							<input class="form-control" type="text" name="handwriting" ng-model="assessmentplayschooldata.handwriting">
+						</div>
+						<div class="form-group">
+							<label>Personal Hygiene</label>
+							<input class="form-control" type="text" name="personalhygiene" ng-model="assessmentplayschooldata.personalhygiene">
+						</div>
+						<div class="form-group">
+							<label>Sharing</label>
+							<input class="form-control" type="text" name="sharing" ng-model="assessmentplayschooldata.sharing" allow-only-numbers>
+						</div>
+
+						<div class="text-right">
+							<input type="button" class="btn btn-default" ng-click="gotostep(1)" value="BACK">
+							<input type="button" class="btn btn-primary" value="NEXT" ng-click="gotostep(3)">
+						</div>
+
+
+
+
+
+					</div>
+
+
+
+
+
+					<div class="stepscontent" id="step3" ng-show="activestep == 3">
+						<div class="form-group">
+							<label>Uniform<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="uniformErrMsg" ng-show="showUniformErr"></label>
+							<input class="form-control" type="text" name="uniform" ng-model="assessmentplayschooldata.uniform">
+						</div>
+						<div class="form-group">
+							<label>Nails<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="nailsErrMsg" ng-show="showNailsErr"></label>
+							<input class="form-control" type="text" name="nails" ng-model="assessmentplayschooldata.nails">
+						</div>
+						<div class="form-group">
+							<label>Hair<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="hairErrMsg" ng-show="showHairErr"></label>
+							<input class="form-control" type="text" name="hair" ng-model="assessmentplayschooldata.hair">
+						</div>
+						<div class="form-group">
+							
+						<div class="form-group">
+							<label>Cleanliness<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="cleanlinessErrMsg" ng-show="showCleanlinessErr"></label>
+							<input class="form-control" type="text" name="cleanliness" ng-model="assessmentplayschooldata.cleanliness">
+						</div>
+
+						<div class="form-group">
+							<label>Height<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="heightErrMsg" ng-show="showHeightErr"></label>
+							<input class="form-control" type="text" name="height" ng-model="assessmentplayschooldata.height" allow-only-numbers required>
+						</div>
+						<div class="form-group">
+							<label>Weight</label>
+							<label class="label-error-message" ng-bind="weightErrMsg" ng-show="showWeightErr"></label>
+							<input class="form-control" type="text" name="weight" ng-model="assessmentplayschooldata.weight" allow-only-numbers>
+
+						</div>
+						<div class="form-group">
+							<label>Login User</label>
+							<input class="form-control" type="text" name="loginuser" ng-model="assessmentplayschooldata.loginuser">
+						</div>
+						<div class="form-group">
+							<label>Institute ID</label>
+							<label class="label-error-message" ng-bind="instituteIdMsg" ng-show="ShowInsituteIdErr"></label>
+
+							<input class="form-control" type="text" name="instituteid" ng-model="assessmentplayschooldata.instituteid" required>
+						</div>
+
+						
+
+						<div class="text-right">
+							<input type="button" class="btn btn-default" ng-click="gotostep(2)" value="BACK">
+							<input type="submit" class="btn btn-primary" value="SAVE">
+						</div>
+
+
+					</div>
+					
+
+						
+				</div>
+			</div>
+			
+		</form>
+	</div>
+</div>

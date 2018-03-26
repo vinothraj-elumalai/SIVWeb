@@ -1,0 +1,17 @@
+<h1>STUDENT DAILY ATTENDANCE</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="studentdailyattendanceparentfetchplayschoolform" ng-submit="studentdailyattendanceparentfetchPlaySchoolSubmit()" novalidate>
+				<div class="datarow">
+					<div class="datatitle">Date</div>
+					<p class="datainfo">{{attendancedetail.entrydate}}</p>
+				</div>
+				<div class="datarow">
+					<div class="datatitle">Attendance Status</div>
+					<p class="datainfo">{{attendancedetail.attstatus}}</p>
+					<img ng-if="attendancedetail.status == '1'" src="images/present.png" class="attstatusimg" />
+					<img ng-if="attendancedetail.status == '0'" src="images/absent.jpg" class="attstatusimg" />
+				</div>
+		</form>
+	</div>
+</div>

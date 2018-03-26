@@ -99,6 +99,7 @@ sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($s
                     "fathersdob": constantService.toDateFormat(success.data[1].fathersdob),
                     "mothersdob": constantService.toDateFormat(success.data[1].mothersdob),
                     "parentsweddingdate": constantService.toDateFormat(success.data[1].parentsweddingdate),
+                    "religion": success.data[1].religion,
                     "pickuppersonname": success.data[1].pickuppersonname,
                     "pickuppersoncontactno": success.data[1].pickuppersoncontactno,
                     "pickuppersonaltcontactno": success.data[1].pickuppersonaltcontactno,
@@ -265,12 +266,12 @@ sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($s
                 $scope.presentpincodeErrMsg = "(Please enter Present Pin Code)";
                 return false;
             }
-            if(playschlStudPersInfEditObj.presentstate == undefined || playschlStudPersInfEditObj.presentstate ==  null || playschlStudPersInfEditObj.presentstate == '')
-            {
-                $scope.showPresentstateErr = true;
-                $scope.presentstateErrMsg = "(Please enter Present State)";
-                return false;
-            }
+            // if(playschlStudPersInfEditObj.presentstate == undefined || playschlStudPersInfEditObj.presentstate ==  null || playschlStudPersInfEditObj.presentstate == '')
+            // {
+            //     $scope.showPresentstateErr = true;
+            //     $scope.presentstateErrMsg = "(Please enter Present State)";
+            //     return false;
+            // }
             if(playschlStudPersInfEditObj.fathersmobileno == undefined || playschlStudPersInfEditObj.fathersmobileno ==  null || playschlStudPersInfEditObj.fathersmobileno == '')
             {
                 $scope.showFathersMobileNoErr = true;
@@ -441,8 +442,8 @@ sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($s
         $scope.presentpincodeErrMsg='';
         $scope.showPresentpincodeErr=false;
 
-        $scope.presentstateErrMsg='';
-        $scope.showPresentstateErr=false;
+        // $scope.presentstateErrMsg='';
+        // $scope.showPresentstateErr=false;
 
         $scope.fathersmobilenoErrMsg='';
         $scope.showFathersMobileNoErr=false;

@@ -1,0 +1,51 @@
+<h1>PARENT FEED BACK ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="parentfeedbackplayschoolform" ng-submit="parentfeedbackPlaySchoolSubmit()" novalidate>
+
+					<div class="form-group">
+						<label>Date<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="entrydateErrMsg" ng-show="showEntrydateErr"></label>						
+						<input class="form-control" type="text" name="entrydate" ng-model="parentfeedbackplayschooldata.entrydate" ng-disabled = "true">
+					</div>
+
+					<div class="form-group">
+						<label>Feed Back Comments About School <font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="feedBackSchoolErrMsg" ng-show="showFeedBackSchoolErr"></label>						
+						<textarea class="form-control" ng-model="parentfeedbackplayschooldata.feedbackschool"></textarea>
+					</div>
+
+					<div class="form-group">
+						<label>Rate School <font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="rateSchoolErrMsg" ng-show="showrateSchoolErr"></label>						
+						<textarea class="form-control" ng-model="parentfeedbackplayschooldata.rateschool"></textarea>
+					</div>
+
+					<div class="form-group">
+						<label>Feed Back Comments About App <font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="feedBackAppErrMsg" ng-show="showFeedBackAppErr"></label>						
+						<textarea class="form-control" ng-model="parentfeedbackplayschooldata.feedbackapp"></textarea>
+					</div>
+
+					<div class="form-group">
+						<label>Rate App <font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="rateAppErrMsg" ng-show="showrateAppErr"></label>						
+						<textarea class="form-control" ng-model="parentfeedbackplayschooldata.rateapp"></textarea>
+					</div>
+
+					<div class="form-group">
+						<label>Institute Id<font color="red">**</font></label>
+						<label class="label-error-message" ng-bind="instituteErrMsg" ng-show="showInstituteIdErr"></label>						
+						<input class="form-control" type="text" name="instituteid" ng-model="parentfeedbackplayschooldata.instituteid" ng-disabled = "true">
+					</div>
+
+                    
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SAVE">
+			</div>
+		</form>
+	</div>
+</div>

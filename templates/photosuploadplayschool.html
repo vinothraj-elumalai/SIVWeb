@@ -1,7 +1,7 @@
-<h1>PLAYSCHOOL STUDENT PHOTOS UPLOAD</h1>
+<h1>PHOTOS/VIDEOS UPLOAD</h1>
 <div class="row">
 	<div class="col-md-12">
-		<form name="photosuploadplayschoolform" ng-submit="photosUploadPlaySchoolSubmit()" novalidate>
+		<form name="photosuploadplayschoolform" ng-submit="getStudentListSubmit()" novalidate>
 			<div class="row student-form">
 				<div class="col-md-6">
 					<!-- <div class="form-group">
@@ -12,15 +12,22 @@
 					<div class="form-group">
 						<label>PROGRAM</label>
 						<select class="form-control" ng-model="photosuploadPlaySchoolData.program" required>
+							<option>Select Program</option>
 							<option>TODDLER PROGRAM</option>
 							<option>PRE-KG</option>
 							<option>KG1</option>
 							<option>KG2</option>
+							<option>I STD</option>
+							<option>II STD</option>
+							<option>III STD</option>
+							<option>IV STD</option>
+							<option>V STD</option>
 						</select>
 					</div>
 					<div class="form-group">
 						<label>SECTION</label>
 						<select class="form-control" ng-model="photosuploadPlaySchoolData.section" required>
+							<option>Select Section</option>
 							<option>SECTION - A</option>
 							<option>SECTION - B</option>
 							<option>SECTION - C</option>
@@ -30,15 +37,10 @@
 					<div class="form-group">
 						<label>Academic Year</label>
 						<select class="form-control" ng-model="photosuploadPlaySchoolData.academicyear" required>
-							<option>2016-2017</option>
-							<option>2015-2016</option>
-							<option>2016-2017</option>
-							<option>2016-2017</option>
+							<option>Select Academic Year</option>
+							<option>2018-2019</option>
+							<option>2017-2018</option>
 						</select>
-					</div>
-					<div class="form-group">
-						<label>Enter Login User</label>
-						<input class="form-control" type="text" name="loginuser" ng-model="photosuploadPlaySchoolData.loginuser" required>
 					</div>
 					<div class="form-group">
 						<label>Enter Institute ID</label>
@@ -51,27 +53,28 @@
 		</form>
 	</div>
 </div>
-
-
 <br/>
 <br/>
 <br/>
 
 
-<table>
+<table ng-show="studentList.length">
 	<tr>
 		<th>S.No.</th>
 		<th>Reg. No</th>
 		<th>Name</th>
-		<th>Attendance</th>
+		<th>
+		Select
+		<p><a href="javascript:void(0)" ng-click="selectAllStudents()">Select All</a></p>
+		</th>
 	</tr>
 
 
-	<tr ng-repeat= "student in studentList">
-		<td>{{$index}}</td>
-		<td>{{student.regNo}}</td>
-		<td>{{student.studentName}}</td>
-		<td><input type="checkbox"/></td>
+	<tr ng-repeat= "student in studentList"  ng-class="{selectedrow : student.studentphotoaccess == 1}">
+		<td>{{$index+1}}</td>
+		<td>{{student.registernumber}}</td>
+		<td>{{student.play_school_student_personal_regno.candidatename}}</td>
+		<td><input type="checkbox" ng-model="student.studentphotoaccess" ng-true-value="1" ng-false-value="0" ng-init="student.studentphotoaccess=0"/></td>
 	</tr>
 </table>
 
@@ -79,5 +82,33 @@
 <br/>
 <br/>
 
-<label>HERE WE HAVE TO PLACE IMAGE CONTROL AND ATTACH MORE BUTTON</label>
-<button ng-click="" class="btn btn-primary">Upload Images</button>
+<form ng-show="studentList.length" enctype="multipart/form-data" method="post" id="fileUploadForm" ng-submit="uploadImageSubmit()">
+<div class="row">
+	<div class="col-md-12">
+		<div class="form-group">
+			<input type="file" accept=".jpg,.jpeg,.png,.tif,.gif,.mkv,.mp4,.avi,.mpeg,.ogg,.wmv" multiple="multiple" name="fileupload" id="photoUploadFileId"/>
+		</div>
+		<div class="form-group">
+			<label>Enter Image(s) Title</label>
+			<input class="form-control" type="text" name="loginuser" ng-model="photosuploadPlaySchoolData.imagetitle" required>
+		</div>
+		<table ng-show="selectedImages.length">
+		    <tr><td>Name</td><td>Date</td><td>Size</td><td>Type</td> <td>Image Preview</td><tr>
+		    <tr ng-repeat="selectedImage in selectedImages">
+		      <td>{{selectedImage.name}}</td>
+		      <td>{{selectedImage.lastModified | date  : 'MMMdd,yyyy'}}</td>
+		      <td>{{selectedImage.size}}</td>
+		      <td>{{selectedImage.type}}</td>
+		      <td><img class="photothumb" ng-src="{{uploadimgurl[$index]}}" /></td>
+		    </tr>
+		    </table>
+	</div>
+</div>
+</form>
+
+<div class="form-group">
+	<label>Enter Login User</label>
+	<input class="form-control" type="text" name="loginuser" ng-model="photosuploadPlaySchoolData.loginuser" required>
+</div>
+
+<button ng-click="uploadImageSubmit()" class="btn btn-primary">Upload Images</button>

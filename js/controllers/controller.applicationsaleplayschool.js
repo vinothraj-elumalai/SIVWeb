@@ -1,4 +1,4 @@
-sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $filter, $window, hosturl) {
+sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $filter, $window, hosturl, Auth, constantService) {
 
     // $scope.showApplnErr = false;
     // $scope.applnNumberErrMsg="";
@@ -6,10 +6,18 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
 
         //     saledate: ''
         // };
-
+        $scope.userdata = Auth.isLoggedIn();
+        $scope.playschoolapplicationsaledata = {};
+        $scope.playschoolapplicationsaledata.loginuser = $scope.userdata.username;
+        $scope.playschoolapplicationsaledata.instituteid = $scope.userdata.instituteid;
+        $scope.$watch('playschoolapplicationsaledata.applicationnumberonly', function(newVal, oldVal) {
+            // checkData(newVal, oldVal, scope);
+            $scope.playschoolapplicationsaledata.applno = $scope.userdata.instituteid+$scope.playschoolapplicationsaledata.applicationnumberonly;
+        }, false);
+        
         clearFields();
-        $scope.lastEnquiryNumber = {};
-        fetchlastenquiryno();
+        // $scope.lastEnquiryNumber = {};
+        // fetchlastenquiryno();
 //       FillSaleDate();
 
         $scope.CalculateAge = function()
@@ -111,28 +119,28 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
             return isValid;
         }
 
-       function fetchlastenquiryno() {
-            $scope.idNumber = {
-                idno: 1
-            };
-            $http({
-                    url: hosturl+"/api/v1/playschoolapplicaitonnogenerate/getPlaySchoolApplcationNo",
-                    method: "POST",
-                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                    data: $.param($scope.idNumber)
-                    }).then(function(success) {
-                        console.log(success.data);
-                        $scope.lastEnquiryNumber = success.data;
-                        // if($scope.lastEnquiryNumber != null && $scope.lastEnquiryNumber.enquiryno != undefined )
-                        // {
-                        //    $scope.playschoolapplicationsaledata.applno = 'ENQ'+ $scope.lastEnquiryNumber.enquiryno;
-                        // }
-                    },function (error){
-                   // alert(error);
+       // function fetchlastenquiryno() {
+       //      $scope.idNumber = {
+       //          idno: 1
+       //      };
+       //      $http({
+       //              url: hosturl+"/api/v1/playschoolapplicaitonnogenerate/getPlaySchoolApplcationNo",
+       //              method: "POST",
+       //              headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+       //              data: $.param($scope.idNumber)
+       //              }).then(function(success) {
+       //                  console.log(success.data);
+       //                  $scope.lastEnquiryNumber = success.data;
+       //                  // if($scope.lastEnquiryNumber != null && $scope.lastEnquiryNumber.enquiryno != undefined )
+       //                  // {
+       //                  //    $scope.playschoolapplicationsaledata.applno = 'ENQ'+ $scope.lastEnquiryNumber.enquiryno;
+       //                  // }
+       //              },function (error){
+       //             // alert(error);
                 
-                    });        
+       //              });        
 
-       }
+       // }
 
         // function FillSaleDate()
         // {
@@ -146,36 +154,20 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
         // }
 
 
-       $scope.autogenerate = function()
-       {
-        var category = $scope.playschoolapplicationsaledata.category;
-        if (category == 'Enquiry')
-        {
-            if($scope.lastEnquiryNumber != null && $scope.lastEnquiryNumber.enquiryno != undefined )
-            {
-                $scope.playschoolapplicationsaledata.applno = 'ENQ'+ $scope.lastEnquiryNumber.enquiryno;
-            }
+       // $scope.autogenerate = function()
+       // {
+       //  var category = $scope.playschoolapplicationsaledata.category;
+       //  if (category == 'Enquiry')
+       //  {
+       //      if($scope.lastEnquiryNumber != null && $scope.lastEnquiryNumber.enquiryno != undefined )
+       //      {
+       //          $scope.playschoolapplicationsaledata.applno = 'ENQ'+ $scope.lastEnquiryNumber.enquiryno;
+       //      }
 
 
-        }
+       //  }
 
-       }
-
-        // $scope.searchAppNo = function(){
-        //     $http({
-        //         url: hosturl+"/api/v1/playschoolapplicationsale/getPlaySchoolApplcationDetail",
-        //         method: "POST",
-        //         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        //         data: $.param($scope.searchAppnoData)
-        //     }).then(function(success) {
-        //         console.log(success.data);
-        //         $scope.playschoolapplicationsaledata = success.data;
-
-        //         //$scope.admissionplayschooldata.applno = $scope.applicationData.applno;
-        //     },function (error){
-                
-        //     });
-        // }
+       // }
 
 
         $scope.playSchoolApplicationSaleSubmit = function(){
@@ -189,11 +181,11 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
             {
                 //try
                // {
-                    $scope.playschoolapplicationsaledata.idno = 1;
-                    if($scope.playschoolapplicationsaledata.category == 'Enquiry')
-                        $scope.playschoolapplicationsaledata.enquiryno = $scope.lastEnquiryNumber.enquiryno+1;
-                    else
-                        $scope.playschoolapplicationsaledata.enquiryno = $scope.lastEnquiryNumber.enquiryno;    
+                    // $scope.playschoolapplicationsaledata.idno = 1;
+                    // if($scope.playschoolapplicationsaledata.category == 'Enquiry')
+                    //     $scope.playschoolapplicationsaledata.enquiryno = $scope.lastEnquiryNumber.enquiryno+1;
+                    // else
+                    //     $scope.playschoolapplicationsaledata.enquiryno = $scope.lastEnquiryNumber.enquiryno;    
 
                     $http({
                         url: hosturl+"/api/v1/playschoolapplicationsale",
@@ -223,14 +215,14 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
         else
         {
             clearFields();
-            $scope.showCategoryErr = true;
-            $scope.categoryErrMsg = "(Please Select Category)";
+            // $scope.showCategoryErr = true;
+            // $scope.categoryErrMsg = "(Please Select Category)";
         }  
     }
 
     function ClearDataFields()
     {
-        $scope.playschoolapplicationsaledata.category="Select Category";
+        // $scope.playschoolapplicationsaledata.category="Select Category";
         $scope.playschoolapplicationsaledata.applno="";
         $scope.playschoolapplicationsaledata.appfor="Select Application For";
         $scope.playschoolapplicationsaledata.candfirstname="";
@@ -268,12 +260,12 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
         {    
              clearFields();
 
-            if(playschlAppObj.category == undefined || playschlAppObj.category ==  null || playschlAppObj.category == '' || playschlAppObj.category == 'Select Category')
-             {
-                $scope.showCategoryErr = true;
-                $scope.categoryErrMsg = "(Please Select Category)";
-                 return false;
-             }
+            // if(playschlAppObj.category == undefined || playschlAppObj.category ==  null || playschlAppObj.category == '' || playschlAppObj.category == 'Select Category')
+            //  {
+            //     $scope.showCategoryErr = true;
+            //     $scope.categoryErrMsg = "(Please Select Category)";
+            //      return false;
+            //  }
 
             if(playschlAppObj.applno == undefined || playschlAppObj.applno ==  null || playschlAppObj.applno == '')
              {
@@ -508,12 +500,12 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                 return false;
             }
 
-            if(playschlAppObj.category == undefined || playschlAppObj.category ==  null || playschlAppObj.category == '')
-            {
-                $scope.showCategoryErr = true;
-                $scope.categoryErrMsg = "(Please Select Category)";
-                return false;
-            }
+            // if(playschlAppObj.category == undefined || playschlAppObj.category ==  null || playschlAppObj.category == '')
+            // {
+            //     $scope.showCategoryErr = true;
+            //     $scope.categoryErrMsg = "(Please Select Category)";
+            //     return false;
+            // }
             if(playschlAppObj.instituteid == undefined || playschlAppObj.instituteid ==  null || playschlAppObj.instituteid == '')
             {
                 $scope.ShowInsituteIdErr = true;
@@ -606,8 +598,8 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
         $scope.showAppForErr = false;
         $scope.saleAppforMsg = '';
 
-        $scope.showCategoryErr = false;
-        $scope.categoryErrMsg = '';
+        // $scope.showCategoryErr = false;
+        // $scope.categoryErrMsg = '';
 
         $scope.ShowInsituteIdErr = false;
         $scope.instituteIdMsg = '';

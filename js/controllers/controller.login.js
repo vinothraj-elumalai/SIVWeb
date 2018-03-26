@@ -1,4 +1,4 @@
-sivwebapp.controller('loginCtrl', function($scope, $http, $location,$rootScope, hosturl) {
+sivwebapp.controller('loginCtrl', function($scope, $http, $location,$rootScope, hosturl, Auth) {
     $scope.loginSubmit = function(){
     	console.log($scope.logindata);
         $http({
@@ -13,6 +13,8 @@ sivwebapp.controller('loginCtrl', function($scope, $http, $location,$rootScope, 
                     alert("Invalid Username/Password");
                 }else{
                     if($rootScope.userStatus.userRole != ""){
+
+                        Auth.setUser($rootScope.userStatus);
                         $location.url("/dashboard");
                         $rootScope.logginStatus = true;
                         $rootScope.istogglemenu = false;

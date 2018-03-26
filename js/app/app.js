@@ -460,9 +460,9 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/studentsnamelistplayschool.html",
         controller : "studentsNameListPlaySchoolCtrl"
     })
-      .when("/studentsmonthlyreportplayschool", {
-        templateUrl : "templates/studentsmonthlyreportplayschool.html",
-        controller : "studentsMonthlyReportPlaySchoolCtrl"
+      .when("/studentsassessmentreportplayschool", {
+        templateUrl : "templates/studentperformanceplayschool.html",
+        controller : "assessmentPlaySchoolCtrl"
     })
       .when("/studentattendanceplayschoolmanagementview", {
         templateUrl : "templates/studentattendanceplayschoolmanagentview.html",
@@ -490,7 +490,7 @@ sivwebapp.config(function($routeProvider) {
     })
       .when("/studenthomeworkviewplayschool", {
         templateUrl : "templates/studenthomeworkviewplayschool.html",
-        controller : "studentHomeWorkPlaySchoolCtrl"
+        controller : "studentHomeWorkViewPlaySchoolCtrl"
     }).when("/studentpickupplayschool", {
         templateUrl : "templates/studentpickupplayschoolentry.html",
         controller : "childsPickupPlaySchoolEntryCtrl"
@@ -499,6 +499,30 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/studentpersonalinformationeditplayschool.html",
         controller : "studentPersonalInformationEditPlaySchoolCtrl"
     })
+    .when("/studentdailyattendanceparentfetchplayschool", {
+        templateUrl : "templates/studentdailyattendanceparentfetchplayschool.html",
+        controller : "studentDailyAttendanceParentFetchPlaySchoolCtrl"
+    })
+    .when("/studentdailyhomeworkparentfetchplayschool", {
+        templateUrl : "templates/studentdailyhomeworkparentfetchplayschool.html",
+        controller : "studentDailyHomeWorkParentFetchPlaySchoolCtrl"
+    })
+    .when("/studentdailyeventsparentfetchplayschool", {
+        templateUrl : "templates/studentdailyeventsparentfetchplayschool.html",
+        controller : "studentDailyEventsParentFetchPlaySchoolCtrl"
+    })
+    .when("/studentdailypickupparentfetchplayschool", {
+        templateUrl : "templates/studentdailypickupparentfetchplayschool.html",
+        controller : "studentDailyPickupParentFetchPlaySchoolCtrl"
+    })
+    .when("/changepasswordplayschool", {
+        templateUrl : "templates/changepasswordplayschool.html",
+        controller : "changePasswordCtrl"
+    })
+   .when("/parentfeedbackplayschool", {
+        templateUrl : "templates/parentfeedbackplayschool.html",
+        controller : "parentfeedbackplayschoolCtrl"
+    })
 
     .otherwise({
         templateUrl : "templates/login.html",
@@ -506,6 +530,53 @@ sivwebapp.config(function($routeProvider) {
     });
 
 });
+sivwebapp.run(['$rootScope', '$location', 'Auth', function ($rootScope, $location, Auth) {
+    $rootScope.$on('$routeChangeStart', function (event) {
 
+        if (!Auth.isLoggedIn()) {
+            console.log('DENY');
+            // event.preventDefault();
+            $location.path('/login');
+
+            $('#wrapper').addClass('loginpage');
+        }
+        else {
+            console.log('ALLOW');
+            // $location.path('/dashboard');
+            $('#wrapper').removeClass('loginpage');
+            $rootScope.profiledata = Auth.isLoggedIn();
+        }
+    });
+}]).factory('Auth', function(){
+var user;
+
+return{
+    setUser : function(aUser){
+        user = aUser;
+    },
+    isLoggedIn : function(){
+        return(user)? user : false;
+    }
+  }
+});
+
+sivwebapp.filter('dateFormat',['constantService' ,function(constantService) {
+    return function(entrydate) {
+        var convertedDate="";
+        convertedDate = constantService.toDateFormat(entrydate);
+        return convertedDate;
+    };
+}]);
+sivwebapp.filter('dayOfDate', function() {
+    return function(entrydate) {
+        var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        // var dayOfDate= "";
+        var d=new Date(entrydate);
+        console.log(days[d.getDay()]);
+        return days[d.getDay()];
+    };
+});
 sivwebapp.constant('hosturl', 'http://localhost:8080');
-// sivwebapp.constant('hosturl', 'http://api.gbcorp.in:8080');
+sivwebapp.constant('currentHost', 'http://localhost/SIVWeb/').run(function ($rootScope, currentHost) {$rootScope.currentHost = currentHost;});
+//sivwebapp.constant('hosturl', 'http://api.gbcorp.in:8080');
+// sivwebapp.constant('currentHost', 'http://siv.gbcorp.in/').run(function ($rootScope, currentHost) {$rootScope.currentHost = currentHost;});;

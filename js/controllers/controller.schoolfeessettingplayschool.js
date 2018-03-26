@@ -60,6 +60,11 @@ sivwebapp.controller('schoolFeesSettingPlaySchoolCtrl', function($scope, $http, 
         $scope.playschoolfeessettingdata.installment1duedate="";
         $scope.playschoolfeessettingdata.installment2fees="";
         $scope.playschoolfeessettingdata.installment2duedate="";
+        $scope.playschoolfeessettingdata.installment3fees="";
+        $scope.playschoolfeessettingdata.installment3duedate="";
+        $scope.playschoolfeessettingdata.othersfees="";
+        $scope.playschoolfeessettingdata.othersfeesduedate="";
+
         $scope.playschoolfeessettingdata.totalfees="";
         $scope.playschoolfeessettingdata.instituteid="";
     }
@@ -146,6 +151,20 @@ sivwebapp.controller('schoolFeesSettingPlaySchoolCtrl', function($scope, $http, 
             {
                 $scope.showInstallment2DueDateErr = true;
                 $scope.installment2DueDateErrMsg = "(Please enter Installment2 Due Date)";
+                return false;
+            }
+
+            if(playschlschlfeessetObj.installment3fees == undefined || playschlschlfeessetObj.installment3fees ==  null || playschlschlfeessetObj.installment3fees == '')
+            {
+                $scope.showInstallment3FeesErr = true;
+                $scope.installment3FeesErrMsg = "(Please enter Installment3 Fees)";
+                return false;
+            }
+
+            if(playschlschlfeessetObj.installment3duedate == undefined || playschlschlfeessetObj.installment3duedate ==  null || playschlschlfeessetObj.installment3duedate == '')
+            {
+                $scope.showInstallment3DueDateErr = true;
+                $scope.installment3DueDateErrMsg = "(Please enter Installment3 Due Date)";
                 return false;
             }
 

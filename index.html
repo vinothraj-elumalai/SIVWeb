@@ -26,14 +26,14 @@
           <div class="navbar-header header-logo-wrap">
             <div class="header-logo clearfix">
               <a href="#menu-toggle" class="togglemenu" id="menu-toggle"><span class="icon-menu"></span></a>
-              <a class="navbar-brand" href="#"><img src="images/institute/modernkids/modernkidslogo.jpg" alt="Realtime"/></a>
+              <a class="navbar-brand" href="#"><img ng-src="{{instituteLogoUrl}}"/></a>
             </div>
           </div>
           <h1 ng-if="logginStatus">Dashboard</h1>
           <ul class="nav navbar-nav navbar-right" ng-if="logginStatus">
             <li><a href="#"><span class="notification"><span class="icon-ring"></span><span class="new-notify"></span></span></a></li>
             <li class="dropdown profile">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Joe Blogs<img src="images/avatar.png" alt="Joe Blogs" class="avatar" />
+              <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">{{profiledata.firstName}} {{profiledata.lastName}}<img src="images/profile.png" width="47" alt="Joe Blogs" class="avatar" />
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">My Profile</a></li>
@@ -52,6 +52,7 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper" ng-if="logginStatus" sidenavnicescroll>
             <ul class="sidebar-nav sidemenu">
+                <li class="green"><a ng-href="#!/dashboard"><span class="sidemenuico icon-classroom"></span>Dashboard</a></li>
                 <li ng-repeat="menu in menulist" ng-class="{'green': $index%4 == 1, 'orange': $index%4 == 2, 'violet': $index%4 == 3, 'yellow': $index%4 == 0}">
                   <a ng-href="#!{{menu.href}}"><span class="sidemenuico {{menu.iconclass}}"></span>{{menu.menuitem}}</a>
                 </li>
@@ -198,6 +199,7 @@
     <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="js/printThis.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.js"></script>
     <script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
@@ -315,11 +317,12 @@
     <script src="js/controllers/controller.eventscircularsplayschool.js"></script>
     <script src="js/controllers/controller.staffpersonalinformationplayschool.js"></script>
     <script src="js/controllers/controller.studenthomeworkplayschool.js"></script>
+    <script src="js/controllers/controller.studenthomeworkviewplayschool.js"></script>
     <script src="js/controllers/controller.childspickupplayschoolentry.js"></script>
     <script src="js/controllers/controller.photosuploadplayschool.js"></script>
     <script src="js/controllers/controller.videosuploadplayschool.js"></script>
     <script src="js/controllers/controller.studentsnamelistplayschool.js"></script>
-    <script src="js/controllers/controller.studentsmonthlyreportplayschool.js"></script>
+    <script src="js/controllers/controller.studentperformanceplayschool.js"></script>
     <script src="js/controllers/controller.studentattendanceplayschoolmanagentview.js"></script>
     <script src="js/controllers/controller.dailyfeesreportmanagementplayschool.js"></script>
     <script src="js/controllers/controller.admissionstatusmanagementplayschool.js"></script>
@@ -327,6 +330,12 @@
     <script src="js/controllers/controller.studentdailyattendanceplayschool.js"></script>
     <script src="js/controllers/controller.studentfeespaymenthistoryplayschool.js"></script>
     <script src="js/controllers/controller.studentpersonalinformationeditplayschool.js"></script>
+    <script src="js/controllers/controller.studentdailyattendanceparentfetchplayschool.js"></script>
+    <script src="js/controllers/controller.studentdailyhomeworkparentfetchplayschool.js"></script>
+    <script src="js/controllers/controller.studentdailyeventsparentfetchplayschool.js"></script>
+    <script src="js/controllers/controller.studentdailypickupparentfetchplayschool.js"></script>
+    <script src="js/controllers/controller.changepasswordplayschool.js"></script>
+    <script src="js/controllers/controller.parentfeedbackplayschool.js"></script>
 
 
 
