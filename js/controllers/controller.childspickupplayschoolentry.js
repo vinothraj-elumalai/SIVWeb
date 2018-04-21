@@ -1,4 +1,8 @@
-sivwebapp.controller('childsPickupPlaySchoolEntryCtrl', function($scope, $http, hosturl) {
+sivwebapp.controller('childsPickupPlaySchoolEntryCtrl', function($scope, $http, hosturl, constantService, Auth) {
+    $scope.userdata = Auth.isLoggedIn();
+    $scope.getPlaySchoolStudentListData = {};
+    $scope.getPlaySchoolStudentListData.instituteid=$scope.userdata.instituteid;
+    $scope.getPlaySchoolStudentListData.loginuser = $scope.userdata.username;
     $scope.currenttime = new Date().toLocaleTimeString();
     $scope.getStudentListAttendance = function(){
         $http({
@@ -29,6 +33,8 @@ sivwebapp.controller('childsPickupPlaySchoolEntryCtrl', function($scope, $http, 
             "pickupdetailsattributes": $scope.pickupdetailsattributes,
             "pickupdetails": $scope.pickupdetails
         };
+        console.log("$scope.pickupdetailsdata");
+        console.log($scope.pickupdetailsdata);
         $http({
                 url: hosturl+"/api/v1/childspickupplayschool/setPickUpDetails",
                 method: "POST",

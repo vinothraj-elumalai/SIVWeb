@@ -1,4 +1,4 @@
-sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $filter, $window, hosturl, Auth, constantService) {
+sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filter, $window, hosturl, Auth, constantService) {
 
     // $scope.showApplnErr = false;
     // $scope.applnNumberErrMsg="";
@@ -7,12 +7,12 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
         //     saledate: ''
         // };
         $scope.userdata = Auth.isLoggedIn();
-        $scope.playschoolapplicationsaledata = {};
-        $scope.playschoolapplicationsaledata.loginuser = $scope.userdata.username;
-        $scope.playschoolapplicationsaledata.instituteid = $scope.userdata.instituteid;
-        $scope.$watch('playschoolapplicationsaledata.applicationnumberonly', function(newVal, oldVal) {
+        $scope.schoolapplicationsaledata = {};
+        $scope.schoolapplicationsaledata.loginuser = $scope.userdata.username;
+        $scope.schoolapplicationsaledata.instituteid = $scope.userdata.instituteid;
+        $scope.$watch('schoolapplicationsaledata.applicationnumberonly', function(newVal, oldVal) {
             // checkData(newVal, oldVal, scope);
-            $scope.playschoolapplicationsaledata.applno = $scope.userdata.instituteid+$scope.playschoolapplicationsaledata.applicationnumberonly;
+            $scope.schoolapplicationsaledata.applno = $scope.userdata.instituteid+$scope.schoolapplicationsaledata.applicationnumberonly;
         }, false);
         
         clearFields();
@@ -21,10 +21,10 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
 //       FillSaleDate();
 
         $scope.CalculateAge = function()
-        {   
-            if($scope.playschoolapplicationsaledata.dateofbirth != undefined && $scope.playschoolapplicationsaledata.dateofbirth !=  null || $scope.playschoolapplicationsaledata.dateofbirth != '')
+        {
+            if($scope.schoolapplicationsaledata.dateofbirth != undefined && $scope.schoolapplicationsaledata.dateofbirth !=  null || $scope.schoolapplicationsaledata.dateofbirth != '')
             {
-                var givenDob = $scope.playschoolapplicationsaledata.dateofbirth;
+                var givenDob = $scope.schoolapplicationsaledata.dateofbirth;
 
                 var isValidDate=validateDate(givenDob);
                 if( isValidDate == null || isValidDate == false) 
@@ -33,7 +33,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                     $scope.candDOBMsg = "(Invalid Date)";
 
                     $scope.childDob = '';
-                    $scope.playschoolapplicationsaledata.age ='';
+                    $scope.schoolapplicationsaledata.age ='';
                     return;
                 }
                 else
@@ -41,6 +41,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                     $scope.showCandDOBErr = false;
                     $scope.candDOBMsg = "";
                 }
+                // givenDob = $filter('date')(new Date(givenDob), 'dd/MM/yyyy');
                 var dobarray = givenDob.split("/");
 
                 // var mdate = "01/08/2015";
@@ -69,57 +70,31 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                 }
                 else {
                     console.log("You are<br/><span id=\"age\">" + year_age + " years " + month_age + " months " + day_age + " days</span> old");
-                    $scope.playschoolapplicationsaledata.age = year_age+"."+month_age;
+                    $scope.schoolapplicationsaledata.age = year_age+"."+month_age;
                     $scope.childDob =  year_age+"."+month_age;
                 }
-                // givenDob = $filter('date')(new Date(givenDob), 'dd/MM/yyyy');
-                // var dobarray = givenDob.split("/");
-                // var givenDob = new Date(dobarray[1], dobarray[0], dobarray[2]);
+                // var givenDob = new Date(dobarray[2], dobarray[1] - 1, dobarray[0]);
                 // var today = new Date();
-                // var yr = today.getFullYear();
-                // var m = today.getMonth()+1;
-                // var da = today.getDate();
-                // var tod= m+"/"+da+"/"+yr;
                 // var birthDate = new Date(givenDob);
-                // var todayDate = new Date(tod);
-                // var agediff = todayDate - birthDate;
-                // console.log("test");
-                // console.log(agediff);
-                // var differenceInMilisecond = todayDate.valueOf() - birthDate.valueOf();
-        
-                // var year_age = Math.floor(differenceInMilisecond / 31536000000);
-                // var day_age = Math.floor((differenceInMilisecond % 31536000000) / 86400000);
-                
-                // // if ((today.getMonth() == birthday.getMonth()) && (today.getDate() == birthday.getDate())) {
-                // //     alert("Happy B'day!!!");
-                // // }
-                
-                // var month_age = Math.floor(day_age/30);
-                
-                // day_age = day_age % 30;
-                
-                // if (isNaN(year_age) || isNaN(month_age) || isNaN(day_age)) {
-                //     alert("Invalid birthday - Please try again!");
+                // var yr = today.getFullYear() - birthDate.getFullYear();
+                // var m = today.getMonth() - birthDate.getMonth();
+                // var da = today.getDate() - birthDate.getDate();
+                // if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                //     $scope.schoolapplicationsaledata.age--;
                 // }
-                // else {
-                //     console.log("You are<br/><span id=\"age\">" + year_age + " years " + month_age + " months " + day_age + " days</span> old");
+                // if(m<0){
+                //     m +=12;
                 // }
-                // // if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                // //     $scope.playschoolapplicationsaledata.age--;
-                // // }
-                // // if(m<0){
-                // //     m +=12;
-                // // }
-                // // if(da<0){
-                // //     da +=30;
-                // // }
+                // if(da<0){
+                //     da +=30;
+                // }
 
-                // if($scope.playschoolapplicationsaledata == null || $scope.playschoolapplicationsaledata == undefined)
+                // if($scope.schoolapplicationsaledata == null || $scope.schoolapplicationsaledata == undefined)
                 // {   
-                //     $scope.playschoolapplicationsaledata = {};
+                //     $scope.schoolapplicationsaledata = {};
                 // }
                 // $scope.childDob = yr + "." + Math.abs(m);
-                // $scope.playschoolapplicationsaledata.age = yr + "." + Math.abs(m);
+                // $scope.schoolapplicationsaledata.age = yr + "." + Math.abs(m);
                 
                 //alert(age+" years "+ Math.abs(m) + "months"+ Math.abs(da) + " days");
             }
@@ -225,14 +200,14 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
        // }
 
 
-        $scope.playSchoolApplicationSaleSubmit = function(){
-    	console.log($scope.playschoolapplicationsaledata);
-        var playschlAppObj = $scope.playschoolapplicationsaledata;
+        $scope.schoolApplicationSaleSubmit = function(){
+    	console.log($scope.schoolapplicationsaledata);
+        var schlAppObj = $scope.schoolapplicationsaledata;
 
-        if(playschlAppObj != undefined && playschlAppObj != null )
+        if(schlAppObj != undefined && schlAppObj != null )
         {
 
-            if(validateApplication(playschlAppObj))
+            if(validateApplication(schlAppObj))
             {
                 //try
                // {
@@ -243,10 +218,10 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                     //     $scope.playschoolapplicationsaledata.enquiryno = $scope.lastEnquiryNumber.enquiryno;    
 
                     $http({
-                        url: hosturl+"/api/v1/playschoolapplicationsale",
+                        url: hosturl+"/api/v1/applicationsaleschool",
                         method: "POST",
                         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                        data: $.param($scope.playschoolapplicationsaledata)
+                        data: $.param($scope.schoolapplicationsaledata)
                     }).then(function(success) {
                     alert('Record Saved.');
                     ClearDataFields();
@@ -278,38 +253,38 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
     function ClearDataFields()
     {
         // $scope.playschoolapplicationsaledata.category="Select Category";
-        $scope.playschoolapplicationsaledata.applno="";
-        $scope.playschoolapplicationsaledata.appfor="Select Application For";
-        $scope.playschoolapplicationsaledata.candfirstname="";
-        $scope.playschoolapplicationsaledata.candmiddlename="";
-        $scope.playschoolapplicationsaledata.candlastname="";
-        $scope.playschoolapplicationsaledata.dateofbirth="";
-        $scope.playschoolapplicationsaledata.age="";
-        $scope.playschoolapplicationsaledata.gender="Select Gender";
-        $scope.playschoolapplicationsaledata.candfathername="";
-        $scope.playschoolapplicationsaledata.candmothername="";
-        $scope.playschoolapplicationsaledata.presentaddress1="";
-        $scope.playschoolapplicationsaledata.presentaddress2="";
-        $scope.playschoolapplicationsaledata.presentarea="";
-        $scope.playschoolapplicationsaledata.presentpincode="";
-        $scope.playschoolapplicationsaledata.presentstate="TamilNadu";
-        $scope.playschoolapplicationsaledata.fathersmobileno="";
-        $scope.playschoolapplicationsaledata.fathersaltmobno="";
-        $scope.playschoolapplicationsaledata.mothersmobileno="";
-        $scope.playschoolapplicationsaledata.mothersaltmobno="";
-        $scope.playschoolapplicationsaledata.fathersemail="";
-        $scope.playschoolapplicationsaledata.mothersemail="";
-        $scope.playschoolapplicationsaledata.reference="";
-        $scope.playschoolapplicationsaledata.willingtojoin="Select Willingness";
-        $scope.playschoolapplicationsaledata.followupdate="";
-        $scope.playschoolapplicationsaledata.applicationprice="";
-        $scope.playschoolapplicationsaledata.applicationpaidmode="Select Paid Mode";
-        $scope.playschoolapplicationsaledata.remarks="";
-        $scope.playschoolapplicationsaledata.academicyear="Select Academic Year";
-        $scope.playschoolapplicationsaledata.institueid="";
+        $scope.schoolapplicationsaledata.applno="";
+        $scope.schoolapplicationsaledata.appfor="Select Application For";
+        $scope.schoolapplicationsaledata.candfirstname="";
+        $scope.schoolapplicationsaledata.candmiddlename="";
+        $scope.schoolapplicationsaledata.candlastname="";
+        $scope.schoolapplicationsaledata.dateofbirth="";
+        $scope.schoolapplicationsaledata.age="";
+        $scope.schoolapplicationsaledata.gender="Select Gender";
+        $scope.schoolapplicationsaledata.candfathername="";
+        $scope.schoolapplicationsaledata.candmothername="";
+        $scope.schoolapplicationsaledata.presentaddress1="";
+        $scope.schoolapplicationsaledata.presentaddress2="";
+        $scope.schoolapplicationsaledata.presentarea="";
+        $scope.schoolapplicationsaledata.presentpincode="";
+        $scope.schoolapplicationsaledata.presentstate="TamilNadu";
+        $scope.schoolapplicationsaledata.fathersmobileno="";
+        $scope.schoolapplicationsaledata.fathersaltmobno="";
+        $scope.schoolapplicationsaledata.mothersmobileno="";
+        $scope.schoolapplicationsaledata.mothersaltmobno="";
+        $scope.schoolapplicationsaledata.fathersemail="";
+        $scope.schoolapplicationsaledata.mothersemail="";
+        $scope.schoolapplicationsaledata.reference="";
+        $scope.schoolapplicationsaledata.willingtojoin="Select Willingness";
+        $scope.schoolapplicationsaledata.followupdate="";
+        $scope.schoolapplicationsaledata.applicationprice="";
+        $scope.schoolapplicationsaledata.applicationpaidmode="Select Paid Mode";
+        $scope.schoolapplicationsaledata.remarks="";
+        $scope.schoolapplicationsaledata.academicyear="Select Academic Year";
+        $scope.schoolapplicationsaledata.institueid="";
     }
 
-    function validateApplication(playschlAppObj )
+    function validateApplication(schlAppObj )
     {
         try
         {    
@@ -322,7 +297,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
             //      return false;
             //  }
 
-            if(playschlAppObj.applno == undefined || playschlAppObj.applno ==  null || playschlAppObj.applno == '')
+            if(schlAppObj.applno == undefined || schlAppObj.applno ==  null || schlAppObj.applno == '')
              {
 
                  $scope.showApplnErr = true;
@@ -330,35 +305,35 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                  return false;
              }
 
-            if(playschlAppObj.saledate == undefined || playschlAppObj.saledate ==  null || playschlAppObj.saledate == '')
+            if(schlAppObj.saledate == undefined || schlAppObj.saledate ==  null || schlAppObj.saledate == '')
             {
                 $scope.showSaleDateErr = true;
                 $scope.saleDateErrMsg = "(Please enter Sale Date)";
                 return false;
             }   
 
-            if(playschlAppObj.appfor == undefined || playschlAppObj.appfor ==  null || playschlAppObj.appfor == '' || playschlAppObj.appfor == 'Select Application For')
+            if(schlAppObj.appfor == undefined || schlAppObj.appfor ==  null || schlAppObj.appfor == '' || schlAppObj.appfor == 'Select Application For')
             {       
                 $scope.showAppForErr = true;
                 $scope.saleAppforMsg = "(Please Select Application For)";
                 //alert('2');
                 return false;
             }
-            if(playschlAppObj.candfirstname == undefined || playschlAppObj.candfirstname ==  null || playschlAppObj.candfirstname == '')
+            if(schlAppObj.candfirstname == undefined || schlAppObj.candfirstname ==  null || schlAppObj.candfirstname == '')
             {
                 $scope.showCandFirstNameErr = true;
                 $scope.candFirstNameMsg = "(Please enter First Name)";
                 return false;
             }
 
-            if(playschlAppObj.candlastname == undefined || playschlAppObj.candlastname ==  null || playschlAppObj.candlastname == '')
+            if(schlAppObj.candlastname == undefined || schlAppObj.candlastname ==  null || schlAppObj.candlastname == '')
             {
                 $scope.showCandLastNameErr = true;
                 $scope.candLastNameMsg = "(Please enter Last Name)";
                 return false;
             }
 
-            if(playschlAppObj.dateofbirth == undefined || playschlAppObj.dateofbirth ==  null || playschlAppObj.dateofbirth == '')
+            if(schlAppObj.dateofbirth == undefined || schlAppObj.dateofbirth ==  null || schlAppObj.dateofbirth == '')
             {
                 $scope.showCandDOBErr = true;
                 $scope.candDOBMsg = "(Please enter Date of Birth)";
@@ -366,21 +341,21 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
             }
             else
             {
-                 var isValidDate=validateDate(playschlAppObj.dateofbirth);
+                 var isValidDate=validateDate(schlAppObj.dateofbirth);
                 if( isValidDate == null || isValidDate == false) 
                 {
                     $scope.showCandDOBErr = true;
                     $scope.candDOBMsg = "(Invalid Date)";
 
                     $scope.childDob = '';
-                    $scope.playschoolapplicationsaledata.age ='';
+                    $scope.schoolapplicationsaledata.age ='';
                     
                     return false;
                 }
 
             }
 
-            if(playschlAppObj.age == undefined || playschlAppObj.age ==  null || playschlAppObj.age == '')
+            if(schlAppObj.age == undefined || schlAppObj.age ==  null || schlAppObj.age == '')
             {
                 $scope.showCandAgeErr = true;
                 $scope.candAgeMsg = "(Please enter Age)";
@@ -388,7 +363,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
             }
             else
             {
-                if( playschlAppObj.age == '0.0')
+                if( schlAppObj.age == '0.0')
                 {
                     $scope.showCandAgeErr = true;
                     $scope.candAgeMsg = "(Invalid Age)";
@@ -396,49 +371,49 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                 }
             }
 
-            if(playschlAppObj.gender == undefined || playschlAppObj.gender ==  null || playschlAppObj.gender == '' || playschlAppObj.gender == 'Select Gender')
+            if(schlAppObj.gender == undefined || schlAppObj.gender ==  null || schlAppObj.gender == '' || schlAppObj.gender == 'Select Gender')
             {
                 $scope.showGenderErr = true;
                 $scope.genderMsg = "(Please Select Gender)";
                 return false;
             }
 
-            if(playschlAppObj.candfathername == undefined || playschlAppObj.candfathername ==  null || playschlAppObj.candfathername == '')
+            if(schlAppObj.candfathername == undefined || schlAppObj.candfathername ==  null || schlAppObj.candfathername == '')
             {
                 $scope.showCandFathersNameErr = true;
                 $scope.candFathersNameMsg = "(Please enter Father Name)";
                 return false;
             }
 
-            if(playschlAppObj.candmothername == undefined || playschlAppObj.candmothername ==  null || playschlAppObj.candmothername == '')
+            if(schlAppObj.candmothername == undefined || schlAppObj.candmothername ==  null || schlAppObj.candmothername == '')
             {
                 $scope.showCandMothersNameErr = true;
                 $scope.candMothersNameMsg = "(Please enter Mother Name)";
                 return false;
             }
 
-            if(playschlAppObj.presentaddress1 == undefined || playschlAppObj.presentaddress1 ==  null || playschlAppObj.presentaddress1 == '')
+            if(schlAppObj.presentaddress1 == undefined || schlAppObj.presentaddress1 ==  null || schlAppObj.presentaddress1 == '')
             {
                 $scope.showPresentAddr1Err = true;
                 $scope.candPresentAddr1Msg = "(Please enter Address Line1)";
                 return false;
             }
 
-            if(playschlAppObj.presentaddress2 == undefined || playschlAppObj.presentaddress2 ==  null || playschlAppObj.presentaddress2 == '')
+            if(schlAppObj.presentaddress2 == undefined || schlAppObj.presentaddress2 ==  null || schlAppObj.presentaddress2 == '')
             {
                 $scope.showCandPresentAddr2Err = true;
                 $scope.candPresentAddr2Msg = "(Please enter Address Line2)";
                 return false;
             }
 
-            if(playschlAppObj.presentarea == undefined || playschlAppObj.presentarea ==  null || playschlAppObj.presentarea == '')
+            if(schlAppObj.presentarea == undefined || schlAppObj.presentarea ==  null || schlAppObj.presentarea == '')
             {
                 $scope.showPresentAreaErr = true;
                 $scope.candPresentAreaMsg = "(Please enter Area)";
                 return false;
             }
 
-            if(playschlAppObj.presentpincode == undefined || playschlAppObj.presentpincode ==  null || playschlAppObj.presentpincode == '')
+            if(schlAppObj.presentpincode == undefined || schlAppObj.presentpincode ==  null || schlAppObj.presentpincode == '')
             {
                 $scope.showpresentpincodeErr = true;
                 $scope.candpresentpincodeMsg = "(Please enter Pincode)";
@@ -446,7 +421,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
             }
             else
             {
-                if(playschlAppObj.presentpincode.length < 6 || playschlAppObj.presentpincode.length > 6)
+                if(schlAppObj.presentpincode.length < 6 || schlAppObj.presentpincode.length > 6)
                 {
                     $scope.showpresentpincodeErr = true;
                     $scope.candpresentpincodeMsg = "(Invalid Pincode)";
@@ -454,14 +429,14 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                 }
             }
 
-            if(playschlAppObj.presentstate == undefined || playschlAppObj.presentstate ==  null || playschlAppObj.presentstate == '')
+            if(schlAppObj.presentstate == undefined || schlAppObj.presentstate ==  null || schlAppObj.presentstate == '')
             {
                 $scope.showpresentstateErr = true;
                 $scope.presentstateMsg = "(Please Select State)";
                 return false;
             }
 
-            if(playschlAppObj.fathersmobileno == undefined || playschlAppObj.fathersmobileno ==  null || playschlAppObj.fathersmobileno == '')
+            if(schlAppObj.fathersmobileno == undefined || schlAppObj.fathersmobileno ==  null || schlAppObj.fathersmobileno == '')
             {
                 $scope.showfathersmobnoErr = true;
                 $scope.candfathersmobnoMsg = "(Please enter Father Mobile Number)";
@@ -469,7 +444,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
             }
             else
             {
-                if(playschlAppObj.fathersmobileno.length != 10 )
+                if(schlAppObj.fathersmobileno.length != 10 )
                 {
                     $scope.showfathersmobnoErr = true;
                     $scope.candfathersmobnoMsg = "(Invalid Mobile Number)";
@@ -477,7 +452,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                 }
             }
 
-            if(playschlAppObj.fathersaltmobno != undefined && playschlAppObj.fathersaltmobno != null && playschlAppObj.fathersaltmobno.length != 10 )
+            if(schlAppObj.fathersaltmobno != undefined && schlAppObj.fathersaltmobno != null && schlAppObj.fathersaltmobno.length != 10 )
                 { 
                     $scope.showfathersaltmobnoErr = true;
                     $scope.candfathersaltmobnoMsg = "(Invalid Mobile Number)";
@@ -485,7 +460,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                 }
 
 
-            if(playschlAppObj.mothersmobileno == undefined || playschlAppObj.mothersmobileno ==  null || playschlAppObj.mothersmobileno == '')
+            if(schlAppObj.mothersmobileno == undefined || schlAppObj.mothersmobileno ==  null || schlAppObj.mothersmobileno == '')
             {
                 $scope.showmothersmobnoErr = true;
                 $scope.candmothersmobnoMsg = "(Please enter Mothers Mobile Number)";
@@ -493,7 +468,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
             }
             else
             {
-                if(playschlAppObj.mothersmobileno.length != 10 )
+                if(schlAppObj.mothersmobileno.length != 10 )
                 {
                     $scope.showmothersmobnoErr = true;
                     $scope.candmothersmobnoMsg = "(Invalid Mobile Number)";
@@ -501,7 +476,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                 }
             }
 
-            if(playschlAppObj.mothersaltmobno != undefined && playschlAppObj.mothersaltmobno != null && playschlAppObj.mothersaltmobno.length != 10 )
+            if(schlAppObj.mothersaltmobno != undefined && schlAppObj.mothersaltmobno != null && schlAppObj.mothersaltmobno.length != 10 )
                 {
                     $scope.showmothersaltmobnoErr = true;
                     $scope.candmothersaltmobnoMsg = "(Invalid Mobile Number)";
@@ -509,14 +484,14 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                 }
 
 
-            if(playschlAppObj.willingtojoin == undefined || playschlAppObj.willingtojoin ==  null || playschlAppObj.willingtojoin == '' || playschlAppObj.willingtojoin == 'Select Willingness')
+            if(schlAppObj.willingtojoin == undefined || schlAppObj.willingtojoin ==  null || schlAppObj.willingtojoin == '' || schlAppObj.willingtojoin == 'Select Willingness')
             {
                 $scope.showwillingtojoinErr = true;
                 $scope.willingtojoinMsg = "(Please Select Willing To Join)";
                 return false;
             }
 
-            if(playschlAppObj.followupdate == undefined || playschlAppObj.followupdate ==  null || playschlAppObj.followupdate == '')
+            if(schlAppObj.followupdate == undefined || schlAppObj.followupdate ==  null || schlAppObj.followupdate == '')
             {
                 $scope.showdatecommittedjoinErr = true;
                 $scope.datecommittedjoinMsg = "(Please enter Date Committed to Join)";
@@ -524,7 +499,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
             }
             else
             {
-                var isValidDate=validateDate(playschlAppObj.followupdate);
+                var isValidDate=validateDate(schlAppObj.followupdate);
                 if( isValidDate == null || isValidDate == false) 
                 {
                     $scope.showdatecommittedjoinErr = true;
@@ -534,21 +509,21 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
                
             }
 
-            if(playschlAppObj.applicationprice == undefined || playschlAppObj.applicationprice ==  null || playschlAppObj.applicationprice == '')
+            if(schlAppObj.applicationprice == undefined || schlAppObj.applicationprice ==  null || schlAppObj.applicationprice == '')
             {
                 $scope.applicationpriceErr = true;
                 $scope.applicationpriceMsg = "(Please enter Application Price)";
                 return false;
             }
 
-            if(playschlAppObj.applicationpaidmode == undefined || playschlAppObj.applicationpaidmode ==  null || playschlAppObj.applicationpaidmode == '' || playschlAppObj.applicationpaidmode == 'Select Paid Mode')
+            if(schlAppObj.applicationpaidmode == undefined || schlAppObj.applicationpaidmode ==  null || schlAppObj.applicationpaidmode == '' || schlAppObj.applicationpaidmode == 'Select Paid Mode')
             {
                 $scope.showapplicationpaidmodeErr = true;
                 $scope.applicationpaidmodeMsg = "(Please Select Application Paid Mode)";
                 return false;
             }
 
-            if(playschlAppObj.academicyear == undefined || playschlAppObj.academicyear ==  null || playschlAppObj.academicyear == '' || playschlAppObj.academicyear == 'Select Academic Year')
+            if(schlAppObj.academicyear == undefined || schlAppObj.academicyear ==  null || schlAppObj.academicyear == '' || schlAppObj.academicyear == 'Select Academic Year')
             {
                 $scope.academicyearErr = true;
                 $scope.academicyearMsg = "(Please Select Academic Year)";
@@ -561,12 +536,12 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
             //     $scope.categoryErrMsg = "(Please Select Category)";
             //     return false;
             // }
-            if(playschlAppObj.instituteid == undefined || playschlAppObj.instituteid ==  null || playschlAppObj.instituteid == '')
-            {
-                $scope.ShowInsituteIdErr = true;
-                $scope.instituteIdMsg = "(Please Enter Institute ID)";
-                return false;
-            }
+            // if(schlAppObj.instituteid == undefined || schlAppObj.instituteid ==  null || schlAppObj.instituteid == '')
+            // {
+            //     $scope.ShowInsituteIdErr = true;
+            //     $scope.instituteIdMsg = "(Please Enter Institute ID)";
+            //     return false;
+            // }
 
             }
             catch(ex)
@@ -656,8 +631,8 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
         // $scope.showCategoryErr = false;
         // $scope.categoryErrMsg = '';
 
-        $scope.ShowInsituteIdErr = false;
-        $scope.instituteIdMsg = '';
+        // $scope.ShowInsituteIdErr = false;
+        // $scope.instituteIdMsg = '';
 
     }
 

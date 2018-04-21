@@ -1,6 +1,7 @@
 sivwebapp.controller('loginCtrl', function($scope, $http, $location,$rootScope, hosturl, Auth) {
+    $scope.logindata = {};
+    $scope.logindata.sourceDevice = "web";
     $scope.loginSubmit = function(){
-    	console.log($scope.logindata);
         $http({
                 url: hosturl+"/api/v1/user",
                 method: "POST",

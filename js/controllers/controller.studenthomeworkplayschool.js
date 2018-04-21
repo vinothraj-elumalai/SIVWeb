@@ -1,8 +1,12 @@
-sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$window, hosturl) {
-
+sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$window, hosturl, constantService, Auth) {
+    
     clearFields();
-
+    $scope.userdata = Auth.isLoggedIn();
+    $scope.getPlaySchoolStudentListData = {};
+    $scope.getPlaySchoolStudentListData.instituteid=$scope.userdata.instituteid;
+    $scope.getPlaySchoolStudentListData.loginuser = $scope.userdata.username;
     $scope.lastHomeWorkId = {};
+    $scope.studenthomeworkplayschooldata = {};
 
     fetchlasthomeworkid();
 
@@ -22,9 +26,7 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$wi
                         if($scope.lastHomeWorkId != null && $scope.lastHomeWorkId.hwid != undefined )
                         {
                            //$scope.studenthomeworkplayschooldata.homeworkid = 'HW'+ $scope.lastHomeWorkId.homeworkid;
-                           $scope.studenthomeworkplayschooldata = {
-                            "homeworkid": 'HW'+ $scope.lastHomeWorkId.hwid
-                           }
+                           $scope.studenthomeworkplayschooldata.homeworkid='HW'+ $scope.lastHomeWorkId.hwid;
                         }
                     },function (error){
                     alert(error);
@@ -48,6 +50,10 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$wi
 
 
     $scope.studentHomeWorkPlaySchoolSubmit = function(){
+        console.log("$scope.studenthomeworkplayschooldata");
+        
+        $scope.studenthomeworkplayschooldata.instituteid=$scope.userdata.instituteid;
+        $scope.studenthomeworkplayschooldata.loginuser = $scope.userdata.username;
     	console.log($scope.studenthomeworkplayschooldata);
         var playschlHomeWorkObj = $scope.studenthomeworkplayschooldata;
 
@@ -226,12 +232,12 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$wi
                 $scope.homeworkContentErrMsg = "(Please enter Home Work Content)";
                 return false;
             }
-            if(playschlHomeWorkObj.instituteid == undefined || playschlHomeWorkObj.instituteid ==  null || playschlHomeWorkObj.instituteid == '')
-            {
-                $scope.showInstituteIdErr = true;
-                $scope.institueIdErrMsg = "(Please enter Institute Id)";
-                return false;
-            }
+            // if(playschlHomeWorkObj.instituteid == undefined || playschlHomeWorkObj.instituteid ==  null || playschlHomeWorkObj.instituteid == '')
+            // {
+            //     $scope.showInstituteIdErr = true;
+            //     $scope.institueIdErrMsg = "(Please enter Institute Id)";
+            //     return false;
+            // }
 
 
         }
@@ -271,8 +277,8 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$wi
         $scope.homeworkContentErrMsg='';
         $scope.showHomeWorkContentErr=false;
 
-        $scope.institueIdErrMsg='';
-        $scope.showInstituteIdErr=false;
+        // $scope.institueIdErrMsg='';
+        // $scope.showInstituteIdErr=false;
 
 
     }    
@@ -286,7 +292,7 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$wi
         $scope.studenthomeworkplayschooldata.academicyear="Select Academic Year";
         $scope.studenthomeworkplayschooldata.subjectcategory="Select Subject Category";
         $scope.studenthomeworkplayschooldata.homeworkcontent="";
-        $scope.studenthomeworkplayschooldata.instituteid="";
+        // $scope.studenthomeworkplayschooldata.instituteid="";
     }
 
 

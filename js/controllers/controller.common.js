@@ -20,7 +20,7 @@ sivwebapp.controller('commonCtrl',['$scope','constantService', '$rootScope', 'ho
       console.log("Connect");
     $scope.userdata = Auth.isLoggedIn();
     console.log($scope.userdata.userRole);
-    $scope.menulist= constantService.usermenu($scope.userdata.userRole);
+    $scope.menulist= JSON.parse($scope.userdata.menulist);
     $scope.instituteLogoUrl = $scope.userdata.instituteLogo;
       //Do something when the user is connected
     }

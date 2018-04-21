@@ -1,4 +1,8 @@
-sivwebapp.controller('photosUploadPlaySchoolCtrl', function($scope, $http, hosturl) {
+sivwebapp.controller('photosUploadPlaySchoolCtrl', function($scope, $http, hosturl, constantService, Auth) {
+    $scope.userdata = Auth.isLoggedIn();
+    $scope.photosuploadPlaySchoolData = {};
+    $scope.photosuploadPlaySchoolData.instituteid = $scope.userdata.instituteid;
+    $scope.photosuploadPlaySchoolData.loginuser = $scope.userdata.username;
     $scope.getStudentListSubmit = function(){
         $http({
                 url: hosturl+"/api/v1/playschoolphotogallery/getStudentList",

@@ -1,4 +1,8 @@
-sivwebapp.controller('studentAttendancePlayschoolCtrl', function($scope, $http, hosturl) {
+sivwebapp.controller('studentAttendancePlayschoolCtrl', function($scope, $http, hosturl, constantService, Auth) {
+    $scope.userdata = Auth.isLoggedIn();
+    $scope.getPlaySchoolStudentListData = {};
+    $scope.getPlaySchoolStudentListData.instituteid=$scope.userdata.instituteid;
+    $scope.getPlaySchoolStudentListData.loginuser = $scope.userdata.username;
     $scope.getStudentListAttendance = function(){
         $http({
                 url: hosturl+"/api/v1/studentattendancedetailplayschool/getStudentListAttendance",

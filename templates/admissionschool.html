@@ -1,0 +1,1567 @@
+<h1>ADMISSION ENTRY</h1>
+<div class="generatedpanel" ng-if="admissionresult.registernumber">
+	Your application <span>{{admissionresult.applicationnumber}}</span> is submitted successfully. 
+	Username is <span>{{admissionresult.registernumber}}</span>
+	<br/><br/>
+	<div>
+		<input type="button" ng-click="printApplication()"  class="btn btn-primary" value="Print Application" />
+	</div>
+	<br/><br/>
+</div>
+
+
+
+
+<div id="printableArea">
+	<div id="printableAreainner">
+		<div class="row">
+			<div class="col-xs-3">
+				<img ng-src="{{admissionschoolprint.institutelogourl}}" class="printheaderlogo">
+			</div>
+			<div class="col-xs-9">
+				<div class="printheader text-center">
+					<h1>{{admissionschoolprint.instituteName}}</h1>
+					<p>{{admissionschoolprint.instituteAddress1}},<br/>
+					{{admissionschoolprint.instituteAddress2}},<br/>
+					{{admissionschoolprint.instituteArea}}, {{admissionschoolprint.instituteState}}, Pincode: {{admissionschoolprint.institutePincode}},<br/>
+					Contact No: {{admissionschoolprint.instituteContact1}}, {{admissionschoolprint.instituteContact2}}<br/>
+					Email Id: {{admissionschoolprint.instituteEmail1}}, {{admissionschoolprint.instituteEmail2}}</p>
+				</div>
+			</div>
+		</div>
+		<br/><br/>
+		<div class="text-center"><h2>APPLICATION FORM - {{admissionschoolprint.academicyear}}</h2></div>
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Application Number</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="printcontent"><span class="highlighttext">{{admissionresult.applicationnumber}}</span></div>
+				</div>
+				<div class="col-xs-3">
+					<div class="affixphoto">Affix Student's Photo</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Username</div>
+				</div>
+				<div class="col-xs-6">
+
+					<!-- <div class="row">
+						<div class="col-xs-6"><div class="printtitle">Address1</div></div>
+						<div class="col-xs-6"></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6"><div class="printtitle">Address2</div></div>
+						<div class="col-xs-6"></div>
+					</div> -->
+
+					<div class="printcontent"><span class="highlighttext">{{admissionresult.registernumber}}</span></div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's First Name</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.candfirstname}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Middle Name</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.candmiddlename}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Last Name</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.candlastname}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Full Name</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent"><span class="highlighttext">{{admissionschoolprint.candfirstname}} {{admissionschoolprint.candmiddlename}} {{admissionschoolprint.candlastname }} </span></div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Date of Birth</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.dateofbirth}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Age</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.age}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Gender</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.gender}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Fathers Name</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.candfathername}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Mothers Name</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.candmothername}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Present Address</div>
+				</div>
+				<div class="col-xs-6">
+
+					<div class="printcontent">{{admissionschoolprint.presentaddress1}}</div>
+					<div class="printcontent">{{admissionschoolprint.presentaddress2}}</div>
+					<div class="printcontent">{{admissionschoolprint.presentarea}}</div>
+					<div class="printcontent">{{admissionschoolprint.presentpincode}}</div>
+					<div class="printcontent">{{admissionschoolprint.presentstate}}</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Fathers Mobile No</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.fathersmobileno}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Fathers Alternate Mobile No</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.fathersaltmobno}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Mothers Mobile No</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.mothersmobileno}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Mothers Alternate Mobile No</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.mothersaltmobno}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Fathers Email</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.fathersemail}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Mothers Email</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.mothersemail}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Reference</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.reference}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Religion</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.religion}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Community</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.community}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Caste</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.caste}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Aadhar Number</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.aadharno}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Blood Group</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.bloodgroup}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Medication Being taken by the Candidate</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.medicaldetails}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Allergies if any of the Candidate</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.allergies}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Identification Marks of the Candidate</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.identificationmarks}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Mother Tongue of the Candidate</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.mothertoungue}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Fathers Occupation</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.fathersoccupation}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Fathers Office Name</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.fathersofficename}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Fathers Office Address</div>
+				</div>
+				<div class="col-xs-6">
+
+					<div class="printcontent">{{admissionschoolprint.fathersofficeaddress1}}</div>
+					<div class="printcontent">{{admissionschoolprint.fathersofficeaddress2}}</div>
+					<div class="printcontent">{{admissionschoolprint.fathersofficearea}}</div>
+					<div class="printcontent">{{admissionschoolprint.fathersofficepincode}}</div>
+					<div class="printcontent">{{admissionschoolprint.fathersofficestate}}</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Fathers Office Phone No</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.fathersofficephoneno}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Fathers Office Alterate Phone No</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.fathersofficealtphoneno}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Fathers Office Entension No</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.fathersoffficeextensionno}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Father's Monthly Income</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.fathermonthlyincome}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Mothers Occupation</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.mothersoccupation}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Mothers Office Name</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.mothersofficename}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Mothers Office Address</div>
+				</div>
+				<div class="col-xs-6">
+
+					<div class="printcontent">{{admissionschoolprint.mothersofficeaddress1}}</div>
+					<div class="printcontent">{{admissionschoolprint.mothersofficeaddress2}}</div>
+					<div class="printcontent">{{admissionschoolprint.mothersofficearea}}</div>
+					<div class="printcontent">{{admissionschoolprint.mothersofficepincode}}</div>
+					<div class="printcontent">{{admissionschoolprint.mothersofficestate}}</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Mothers Office Phone No</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.mothersofficephoneno}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Mothers Office Alterate Phone No</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.mothersofficealtphoneno}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Candidate's Mothers Office Entension No</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.mothersofficeextensionno}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Mothers Monthly Income</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.mothersmonthlyincome}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Fathers Date of Birth</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.fathersdob}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Mothers Date of Birth</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.mothersdob}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Parent Wedding Date</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.parentsweddingdate}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Siblings if Any</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.siblings}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Sibling Name</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.siblingname}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Sibling Date of Birth</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.siblingdob}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Sibling Age</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.siblingage}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">If Sibling is studying in this School, Class of Sibling</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.siblingclass}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">If Sibling is studying in this School, Section of Sibling</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.siblingsection}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Name of the School Last Attended</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.lastschoolname}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Class Last Studied</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.lastschoolclass}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Whether qualified for promotion ?</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.lastschoolclassqualified}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Whether Transfer Certificate is Attached ?</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.lastschooltcattached}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Medium of Instruction in which studied</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.lastschoolmedium}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Last School year of study</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.lastschoolyearofstudy}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Extra Curricular Activities</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.extracurricular}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Achievements</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.achievements}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Class into which admission sought</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.classintoadmission}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Admission Date</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.admissiondate}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Admission Status</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent">{{admissionschoolprint.admissionstatus}} </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Admitted into</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent"><span class="highlighttext">{{admissionschoolprint.admittedinto}}</span> </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Admitted Section</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent"><span class="highlighttext">{{admissionschoolprint.section}}</span> </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">Admission Number alloted by School</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent"><span class="highlighttext">{{admissionschoolprint.instituteregisternumber}}</span> </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="printdatarow">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="printtitle">EMIS Number</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="printcontent"><span class="highlighttext">{{admissionschoolprint.emisno}}</span> </div>
+					<!-- <div class="printcontent">{{admissionplayschoolprint.dob | dateFormat}} </div> -->
+				</div>
+			</div>
+		</div>
+
+
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<div class="row">
+			<div class="col-xs-6">
+				<p class="disclaimerprinttext">Parent Signature</p>
+			</div>
+			<div class="col-xs-6">
+				<p class="disclaimerprinttext text-right">Principal Signature with Seal</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="row">
+	<div class="col-md-12">
+		
+		<div class="form-group">
+			<label>Application No</label>
+			<input class="form-control" type="text" name="applno" ng-model="searchAppnoData.applno">
+		</div>
+
+
+<!-- 			<input class="form-control" type="text" name="applicationno" ng-model="admissionplayschooldata.applicationno">
+ -->		 	
+		<div class="form-group">	
+		<div class="text-right">
+
+			<input type="button" ng-click="searchAppNo()" class="btn btn-default"  value="SEARCH">
+		</div>
+		</div>
+		<form name="admissionschoolform" ng-submit="admissionSchoolSubmit()" novalidate class="form-validation">
+			<ul class="steps">
+				<li ng-class="{'active':activestep == 1}"><a href="javascript:void(0)"><span class="stepscount">1</span></a></li>
+				<li ng-class="{'active':activestep == 2}"><a href="javascript:void(0)"><span class="stepscount">2</span></a></li>
+				<li ng-class="{'active':activestep == 3}"><a href="javascript:void(0)"><span class="stepscount">3</span></a></li>
+			</ul>
+			<div class="row">
+				<div class="col-md-12">		
+					<div class="stepscontent" id="step1" ng-show="activestep == 1">
+
+
+
+
+						<div class="form-group">
+							<label>Application No</label>
+							<label class="label-error-message" ng-bind="ApplicationNoErrMsg" ng-show="showApplicationNoErr"></label>
+							<input class="form-control" type="text" name="applno" ng-model="admissionschooldata.applno"  required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Application For</label>
+							<input class="form-control" type="text" name="appfor" ng-model="admissionschooldata.appfor" required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Candidate's First Name</label>
+							<input class="form-control" type="text" name="candfirstname" ng-model="admissionschooldata.candfirstname" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Candidate's Middle Name</label>
+							<input class="form-control" type="text" name="candmiddlename" ng-model="admissionschooldata.candmiddlename" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Candidate's Last Name</label>
+							<input class="form-control" type="text" name="candlastname" ng-model="admissionschooldata.candlastname" required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Date of Birth</label>
+							<input class="form-control" type="text" name="dateofbirth" ng-model="admissionschooldata.dateofbirth" required ng-disabled="true" >
+						</div>
+						<div class="form-group">
+							<label>Age</label>
+							<input class="form-control" type="text" name="age" ng-model="admissionschooldata.age" required ng-disabled="true"> 
+						</div>
+
+						<div class="form-group">
+							<label>Gender</label>
+							<input class="form-control" type="text" name="gender" ng-model="admissionschooldata.gender" required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Father's Name</label>
+							<input class="form-control" type="text" name="candfathername" ng-model="admissionschooldata.candfathername" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Mother's Name</label>
+							<input class="form-control" type="text" name="candmothername" ng-model="admissionschooldata.candmothername" required ng-disabled="true">
+						</div>
+						
+						
+						<div class="form-group">
+							<label>Present Address</label>
+							<input class="form-control" type="text" name="presentaddress1" ng-model="admissionschooldata.presentaddress1" required ng-disabled="true">
+							
+						</div>
+						<div class="form-group">
+							<label>Second Address</label>
+							<input class="form-control" type="text" name="presentaddress2" ng-model="admissionschooldata.presentaddress2" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Area/City</label>
+							<input class="form-control" type="text" name="presentarea" ng-model="admissionschooldata.presentarea" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>PinCode</label>
+							<input class="form-control" type="text" name="presentpincode" ng-model="admissionschooldata.presentpincode" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>State</label>
+							<input class="form-control" type="text" name="presentstate" ng-model="admissionschooldata.presentstate" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Father's Mobile Number</label>
+							<input class="form-control" type="text" name="fathersmobileno" ng-model="admissionschooldata.fathersmobileno" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Father's Alternative Mobile Number</label>
+							<input class="form-control" type="text" name="fathersaltmobno" ng-model="admissionschooldata.fathersaltmobno" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Mother's Mobile Number</label>
+							<input class="form-control" type="text" name="mothersmobileno" ng-model="admissionschooldata.mothersmobileno" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Mother's Alternative Mobile Number</label>
+							<input class="form-control" type="text" name="mothersaltmobileno" ng-model="admissionplayschooldata.mothersaltmobno" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Father's Email</label>
+							<input class="form-control" type="text" name="fathersemail" ng-model="admissionschooldata.fathersemail" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Mother's E-mail</label>
+							<input class="form-control" type="text" name="mothersemail" ng-model="admissionschooldata.mothersemail" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Reference</label>
+							<input class="form-control" type="text" name="reference" ng-model="admissionschooldata.reference" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Remarks</label>
+							<input class="form-control" type="text" name="remarks" ng-model="admissionschooldata.remarks" required ng-disabled="true">
+						</div>
+						<div class="form-group">
+							<label>Academic Year</label>
+							<input class="form-control" type="academicyear" name="remarks" ng-model="admissionschooldata.academicyear" required ng-disabled="true" >
+						</div>
+
+							
+
+						
+
+						<div class="text-right">
+							<input  type="button" class="btn btn-primary" value="NEXT" ng-click="gotostep(2)">
+						</div>
+
+
+
+
+
+					</div>
+
+
+
+
+
+
+					<div class="stepscontent" id="step2" ng-show="activestep == 2">
+
+
+
+						<div class="form-group">
+							
+							<label>Religion<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="religionErrMsg" ng-show="showReligionErr"></label>
+							<select class="form-control" ng-model="admissionschooldata.religion" required >
+								<option>Select Religion</option>
+								<option>Hindu</option>
+								<option>Christian</option>
+								<option>Muslim</option>
+								<option>Jain</option>
+								<option>Budhist</option>
+								<option>Others</option>
+								</select>
+						</div>
+
+						<div class="form-group">
+							
+							<label>Community<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="communityErrMsg" ng-show="showCommunityErr"></label>
+							<select class="form-control" ng-model="admissionschooldata.community" required >
+								<option>Select Community</option>
+								<option>SC</option>
+								<option>ST</option>
+								<option>BC</option>
+								<option>MBC</option>
+								<option>OC</option>
+								
+								</select>
+						</div>
+
+						<div class="form-group">
+							<label>Caste</label>
+							<label class="label-error-message" ng-bind="casteErrMsg" ng-show="showCasteErr"></label>
+							<input class="form-control" type="text" name="caste" ng-model="admissionschooldata.caste">
+						</div>					
+
+
+						<div class="form-group">
+							<label>Aadhar Number</label>
+							<input class="form-control" type="text" name="aadharno" ng-model="admissionschooldata.aadharno">
+						</div>					
+
+						<div class="form-group">
+							<label>Blood Group</label>
+							<input class="form-control" type="text" name="bloodgroup" ng-model="admissionschooldata.bloodgroup">
+						</div>					
+
+						<div class="form-group">
+							<label>Medication being taken by the Pupil</label>
+							<input class="form-control" type="text" name="medicaldetails" ng-model="admissionschooldata.medicaldetails " required>
+						</div>
+						<div class="form-group">
+							<label>Allergies if any</label>
+							<input class="form-control" type="text" name="allergies" ng-model="admissionschooldata.allergies " required>
+						</div>
+						<div class="form-group">
+							<label>Identification Marks of the Pupil</label>
+							<input class="form-control" type="text" name="identificationmarks" ng-model="admissionschooldata.identificationmarks " required>
+						</div>
+
+
+						<div class="form-group">
+							
+							<label>Mother Tongue<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="mothertoungueErrMsg" ng-show="showMothertongueErr"></label>
+							<select class="form-control" ng-model="admissionschooldata.mothertongue" required >
+								<option>Select Mother Tongue</option>
+								<option>Tamil</option>
+								<option>Telugu</option>
+								<option>Malayalam</option>
+								<option>Kannada</option>
+								<option>Shourastra</option>
+								<option>Hindi</option>
+								<option>Urudhu</option>
+								<option>Bengali</option>
+								<option>English</option>
+								<option>Others</option>
+								
+								</select>
+						</div>
+
+						
+						<div class="form-group">
+							<label>Father's Occupation</label>
+							<label class="label-error-message" ng-bind="fathersOccupationErrMsg" ng-show="showFathersOccupationErr"></label>
+							<input class="form-control" type="text" name="fathersoccupation" ng-model="admissionschooldata.fathersoccupation">
+						</div>					
+						<div class="form-group">
+							<label>Father's Office Name</label>
+							<label class="label-error-message" ng-bind="fathersOfficeNameErrMsg" ng-show="showfathersOfficeNameErr"></label>
+							<input class="form-control" type="text" name="fathersofficename" ng-model="admissionschooldata.fathersofficename">
+						</div>
+						<div class="form-group">
+							<label>Father's Office Address Line1</label>
+							<label class="label-error-message" ng-bind="fathersOffAdd1ErrMsg" ng-show="showfathersOffAdd1Err"></label>
+							<input class="form-control" type="text" name="fathersofficeaddress1" ng-model="admissionschooldata.fathersofficeaddress1">
+						</div>
+						<div class="form-group">
+							<label>Father's Office Address Line2</label>
+							
+							<input class="form-control" type="text" name="fathersofficeaddress2" ng-model="admissionschooldata.fathersofficeaddress2">
+						</div>
+						<div class="form-group">
+							<label>Father's Office Area / City</label>
+							<label class="label-error-message" ng-bind="fathersOffAreaErrMsg" ng-show="showfathersOffAreaErr"></label>
+							<input class="form-control" type="text" name="fathersofficearea" ng-model="admissionschooldata.fathersofficearea">
+						</div>
+						<div class="form-group">
+							<label>Father's Office Pincode</label>
+							<label class="label-error-message" ng-bind="fathersOffPinCodeErrMsg" ng-show="showFathersOffPinCodeErr"></label>
+							<input class="form-control" type="text" name="fathersofficepincode" ng-model="admissionschooldata.fathersofficepincode" allow-only-numbers required>
+						</div>
+						<div class="form-group">
+							<label>Father's Office State</label>
+							<label class="label-error-message" ng-bind="fathersOffStateErrMsg" ng-show="showFathersOffStateErr"></label>
+							<input class="form-control" type="text" name="fathersofficestate" ng-model="admissionschooldata.fathersofficestate" ng-init="admissionschooldata.fathersofficestate='TamilNadu'" required>
+						</div>
+						<div class="form-group">
+							<label>Father's Office Phone Number</label>
+
+							<input class="form-control" type="text" name="fathersofficephoneno" ng-model="admissionschooldata.fathersofficephoneno" allow-only-numbers>
+						</div>
+						<div class="form-group">
+							<label>Father's Office Alternative Phone Number</label>
+							<input class="form-control" type="text" name="fathersofficealtphoneno" ng-model="admissionschooldata.fathersofficealtphoneno" allow-only-numbers>
+						</div>
+						<div class="form-group">
+							<label>Father's Office Extension No if Any</label>
+							<input class="form-control" type="text" name="fathersoffficeextensionno" ng-model="admissionschooldata.fathersoffficeextensionno " allow-only-numbers>
+						</div>
+
+						<div class="form-group">
+							<label>Father's Monthly Income</label>
+							<input class="form-control" type="text" name="fathermonthlyincome" ng-model="admissionschooldata.fathermonthlyincome " allow-only-numbers>
+						</div>
+
+						<div class="form-group">
+							<label>Mother's Occupation</label>
+							<input class="form-control" type="text" name="mothersoccupation" ng-model="admissionschooldata.mothersoccupation">
+						</div>					
+						<div class="form-group">
+							<label>Mother's Office Name</label>
+							<input class="form-control" type="text" name="mothersofficename" ng-model="admissionschooldata.mothersofficename">
+						</div>
+						<div class="form-group">
+							<label>Mother's Office Address Line1</label>
+							<input class="form-control" type="text" name="mothersofficeaddress1" ng-model="admissionschooldata.mothersofficeaddress1">
+						</div>
+						<div class="form-group">
+							<label>Mother's Office Address Line2</label>
+							<input class="form-control" type="text" name="mothersofficeaddress2" ng-model="admissionschooldata.mothersofficeaddress2">
+						</div>
+						<div class="form-group">
+							<label>Mother's Office Area / City</label>
+							<input class="form-control" type="text" name="mothersofficearea" ng-model="admissionschooldata.mothersofficearea">
+						</div>
+						<div class="form-group">
+							<label>Mother's Office Pincode</label>
+							<input class="form-control" type="text" name="mothersofficepincode" ng-model="admissionschooldata.mothersofficepincode" allow-only-numbers>
+						</div>
+						<div class="form-group">
+							<label>Mother's Office State</label>
+							<input class="form-control" type="text" name="mothersofficestate" ng-model="admissionschooldata.mothersofficestate" ng-init="admissionschooldata.mothersofficestate='TamilNadu'" required>
+						</div>
+						<div class="form-group">
+							<label>Mother's Office Phone Number</label>
+							<input class="form-control" type="text" name="mothersofficephoneno" ng-model="admissionschooldata.mothersofficephoneno" allow-only-numbers>
+						</div>
+						<div class="form-group">
+							<label>Mother's Office Alternative Phone Number</label>
+							<input class="form-control" type="text" name="mothersofficealtphoneno" ng-model="admissionschooldata.mothersofficealtphoneno" allow-only-numbers>
+						</div>
+						<div class="form-group">
+							<label>Mother's Office Extension No if Any</label>
+							<input class="form-control" type="text" name="mothersofficeextensionno" ng-model="admissionschooldata.mothersofficeextensionno " allow-only-numbers>
+						</div>
+
+						<div class="form-group">
+							<label>Mother's Monthly Income</label>
+							<input class="form-control" type="text" name="mothersmonthlyincome" ng-model="admissionschooldata.mothersmonthlyincome " allow-only-numbers>
+						</div>
+						<div class="form-group">
+							<label>Fathers Date of Birth</label>
+							<input class="form-control" type="text" name="fathersdob" ng-model="admissionschooldata.fathersdob">
+						</div>
+						<div class="form-group">
+							<label>Mothers Date of Birth</label>
+							<input class="form-control" type="text" name="mothersdob" ng-model="admissionschooldata.mothersdob">
+						</div>
+						<div class="form-group">
+							<label>Parents Wedding Date</label>
+							<input class="form-control" type="text" name="parentsweddingdate" ng-model="admissionschooldata.parentsweddingdate">
+						</div>
+
+
+						<div class="form-group">
+							<label>Siblings if any</label>
+							<label class="label-error-message" ng-bind="siblingsErrMsg" ng-show="showSiblingsErr"></label>
+							<select class="form-control" ng-model="admissionschooldata.siblings" required >
+								<option>Select Siblings</option>
+								<option>Yes</option>
+								<option>No</option>
+								</select>
+						</div>
+						<div class="form-group">
+							<label>Sibling Name</label>
+							<input class="form-control" type="text" name="siblingname" ng-model="admissionschooldata.siblingname " required>
+						</div>
+						<div class="form-group">
+							<label>Sibling Date of Birth</label>
+							<input class="form-control" type="text" name="siblingdob" ng-model="admissionschooldata.siblingdob " required>
+						</div>
+						<div class="form-group">
+							<label>Sibling Age</label>
+							<input class="form-control" type="text" name="siblingage" ng-model="admissionschooldata.siblingage " ng-init="admissionschooldata.siblingage='0.0'" required >
+						</div>
+
+						<div class="form-group">
+							<label>If Sibling Studying in this School, Class of Sibling</label>
+							<input class="form-control" type="text" name="siblingclass" ng-model="admissionschooldata.siblingclass " required>
+						</div>
+
+						<div class="form-group">
+							<label>If Sibling Studying in this School, Section of Sibling</label>
+							<input class="form-control" type="text" name="siblingsection" ng-model="admissionschooldata.siblingsection " required>
+						</div>
+
+
+						<div class="text-right">
+							<input type="button" class="btn btn-default" ng-click="gotostep(1)" value="BACK">
+							<input type="button" class="btn btn-primary" value="NEXT" ng-click="gotostep(3)">
+						</div>
+
+
+
+
+
+					</div>
+
+
+
+
+
+					<div class="stepscontent" id="step3" ng-show="activestep == 3">
+
+
+						<div class="form-group">
+							<label>Name of the School Last Attended</label>
+							<input class="form-control" type="text" name="lastschoolname" ng-model="admissionschooldata.lastschoolname " required>
+						</div>
+
+						<div class="form-group">
+							<label>Class Last Studied</label>
+							<input class="form-control" type="text" name="lastschoolclass" ng-model="admissionschooldata.lastschoolclass " required>
+						</div>
+
+						<div class="form-group">
+							<label>Whether Qualified for Promotion</label>
+							<select class="form-control" ng-model="admissionschooldata.lastschoolclassqualified" required>
+								<option>Select Qualified</option>
+								<option>Yes</option>
+								<option>No</option>
+								</select>
+						</div>
+
+						<div class="form-group">
+							<label>Whether Transfer Certificate is attached ?</label>
+							<select class="form-control" ng-model="admissionschooldata.lastschooltcattached" required>
+								<option>Select Qualified</option>
+								<option>Yes</option>
+								<option>No</option>
+								</select>
+						</div>
+
+						<div class="form-group">
+							<label>Medium of Instruction in which studied</label>
+							<select class="form-control" ng-model="admissionschooldata.lastschoolmedium" required>
+								<option>Select Qualified</option>
+								<option>Yes</option>
+								<option>No</option>
+								</select>
+						</div>
+
+						<div class="form-group">
+							<label>Last School Year of Study</label>
+							<input class="form-control" type="text" name="lastschoolyearofstudy" ng-model="admissionschooldata.lastschoolyearofstudy " required>
+						</div>
+
+
+						<div class="form-group">
+							<label>Extra Curricular Activities</label>
+							<input class="form-control" type="text" name="extracurricular" ng-model="admissionschooldata.extracurricular " required>
+						</div>
+
+						<div class="form-group">
+							<label>Achievements if any</label>
+							<input class="form-control" type="text" name="achievements" ng-model="admissionschooldata.achievements " required>
+						</div>
+
+						<div class="form-group">
+							<label>Class into which admission sought</label>
+							<input class="form-control" type="text" name="classintoadmission" ng-model="admissionschooldata.classintoadmission " required>
+						</div>
+
+						<div class="form-group">
+							<label>Admission Date<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="admissionDateErrMsg" ng-show="showAdmissionDateErr"></label>
+							<input class="form-control" type="text" name="admissiondate" ng-model="admissionschooldata.admissiondate" required>
+						</div>
+
+						<div class="form-group">
+							<label>Admission Status<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="admissionStatusErrMsg" ng-show="showAdmissionStatusErr"></label>
+							<select class="form-control" ng-model="admissionschooldata.admissionstatus" required>
+								<option>Select Admission Status</option>
+								<option>Admitted</option>
+								<option>Waiting List</option>
+								</select>
+						</div>
+
+						<div class="form-group">
+							<label>Admitted Into<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="admittedIntoErrMsg" ng-show="showAdmittedIntoErr"></label>
+							<select class="form-control" ng-model="admissionschooldata.admittedinto" required>
+								<option>Select Admitted Into</option>
+								<option>PRE-KG</option>
+								<option>LKG</option>
+								<option>UKG</option>
+								<option>I STD</option>
+								<option>II STD</option>
+								<option>III STD</option>
+								<option>IV STD</option>
+								<option>V STD</option>
+								<option>VI STD</option>
+								<option>VII STD</option>
+								<option>VIII STD</option>
+								<option>IX STD</option>
+								<option>X STD</option>
+								<option>XI STD</option>
+								<option>XII STD</option>
+								</select>
+						</div>
+
+						<div class="form-group">
+							<label>Select Section<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="sectionErrMsg" ng-show="showSectionErr"></label>
+							<select class="form-control" ng-model="admissionschooldata.section">
+								<option>Select Section</option>
+								<option>SECTION - A</option>
+								<option>SECTION - B</option>
+								<option>SECTION - C</option>
+								<option>SECTION - D</option>
+								<option>SECTION - E</option>
+								<option>SECTION - F</option>
+								<option>SECTION - G</option>
+								<option>SECTION - H</option>
+								<option>SECTION - I</option>
+								<option>SECTION - J</option>
+								<option>SECTION - K</option>
+								<option>SECTION - L</option>
+								<option>SECTION - M</option>
+								<option>SECTION - N</option>
+								<option>SECTION - O</option>
+								</select>
+						</div>
+
+						<div class="form-group">
+							<label>Admission Number Alloted by School</label>
+							<label class="label-error-message" ng-bind="registerNumberErrMsg" ng-show="showRegisterNumberErr"></label>
+							<input class="form-control" type="text" name="instituteregisternumber" ng-model="admissionschooldata.instituteregisternumber">
+						</div>
+
+						<div class="form-group">
+							<label>EMIS Number</label>
+							<label class="label-error-message" ng-bind="emisNumberErrMsg" ng-show="showEmisNumberErr"></label>
+							<input class="form-control" type="text" name="emisno" ng-model="admissionschooldata.emisno">
+						</div>
+
+
+						<div class="form-group">
+							<label>Select Transport Mode<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="transportErrMsg" ng-show="showTransportErr"></label>
+							<select class="form-control" ng-model="admissionschooldata.transport" ng-change="schoolvansetting()">
+								<option>Select Route</option>
+								<option>PRIVATE</option>
+								<option>SCHOOL VAN</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Select Stage<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="stageErrMsg" ng-show="showStageErr"></label>
+							<select class="form-control" ng-model="admissionschooldata.transportstage" ng-disabled="admissionschooldata.transport == 'PRIVATE'">
+								<option>Select Stage</option>
+								<option>NO SCHOOL BUS</option>
+								<option>UPTO 1 KM</option>
+								<option>UPTO 2 KM</option>
+								<option>UPTO 3 KM</option>
+								<option>NO SCHOOL VAN</option>
+
+								</select>
+						</div>
+						<div class="form-group">
+							<label>Transport Fees Method</label>
+							<label>Transprot Fees Method<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="transportfeesmethodErrMsg" ng-show="showTransportFeesMethodErr"></label>
+							<select class="form-control" ng-model="admissionplayschooldata.transportfeesmethod" ng-disabled="admissionplayschooldata.transport == 'PRIVATE'">
+								<option>Select Transport Fees Payment Method</option>
+								<option>Monthly</option>
+								<option>Termly</option>
+								<option>Yearly</option>
+								<option>Not Applicable</option>
+								</select>
+						</div>
+
+						<div class="form-group">
+							<label>Tuition Fees Method</label>
+							<label>Tuition Fees Method<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="tuitionfeesmethodErrMsg" ng-show="showTuitionFeesMethodErr"></label>
+							<select class="form-control" ng-model="admissionschooldata.tuitionfeesmethod">
+								<option>Select Tuition Fees Payment Method</option>
+								<option>Monthly</option>
+								<option>Termly</option>
+								<option>Yearly</option>
+								<option>Not Applicable</option>
+								</select>
+						</div>
+
+						<div class="form-group">
+							<label>Facility Fees<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="facilityFeesErrMsg" ng-show="showFacilityFeesErr"></label>
+							<input class="form-control" type="text" name="facilityfees" ng-model="admissionschooldata.facilityfees" allow-only-numbers required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Facility Fees Due Date<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="facilityFeesDueDateErrMsg" ng-show="showFacilityFeesDueDateErr"></label>
+							<input class="form-control" type="text" name="facilityfeesduedate" ng-model="admissionschooldata.facilityfeesduedate" allow-only-numbers required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Book and Note Book Fees<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="booknotebookFeesErrMsg" ng-show="showBookNoteBookFeesErr"></label>
+							<input class="form-control" type="text" name="booksnotebookfees" ng-model="admissionschooldata.booksnotebookfees" allow-only-numbers required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Book and Note Book Fees Due Date<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="booknotebookFeesDueDateErrMsg" ng-show="showBookNoteBookFeesDueDateErr"></label>
+							<input class="form-control" type="text" name="booksnotebookfeesduedate" ng-model="admissionschooldata.booksnotebookfeesduedate" allow-only-numbers required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Others Fees<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="othersFeesErrMsg" ng-show="showOthersFeesErr"></label>
+							<input class="form-control" type="text" name="othersfees" ng-model="admissionschooldata.othersfees" allow-only-numbers required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Others Fees Due Date<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="othersFeesDueDateErrMsg" ng-show="showOthersFeesDueDateErr"></label>
+							<input class="form-control" type="text" name="othersfeesduedate" ng-model="admissionschooldata.othersfeesduedate" allow-only-numbers required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Tuition Fees Monthly<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="tuitionfeesmonthlyErrMsg" ng-show="showTuitionFeesMonthlyErr"></label>
+							<input class="form-control" type="text" name="tuitionfeesmonthly" ng-model="admissionschooldata.tuitionfeesmonthly" allow-only-numbers required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Tuition Fees Monthly Due Date<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="tuitionfeesmonthlyDueDateErrMsg" ng-show="showTuitionFeesMonthlyDueDateErr"></label>
+							<input class="form-control" type="text" name="tuitionfeesmonthlyduedate" ng-model="admissionschooldata.tuitionfeesmonthlyduedate" allow-only-numbers required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Tuition Fees Termly<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="tuitionfeestermlyErrMsg" ng-show="showTuitionFeesTermlyErr"></label>
+							<input class="form-control" type="text" name="tuitionfeestermly" ng-model="admissionschooldata.tuitionfeestermly" allow-only-numbers required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Tuition Fees Termly Due Date<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="tuitionfeestermlyDueDateErrMsg" ng-show="showTuitionFeesTermlyDueDateErr"></label>
+							<input class="form-control" type="text" name="tuitionfeestermlyduedate" ng-model="admissionschooldata.tuitionfeestermlyduedate" allow-only-numbers required ng-disabled="true">
+						</div>
+
+						<div class="form-group">
+							<label>Total Fees<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="totalFeesErrMsg" ng-show="showTotalFeesErr"></label>
+							<input class="form-control" type="text" name="totalfees" ng-model="admissionschooldata.totalfees" allow-only-numbers required ng-disabled="true">
+						</div>
+
+
+						<div class="form-group">
+							<label>Transport Fees<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="transportFeesErrMsg" ng-show="showTransportFeesErr"></label>
+							<input class="form-control" type="text" name="transportfees" ng-model="admissionplayschooldata.transportfees" allow-only-numbers required  ng-disabled="admissionschooldata.transport == 'PRIVATE'">
+						</div>
+
+						<div class="form-group">
+							<h4><label style="color: #ff6600">Grand Total Fees for First Installment</label></h4>
+							<label>Grand Total Fees for First Installment<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="grandTotalFeesErrMsg" ng-show="showGrandTotalFeesErr"></label>
+							<h3 style="color: #ff6600"><label><strong>Rs.{{ (admissionschooldata.totalfees*1) + (admissionschooldata.transportfees*1) }}</strong></label></h3>
+							<!-- <input class="form-control" type="text" name="grandtotalfees" ng-model="(admissionplayschooldata.totalfees|number)+(admissionplayschooldata.transportfees|number)" allow-only-numbers required> -->
+						</div>
+
+
+						
+
+						<div class="text-right">
+							<input type="button" class="btn btn-default" ng-click="gotostep(2)" value="BACK">
+							<input type="submit" class="btn btn-primary" value="SAVE">
+						</div>
+
+
+					</div>
+					
+
+						
+				</div>
+			</div>
+			
+		</form>
+	</div>
+</div>

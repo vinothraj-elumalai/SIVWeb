@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'customicons';
+  src:  url('../fonts/customicons.eot?kez33u');
+  src:  url('../fonts/customicons.eot?kez33u#iefix') format('embedded-opentype'),
+    url('../fonts/customicons.ttf?kez33u') format('truetype'),
+    url('../fonts/customicons.woff?kez33u') format('woff'),
+    url('../fonts/customicons.svg?kez33u#customicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="customicons-"], [class*=" customicons-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'customicons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.customicons-admissionstatus:before {
+  content: "\e910";
+}
+.customicons-feedback:before {
+  content: "\e911";
+}
+.customicons-feesreport:before {
+  content: "\e912";
+}
+.customicons-schoolfees:before {
+  content: "\e913";
+}
+.customicons-staffattendance:before {
+  content: "\e914";
+}
+.customicons-studentattendance:before {
+  content: "\e915";
+}
+.customicons-studentperformance:before {
+  content: "\e916";
+}
+.customicons-transportfees:before {
+  content: "\e917";
+}
+.customicons-ATTENDANCE:before {
+  content: "\e90a";
+}
+.customicons-FILEUPLOAD:before {
+  content: "\e90b";
+}
+.customicons-homework:before {
+  content: "\e90c";
+}
+.customicons-photoupload:before {
+  content: "\e90d";
+}
+.customicons-pickup:before {
+  content: "\e90e";
+}
+.customicons-video-player:before {
+  content: "\e90f";
+}
+.customicons-admission:before {
+  content: "\e900";
+}
+.customicons-application-form:before {
+  content: "\e901";
+}
+.customicons-cashcounter:before {
+  content: "\e902";
+}
+.customicons-edit:before {
+  content: "\e903";
+}
+.customicons-emergency:before {
+  content: "\e904";
+}
+.customicons-eventsandcircular:before {
+  content: "\e905";
+}
+.customicons-namelist:before {
+  content: "\e906";
+}
+.customicons-reports:before {
+  content: "\e907";
+}
+.customicons-staffbiodata:before {
+  content: "\e908";
+}
+.customicons-transport:before {
+  content: "\e909";
+}

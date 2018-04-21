@@ -396,6 +396,12 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/institutebusroutedetails.html",
         controller : "instituteBusrouteDetailsCtrl"
     })
+
+   .when("/instituteschoolsubjectdetails", {
+        templateUrl : "templates/instituteschoolsubjectdetails.html",
+        controller : "instituteSchoolSubjectDetailsCtrl"
+    })
+
     .when("/applicationsaleplayschool", {
         templateUrl : "templates/applicationsaleplayschool.html",
         controller : "playSchoolapplicationSaleCtrl"
@@ -523,6 +529,15 @@ sivwebapp.config(function($routeProvider) {
         templateUrl : "templates/parentfeedbackplayschool.html",
         controller : "parentfeedbackplayschoolCtrl"
     })
+   .when("/applicationsaleschool", {
+        templateUrl : "templates/applicationsaleschool.html",
+        controller : "schoolApplicationSaleCtrl"
+    })
+
+   .when("/admissionschool", {
+        templateUrl : "templates/admissionschool.html",
+        controller : "admissionSchoolCtrl"
+    })
 
     .otherwise({
         templateUrl : "templates/login.html",
@@ -576,7 +591,7 @@ sivwebapp.filter('dayOfDate', function() {
         return days[d.getDay()];
     };
 });
-sivwebapp.constant('hosturl', 'http://localhost:8080');
-sivwebapp.constant('currentHost', 'http://localhost/SIVWeb/').run(function ($rootScope, currentHost) {$rootScope.currentHost = currentHost;});
-//sivwebapp.constant('hosturl', 'http://api.gbcorp.in:8080');
-// sivwebapp.constant('currentHost', 'http://siv.gbcorp.in/').run(function ($rootScope, currentHost) {$rootScope.currentHost = currentHost;});;
+// sivwebapp.constant('hosturl', 'http://localhost:8080');
+// sivwebapp.constant('currentHost', 'http://localhost/SIVWeb/').run(function ($rootScope, currentHost) {$rootScope.currentHost = currentHost;});
+sivwebapp.constant('hosturl', 'http://api.gbcorp.in:8080');
+sivwebapp.constant('currentHost', 'http://siv.gbcorp.in/').run(function ($rootScope, currentHost) {$rootScope.currentHost = currentHost;});;

@@ -1,7 +1,11 @@
-sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($scope, $http, $window, hosturl, constantService) {
+sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($scope, $http, $window, hosturl, constantService, Auth) {
 
     clearFields();
-
+    $scope.userdata = Auth.isLoggedIn();
+    $scope.studentpersonalinformationeditplayschooldata = {};
+     $scope.studentpersonalinformationsearch = {};
+    $scope.studentpersonalinformationeditplayschooldata.instituteid = $scope.userdata.instituteid;
+    $scope.studentpersonalinformationsearch.instituteid = $scope.userdata.instituteid;
     $scope.studentpersonalinformationPlaySchoolSubmit = function(){
     	console.log($scope.studentpersonalinformationeditplayschooldata);
         var playschlStudPersInfEditObj = $scope.studentpersonalinformationeditplayschooldata;

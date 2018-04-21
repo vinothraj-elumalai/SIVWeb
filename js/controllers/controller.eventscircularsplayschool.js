@@ -1,7 +1,10 @@
-sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http,$window, hosturl) {
+sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http,$window, hosturl, constantService, Auth) {
 
     clearFields();
-
+    $scope.userdata = Auth.isLoggedIn();
+    $scope.eventscircularssplayschooldata = {};
+    $scope.eventscircularssplayschooldata.instituteid=$scope.userdata.instituteid;
+    $scope.eventscircularssplayschooldata.loginuser = $scope.userdata.username;
     $scope.lastEventId = {};
 
     fetchlasteventid();
@@ -49,6 +52,8 @@ sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http,$wi
 
     $scope.eventsCircularsPlaySchoolSubmit = function(){
     	console.log($scope.eventscircularssplayschooldata);
+        $scope.eventscircularssplayschooldata.instituteid=$scope.userdata.instituteid;
+        $scope.eventscircularssplayschooldata.loginuser = $scope.userdata.username;
         var playschlEventCircularObj = $scope.eventscircularssplayschooldata;
 
         if(playschlEventCircularObj != undefined && playschlEventCircularObj != null )
@@ -235,12 +240,12 @@ sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http,$wi
                 $scope.messageErrMsg = "(Please enter Event Message)";
                 return false;
             }
-            if(playschlEventCircularObj.instituteid == undefined || playschlEventCircularObj.instituteid ==  null || playschlEventCircularObj.instituteid == '')
-            {
-                $scope.showInstituteIdErr = true;
-                $scope.instituteIdErrMsg = "(Please enter InstituteId)";
-                return false;
-            }
+            // if(playschlEventCircularObj.instituteid == undefined || playschlEventCircularObj.instituteid ==  null || playschlEventCircularObj.instituteid == '')
+            // {
+            //     $scope.showInstituteIdErr = true;
+            //     $scope.instituteIdErrMsg = "(Please enter InstituteId)";
+            //     return false;
+            // }
 
 
         }
@@ -283,8 +288,8 @@ sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http,$wi
         $scope.messageErrMsg='';
         $scope.showMessageErr=false;
 
-        $scope.instituteIdErrMsg='';
-        $scope.showInstituteIdErr=false;
+        // $scope.instituteIdErrMsg='';
+        // $scope.showInstituteIdErr=false;
 
     }    
 
@@ -298,7 +303,7 @@ sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http,$wi
         $scope.eventscircularssplayschooldata.academicyear="Select Academic Year";
         $scope.eventscircularssplayschooldata.eventtitle="";
         $scope.eventscircularssplayschooldata.message="";
-        $scope.eventscircularssplayschooldata.instituteid="";
+        // $scope.eventscircularssplayschooldata.instituteid="";
 
     }
 

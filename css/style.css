@@ -1225,9 +1225,16 @@ span.paneldate, span.panelday {
   #printableArea, #printableArea * {
     visibility: visible;
   }*/
+    #printableAreainner h3 {
+      font-size: 20px; 
+    }
   #printableArea {
     display: block;
   }  
+  #printableAreainner .tablewrap table{
+    width: 100%;
+    border-top: 1px solid #ccc;
+  }
   #printableAreainner {
     /*position: absolute;
     left: 0;
