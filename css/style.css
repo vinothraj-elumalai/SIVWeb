@@ -1207,8 +1207,33 @@ span.paneldate, span.panelday {
   color: #ff6600;
   font-weight: bold;
 }
+.subjectpass .form-control {
+    background: #19c419;
+    color: #fff;
+}
+.subjectfail .form-control {
+    background: #f64b4b;
+    color: #fff;
+}
+.tablelarge th, .tablelarge td {
+      padding: 4px 10px;
+}
+.tablelarge th {
+    border-right: 1px solid #999;
+    border-top: 1px solid #999;
+    font-size: 12px;
+}
+.tablelarge textarea.form-control-remark {
+  min-height: 53px;
+  width: 250px;
+}
 
-
+.tablelarge .form-control {
+  height: 35px;
+}
+.tablelarge .form-control-grade {
+  width: 50px;
+}
 
 
 
@@ -1274,3 +1299,4 @@ span.paneldate, span.panelday {
   }
   #printableAreainner .printheaderlogo {margin: 20px 0 0 5px;}
 }
+

@@ -1,0 +1,89 @@
+<h1>Enter Exam/Test Time Table</h1>
+<div class="row">
+	<div class="col-md-12">
+		<form name="schoolexamtimetableform" ng-submit="getSubjectDetailsSubmit()" novalidate>
+			<div class="row student-form">
+				<div class="col-md-6">
+					<!-- <div class="form-group">
+						<label>Enter Date</label>
+						<input class="form-control" type="text" name="entrydate" ng-model="photosuploadPlaySchoolData.entrydate" required>
+					</div> -->
+
+					<div class="form-group">
+						<label>PROGRAM</label>
+						<select class="form-control" ng-model="getTimeTableData.program" required>
+							<option>Select Program</option>
+							<option>TODDLER PROGRAM</option>
+							<option>PRE-KG</option>
+							<option>KG1</option>
+							<option>KG2</option>
+							<option>I STD</option>
+							<option>II STD</option>
+							<option>III STD</option>
+							<option>IV STD</option>
+							<option>V STD</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>SECTION</label>
+						<select class="form-control" ng-model="getTimeTableData.section" required>
+							<option>Select Section</option>
+							<option>All</option>
+							<option>SECTION - A</option>
+							<option>SECTION - B</option>
+							<option>SECTION - C</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="getTimeTableData.academicyear" required>
+							<option>Select Academic Year</option>
+							<option>2018-2019</option>
+							<option>2017-2018</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Test Type</label>
+						<select class="form-control" ng-model="getTimeTableData.testtype" required>
+							<option>Select Test Type</option>
+							<option>Mid Term Test</option>
+							<option>Quarterly Exam</option>
+							<option>Half Yearly Exam</option>
+							<option>Annual Exam</option>
+						</select>
+					</div>
+
+
+					<button ng-disabled="schoolexamtimetableform.$invalid" class="btn btn-primary">SET TIME TABLE</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<br/>
+<br/>
+<br/>
+
+<div ng-show="subjectdetails.length">
+	<table>
+		<tr>
+			<th>S.No.</th>
+			<th>Subject Code</th>
+			<th>Subject Name</th>
+			<th>Date</th>
+		</tr>
+
+
+		<tr ng-repeat= "subject in subjectdetails"  ng-class="{selectedrow : student.studentphotoaccess == 1}">
+			<td>{{$index+1}}</td>
+			<td>{{subject.subjectcode}}</td>
+			<td>{{subject.subjectname}}</td>
+			<td><input type="text" ng-model="subject.date" class="form-control" /></td>
+		</tr>
+	</table>
+
+
+	<button ng-click="submitTimeTable()" class="btn btn-primary">Upload Time Table</button>
+</div>

@@ -1,0 +1,119 @@
+<h1>Enter Exam/Test Mark Entry</h1>
+<div class="row">
+	<div class="col-md-12">
+		<form name="schooltestexammarkentryform" ng-submit="getStudentListSubmit()" novalidate>
+			<div class="row student-form">
+				<div class="col-md-6">
+					<!-- <div class="form-group">
+						<label>Enter Date</label>
+						<input class="form-control" type="text" name="entrydate" ng-model="photosuploadPlaySchoolData.entrydate" required>
+					</div> -->
+
+					<div class="form-group">
+						<label>STANDARD</label>
+						<select class="form-control" ng-model="getSchoolTestExamMarkData.program" required>
+							<option>Select Program</option>
+							<option>TODDLER PROGRAM</option>
+							<option>PRE-KG</option>
+							<option>KG1</option>
+							<option>KG2</option>
+							<option>I STD</option>
+							<option>II STD</option>
+							<option>III STD</option>
+							<option>IV STD</option>
+							<option>V STD</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>SECTION</label>
+						<select class="form-control" ng-model="getSchoolTestExamMarkData.section" required>
+							<option>Select Section</option>
+							<option>All</option>
+							<option>SECTION - A</option>
+							<option>SECTION - B</option>
+							<option>SECTION - C</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Academic Year</label>
+						<select class="form-control" ng-model="getSchoolTestExamMarkData.academicyear" required>
+							<option>Select Academic Year</option>
+							<option>2018-2019</option>
+							<option>2017-2018</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Test Type</label>
+						<select class="form-control" ng-model="getSchoolTestExamMarkData.testtype" required>
+							<option>Select Test Type</option>
+							<option>Mid Term Test</option>
+							<option>Quarterly Exam</option>
+							<option>Half Yearly Exam</option>
+							<option>Annual Exam</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Select Maximum Marks for this test/exam</label>
+						<select class="form-control" ng-model="getSchoolTestExamMarkData.subjectmaxmarks" required>
+							<option>Select Test Type</option>
+							<option>10</option>
+							<option>20</option>
+							<option>25</option>
+							<option>30</option>
+							<option>35</option>
+							<option>40</option>
+							<option>50</option>
+							<option>75</option>
+							<option>100</option>
+							<option>150</option>
+							<option>200</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Enter Minimum Pass Mark</label>
+						<input class="form-control" ng-model="getSchoolTestExamMarkData.subjectpassmarks" required>
+					</div>
+					<button ng-disabled="schooltestexammarkentryform.$invalid" class="btn btn-primary">ENTER MARKS</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<br/>
+<br/>
+<br/>
+
+<div ng-show="returnstatus">
+<table class="tablelarge">
+	<tr>
+		<th>S.No.</th>
+		<th>Register Number</th>
+		<th>Student Name</th>
+		<th ng-repeat="subject in subjectlist">{{subject.subjectname}}<small> - {{subject.subjectcode}}</small><br/>{{subject.date}}</th>
+		<th>Total Marks</th>
+		<th>Percentage</th>
+		<th>Grade</th>
+		<th>Result</th>
+		<th>Remarks</th>
+	</tr>
+
+
+	<tr ng-repeat= "student in studentList" ng-class="{'studentpass': student.result == 'PASS' , 'studentfail': student.result == 'FAIL'} ">
+		<td>{{$index+1}}</td>
+		<td>{{student.registernumber}}</td>
+		<td>{{student.candidatename}}</td>
+		<td ng-repeat="subject in subjectlist" ng-class="{'subjectpass': isPass(studentList[$parent.$index].subjectmarks[$index]), 'subjectfail': !isPass(studentList[$parent.$index].subjectmarks[$index]) }"><input type="text" class="form-control" ng-model="studentList[$parent.$index].subjectmarks[$index]" ng-init="studentList[$parent.$index].subjectmarks[$index]=0" ng-change="student.totalmark = totalmarks(student.subjectmarks, $index); student.percentage = averagemarks(student.subjectmarks, $index); student.grade = gradecalc(student.subjectmarks, $parent.$index)"/></td>
+		<td><span ng-init="student.totalmark = totalmarks(student.subjectmarks, $index)">{{totalmarks(student.subjectmarks, $index)}}</span></td>
+		<td><span ng-init="student.percentage = averagemarks(student.subjectmarks, $index)">{{averagemarks(student.subjectmarks, $index)}}</span></td>
+		<td><input type="text" class="form-control form-control-grade" ng-model="student.grade"/></td>
+		<td><span>{{student.result}}</span></td>
+		<td><textarea class="form-control form-control-remark" ng-model="student.remarks"></textarea></td>
+	</tr>
+</table>
+
+
+<button ng-click="uploadMarks()" class="btn btn-primary">Upload Marks</button>
+</div>

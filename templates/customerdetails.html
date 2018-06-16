@@ -1,0 +1,86 @@
+<h1>CUSTOMER DETAIL ENTRY</h1> 
+<div class="row">
+	<div class="col-md-12">
+		<form name="customerdetailsentryform" enctype="multipart/form-data" ng-submit="customerdetailsSubmit()" novalidate>
+			<div class="row">
+				<div class="col-md-6">	
+
+					<div class="form-group">
+						<label>Enter Institute Id<font color="red">**</font></label>
+						<label class="label-error-message"ng-bind="instituteIdMsg" ng-show="instituteIdErr"></label>
+						<input class="form-control" type="text" name="instituteid" ng-model="customerdetailsdata.instituteid">
+					</div>
+                   
+					<div class="form-group">
+						<label>Enter Institute Type<font color="red">**</font></label>
+						<label class="label-error-message"ng-bind="institutetypeMsg" ng-show="institutetypeErr"></label>
+						<select class="form-control" ng-model="customerdetailsdata.institutetype">
+							<option>Select Institute Type</option>
+							<option>ENGINEERING COLLEGE</option>
+							<option>POLYTECHNIC COLLEGE</option>
+							<option>ARTS AND SCIENCE COLLEGE</option>
+							<option>SCHOOL</option>
+							<option>PLAY SCHOOL</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Institute name<font color="red">**</font></label>
+						<label class="label-error-message"ng-bind="instituteNameMsg" ng-show="instituteNameErr"></label>
+						<input class="form-control" type="text" name="institutename" ng-model="customerdetailsdata.institutename">
+					</div>
+
+   					<div class="form-group">
+						<label>Enter Number of Students<font color="red">**</font></label>
+						<label class="label-error-message"ng-bind="noofstudentsMsg" ng-show="noofstudentsErr"></label>
+						<input class="form-control" type="text" name="noofstudents" ng-model="customerdetailsdata.noofstudents">
+					</div>
+					<div class="form-group">
+						<label>Enter Price Per Student<font color="red">**</font></label>
+						<label class="label-error-message"ng-bind="priceperstudentMsg" ng-show="priceperstudentErr"></label>
+						<input class="form-control" type="text" name="priceperstudent" ng-model="customerdetailsdata.priceperstudent">
+					</div>
+					
+					<div class="form-group">
+						<label>Enter Total Amount<font color="red">**</font></label>
+						<label class="label-error-message"ng-bind="totalamtMsg" ng-show="totalamtErr"></label>
+						<input class="form-control" type="text" name="totalamount" ng-model="customerdetailsdata.totalamount">
+					</div>
+					<div class="form-group">
+						<label>Enter Payment method<font color="red">**</font></label>
+						<label class="label-error-message"ng-bind="paymentMethodMsg" ng-show="paymentMethodErr"></label>
+						<select class="form-control" ng-model="customerdetailsdata.paymentmethod">
+							<option>Select Payment method</option>
+							<option>First Installment</option>
+							<option>Second Installment</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Enter Amount Paid<font color="red">**</font></label>
+						<label class="label-error-message"ng-bind="amountPaidMsg" ng-show="amountPaidErr"></label>
+						<input class="form-control" type="text" name="amountpaid" ng-model="customerdetailsdata.amountpaid">
+					</div>
+					<div class="form-group">
+						<label>Enter Balance<font color="red">**</font></label>
+						<label class="label-error-message"ng-bind="balanceMsg" ng-show="balanceErr"></label>
+						<input class="form-control" type="text" name="balance" ng-model="customerdetailsdata.balance">
+					</div>
+					<div class="form-group">
+						<label>Enter Due Date<font color="red">**</font></label>
+						<label class="label-error-message"ng-bind="dueDateMsg" ng-show="dueDateErr"></label>
+						<input class="form-control" type="text" name="duedate" ng-model="customerdetailsdata.duedate">
+					</div>
+					<div class="form-group">
+						<label>Enter Username<font color="red">**</font></label>
+						<label class="label-error-message"ng-bind="usernameMsg" ng-show="usernameErr"></label>
+						<input class="form-control" type="text" name="username" ng-model="customerdetailsdata.username">
+					</div>
+                    
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="button" class="btn btn-default" value="CLEAR">
+				<input type="submit" class="btn btn-primary" value="SUBMIT">
+			</div>
+		</form>
+	</div>
+</div>

@@ -209,7 +209,7 @@ sivwebapp.controller('admissionSchoolCtrl', function($scope, $http, hosturl, cur
          $scope.genregisternumber = "";
          $scope.searchAppnoData.instituteid = $scope.userdata.instituteid;
         $http({
-                url: hosturl+"/api/v1/schoolapplicationsale/getApplicationFeesDetails",
+                url: hosturl+"/api/v1/applicationsaleschool/getApplicationFeesDetails",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.searchAppnoData)
