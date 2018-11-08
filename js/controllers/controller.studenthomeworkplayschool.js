@@ -285,12 +285,12 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$wi
 
         function ClearDataFields()
     {
-        $scope.studenthomeworkplayschooldata.entrydate="";
-        $scope.studenthomeworkplayschooldata.entryday="";
-        $scope.studenthomeworkplayschooldata.program="Select Program";
-        $scope.studenthomeworkplayschooldata.section="Select Section";
-        $scope.studenthomeworkplayschooldata.academicyear="Select Academic Year";
-        $scope.studenthomeworkplayschooldata.subjectcategory="Select Subject Category";
+        // $scope.studenthomeworkplayschooldata.entrydate="";
+        // $scope.studenthomeworkplayschooldata.entryday="";
+        // $scope.studenthomeworkplayschooldata.program="Select Program";
+        // $scope.studenthomeworkplayschooldata.section="Select Section";
+        // $scope.studenthomeworkplayschooldata.academicyear="Select Academic Year";
+        // $scope.studenthomeworkplayschooldata.subjectcategory="Select Subject Category";
         $scope.studenthomeworkplayschooldata.homeworkcontent="";
         // $scope.studenthomeworkplayschooldata.instituteid="";
     }

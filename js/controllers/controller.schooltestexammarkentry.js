@@ -1,4 +1,4 @@
-sivwebapp.controller('schoolTestExamMarkEntryCtrl', function($scope, $http, hosturl, currentHost, constantService, Auth) {
+sivwebapp.controller('schoolTestExamMarkEntryCtrl1', function($scope, $http, hosturl, currentHost, constantService, Auth) {
     $scope.userdata = Auth.isLoggedIn();
     $scope.getSchoolTestExamMarkData = {};
     $scope.getSchoolTestExamMarkData.loginuser = $scope.userdata.username;
@@ -58,6 +58,9 @@ sivwebapp.controller('schoolTestExamMarkEntryCtrl', function($scope, $http, host
             obj['instituteid']=value.instituteid;
             obj['totalmark']=value.totalmark;
             obj['percentage']=value.percentage;
+            obj['grade']=value.grade;
+            obj['result']=value.result;
+            obj['remarks']=value.remarks;
             obj['subjectmarks']=[];
 
             angular.forEach($scope.studentList[index].subjectmarks, function (value, key){

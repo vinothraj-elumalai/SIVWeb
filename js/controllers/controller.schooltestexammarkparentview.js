@@ -31,7 +31,10 @@ sivwebapp.controller('schoolTestExamMarkEntryCtrl', function($scope, $http, host
                 if(success.data.errorMessage == "No Time Table Scheduled"){
                     alert(success.data.errorMessage);
                     $scope.returnstatus = false;
-                } else {
+                } else if (success.data.errorMessage == "Data Already Entered!"){
+                    alert(success.data.errorMessage);
+                    $scope.returnstatus = false;
+                }else {
                     $scope.returnstatus = true;
                     $scope.studentList = success.data.studentlist;
                     $scope.timetabledetails = success.data.timetabledetails;
@@ -58,6 +61,9 @@ sivwebapp.controller('schoolTestExamMarkEntryCtrl', function($scope, $http, host
             obj['instituteid']=value.instituteid;
             obj['totalmark']=value.totalmark;
             obj['percentage']=value.percentage;
+            obj['grade']=value.grade;
+            obj['result']=value.result;
+            obj['remarks']=value.remarks;
             obj['subjectmarks']=[];
 
             angular.forEach($scope.studentList[index].subjectmarks, function (value, key){

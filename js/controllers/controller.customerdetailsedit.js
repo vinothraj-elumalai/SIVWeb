@@ -74,7 +74,7 @@ sivwebapp.controller('customerdetailseditCtrl', function($scope, $http, $window,
 
         
 
-        function validateCustomerInformation(customerdetailsEditObj)
+function validateCustomerInformation(customerdetailsEditObj)
     {
         try
         {    

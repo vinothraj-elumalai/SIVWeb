@@ -289,90 +289,90 @@ sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($s
                 return false;
             }
 
-            if(playschlStudPersInfEditObj.fathersdob == undefined || playschlStudPersInfEditObj.fathersdob ==  null || playschlStudPersInfEditObj.fathersdob == '')
-            {
+            // if(playschlStudPersInfEditObj.fathersdob == undefined || playschlStudPersInfEditObj.fathersdob ==  null || playschlStudPersInfEditObj.fathersdob == '')
+            // {
                
-                $scope.showFathersDobErr = true;
-                $scope.fathersDobErrMsg = "(Please enter Fathers Date of Birth)";
-                return false;
+            //     $scope.showFathersDobErr = true;
+            //     $scope.fathersDobErrMsg = "(Please enter Fathers Date of Birth)";
+            //     return false;
 
-            }
-            else
-            {
-                var isValidDate=validateDate(playschlStudPersInfEditObj.fathersdob);
-                if( isValidDate == null || isValidDate == false) 
-                {
-                    $scope.showFathersDobErr = true;
-                    $scope.fathersDobErrMsg = "(Invalid Date of Birth)";
-                    return false;
-                }
+            // }
+            // else
+            // {
+            //     var isValidDate=validateDate(playschlStudPersInfEditObj.fathersdob);
+            //     if( isValidDate == null || isValidDate == false) 
+            //     {
+            //         $scope.showFathersDobErr = true;
+            //         $scope.fathersDobErrMsg = "(Invalid Date of Birth)";
+            //         return false;
+            //     }
                
-            }
+            // }
 
-            if(playschlStudPersInfEditObj.mothersdob == undefined || playschlStudPersInfEditObj.mothersdob ==  null || playschlStudPersInfEditObj.mothersdob == '')
-            {
+            // if(playschlStudPersInfEditObj.mothersdob == undefined || playschlStudPersInfEditObj.mothersdob ==  null || playschlStudPersInfEditObj.mothersdob == '')
+            // {
                
-                $scope.showMothersDobErr = true;
-                $scope.mothersDobErrMsg = "(Please enter Mothers Date of Birth)";
-                return false;
+            //     $scope.showMothersDobErr = true;
+            //     $scope.mothersDobErrMsg = "(Please enter Mothers Date of Birth)";
+            //     return false;
 
-            }
-            else
-            {
-                var isValidDate=validateDate(playschlStudPersInfEditObj.mothersdob);
-                if( isValidDate == null || isValidDate == false) 
-                {
-                    $scope.showMothersDobErr = true;
-                    $scope.mothersDobErrMsg = "(Invalid Date of Birth)";
-                    return false;
-                }
+            // }
+            // else
+            // {
+            //     var isValidDate=validateDate(playschlStudPersInfEditObj.mothersdob);
+            //     if( isValidDate == null || isValidDate == false) 
+            //     {
+            //         $scope.showMothersDobErr = true;
+            //         $scope.mothersDobErrMsg = "(Invalid Date of Birth)";
+            //         return false;
+            //     }
                
-            }
-            if(playschlStudPersInfEditObj.parentsweddingdate == undefined || playschlStudPersInfEditObj.parentsweddingdate ==  null || playschlStudPersInfEditObj.parentsweddingdate == '')
-            {
+            // }
+            // if(playschlStudPersInfEditObj.parentsweddingdate == undefined || playschlStudPersInfEditObj.parentsweddingdate ==  null || playschlStudPersInfEditObj.parentsweddingdate == '')
+            // {
                
-                $scope.showParentWeddingDateErr = true;
-                $scope.parentWeddingDateErrMsg = "(Please enter Parent Wedding Date)";
-                return false;
+            //     $scope.showParentWeddingDateErr = true;
+            //     $scope.parentWeddingDateErrMsg = "(Please enter Parent Wedding Date)";
+            //     return false;
 
-            }
-            else
-            {
-                var isValidDate=validateDate(playschlStudPersInfEditObj.parentsweddingdate);
-                if( isValidDate == null || isValidDate == false) 
-                {
-                    $scope.showParentWeddingDateErr = true;
-                    $scope.parentWeddingDateErrMsg = "(Invalid Date of Birth)";
-                    return false;
-                }
+            // }
+            // else
+            // {
+            //     var isValidDate=validateDate(playschlStudPersInfEditObj.parentsweddingdate);
+            //     if( isValidDate == null || isValidDate == false) 
+            //     {
+            //         $scope.showParentWeddingDateErr = true;
+            //         $scope.parentWeddingDateErrMsg = "(Invalid Date of Birth)";
+            //         return false;
+            //     }
                
-            }
+            // }
 
 
-            if(playschlStudPersInfEditObj.religion == undefined || playschlStudPersInfEditObj.religion ==  null || playschlStudPersInfEditObj.religion == '')
-            {
-                $scope.showreligionErr = true;
-                $scope.religionErrMsg = "(Please enter Religion)";
-                return false;
-            }
-            if(playschlStudPersInfEditObj.pickuppersonname == undefined || playschlStudPersInfEditObj.pickuppersonname ==  null || playschlStudPersInfEditObj.pickuppersonname == '')
-            {
-                $scope.showPickupPersonNameErr = true;
-                $scope.pickupPersonNameErrMsg = "(Please enter Pick up Person Name)";
-                return false;
-            }
-            if(playschlStudPersInfEditObj.pickuppersoncontactno == undefined || playschlStudPersInfEditObj.pickuppersoncontactno ==  null || playschlStudPersInfEditObj.pickuppersoncontactno == '')
-            {
-                $scope.showpickupPersonContactNoErr = true;
-                $scope.pickupPersonContactNoErrMsg = "(Please enter Pick up Person Contact Number)";
-                return false;
-            }
-            if(playschlStudPersInfEditObj.pickuppersonrelationship == undefined || playschlStudPersInfEditObj.pickuppersonrelationship ==  null || playschlStudPersInfEditObj.pickuppersonrelationship == '')
-            {
-                $scope.showpickupPersonRelationshipErr = true;
-                $scope.pickupPersonRelationshipErrMsg = "(Please enter Pick up Person Relationship)";
-                return false;
-            }
+            // // if(playschlStudPersInfEditObj.religion == undefined || playschlStudPersInfEditObj.religion ==  null || playschlStudPersInfEditObj.religion == '')
+            // // {
+            // //     $scope.showreligionErr = true;
+            // //     $scope.religionErrMsg = "(Please enter Religion)";
+            // //     return false;
+            // // }
+            // if(playschlStudPersInfEditObj.pickuppersonname == undefined || playschlStudPersInfEditObj.pickuppersonname ==  null || playschlStudPersInfEditObj.pickuppersonname == '')
+            // {
+            //     $scope.showPickupPersonNameErr = true;
+            //     $scope.pickupPersonNameErrMsg = "(Please enter Pick up Person Name)";
+            //     return false;
+            // }
+            // if(playschlStudPersInfEditObj.pickuppersoncontactno == undefined || playschlStudPersInfEditObj.pickuppersoncontactno ==  null || playschlStudPersInfEditObj.pickuppersoncontactno == '')
+            // {
+            //     $scope.showpickupPersonContactNoErr = true;
+            //     $scope.pickupPersonContactNoErrMsg = "(Please enter Pick up Person Contact Number)";
+            //     return false;
+            // }
+            // if(playschlStudPersInfEditObj.pickuppersonrelationship == undefined || playschlStudPersInfEditObj.pickuppersonrelationship ==  null || playschlStudPersInfEditObj.pickuppersonrelationship == '')
+            // {
+            //     $scope.showpickupPersonRelationshipErr = true;
+            //     $scope.pickupPersonRelationshipErrMsg = "(Please enter Pick up Person Relationship)";
+            //     return false;
+            // }
             if(playschlStudPersInfEditObj.transport == undefined || playschlStudPersInfEditObj.transport ==  null || playschlStudPersInfEditObj.transport == '')
             {
                 $scope.showtransportModeErr = true;

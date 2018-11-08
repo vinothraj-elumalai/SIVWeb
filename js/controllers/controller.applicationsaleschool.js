@@ -218,7 +218,7 @@ sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filte
                     //     $scope.playschoolapplicationsaledata.enquiryno = $scope.lastEnquiryNumber.enquiryno;    
 
                     $http({
-                        url: hosturl+"/api/v1/applicationsaleschool",
+                        url: hosturl+"/api/v1/playschoolapplicationsale",
                         method: "POST",
                         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                         data: $.param($scope.schoolapplicationsaledata)

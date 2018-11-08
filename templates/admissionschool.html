@@ -1040,10 +1040,11 @@
 
 						<div class="form-group">
 							
-							<label>Religion<font color="red">**</font></label>
-							<label class="label-error-message" ng-bind="religionErrMsg" ng-show="showReligionErr"></label>
+							<label>Religion</label>
+							
 							<select class="form-control" ng-model="admissionschooldata.religion" required >
 								<option>Select Religion</option>
+								<option>Need to Update</option>
 								<option>Hindu</option>
 								<option>Christian</option>
 								<option>Muslim</option>
@@ -1055,10 +1056,11 @@
 
 						<div class="form-group">
 							
-							<label>Community<font color="red">**</font></label>
-							<label class="label-error-message" ng-bind="communityErrMsg" ng-show="showCommunityErr"></label>
+							<label>Community</label>
+							
 							<select class="form-control" ng-model="admissionschooldata.community" required >
 								<option>Select Community</option>
+								<option>Need to Update</option>
 								<option>SC</option>
 								<option>ST</option>
 								<option>BC</option>
@@ -1101,10 +1103,11 @@
 
 						<div class="form-group">
 							
-							<label>Mother Tongue<font color="red">**</font></label>
-							<label class="label-error-message" ng-bind="mothertoungueErrMsg" ng-show="showMothertongueErr"></label>
+							<label>Mother Tongue</label>
+							
 							<select class="form-control" ng-model="admissionschooldata.mothertongue" required >
 								<option>Select Mother Tongue</option>
+								<option>Need to Update</option>
 								<option>Tamil</option>
 								<option>Telugu</option>
 								<option>Malayalam</option>
@@ -1220,6 +1223,37 @@
 							<input class="form-control" type="text" name="mothersmonthlyincome" ng-model="admissionschooldata.mothersmonthlyincome " allow-only-numbers>
 						</div>
 						<div class="form-group">
+							<label>Guardian / Child's Pickup Person Name<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="pickupPersonNameErrMsg" ng-show="showPickupPersonNameErr"></label>
+							<input class="form-control" type="text" name="pickuppersonname" ng-model="admissionschooldata.pickuppersonname">
+						</div>
+
+						<div class="form-group">
+							<label>Guardian / Child's Pickup Person Contact Number<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="pickuppersoncontactNoErrMsg" ng-show="showPickuppersonContactnoErr"></label>
+							<input class="form-control" type="text" name="pickuppersoncontactno" ng-model="admissionschooldata.pickuppersoncontactno" allow-only-numbers required>
+						</div>
+						<div class="form-group">
+							<label>Guardian / Child's Pickup Person Alternative Contact Number</label>
+							<label class="label-error-message" ng-bind="pickupPersonaltnoErrMsg" ng-show="showPickupPersonAltnoErr"></label>
+							<input class="form-control" type="text" name="pickuppersonaltcontactno" ng-model="admissionschooldata.pickuppersonaltcontactno" allow-only-numbers>
+
+						</div>
+						<div class="form-group">
+							<label>Select Guardians / Child's Pickup Person Relationship<font color="red">**</font></label>
+							<label class="label-error-message" ng-bind="pickuppersonrelationshipErrMsg" ng-show="showPickuppersonrelationshipErr"></label>
+							<select class="form-control" ng-model="admissionschooldata.pickuppersonrelationship">
+								<option>Select Relationship</option>
+								<option>PARENT</option>
+								<option>GRAND FATHER</option>
+								<option>GRAND MOTHER</option>
+								<option>UNCLE</option>
+								<option>AUNTY</option>
+								<option>DRIVER</option>
+								<option>GUARDIAN</option>
+								</select>
+						</div>
+						<div class="form-group">
 							<label>Fathers Date of Birth</label>
 							<input class="form-control" type="text" name="fathersdob" ng-model="admissionschooldata.fathersdob">
 						</div>
@@ -1298,6 +1332,7 @@
 							<label>Whether Qualified for Promotion</label>
 							<select class="form-control" ng-model="admissionschooldata.lastschoolclassqualified" required>
 								<option>Select Qualified</option>
+								<option>Not Applicable</option>
 								<option>Yes</option>
 								<option>No</option>
 								</select>
@@ -1307,6 +1342,7 @@
 							<label>Whether Transfer Certificate is attached ?</label>
 							<select class="form-control" ng-model="admissionschooldata.lastschooltcattached" required>
 								<option>Select Qualified</option>
+								<option>Not Applicable</option>
 								<option>Yes</option>
 								<option>No</option>
 								</select>
@@ -1316,6 +1352,7 @@
 							<label>Medium of Instruction in which studied</label>
 							<select class="form-control" ng-model="admissionschooldata.lastschoolmedium" required>
 								<option>Select Qualified</option>
+								<option>Not Applicable</option>
 								<option>Yes</option>
 								<option>No</option>
 								</select>
@@ -1364,8 +1401,8 @@
 							<select class="form-control" ng-model="admissionschooldata.admittedinto" required>
 								<option>Select Admitted Into</option>
 								<option>PRE-KG</option>
-								<option>LKG</option>
-								<option>UKG</option>
+								<option>KG1</option>
+								<option>KG2</option>
 								<option>I STD</option>
 								<option>II STD</option>
 								<option>III STD</option>

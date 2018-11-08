@@ -41,9 +41,12 @@ sivwebapp.controller('customerdetailsCtrl', function($scope, $http, hosturl,Auth
       
     }
 
-     
-    }
-    function validateApplication(custdetailsObj)
+    
+
+
+
+});
+function validateApplication(custdetailsObj)
     {
         try
         {    
@@ -195,7 +198,3 @@ sivwebapp.controller('customerdetailsCtrl', function($scope, $http, hosturl,Auth
         $scope.customerdetailsdata.duedate="";
         $scope.customerdetailsdata.username="";
     }
-
-
-
-});

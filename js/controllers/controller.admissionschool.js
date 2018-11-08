@@ -145,7 +145,7 @@ sivwebapp.controller('admissionSchoolCtrl', function($scope, $http, hosturl, cur
                     $scope.admissionschooldata.loginuser = $scope.userdata.username;
                     $scope.admissionschooldata.instituteid = $scope.userdata.instituteid;
                     $http({
-                    url: hosturl+"/api/v1/admissionschool",
+                    url: hosturl+"/api/v1/admissionplayschool",
                     method: "POST",
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                     data: $.param($scope.admissionschooldata)
@@ -209,7 +209,7 @@ sivwebapp.controller('admissionSchoolCtrl', function($scope, $http, hosturl, cur
          $scope.genregisternumber = "";
          $scope.searchAppnoData.instituteid = $scope.userdata.instituteid;
         $http({
-                url: hosturl+"/api/v1/applicationsaleschool/getApplicationFeesDetails",
+                url: hosturl+"/api/v1/playschoolapplicationsale/getApplicationFeesDetails",
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.searchAppnoData)
@@ -245,17 +245,17 @@ sivwebapp.controller('admissionSchoolCtrl', function($scope, $http, hosturl, cur
                     "remarks": success.data[0].remarks,                                                                                                                                                                                             
                     "academicyear": success.data[0].academicyear,
      
-                    "facilityfees": success.data[1].facilityfees,
-                    "facilityfeesduedate":constantService.toDateFormat(success.data[1].facilityfeesduedate),
-                    "booksnotebookfees": success.data[1].booksnotebookfees,
-                    "booksnotebookfeesduedate":constantService.toDateFormat(success.data[1].booksnotebookfeesduedate),
-                    "othersfees": success.data[1].othersfees,
-                    "othersfeesduedate":constantService.toDateFormat(success.data[1].othersfeesduedate),
-                    "tuitionfeesmonthly": success.data[1].tuitionfeesmonthly,
-                    "tuitionfeesmonthlyduedate":constantService.toDateFormat(success.data[1].tuitionfeesmonthlyduedate),
-                    "tuitionfeestermly": success.data[1].tuitionfeestermly,
-                    "tuitionfeestermlyduedate":constantService.toDateFormat(success.data[1].tuitionfeestermlyduedate),
-                    "totalfees": success.data[1].totalfees                    
+                    "facilityfees": success.data[1].registrationfees,
+                    "facilityfeesduedate":constantService.toDateFormat(success.data[1].installment1duedate),
+                    "booksnotebookfees": success.data[1].registrationfees,
+                    "booksnotebookfeesduedate":constantService.toDateFormat(success.data[1].installment1duedate),
+                    "othersfees": success.data[1].registrationfees,
+                    "othersfeesduedate":constantService.toDateFormat(success.data[1].installment1duedate),
+                    "tuitionfeesmonthly": success.data[1].registrationfees,
+                    "tuitionfeesmonthlyduedate":constantService.toDateFormat(success.data[1].installment1duedate),
+                    "tuitionfeestermly": success.data[1].registrationfees,
+                    "tuitionfeestermlyduedate":constantService.toDateFormat(success.data[1].installment1duedate),
+                    "totalfees": success.data[1].registrationfees                    
                    
                 }
 
@@ -438,33 +438,33 @@ sivwebapp.controller('admissionSchoolCtrl', function($scope, $http, hosturl, cur
 
 
 
-            if(schlAdmissionObj.religion == undefined || schlAdmissionObj.religion ==  null || schlAdmissionObj.religion == '')
-            {
-                $scope.showReligionErr = true;
-                $scope.religionErrMsg = "(Please enter Religion)";
-                return false;
-            }
+            // if(schlAdmissionObj.religion == undefined || schlAdmissionObj.religion ==  null || schlAdmissionObj.religion == '')
+            // {
+            //     $scope.showReligionErr = true;
+            //     $scope.religionErrMsg = "(Please enter Religion)";
+            //     return false;
+            // }
 
-            if(schlAdmissionObj.community == undefined || schlAdmissionObj.community ==  null || schlAdmissionObj.community == '')
-            {
-                $scope.showPickupPersonNameErr = true;
-                $scope.pickupPersonNameErrMsg = "(Please enter Community)";
-                return false;
-            }
+            // if(schlAdmissionObj.community == undefined || schlAdmissionObj.community ==  null || schlAdmissionObj.community == '')
+            // {
+            //     $scope.showPickupPersonNameErr = true;
+            //     $scope.pickupPersonNameErrMsg = "(Please enter Community)";
+            //     return false;
+            // }
 
-            if(schlAdmissionObj.caste == undefined || schlAdmissionObj.caste ==  null || schlAdmissionObj.caste == '')
-            {
-                $scope.showPickuppersonContactnoErr = true;
-                $scope.pickuppersoncontactNoErrMsg = "(Please enter Caste)";
-                return false;
-            }
+            // if(schlAdmissionObj.caste == undefined || schlAdmissionObj.caste ==  null || schlAdmissionObj.caste == '')
+            // {
+            //     $scope.showPickuppersonContactnoErr = true;
+            //     $scope.pickuppersoncontactNoErrMsg = "(Please enter Caste)";
+            //     return false;
+            // }
 
-            if(schlAdmissionObj.mothertongue == undefined || schlAdmissionObj.mothertongue ==  null || schlAdmissionObj.mothertongue == '')
-            {
-                $scope.showPickuppersonrelationshipErr = true;
-                $scope.pickuppersonrelationshipErrMsg = "(Please enter Mother Tongue)";
-                return false;
-            }
+            // if(schlAdmissionObj.mothertongue == undefined || schlAdmissionObj.mothertongue ==  null || schlAdmissionObj.mothertongue == '')
+            // {
+            //     $scope.showPickuppersonrelationshipErr = true;
+            //     $scope.pickuppersonrelationshipErrMsg = "(Please enter Mother Tongue)";
+            //     return false;
+            // }
 
             if(schlAdmissionObj.admissiondate == undefined || schlAdmissionObj.admissiondate ==  null || schlAdmissionObj.admissiondate == '')
             {
@@ -506,12 +506,12 @@ sivwebapp.controller('admissionSchoolCtrl', function($scope, $http, hosturl, cur
                 return false;
             }
 
-            if(schlAdmissionObj.instituteregisternumber == undefined || schlAdmissionObj.instituteregisternumber ==  null || schlAdmissionObj.instituteregisternumber == '')
-            {
-                $scope.showSectionErr = true;
-                $scope.sectionErrMsg = "(Please enter Institute Admission Number";
-                return false;
-            }
+            // if(schlAdmissionObj.instituteregisternumber == undefined || schlAdmissionObj.instituteregisternumber ==  null || schlAdmissionObj.instituteregisternumber == '')
+            // {
+            //     $scope.showSectionErr = true;
+            //     $scope.sectionErrMsg = "(Please enter Institute Admission Number";
+            //     return false;
+            // }
 
             if(schlAdmissionObj.transport == undefined || schlAdmissionObj.transport ==  null || schlAdmissionObj.transport == '')
             {
@@ -662,17 +662,17 @@ sivwebapp.controller('admissionSchoolCtrl', function($scope, $http, hosturl, cur
         // $scope.showFathersOffStateErr=false;
 
 
-        $scope.religionErrMsg='';
-        $scope.showReligionErr=false;
+        // $scope.religionErrMsg='';
+        // $scope.showReligionErr=false;
 
-        $scope.communityErrMsg='';
-        $scope.showCommunityErr=false;
+        // $scope.communityErrMsg='';
+        // $scope.showCommunityErr=false;
 
-        $scope.casteErrMsg='';
-        $scope.showCasteErr=false;
+        // $scope.casteErrMsg='';
+        // $scope.showCasteErr=false;
 
-        $scope.mothertoungueErrMsg='';
-        $scope.showMothertongueErr=false;
+        // $scope.mothertoungueErrMsg='';
+        // $scope.showMothertongueErr=false;
 
         $scope.admissionDateErrMsg='';
         $scope.showAdmissionDateErr=false;

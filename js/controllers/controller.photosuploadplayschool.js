@@ -41,6 +41,7 @@ sivwebapp.controller('photosUploadPlaySchoolCtrl', function($scope, $http, hostu
                  data.append("imagetitle", $scope.photosuploadPlaySchoolData.imagetitle);
                  data.append("uploadid", i);
                  data.append("studentlist", JSON.stringify($scope.studentList));
+                 console.log(JSON.stringify($scope.studentList));
                 $('body').append('<span class="overlay overlay'+i+'"></span>');
                  $.ajax({
                     type: "POST",

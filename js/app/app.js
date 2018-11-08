@@ -582,6 +582,25 @@ sivwebapp.config(function($routeProvider) {
         controller : "customerdetailseditCtrl"
     })
 
+   .when("/schoolstudentattendanceentry", {
+        templateUrl : "templates/schoolstudentattendanceentry.html",
+        controller : "studentAttendanceSchoolCtrl"
+    })
+
+   .when("/schoolhomeworkreport", {
+        templateUrl : "templates/schoolhomeworkreport.html",
+        controller : "homeWorkListSchoolCtrl"
+    })
+
+   .when("/schooleventsreport", {
+        templateUrl : "templates/schooleventsreport.html",
+        controller : "eventsListSchoolCtrl"
+    })
+
+   .when("/schoolstudentdailyattendancereport", {
+        templateUrl : "templates/schoolstudentdailyattendancereport.html",
+        controller : "studentDailyAttendanceListSchoolCtrl"
+    })
 
     .otherwise({
         templateUrl : "templates/login.html",
@@ -637,5 +656,5 @@ sivwebapp.filter('dayOfDate', function() {
 });
 sivwebapp.constant('hosturl', 'http://localhost:8080');
 sivwebapp.constant('currentHost', 'http://localhost/SIVWeb/').run(function ($rootScope, currentHost) {$rootScope.currentHost = currentHost;});
-// sivwebapp.constant('hosturl', 'http://api.gbcorp.in:8080');
+//sivwebapp.constant('hosturl', 'http://api.gbcorp.in:8080');
 // sivwebapp.constant('currentHost', 'http://siv.gbcorp.in/').run(function ($rootScope, currentHost) {$rootScope.currentHost = currentHost;});;

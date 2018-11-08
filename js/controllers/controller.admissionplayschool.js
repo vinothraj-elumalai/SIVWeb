@@ -437,62 +437,62 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
             //     return false;
             // }
 
-            if(playschlAdmissionObj.fathersdob == undefined || playschlAdmissionObj.fathersdob ==  null || playschlAdmissionObj.fathersdob == '')
-            {
-                $scope.showFathersDobErr = true;
-                $scope.fathersDobErrMsg = "(Please enter Fathers Date of Birth)";
-                return false;
-            }
-            else
-            {
-                 var isValidDate=validateDate(playschlAdmissionObj.fathersdob);
-                if( isValidDate == null || isValidDate == false) 
-                {
-                    $scope.showFathersDobErr = true;
-                    $scope.fathersDobErrMsg = "(Invalid Date)";
-                    return false;
-                }
+            // if(playschlAdmissionObj.fathersdob == undefined || playschlAdmissionObj.fathersdob ==  null || playschlAdmissionObj.fathersdob == '')
+            // {
+            //     $scope.showFathersDobErr = true;
+            //     $scope.fathersDobErrMsg = "(Please enter Fathers Date of Birth)";
+            //     return false;
+            // }
+            // else
+            // {
+            //      var isValidDate=validateDate(playschlAdmissionObj.fathersdob);
+            //     if( isValidDate == null || isValidDate == false) 
+            //     {
+            //         $scope.showFathersDobErr = true;
+            //         $scope.fathersDobErrMsg = "(Invalid Date)";
+            //         return false;
+            //     }
 
-            }
-
-
-
-            if(playschlAdmissionObj.mothersdob == undefined || playschlAdmissionObj.mothersdob ==  null || playschlAdmissionObj.mothersdob == '')
-            {
-                $scope.showMothersDobErr = true;
-                $scope.mothersDobErrMsg = "(Please enter Mothers Date of Birth)";
-                return false;
-            }
-            else
-            {
-                 var isValidDate=validateDate(playschlAdmissionObj.mothersdob);
-                if( isValidDate == null || isValidDate == false) 
-                {
-                    $scope.showMothersDobErr = true;
-                    $scope.fathersDobErrMsg = "(Invalid Date)";
-                    return false;
-                }
-
-            }
+            // }
 
 
-            if(playschlAdmissionObj.parentsweddingdate == undefined || playschlAdmissionObj.parentsweddingdate ==  null || playschlAdmissionObj.parentsweddingdate == '')
-            {
-                $scope.showParentsWedDayErr = true;
-                $scope.parentsWedDayErrMsg = "(Please enter Parents Wedding Date)";
-                return false;
-            }
-            else
-            {
-                 var isValidDate=validateDate(playschlAdmissionObj.parentsweddingdate);
-                if( isValidDate == null || isValidDate == false) 
-                {
-                    $scope.showParentsWedDayErr = true;
-                    $scope.parentsWedDayErrMsg = "(Invalid Date)";
-                    return false;
-                }
 
-            }
+            // if(playschlAdmissionObj.mothersdob == undefined || playschlAdmissionObj.mothersdob ==  null || playschlAdmissionObj.mothersdob == '')
+            // {
+            //     $scope.showMothersDobErr = true;
+            //     $scope.mothersDobErrMsg = "(Please enter Mothers Date of Birth)";
+            //     return false;
+            // }
+            // else
+            // {
+            //      var isValidDate=validateDate(playschlAdmissionObj.mothersdob);
+            //     if( isValidDate == null || isValidDate == false) 
+            //     {
+            //         $scope.showMothersDobErr = true;
+            //         $scope.fathersDobErrMsg = "(Invalid Date)";
+            //         return false;
+            //     }
+
+            // }
+
+
+            // if(playschlAdmissionObj.parentsweddingdate == undefined || playschlAdmissionObj.parentsweddingdate ==  null || playschlAdmissionObj.parentsweddingdate == '')
+            // {
+            //     $scope.showParentsWedDayErr = true;
+            //     $scope.parentsWedDayErrMsg = "(Please enter Parents Wedding Date)";
+            //     return false;
+            // }
+            // else
+            // {
+            //      var isValidDate=validateDate(playschlAdmissionObj.parentsweddingdate);
+            //     if( isValidDate == null || isValidDate == false) 
+            //     {
+            //         $scope.showParentsWedDayErr = true;
+            //         $scope.parentsWedDayErrMsg = "(Invalid Date)";
+            //         return false;
+            //     }
+
+            // }
 
 
 
@@ -728,14 +728,14 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
         // $scope.fathersOffStateErrMsg='';
         // $scope.showFathersOffStateErr=false;
 
-        $scope.fathersDobErrMsg='';
-        $scope.showFathersDobErr=false;
+        // $scope.fathersDobErrMsg='';
+        // $scope.showFathersDobErr=false;
 
-        $scope.mothersDobErrMsg='';
-        $scope.showMothersDobErr=false;
+        // $scope.mothersDobErrMsg='';
+        // $scope.showMothersDobErr=false;
 
-        $scope.parentsWedDayErrMsg='';
-        $scope.showParentsWedDayErr=false;
+        // $scope.parentsWedDayErrMsg='';
+        // $scope.showParentsWedDayErr=false;
 
         $scope.religionErrMsg='';
         $scope.showReligionErr=false;
