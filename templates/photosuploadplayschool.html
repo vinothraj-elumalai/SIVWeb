@@ -13,6 +13,7 @@
 						<label>PROGRAM</label>
 						<select class="form-control" ng-model="photosuploadPlaySchoolData.program" required>
 							<option>Select Program</option>
+							<option value="allStudents">All Students - School</option>
 							<option>TODDLER PROGRAM</option>
 							<option>PRE-KG</option>
 							<option>KG1</option>
@@ -24,7 +25,7 @@
 							<option>V STD</option>
 						</select>
 					</div>
-					<div class="form-group">
+					<div class="form-group" ng-hide="photosuploadPlaySchoolData.program == 'allStudents'">
 						<label>SECTION</label>
 						<select class="form-control" ng-model="photosuploadPlaySchoolData.section" required>
 							<option>Select Section</option>
@@ -34,7 +35,7 @@
 						</select>
 					</div>
 
-					<div class="form-group">
+					<div class="form-group" ng-hide="photosuploadPlaySchoolData.program == 'allStudents'">
 						<label>Academic Year</label>
 						<select class="form-control" ng-model="photosuploadPlaySchoolData.academicyear" required>
 							<option>Select Academic Year</option>
@@ -44,7 +45,7 @@
 						</select>
 					</div>
 
-					<button ng-disabled="photosuploadplayschoolform.$invalid" class="btn btn-primary">SELECT STUDENTS</button>
+					<button ng-hide="photosuploadPlaySchoolData.program == 'allStudents'" class="btn btn-primary">SELECT STUDENTS</button>
 				</div>
 			</div>
 		</form>
@@ -55,7 +56,7 @@
 <br/>
 
 
-<table ng-show="studentList.length">
+<table ng-hide="photosuploadPlaySchoolData.program == 'allStudents'">
 	<tr>
 		<th>S.No.</th>
 		<th>Reg. No</th>
@@ -79,7 +80,7 @@
 <br/>
 <br/>
 
-<form ng-show="studentList.length" enctype="multipart/form-data" method="post" id="fileUploadForm" ng-submit="uploadImageSubmit()">
+<form enctype="multipart/form-data" method="post" id="fileUploadForm" ng-submit="uploadImageSubmit()">
 <div class="row">
 	<div class="col-md-12">
 		<div class="form-group">

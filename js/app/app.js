@@ -656,5 +656,5 @@ sivwebapp.filter('dayOfDate', function() {
 });
 sivwebapp.constant('hosturl', 'http://localhost:8080');
 sivwebapp.constant('currentHost', 'http://localhost/SIVWeb/').run(function ($rootScope, currentHost) {$rootScope.currentHost = currentHost;});
-//sivwebapp.constant('hosturl', 'http://api.gbcorp.in:8080');
+// sivwebapp.constant('hosturl', 'http://api.gbcorp.in:8080');
 // sivwebapp.constant('currentHost', 'http://siv.gbcorp.in/').run(function ($rootScope, currentHost) {$rootScope.currentHost = currentHost;});;
