@@ -33,7 +33,7 @@ sivwebapp.controller('admissionSchoolCtrl', function($scope, $http, hosturl, cur
     
     // $scope.lastToddlerProgramNumber = {};
     //  $scope.fetchlasttoddlerprogramno = function() {
-    //     console.log("sdfsdf");
+    
     //         $scope.idNumber = {
     //             idno: 1
     //         };
@@ -44,7 +44,7 @@ sivwebapp.controller('admissionSchoolCtrl', function($scope, $http, hosturl, cur
     //                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
     //                 data: $.param($scope.idNumber)
     //                 }).then(function(success) {
-    //                     console.log(success.data);
+   
     //                     $scope.lastToddlerProgramNumber = success.data;
     //                     // if($scope.lastEnquiryNumber != null && $scope.lastEnquiryNumber.enquiryno != undefined )
     //                     // {
@@ -165,7 +165,7 @@ sivwebapp.controller('admissionSchoolCtrl', function($scope, $http, hosturl, cur
                         $scope.admissionschoolprint.instituteEmail2 = $scope.userdata.instituteEmail2;
                         $scope.admissionschoolprint.institutelogourl = $scope.userdata.instituteLogo;
                         $scope.admissionschoolprint={};
-                        console.log(success.data);
+                       
                         $scope.admissionresult=success.data; 
                     },function (error){
                         alert(error);                
@@ -215,7 +215,7 @@ sivwebapp.controller('admissionSchoolCtrl', function($scope, $http, hosturl, cur
                 data: $.param($scope.searchAppnoData)
                 //data: $.param($scope.feesDetailsRequest)
             }).then(function(success) {
-                console.log(success.data);
+               
                 if(success.data == null || success.data == ""){
                     alert("Application not found or UnAuthorized access");
                 }else{
@@ -266,7 +266,7 @@ sivwebapp.controller('admissionSchoolCtrl', function($scope, $http, hosturl, cur
                 //fetchFeesDetails();
                 //$scope.admissionplayschooldata.applno = $scope.applicationData.applno;
             },function (error){
-                console.log("test2");
+                
             });
     }
 
@@ -277,7 +277,7 @@ sivwebapp.controller('admissionSchoolCtrl', function($scope, $http, hosturl, cur
     //             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
     //             data: $.param($scope.admissionplayschooldata)
     //         }).then(function(success) {
-    //             console.log(success.data);
+    
     //             $scope.admissionplayschooldata = success.data;
 
     //             //$scope.admissionplayschooldata.applno = $scope.applicationData.applno;
@@ -309,7 +309,7 @@ sivwebapp.controller('admissionSchoolCtrl', function($scope, $http, hosturl, cur
 //                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 //                 data: $.param($scope.feesDetailsRequest)
 //             }).then(function(success) {
-//                 console.log(success.data);
+
 // //                $scope.feesDetailsResponse = success.data;
 //                 $scope.admissionplayschooldata = success.data;
 

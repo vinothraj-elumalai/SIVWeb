@@ -11,7 +11,7 @@ sivwebapp.controller('studentsNameListSchoolCtrl', function($scope, $http, curre
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.studentsnamelistschooldata)
             }).then(function(success) {
-                console.log(success);
+                
                 $scope.students = success.data;
 
 

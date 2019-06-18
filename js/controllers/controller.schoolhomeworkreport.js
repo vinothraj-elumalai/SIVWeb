@@ -17,7 +17,7 @@ sivwebapp.controller('homeWorkListSchoolCtrl', function($scope, $http, currentHo
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.homeworklistdata)
             }).then(function(success) {
-                console.log(success);
+                
                 $scope.students = success.data;
 
 

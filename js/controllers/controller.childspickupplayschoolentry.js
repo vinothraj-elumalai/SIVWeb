@@ -11,7 +11,7 @@ sivwebapp.controller('childsPickupPlaySchoolEntryCtrl', function($scope, $http, 
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.getPlaySchoolStudentListData)
             }).then(function(success) {
-                console.log(success.data);
+               
                 
                     $scope.playschoolstudentList = success.data;
                     $scope.$watch('playschoolstudentList', function(newVal, oldVal){
@@ -41,7 +41,7 @@ sivwebapp.controller('childsPickupPlaySchoolEntryCtrl', function($scope, $http, 
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.pickupdetailsdata)
             }).then(function(success) {
-                console.log(success.data);
+               
                
                 alert("Record Saved");
                 $scope.pickupdetailsdata = {};

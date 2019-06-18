@@ -48,7 +48,7 @@ sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($s
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.studentpersonalinformationsearch)
             }).then(function(success) {
-                console.log(success.data);
+               
                 //$scope.studentpersonalinformationeditplayschooldata=success.data;
                 // $scope.studentpersonalinformationeditplayschooldata=success.data[1];
                 // $scope.studentpersonalinformationeditplayschooldata.dateofbirth=constantService.todateformat(success.data[1].dateofbirth);

@@ -94,7 +94,7 @@ sivwebapp.controller('playSchoolapplicationSaleEditCtrl', function($scope, $http
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                     data: $.param($scope.idNumber)
                     }).then(function(success) {
-                        console.log(success.data);
+                       
                         $scope.lastEnquiryNumber = success.data;
                         // if($scope.lastEnquiryNumber != null && $scope.lastEnquiryNumber.enquiryno != undefined )
                         // {
@@ -141,7 +141,6 @@ sivwebapp.controller('playSchoolapplicationSaleEditCtrl', function($scope, $http
         //         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         //         data: $.param($scope.searchAppnoData)
         //     }).then(function(success) {
-        //         console.log(success.data);
         //         $scope.playschoolapplicationsaledata = success.data;
 
         //         //$scope.admissionplayschooldata.applno = $scope.applicationData.applno;

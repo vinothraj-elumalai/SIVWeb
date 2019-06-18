@@ -1,4 +1,4 @@
-var sivwebapp = angular.module("sivweb", ["ngRoute"]);
+var sivwebapp = angular.module("sivweb", ["ngRoute", "ui.bootstrap"]);
 sivwebapp.config(function($routeProvider) {
     $routeProvider
     .when("/", {
@@ -612,14 +612,12 @@ sivwebapp.run(['$rootScope', '$location', 'Auth', function ($rootScope, $locatio
     $rootScope.$on('$routeChangeStart', function (event) {
 
         if (!Auth.isLoggedIn()) {
-            console.log('DENY');
             // event.preventDefault();
             $location.path('/login');
 
             $('#wrapper').addClass('loginpage');
         }
         else {
-            console.log('ALLOW');
             // $location.path('/dashboard');
             $('#wrapper').removeClass('loginpage');
             $rootScope.profiledata = Auth.isLoggedIn();
@@ -650,7 +648,6 @@ sivwebapp.filter('dayOfDate', function() {
         var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
         // var dayOfDate= "";
         var d=new Date(entrydate);
-        console.log(days[d.getDay()]);
         return days[d.getDay()];
     };
 });

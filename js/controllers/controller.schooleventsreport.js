@@ -17,7 +17,7 @@ sivwebapp.controller('eventsListSchoolCtrl', function($scope, $http, currentHost
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.eventslistdata)
             }).then(function(success) {
-                console.log(success);
+                
                 $scope.students = success.data;
 
 

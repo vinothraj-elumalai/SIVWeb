@@ -73,7 +73,6 @@ sivwebapp.directive('sidenavnicescroll', function() {
     link: function(scope, element, attributes) {
       var oldVal = null;
       element.on("keydown keyup", function(e) {
-        console.log("testtest")
     if (Number(element.val()) > Number(attributes.max) &&
           e.keyCode != 46 // delete
           &&

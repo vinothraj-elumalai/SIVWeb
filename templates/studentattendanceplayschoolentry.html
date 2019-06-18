@@ -3,10 +3,15 @@
 	<div class="col-md-12">
 		<form name="studentattendanceplayschoolform" ng-submit="getStudentListAttendance()" novalidate>
 			<div class="row student-form">
-				<div class="col-md-6">
+				<div class="col-md-6">				   
 					<div class="form-group">
 						<label>Enter Date</label>
-						<input class="form-control" type="text" name="entrydate" ng-model="getPlaySchoolStudentListData.entrydate" required>
+						<p class="input-group calendar-input">
+							<input type="text" name="entrydate" class="form-control" uib-datepicker-popup="{{format}}" is-open="popup1.opened" ng-model="getPlaySchoolStudentListData.entrydate" datepicker-options="dateDisableFutureOptions" ng-required="true" close-text="Close" />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
 					</div>
 
 					<div class="form-group">
@@ -49,7 +54,7 @@
 						</select>
 					</div>
 
-					<button ng-disabled="studentattendanceplayschoolform.$invalid" class="btn btn-primary">Submit</button>
+					<button ng-disabled="studentattendanceplayschoolform.$invalid" class="btn btn-primary form-button">Submit</button>
 				</div>
 			</div>
 		</form>
@@ -103,7 +108,7 @@
 		</table>
 		<br/>
 		<br/>
-		<input type="button" class="btn btn-primary" ng-click="confirmAbsentee=true" value="Confirm Absentee">
+		<input type="button" class="btn btn-primary form-button" ng-click="confirmAbsentee=true" value="Confirm Absentee">
 	</div>
 </div>
 
@@ -112,5 +117,5 @@
 <br/>
 <br/>
 <p>Note: Please Click Confirm Absentee button to submit</p>
-<button class="btn btn-primary" ng-disabled="!confirmAbsentee">Submit Attendance</button>
+<button class="btn btn-primary form-button" ng-disabled="!confirmAbsentee">Submit Attendance</button>
 </form>

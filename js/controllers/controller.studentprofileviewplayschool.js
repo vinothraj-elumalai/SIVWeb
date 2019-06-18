@@ -20,7 +20,7 @@ sivwebapp.controller('studentProfileViewPlaySchoolCtrl', function($scope, $http,
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.studentprofileinformationdata1)
             }).then(function(success) {
-                console.log(success.data);
+               
                 $scope.studentpersonalinfo=success.data;
             },function (error){
                 

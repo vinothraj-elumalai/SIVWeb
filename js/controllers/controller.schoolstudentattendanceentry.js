@@ -10,7 +10,7 @@ sivwebapp.controller('studentAttendanceSchoolCtrl', function($scope, $http, host
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.getSchoolStudentListData)
             }).then(function(success) {
-                console.log(success.data);
+               
                 if(success.data == "" || success.data == null){
                     alert("Record already entered!");
                 }else{
@@ -43,7 +43,7 @@ sivwebapp.controller('studentAttendanceSchoolCtrl', function($scope, $http, host
             }).then(function(success) {
                 alert("Record Saved!");
                 $scope.schoolstudentList = [];
-                // console.log(success.data);
+                
                 // $scope.playschoolstudentList = success.data;
             },function (error){
                 

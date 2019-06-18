@@ -8,7 +8,6 @@ sivwebapp.controller('loginCtrl', function($scope, $http, $location,$rootScope, 
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.logindata)
             }).then(function(response) {
-                console.log(response);
                 $rootScope.userStatus=response.data;
                 if($rootScope.userStatus.errorMessage=="WRONG PASSWORD"){
                     alert("Invalid Username/Password");
@@ -22,7 +21,7 @@ sivwebapp.controller('loginCtrl', function($scope, $http, $location,$rootScope, 
                     }
                 }
             },function (error){
-            	
+            	alert("Something went wrong!");
    			});
     }
 });

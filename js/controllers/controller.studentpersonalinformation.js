@@ -20,7 +20,7 @@ sivwebapp.controller('studentPersonalInformationCtrl', function($scope, $http, h
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.studentpersonalinfodata1)
             }).then(function(success) {
-                console.log(success.data);
+               
                 $scope.studentpersonalinfo=success.data;
             },function (error){
                 

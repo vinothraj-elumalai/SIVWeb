@@ -20,7 +20,7 @@ sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http,$wi
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                     data: $.param($scope.idNumber)
                     }).then(function(success) {
-                        console.log(success.data);
+                       
                         $scope.lastEventId = success.data;
                         if($scope.lastEventId != null && $scope.lastEventId.evecirid != undefined )
                         {

@@ -4,7 +4,7 @@
 	Username is <span>{{admissionresult.registernumber}}</span>
 	<br/><br/>
 	<div>
-		<input type="button" ng-click="printApplication()"  class="btn btn-primary" value="Print Application" />
+		<input type="button" ng-click="printApplication()"  class="btn btn-primary form-button" value="Print Application" />
 	</div>
 	<br/><br/>
 </div>
@@ -678,7 +678,7 @@
 		<div class="form-group">	
 		<div class="text-right">
 
-			<input type="button" ng-click="searchAppNo()" class="btn btn-default"  value="SEARCH">
+			<input type="button" ng-click="searchAppNo()" class="btn btn-default form-button"  value="SEARCH">
 		</div>
 		</div>
 		<form name="admissionplayschoolform" ng-submit="admissionPlaySchoolSubmit()" novalidate class="form-validation">
@@ -805,7 +805,7 @@
 						
 
 						<div class="text-right">
-							<input  type="button" class="btn btn-primary" value="NEXT" ng-click="gotostep(2)">
+							<input  type="button" class="btn btn-primary form-button" value="NEXT" ng-click="gotostep(2)">
 						</div>
 
 
@@ -942,8 +942,8 @@
 						</div>
 
 						<div class="text-right">
-							<input type="button" class="btn btn-default" ng-click="gotostep(1)" value="BACK">
-							<input type="button" class="btn btn-primary" value="NEXT" ng-click="gotostep(3)">
+							<input type="button" class="btn btn-default form-button" ng-click="gotostep(1)" value="BACK">
+							<input type="button" class="btn btn-primary form-button" value="NEXT" ng-click="gotostep(3)">
 						</div>
 
 
@@ -1166,8 +1166,8 @@
 						
 
 						<div class="text-right">
-							<input type="button" class="btn btn-default" ng-click="gotostep(2)" value="BACK">
-							<input type="submit" class="btn btn-primary" value="SAVE">
+							<input type="button" class="btn btn-default form-button" ng-click="gotostep(2)" value="BACK">
+							<input type="submit" class="btn btn-primary form-button" value="SAVE">
 						</div>
 
 

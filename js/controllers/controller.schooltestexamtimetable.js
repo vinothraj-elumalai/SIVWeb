@@ -14,7 +14,7 @@ sivwebapp.controller('schoolTestExamTimeTableCtrl', function($scope, $http, host
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.getTimeTableData)
             }).then(function(success) {
-                console.log(success.data);
+               
                 if(success.data.returnmessage == "No Data"){
                     alert("No Data Found");
                 }else{
@@ -45,7 +45,7 @@ sivwebapp.controller('schoolTestExamTimeTableCtrl', function($scope, $http, host
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.timetableentry)
             }).then(function(success) {
-                console.log(success);
+                
                 if(success.data.returnmessage == "saved"){
                     alert("data saved!");
                 }else if(success.data.returnmessage == "failed"){
@@ -75,7 +75,7 @@ sivwebapp.controller('schoolTestExamTimeTableCtrl', function($scope, $http, host
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                     data: $.param($scope.idNumber)
                     }).then(function(success) {
-                        console.log(success.data);
+                       
                         $scope.lastEventId = success.data;
                         if($scope.lastEventId != null && $scope.lastEventId.evecirid != undefined )
                         {

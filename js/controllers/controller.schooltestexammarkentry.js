@@ -15,7 +15,7 @@ sivwebapp.controller('schoolTestExamMarkEntryCtrl1', function($scope, $http, hos
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.testdata)
             }).then(function(success) {
-                console.log(success);
+                
                 console.log(JSON.stringify(success.data));
             },function (error){
                 

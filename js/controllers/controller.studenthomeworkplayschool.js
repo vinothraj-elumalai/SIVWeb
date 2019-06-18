@@ -21,7 +21,7 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$wi
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                     data: $.param($scope.idNumber)
                     }).then(function(success) {
-                        console.log(success.data);
+                       
                         $scope.lastHomeWorkId = success.data;
                         if($scope.lastHomeWorkId != null && $scope.lastHomeWorkId.hwid != undefined )
                         {

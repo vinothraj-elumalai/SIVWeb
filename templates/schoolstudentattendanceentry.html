@@ -49,7 +49,7 @@
 						</select>
 					</div>
 
-					<button ng-disabled="studentattendanceschoolform.$invalid" class="btn btn-primary">Submit</button>
+					<button ng-disabled="studentattendanceschoolform.$invalid" class="btn btn-primary form-button">Submit</button>
 				</div>
 			</div>
 		</form>
@@ -103,7 +103,7 @@
 		</table>
 		<br/>
 		<br/>
-		<input type="button" class="btn btn-primary" ng-click="confirmAbsentee=true" value="Confirm Absentee">
+		<input type="button" class="btn btn-primary form-button" ng-click="confirmAbsentee=true" value="Confirm Absentee">
 	</div>
 </div>
 
@@ -112,5 +112,5 @@
 <br/>
 <br/>
 <p>Note: Please Click Confirm Absentee button to submit</p>
-<button class="btn btn-primary" ng-disabled="!confirmAbsentee">Submit Attendance</button>
+<button class="btn btn-primary form-button" ng-disabled="!confirmAbsentee">Submit Attendance</button>
 </form>

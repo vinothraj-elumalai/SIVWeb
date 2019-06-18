@@ -13,7 +13,7 @@ sivwebapp.controller('studentDailyAttendanceListSchoolCtrl', function($scope, $h
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.schoolstudentabsentlistdata)
             }).then(function(success) {
-                console.log(success);
+                
                 $scope.students = success.data;
 
 

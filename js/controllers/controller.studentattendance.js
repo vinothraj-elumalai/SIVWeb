@@ -6,7 +6,7 @@ sivwebapp.controller('studentAttendanceCtrl', function($scope, $http, hosturl) {
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.getStudentListData)
             }).then(function(success) {
-                console.log(success.data);
+               
                 $scope.studentList = success.data;
             },function (error){
                 

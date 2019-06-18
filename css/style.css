@@ -822,7 +822,7 @@ hr.dashboardhr {
 .form-group {
   margin-bottom: 30px; }
 
-.btn.btn-primary {
+.btn.btn-primary.form-button {
   /* fallback/image non-cover color */
   background-color: #3DA0E4;
   /* Firefox 3.6+ */
@@ -839,7 +839,7 @@ hr.dashboardhr {
   border: 0;
   font-weight: 500;
   padding: 15px 65px; }
-.btn.btn-default {
+.btn.btn-default.form-button {
   /* fallback/image non-cover color */
   background-color: #E2E3E5;
   /* Firefox 3.6+ */
@@ -1235,12 +1235,28 @@ span.paneldate, span.panelday {
   width: 50px;
 }
 
-
-
-
-
 #printableArea {
   display: none;
+}
+
+.uib-datepicker-popup td, .uib-datepicker-popup th{
+  padding: 0;
+}
+
+.calendar-input.input-group [uib-datepicker-popup-wrap] {
+  border: none;
+}
+
+.calendar-input span.input-group-btn {
+  position: absolute;
+  right: 38px;
+  top: 6px;
+  z-index: 3;
+}
+
+p.input-group.calendar-input {
+  width: 100%;
+  max-width: 400px;
 }
 
 @media print {

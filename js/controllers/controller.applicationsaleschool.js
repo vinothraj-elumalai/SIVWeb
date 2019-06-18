@@ -159,7 +159,7 @@ sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filte
        //              headers: {'Content-Type': 'application/x-www-form-urlencoded'},
        //              data: $.param($scope.idNumber)
        //              }).then(function(success) {
-       //                  console.log(success.data);
+       
        //                  $scope.lastEnquiryNumber = success.data;
        //                  // if($scope.lastEnquiryNumber != null && $scope.lastEnquiryNumber.enquiryno != undefined )
        //                  // {
