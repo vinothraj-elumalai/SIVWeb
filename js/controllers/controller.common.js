@@ -34,4 +34,15 @@ sivwebapp.controller('commonCtrl',['$scope','constantService', '$rootScope', 'ho
       formatYear: 'yy',
       startingDay: 0
     };
+    $rootScope.open1 = function(scopeName) {
+      // if (opened) {
+      //   $rootScope[opened].opened = true;
+      // }
+      $rootScope[scopeName] = true;
+      // $(form).find(`[name=${elementName}]`).attr('is-open', true);
+      // $rootScope.popup1.opened = true;
+    };
+    $rootScope.popup1 = {
+        opened: false
+    };
 }]);

@@ -7,9 +7,18 @@
 					<div class="form-group">
 						<label>Enter Date</label>
 						<p class="input-group calendar-input">
-							<input type="text" name="entrydate" class="form-control" uib-datepicker-popup="{{format}}" is-open="popup1.opened" ng-model="getPlaySchoolStudentListData.entrydate" datepicker-options="dateDisableFutureOptions" ng-required="true" close-text="Close" />
+							<input type="text" name="entrydate" class="form-control" uib-datepicker-popup="{{format}}" is-open="popup1" ng-model="getPlaySchoolStudentListData.entrydate" datepicker-options="dateDisableFutureOptions" ng-required="true" close-text="Close" />
 							<span class="input-group-btn">
-								<button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+								<button type="button" class="btn btn-default" ng-click="open1(popup1)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          </div>
+          <div class="form-group">
+						<label>Enter Date</label>
+						<p class="input-group calendar-input">
+							<input type="text" name="exitdate" class="form-control" uib-datepicker-popup="{{format}}" is-open="popup2" ng-model="getPlaySchoolStudentListData.exitdate" datepicker-options="dateDisableFutureOptions" ng-required="true" close-text="Close" />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open1(popup2)"><i class="glyphicon glyphicon-calendar"></i></button>
 							</span>
 						</p>
 					</div>
