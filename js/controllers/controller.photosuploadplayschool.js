@@ -17,15 +17,12 @@ sivwebapp.controller('photosUploadPlaySchoolCtrl', function($scope, $http, hostu
     }
     $scope.selectAllStudents = function() {
         for(i in $scope.studentList){
-            console.log(i);
             $scope.studentList[i].studentphotoaccess=1;
         }
     }
     $scope.uploadImageSubmit = function(){
          var files= $('#photoUploadFileId')[0].files;
          var len=files.length;
-
-        console.log($scope.studentList);
 
          if(len>10){
             alert("Maximum 10 Images are allowed!")
@@ -41,7 +38,6 @@ sivwebapp.controller('photosUploadPlaySchoolCtrl', function($scope, $http, hostu
                  data.append("imagetitle", $scope.photosuploadPlaySchoolData.imagetitle);
                  data.append("uploadid", i);
                  data.append("studentlist", JSON.stringify($scope.studentList));
-                 console.log(JSON.stringify($scope.studentList));
                 $('body').append('<span class="overlay overlay'+i+'"></span>');
                  $.ajax({
                     type: "POST",
@@ -53,15 +49,10 @@ sivwebapp.controller('photosUploadPlaySchoolCtrl', function($scope, $http, hostu
                     cache: false,
                     timeout: 600000,
                     success: function (data) {
-                        // $("#btnSubmit").prop("disabled", false);
                         $('.overlay'+data).remove();
                         alert("Image"+data+" uploaded successfully!");
                     },
                     error: function (e) {
-
-                        // $("#result").text(e.responseText);
-                        console.log("ERROR : ", e);
-                        // $("#btnSubmit").prop("disabled", false);
 
                         $('.overlay').remove();
 

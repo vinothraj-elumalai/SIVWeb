@@ -1,8 +1,4 @@
 sivwebapp.controller('studentHomeWorkViewPlaySchoolCtrl', function($scope, $http, hosturl, Auth, constantService) {
-    // postDataParams.put("registernumber", registernumber);
-    //             postDataParams.put("hwdate", hwdate);
-    //             postDataParams.put("currentdatestatus", datesearchStatus);
-    //             postDataParams.put("instituteid", instituteid);
 
     $scope.userdata = Auth.isLoggedIn();
     $scope.datesearchStatus = true;
@@ -13,7 +9,6 @@ sivwebapp.controller('studentHomeWorkViewPlaySchoolCtrl', function($scope, $http
     };
     $scope.homeworkparamdata.hwdate = constantService.toDateFormat(new Date());
     $scope.studentHomeWorkViewPlaySchoolSubmit = function(){
-        console.log($scope.homeworkparamdata);
         $http({
                 url: hosturl+"/api/v1/studenthomeworkplayschool/getStudentHomeWorkListPlaySchool",
                 method: "POST",
@@ -21,7 +16,6 @@ sivwebapp.controller('studentHomeWorkViewPlaySchoolCtrl', function($scope, $http
                 data: $.param($scope.homeworkparamdata)
             }).then(function(success) {
                 $scope.homeworklist = success.data;
-                console.log($scope.homeworklist);
             },function (error){
             	
    			});
@@ -29,8 +23,14 @@ sivwebapp.controller('studentHomeWorkViewPlaySchoolCtrl', function($scope, $http
     $scope.getHomework = function() {
         $scope.homeworkparamdata.currentdatestatus = false;
         $scope.homeworkparamdata.hwdate = $scope.homeworkDate;
-        console.log($scope.homeworkparamdata);
         $scope.studentHomeWorkViewPlaySchoolSubmit();
     }
     $scope.studentHomeWorkViewPlaySchoolSubmit();
+
+    $scope.open1 = function() {
+        $scope.popup1.opened = true;
+    };
+    $scope.popup1 = {
+        opened: false
+    };
 });

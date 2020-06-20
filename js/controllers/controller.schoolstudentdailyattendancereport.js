@@ -6,7 +6,6 @@ sivwebapp.controller('studentDailyAttendanceListSchoolCtrl', function($scope, $h
 
 
     $scope.getSchoolStudentAbsentList = function(){
-    	console.log($scope.schoolstudentabsentlistdata);
         $http({
                 url: hosturl+"/api/v1/studentattendancedetailplayschool/getStudentDailyAttendanceStatusList",
                 method: "POST",
@@ -17,7 +16,6 @@ sivwebapp.controller('studentDailyAttendanceListSchoolCtrl', function($scope, $h
                 $scope.students = success.data;
 
 
-                // $scope.admissionplayschoolprint = $scope.admissionplayschooldata;
                 $scope.admissionplayschoolprint.instituteName = $scope.userdata.instituteName;
                 $scope.admissionplayschoolprint.instituteAddress1 = $scope.userdata.instituteAddress1;
                 $scope.admissionplayschoolprint.instituteAddress2 = $scope.userdata.instituteAddress2;
@@ -42,15 +40,11 @@ sivwebapp.controller('studentDailyAttendanceListSchoolCtrl', function($scope, $h
             importCSS: true,
              loadCSS: [currentHost+"css/bootstrap.css",currentHost+"css/font-awesome.css",currentHost+"css/icomoon.css",currentHost+"css/simple-sidebar.css",currentHost+"css/style.css"]
         });
-        // $scope.admissionplayschoolprint = {};
     }
-
-    //     $scope.getHomework = function() {
-    //     $scope.homeworklistdata.currentdatestatus = false;
-    //     $scope.homeworklistdata.hwdate = $scope.entrydate;
-    //     console.log($scope.homeworklistdata);
-    //     $scope.homeWorkListSubmit();
-    // }
-    // $scope.homeWorkListSubmit();
+    $scope.open1 = function() {
+        $scope.popup1.opened = true;
+    };
+    $scope.popup1 = {
+        opened: false
+    };
  });
-//});

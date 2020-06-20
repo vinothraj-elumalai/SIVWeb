@@ -4,6 +4,7 @@ sivwebapp.controller('studentAttendancePlayschoolCtrl', function($scope, $http, 
     $scope.getPlaySchoolStudentListData.instituteid=$scope.userdata.instituteid;
     $scope.getPlaySchoolStudentListData.loginuser = $scope.userdata.username;
     $scope.getStudentListAttendance = function(){
+        $scope.getPlaySchoolStudentListData.entrydate = constantService.toDateFormat($scope.getPlaySchoolStudentListData.entrydate)
         $http({
                 url: hosturl+"/api/v1/studentattendancedetailplayschool/getStudentListAttendance",
                 method: "POST",
@@ -16,7 +17,6 @@ sivwebapp.controller('studentAttendancePlayschoolCtrl', function($scope, $http, 
                 }else{
                     $scope.playschoolstudentList = success.data;
                     $scope.$watch('playschoolstudentList', function(newVal, oldVal){
-                        console.log('changed');
                         $scope.confirmAbsentee=false;
                     }, true);
                 }
@@ -28,8 +28,6 @@ sivwebapp.controller('studentAttendancePlayschoolCtrl', function($scope, $http, 
     $scope.submitStudentAttendance = function(){
         $scope.setattendancedetaildatalist=JSON.stringify($scope.playschoolstudentList);
         $scope.getPlaySchoolStudentListDataString=JSON.stringify($scope.getPlaySchoolStudentListData);
-        console.log("sdfdsdfdf");
-        console.log($scope.getPlaySchoolStudentListDataString);
         $scope.setattendancedetaildata={};
         $scope.setattendancedetaildata={
             "setattendancedetail": $scope.setattendancedetaildatalist,
@@ -43,8 +41,6 @@ sivwebapp.controller('studentAttendancePlayschoolCtrl', function($scope, $http, 
             }).then(function(success) {
                 alert("Record Saved!");
                 $scope.playschoolstudentList = [];
-                
-                // $scope.playschoolstudentList = success.data;
             },function (error){
                 
          });

@@ -7,7 +7,6 @@ sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($s
     $scope.studentpersonalinformationeditplayschooldata.instituteid = $scope.userdata.instituteid;
     $scope.studentpersonalinformationsearch.instituteid = $scope.userdata.instituteid;
     $scope.studentpersonalinformationPlaySchoolSubmit = function(){
-    	console.log($scope.studentpersonalinformationeditplayschooldata);
         var playschlStudPersInfEditObj = $scope.studentpersonalinformationeditplayschooldata;
 
         if(playschlStudPersInfEditObj != undefined && playschlStudPersInfEditObj != null )
@@ -48,10 +47,6 @@ sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($s
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.studentpersonalinformationsearch)
             }).then(function(success) {
-               
-                //$scope.studentpersonalinformationeditplayschooldata=success.data;
-                // $scope.studentpersonalinformationeditplayschooldata=success.data[1];
-                // $scope.studentpersonalinformationeditplayschooldata.dateofbirth=constantService.todateformat(success.data[1].dateofbirth);
 
                 $scope.studentpersonalinformationeditplayschooldata={
                     "registernumber": success.data[1].registernumber,  
@@ -128,7 +123,6 @@ sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($s
             var isValid=true;
             // Match the date format through regular expression
             if (dateStr.match(dateformat)) {
-                //document.form1.text1.focus();
                 //Test which seperator is used '/' or '-'
                 var opera1 = dateStr.split('/');
                 var opera2 = dateStr.split('-');
@@ -270,12 +264,6 @@ sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($s
                 $scope.presentpincodeErrMsg = "(Please enter Present Pin Code)";
                 return false;
             }
-            // if(playschlStudPersInfEditObj.presentstate == undefined || playschlStudPersInfEditObj.presentstate ==  null || playschlStudPersInfEditObj.presentstate == '')
-            // {
-            //     $scope.showPresentstateErr = true;
-            //     $scope.presentstateErrMsg = "(Please enter Present State)";
-            //     return false;
-            // }
             if(playschlStudPersInfEditObj.fathersmobileno == undefined || playschlStudPersInfEditObj.fathersmobileno ==  null || playschlStudPersInfEditObj.fathersmobileno == '')
             {
                 $scope.showFathersMobileNoErr = true;
@@ -288,91 +276,6 @@ sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($s
                 $scope.mothersmobilenoErrMsg = "(Please enter Mothers Mobile Number)";
                 return false;
             }
-
-            // if(playschlStudPersInfEditObj.fathersdob == undefined || playschlStudPersInfEditObj.fathersdob ==  null || playschlStudPersInfEditObj.fathersdob == '')
-            // {
-               
-            //     $scope.showFathersDobErr = true;
-            //     $scope.fathersDobErrMsg = "(Please enter Fathers Date of Birth)";
-            //     return false;
-
-            // }
-            // else
-            // {
-            //     var isValidDate=validateDate(playschlStudPersInfEditObj.fathersdob);
-            //     if( isValidDate == null || isValidDate == false) 
-            //     {
-            //         $scope.showFathersDobErr = true;
-            //         $scope.fathersDobErrMsg = "(Invalid Date of Birth)";
-            //         return false;
-            //     }
-               
-            // }
-
-            // if(playschlStudPersInfEditObj.mothersdob == undefined || playschlStudPersInfEditObj.mothersdob ==  null || playschlStudPersInfEditObj.mothersdob == '')
-            // {
-               
-            //     $scope.showMothersDobErr = true;
-            //     $scope.mothersDobErrMsg = "(Please enter Mothers Date of Birth)";
-            //     return false;
-
-            // }
-            // else
-            // {
-            //     var isValidDate=validateDate(playschlStudPersInfEditObj.mothersdob);
-            //     if( isValidDate == null || isValidDate == false) 
-            //     {
-            //         $scope.showMothersDobErr = true;
-            //         $scope.mothersDobErrMsg = "(Invalid Date of Birth)";
-            //         return false;
-            //     }
-               
-            // }
-            // if(playschlStudPersInfEditObj.parentsweddingdate == undefined || playschlStudPersInfEditObj.parentsweddingdate ==  null || playschlStudPersInfEditObj.parentsweddingdate == '')
-            // {
-               
-            //     $scope.showParentWeddingDateErr = true;
-            //     $scope.parentWeddingDateErrMsg = "(Please enter Parent Wedding Date)";
-            //     return false;
-
-            // }
-            // else
-            // {
-            //     var isValidDate=validateDate(playschlStudPersInfEditObj.parentsweddingdate);
-            //     if( isValidDate == null || isValidDate == false) 
-            //     {
-            //         $scope.showParentWeddingDateErr = true;
-            //         $scope.parentWeddingDateErrMsg = "(Invalid Date of Birth)";
-            //         return false;
-            //     }
-               
-            // }
-
-
-            // // if(playschlStudPersInfEditObj.religion == undefined || playschlStudPersInfEditObj.religion ==  null || playschlStudPersInfEditObj.religion == '')
-            // // {
-            // //     $scope.showreligionErr = true;
-            // //     $scope.religionErrMsg = "(Please enter Religion)";
-            // //     return false;
-            // // }
-            // if(playschlStudPersInfEditObj.pickuppersonname == undefined || playschlStudPersInfEditObj.pickuppersonname ==  null || playschlStudPersInfEditObj.pickuppersonname == '')
-            // {
-            //     $scope.showPickupPersonNameErr = true;
-            //     $scope.pickupPersonNameErrMsg = "(Please enter Pick up Person Name)";
-            //     return false;
-            // }
-            // if(playschlStudPersInfEditObj.pickuppersoncontactno == undefined || playschlStudPersInfEditObj.pickuppersoncontactno ==  null || playschlStudPersInfEditObj.pickuppersoncontactno == '')
-            // {
-            //     $scope.showpickupPersonContactNoErr = true;
-            //     $scope.pickupPersonContactNoErrMsg = "(Please enter Pick up Person Contact Number)";
-            //     return false;
-            // }
-            // if(playschlStudPersInfEditObj.pickuppersonrelationship == undefined || playschlStudPersInfEditObj.pickuppersonrelationship ==  null || playschlStudPersInfEditObj.pickuppersonrelationship == '')
-            // {
-            //     $scope.showpickupPersonRelationshipErr = true;
-            //     $scope.pickupPersonRelationshipErrMsg = "(Please enter Pick up Person Relationship)";
-            //     return false;
-            // }
             if(playschlStudPersInfEditObj.transport == undefined || playschlStudPersInfEditObj.transport ==  null || playschlStudPersInfEditObj.transport == '')
             {
                 $scope.showtransportModeErr = true;
@@ -403,7 +306,6 @@ sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($s
         catch(ex)
         {
             alert('Exception in validation '+ ex);
-            console.log(ex);
             return false;
         }
 
@@ -446,9 +348,6 @@ sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($s
         $scope.presentpincodeErrMsg='';
         $scope.showPresentpincodeErr=false;
 
-        // $scope.presentstateErrMsg='';
-        // $scope.showPresentstateErr=false;
-
         $scope.fathersmobilenoErrMsg='';
         $scope.showFathersMobileNoErr=false;
 
@@ -490,6 +389,32 @@ sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($s
 
     }    
 
+    $scope.open1 = function() {
+        $scope.popup1.opened = true;
+    };
+    $scope.popup1 = {
+        opened: false
+    };
+
+    $scope.open2 = function() {
+        $scope.popup2.opened = true;
+    };
+    $scope.popup2 = {
+        opened: false
+    };
+
+    $scope.open3 = function() {
+        $scope.popup3.opened = true;
+    };
+    $scope.popup3 = {
+        opened: false
+    };
+    $scope.open4 = function() {
+        $scope.popup4.opened = true;
+    };
+    $scope.popup4 = {
+        opened: false
+    };
 
 });
 

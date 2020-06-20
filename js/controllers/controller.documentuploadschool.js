@@ -17,15 +17,12 @@ sivwebapp.controller('documentUploadSchoolCtrl', function($scope, $http, hosturl
     }
     $scope.selectAllStudents = function() {
         for(i in $scope.studentList){
-            console.log(i);
             $scope.studentList[i].studentphotoaccess=1;
         }
     }
     $scope.uploadImageSubmit = function(){
          var files= $('#photoUploadFileId')[0].files;
          var len=files.length;
-
-        console.log($scope.studentList);
 
          if(len>10){
             alert("Maximum 10 Images are allowed!")
@@ -52,21 +49,12 @@ sivwebapp.controller('documentUploadSchoolCtrl', function($scope, $http, hosturl
                     cache: false,
                     timeout: 600000,
                     success: function (data) {
-                        // $("#btnSubmit").prop("disabled", false);
                         $('.overlay'+data).remove();
                         alert("Image"+data+" uploaded successfully!");
                     },
                     error: function (e) {
-
-                        // $("#result").text(e.responseText);
-                        console.log("ERROR : ", e);
-                        // $("#btnSubmit").prop("disabled", false);
-
                         $('.overlay').remove();
-
-                        
                         alert("File/Document"+data+" failed to upload! Please try again");
-
                     }
                 });
              }

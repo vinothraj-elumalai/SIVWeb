@@ -1,6 +1,5 @@
 sivwebapp.controller('createUserCtrl', function($scope, $http, hosturl) {
     $scope.createUserSubmit = function(){
-    	console.log($scope.createuserdata);
         $http({
                 url: hosturl+"/api/v1/createuser",
                 method: "POST",

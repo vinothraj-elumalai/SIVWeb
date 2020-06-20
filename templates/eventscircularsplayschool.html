@@ -21,19 +21,27 @@
 						<input class="form-control" type="text" name="eventid" ng-model="eventscircularssplayschooldata.eventid" ng-disabled = "true">
 					</div>
 
-
 					<div class="form-group">
 						<label>Enter Entry Date<font color="red">**</font></label>
-						<label class="label-error-message" ng-bind="entryDateErrMsg" ng-show="showentryDateErr"></label>						
-						<input class="form-control" type="text" name="entrydate" ng-model="eventscircularssplayschooldata.entrydate">
-					</div>
+						<label class="label-error-message" ng-bind="entryDateErrMsg" ng-show="showentryDateErr"></label>
+						<p class="input-group calendar-input">
+							<input type="text" name="entrydate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open1(popup1)" is-open="popup1.opened" ng-model="eventscircularssplayschooldata.entrydate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open1(popup1)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
 
-
-                    <div class="form-group">
+					<div class="form-group">
 						<label>Event Date<font color="red">**</font></label>
-						<label class="label-error-message" ng-bind="eventDateErrMsg" ng-show="showEventDateErr"></label>						
-						<input class="form-control" type="text" name="eventdate" ng-model="eventscircularssplayschooldata.eventdate">
-					</div>
+						<label class="label-error-message" ng-bind="eventDateErrMsg" ng-show="showEventDateErr"></label>
+						<p class="input-group calendar-input">
+							<input type="text" name="eventdate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open2(popup2)" is-open="popup2.opened" ng-model="eventscircularssplayschooldata.eventdate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open2(popup2)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
    					<div class="form-group">
 						<label>Event Day<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="eventDayErrMsg" ng-show="showEventDayErr"></label>						

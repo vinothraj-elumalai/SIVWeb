@@ -17,21 +17,6 @@ sivwebapp.controller('instituteDetailsCtrl', function($scope, $http, hosturl) {
         data.append("instituteemail1",$scope.institutedetailsdata.instituteemail1);
         data.append("instituteemail2",$scope.institutedetailsdata.instituteemail2);
         data.append("instituteweb",$scope.institutedetailsdata.instituteweb);
-        console.log(institutelogofile);
-        console.log('data');
-        console.log(data);
-    	console.log($scope.institutedetailsdata);
-      //   $http({
-      //           url: hosturl+"/api/v1/institutedetails",
-      //           method: "POST",
-      //           enctype: 'multipart/form-data',
-      //           headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-      //           data: data
-      //       }).then(function(success) {
-                
-      //       },function (error){
-            	
-   			// });
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
@@ -44,7 +29,6 @@ sivwebapp.controller('instituteDetailsCtrl', function($scope, $http, hosturl) {
             success: function (data) {
             },
             error: function (e) {
-                console.log("ERROR : ", e);
             }
         });
     }

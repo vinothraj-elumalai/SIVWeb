@@ -57,87 +57,7 @@
                 <li ng-repeat="menu in menulist" ng-class="{'green': $index%4 == 1, 'orange': $index%4 == 2, 'violet': $index%4 == 3, 'yellow': $index%4 == 0}">
                   <a ng-href="#!{{menu.href}}"><span class="sidemenuico {{menu.iconclass}}"></span>{{menu.menuitem}}</a>
                 </li>
-                <!-- <li class="green">
-                    <a href="#"><span class="sidemenuico icon-money-bag"></span>Trade</a>
-                </li>
-                <li class="orange">
-                    <a href="#" data-toggle="modal" data-target="#preregistration"><span class="sidemenuico icon-line-chart"></span>Reports</a>
-                </li>
-                <li class="active violet">
-                    <a href="#"><span class="sidemenuico icon-settings"></span>Settings</a>
-                </li>
-                <li class="yellow">
-                    <a href="#"><span class="sidemenuico icon-man"></span>About</a>
-                </li> -->
             </ul>
-            <!-- <div class="customprices-wrap">
-              <a data-toggle="collapse" data-target="#customprices" href="javascript:void(0)" class="custompricetitle"><span class="cpico icon-user" ></span> Custom Prices <i class="fa fa-caret-up" aria-hidden="true"></i></a>
-
-              <div id="customprices" class="collapse in customprices">
-                  <ul class="custompriceslist">
-                    <li>
-                      <div class="cplistinner draggable" id="draggable">
-                        <div class="cplistdragwrap">
-                        <img src="images/bpsmall.png" class="cplogo">
-                        <div class="cpright">
-                          <div class="price">114.73 <span class="icon-move"></span></div>
-                          <div class="cpdesc">
-                            <span class="cpdescname1">DIESEL</span>
-                            <span class="cpdescname2">23.56C</span>
-                            <span class="cpdescname3">MT</span>
-                          </div>
-                        </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="cplistinner draggable">
-                        <div class="cplistdragwrap">
-                        <img src="images/hpsmall.png" class="cplogo">
-                        <div class="cpright">
-                          <div class="price">115.34 <span class="icon-move"></span></div>
-                          <div class="cpdesc">
-                            <span class="cpdescname1">DIESEL</span>
-                            <span class="cpdescname2">23.56C</span>
-                            <span class="cpdescname3">MT</span>
-                          </div>
-                        </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="cplistinner draggable">
-                        <div class="cplistdragwrap">
-                        <img src="images/totalsmall.png" class="cplogo">
-                        <div class="cpright">
-                          <div class="price">114.12 <span class="icon-move"></span></div>
-                          <div class="cpdesc">
-                            <span class="cpdescname1">DIESEL</span>
-                            <span class="cpdescname2">23.56C</span>
-                            <span class="cpdescname3">MT</span>
-                          </div>
-                        </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="cplistinner draggable">
-                        <div class="cplistdragwrap">
-                        <img src="images/shellsmall.png" class="cplogo">
-                        <div class="cpright">
-                          <div class="price">114.18 <span class="icon-move"></span></div>
-                          <div class="cpdesc">
-                            <span class="cpdescname1">DIESEL</span>
-                            <span class="cpdescname2">23.56C</span>
-                            <span class="cpdescname3">MT</span>
-                          </div>
-                        </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-              </div>
-            </div> -->
         </div>
         <!-- /#sidebar-wrapper -->
 
@@ -146,54 +66,6 @@
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
-
-    <!-- Modal -->
-<!-- <div id="buynow" class="modal fade modalsmall" role="dialog">
-  <div class="modal-dialog">
-
-    
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title">Buy</h2>
-      </div>
-      <div class="modal-body">
-        <div class="formwrap-small">
-
-          <div class="form-group">
-            <label>Price</label>
-            <div class="form-flex-wrap">
-              <label class="labellight">USD$</label>
-              <div class="formcontrolwrap">
-                <span class="dollar">$</span>
-                <input type="text" placeholder="Enter your price" class="form-control">
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Quantity</label>
-            <div class="rangebuttonsholder">
-              <a href="javascript:void(0)" class="roundbtn roundbtnleft" id="incQuantity"><span class="icon-plus"></span></a>
-              <input type="text"  class="form-control" id="quantity" value="0">
-              <a href="javascript:void(0)" class="roundbtn roundbtnright" id="decQuantity"><span class="icon-minus"></span></a>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Terms</label>
-            <input type="text" placeholder="" class="form-control">
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <div class="text-center">
-          <button type="button" class="btn btn-primary form-button" data-dismiss="modal">Buy</button>
-          <button type="button" class="btn btn-default form-button" data-dismiss="modal">Cancel</button>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-</div> -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -206,7 +78,6 @@
     <script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <script src="js/app/app.js"></script>
     <script src="js/app/directives.js"></script>
-    <script src="js/app/config.js"></script>
     <script src="js/app/global.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/script.js"></script>
@@ -214,148 +85,29 @@
     <script src="js/controllers/controller.dashboard.js"></script>
     <script src="js/controllers/controller.login.js"></script>
     <script src="js/controllers/controller.createuser.js"></script>
-    <script src="js/controllers/controller.applicationsale.js"></script>
-    <script src="js/controllers/controller.admissioncounselling.js"></script>
-    <script src="js/controllers/controller.collegefeessetting.js"></script>
-    <script src="js/controllers/controller.transportfeessetting.js"></script>
-    <script src="js/controllers/controller.hostelfeessetting.js"></script>
-    <script src="js/controllers/controller.foodfeessetting.js"></script>
-    <script src="js/controllers/controller.feespayment.js"></script>
-    <script src="js/controllers/controller.studentacademicinfo.js"></script>
-    <script src="js/controllers/controller.studentpersonalinformation.js"></script>
-    <script src="js/controllers/controller.studentbaseinformation.js"></script>
-    <script src="js/controllers/controller.subjectentry.js"></script>
-    <script src="js/controllers/controller.certificatesubmission.js"></script>
-    <script src="js/controllers/controller.studenttransport.js"></script>
-    <script src="js/controllers/controller.studenthostel.js"></script>
-    <script src="js/controllers/controller.studentfood.js"></script>
-    <script src="js/controllers/controller.subjectallocation.js"></script>
-    <script src="js/controllers/controller.questionentry.js"></script>
-    <script src="js/controllers/controller.staffleaveletterentry.js"></script>
-    <script src="js/controllers/controller.bonafide.js"></script>
-    <script src="js/controllers/controller.firstaid.js"></script>
-    <script src="js/controllers/controller.feesfollowup.js"></script>
-    <script src="js/controllers/controller.studentleaveletter.js"></script>
-    <script src="js/controllers/controller.subjecttimetable.js"></script>
-    <script src="js/controllers/controller.studenthomework.js"></script>
-    <script src="js/controllers/controller.applicationfollowup.js"></script>
-    <script src="js/controllers/controller.studentcollegeid.js"></script>
-    <script src="js/controllers/controller.studentdiscontinuedtc.js"></script>
-    <script src="js/controllers/controller.studentremarks.js"></script>
-    <script src="js/controllers/controller.studentremarksaction.js"></script>
-    <script src="js/controllers/controller.diplomabranchinttesttimetable.js"></script>
-    <script src="js/controllers/controller.diplomasem1inttesttimetable.js"></script>
-    <script src="js/controllers/controller.diplomasem2inttesttimetable.js"></script>
-    <script src="js/controllers/controller.diplomabranchboardtimetable.js"></script>
-    <script src="js/controllers/controller.diplomafirstyearboardtimetable.js"></script>
-    <script src="js/controllers/controller.vendordetails.js"></script>
-    <script src="js/controllers/controller.scholarship.js"></script>
-    <script src="js/controllers/controller.stafftransport.js"></script>
-    <script src="js/controllers/controller.scholarship.js"></script>
-    <script src="js/controllers/controller.stafftransport.js"></script>
-    <script src="js/controllers/controller.equivalencesubject.js"></script>
-    <script src="js/controllers/controller.egovspellentry.js"></script>
-    <script src="js/controllers/controller.stenoevents.js"></script>
-    <script src="js/controllers/controller.stenocircular.js"></script>
-    <script src="js/controllers/controller.transportidcard.js"></script>
-    <script src="js/controllers/controller.mtcconcession.js"></script>
-    <script src="js/controllers/controller.trainconcession.js"></script>
-    <script src="js/controllers/controller.fuelfilling.js"></script>
-    <script src="js/controllers/controller.transportinsurance.js"></script>
-    <script src="js/controllers/controller.transportfc.js"></script>
-    <script src="js/controllers/controller.campusscheduler.js"></script>
-    <script src="js/controllers/controller.tournamentdata.js"></script>
-    <script src="js/controllers/controller.sportskitsstock.js"></script>
-    <script src="js/controllers/controller.sportsodform.js"></script>
-    <script src="js/controllers/controller.sportspddetails.js"></script>
-    <script src="js/controllers/controller.librarymemberdetail.js"></script>
-    <script src="js/controllers/controller.librarybookdata.js"></script>
-    <script src="js/controllers/controller.librarycddata.js"></script>
-    <script src="js/controllers/controller.librarymagazinedata.js"></script>
-    <script src="js/controllers/controller.librarybookissuereturn.js"></script>
-    <script src="js/controllers/controller.libraryusage.js"></script>
-    <script src="js/controllers/controller.hostelstudentdata.js"></script>
-    <script src="js/controllers/controller.hostelstudentleaveform.js"></script>
-    <script src="js/controllers/controller.hostelstudentvisitor.js"></script>
-    <script src="js/controllers/controller.parentfeedback.js"></script>
-    <script src="js/controllers/controller.securityvisitorpass.js"></script>
-    <script src="js/controllers/controller.securityvehiclesinout.js"></script>
-    <script src="js/controllers/controller.securityoutpass.js"></script>
-    <script src="js/controllers/controller.securitylatecomers.js"></script>
-    <script src="js/controllers/controller.studentattendance.js"></script>
-    <script src="js/controllers/controller.corporateentry.js"></script>
-    <script src="js/controllers/controller.campusrequest.js"></script>
-    <script src="js/controllers/controller.securitymaterialinout.js"></script>
-    <script src="js/controllers/controller.sportsathelete.js"></script>
-    <script src="js/controllers/controller.sportskitspurchase.js"></script>
-    <script src="js/controllers/controller.storespurchase.js"></script>
-    <script src="js/controllers/controller.storessales.js"></script>
-    <script src="js/controllers/controller.storesreturn.js"></script>
-    <script src="js/controllers/controller.superintendentex2.js"></script>
-    <script src="js/controllers/controller.superintendentstaffattendance.js"></script>
-    <script src="js/controllers/controller.primarykeytestuser.js"></script>
-    <script src="js/controllers/controller.primaryusercontacts.js"></script>
-    <script src="js/controllers/controller.primaryuserlog.js"></script>
-    <script src="js/controllers/controller.studentpersonalinformationentry.js"></script>
-    <script src="js/controllers/controller.staffbiodata.js"></script>
-    <script src="js/controllers/controller.staffacdemicinformation.js"></script>
-    <script src="js/controllers/controller.staffwillingsubjects.js"></script>
     <script src="js/controllers/controller.institutedetails.js"></script>
-    <script src="js/controllers/controller.institutecoursedetails.js"></script>
-    <script src="js/controllers/controller.institutebatchdetails.js"></script>
-    <script src="js/controllers/controller.institutetestdetails.js"></script>
-    <script src="js/controllers/controller.instituteexamdetails.js"></script>
-    <script src="js/controllers/controller.institutebusnodetails.js"></script>
-    <script src="js/controllers/controller.institutebusroutedetails.js"></script>
-    <script src="js/controllers/controller.instituteschoolsubjectdetails.js"></script>
-    <script src="js/controllers/controller.applicationsaleplayschool.js"></script>
-    <script src="js/controllers/controller.psdailyattendance.js"></script>
-    <script src="js/controllers/controller.admissionplayschool.js"></script>
     <script src="js/controllers/controller.schoolfeessettingplayschool.js"></script>
     <script src="js/controllers/controller.transportfeessettingplayschool.js"></script>
+    <script src="js/controllers/controller.applicationsaleplayschool.js"></script>
+    <script src="js/controllers/controller.admissionplayschool.js"></script>
     <script src="js/controllers/controller.studentattendanceplayschoolentry.js"></script>
-    <script src="js/controllers/controller.feespaymentplayschool.js"></script>
-    <script src="js/controllers/controller.studenttransportchangeplayschool.js"></script>
     <script src="js/controllers/controller.eventscircularsplayschool.js"></script>
-    <script src="js/controllers/controller.staffpersonalinformationplayschool.js"></script>
     <script src="js/controllers/controller.studenthomeworkplayschool.js"></script>
     <script src="js/controllers/controller.studenthomeworkviewplayschool.js"></script>
     <script src="js/controllers/controller.childspickupplayschoolentry.js"></script>
     <script src="js/controllers/controller.photosuploadplayschool.js"></script>
-    <script src="js/controllers/controller.videosuploadplayschool.js"></script>
     <script src="js/controllers/controller.studentsnamelistplayschool.js"></script>
-    <script src="js/controllers/controller.studentperformanceplayschool.js"></script>
-    <script src="js/controllers/controller.studentattendanceplayschoolmanagentview.js"></script>
-    <script src="js/controllers/controller.dailyfeesreportmanagementplayschool.js"></script>
-    <script src="js/controllers/controller.admissionstatusmanagementplayschool.js"></script>
-    <script src="js/controllers/controller.studentprofileviewplayschool.js"></script>
-    <script src="js/controllers/controller.studentdailyattendanceplayschool.js"></script>
-    <script src="js/controllers/controller.studentfeespaymenthistoryplayschool.js"></script>
     <script src="js/controllers/controller.studentpersonalinformationeditplayschool.js"></script>
     <script src="js/controllers/controller.studentdailyattendanceparentfetchplayschool.js"></script>
-    <script src="js/controllers/controller.studentdailyhomeworkparentfetchplayschool.js"></script>
-    <script src="js/controllers/controller.studentdailyeventsparentfetchplayschool.js"></script>
     <script src="js/controllers/controller.studentdailypickupparentfetchplayschool.js"></script>
-    <script src="js/controllers/controller.changepasswordplayschool.js"></script>
-    <script src="js/controllers/controller.parentfeedbackplayschool.js"></script>
     <script src="js/controllers/controller.applicationsaleschool.js"></script>
     <script src="js/controllers/controller.admissionschool.js"></script>
     <script src="js/controllers/controller.schooltestexamtimetable.js"></script>
-    <script src="js/controllers/controller.schooltestexammarkentry.js"></script>
-    <script src="js/controllers/controller.schoolfrontofficereports.js"></script>
-    <script src="js/controllers/controller.studentsnamelistschool.js"></script>
     <script src="js/controllers/controller.documentuploadschool.js"></script>
-    <script src="js/controllers/controller.videosuploadschool.js"></script>
-    <script src="js/controllers/controller.customerdetails.js"></script>
     <script src="js/controllers/controller.schooltestexammarkparentview.js"></script>
-    <script src="js/controllers/controller.customerdetailsedit.js"></script>
-    <script src="js/controllers/controller.schoolstudentattendanceentry.js"></script>
     <script src="js/controllers/controller.schoolhomeworkreport.js"></script>
     <script src="js/controllers/controller.schooleventsreport.js"></script>
     <script src="js/controllers/controller.schoolstudentdailyattendancereport.js"></script>
-
-
-
  </body>
 </html>
 

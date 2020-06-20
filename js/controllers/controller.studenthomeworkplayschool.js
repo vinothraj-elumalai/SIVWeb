@@ -7,6 +7,9 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$wi
     $scope.getPlaySchoolStudentListData.loginuser = $scope.userdata.username;
     $scope.lastHomeWorkId = {};
     $scope.studenthomeworkplayschooldata = {};
+    $scope.studenthomeworkplayschooldata.homeworks = [
+        {'category': '', 'homework': ''}
+    ]
 
     fetchlasthomeworkid();
 
@@ -25,7 +28,6 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$wi
                         $scope.lastHomeWorkId = success.data;
                         if($scope.lastHomeWorkId != null && $scope.lastHomeWorkId.hwid != undefined )
                         {
-                           //$scope.studenthomeworkplayschooldata.homeworkid = 'HW'+ $scope.lastHomeWorkId.homeworkid;
                            $scope.studenthomeworkplayschooldata.homeworkid='HW'+ $scope.lastHomeWorkId.hwid;
                         }
                     },function (error){
@@ -48,13 +50,30 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$wi
 
        }
 
+       $scope.addHomeworkRow = function () {
+        $scope.valueEmpty = false;
+        for(var i=0;i<$scope.studenthomeworkplayschooldata.homeworks.length;i++){
+            if($scope.studenthomeworkplayschooldata.homeworks[i].category == '' || $scope.studenthomeworkplayschooldata.homeworks[i].homework == '') {
+                $scope.valueEmpty = true;
+            }
+        }
+        if ($scope.valueEmpty) {
+            alert('Please enter homework')
+        } else {
+            $scope.studenthomeworkplayschooldata.homeworks.push({'category': '', 'homework': ''})
+        }
+       }
+       $scope.deleteHomeworkRow = function (index) {
+        if ($scope.studenthomeworkplayschooldata.homeworks.length > 1) {
+            $scope.studenthomeworkplayschooldata.homeworks.splice(index, 1);
+        }
+       }
+
 
     $scope.studentHomeWorkPlaySchoolSubmit = function(){
-        console.log("$scope.studenthomeworkplayschooldata");
         
         $scope.studenthomeworkplayschooldata.instituteid=$scope.userdata.instituteid;
         $scope.studenthomeworkplayschooldata.loginuser = $scope.userdata.username;
-    	console.log($scope.studenthomeworkplayschooldata);
         var playschlHomeWorkObj = $scope.studenthomeworkplayschooldata;
 
         if(playschlHomeWorkObj != undefined && playschlHomeWorkObj != null )
@@ -63,30 +82,41 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$wi
             {
                 try
                 {
-                    $scope.studenthomeworkplayschooldata.idno = 1;
-                    $scope.studenthomeworkplayschooldata.hwid = $scope.lastHomeWorkId.hwid+1;
-                    $http({
-                    url: hosturl+"/api/v1/studenthomeworkplayschool",
-                    method: "POST",
-                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                    data: $.param($scope.studenthomeworkplayschooldata)
-                    }).then(function(success) {
-                        alert('Record Saved');
-                        fetchlasthomeworkid();
-                        ClearDataFields();
-
-                        
-                
-                    },function (error){
-                
-                    });
+                  var p = $.when();
+                  $scope.studenthomeworkplayschooldata.homeworks.forEach(function(item, index) {
+                    p = p.then(function(){
+                      return updateHW(item, index);
+                    })
+                  })
+                    function updateHW(item, index){
+                      if(index!=0) {
+                         $scope.studenthomeworkplayschooldata.homeworkid='HW'+ $scope.lastHomeWorkId.hwid;
+                      }
+                        $scope.studenthomeworkplayschooldata.idno = 1;
+                        $scope.lastHomeWorkId.hwid = $scope.lastHomeWorkId.hwid + 1;
+                        $scope.studenthomeworkplayschooldata.hwid = $scope.lastHomeWorkId.hwid;
+                        $scope.studenthomeworkplayschooldata.subjectcategory = $scope.studenthomeworkplayschooldata.homeworks[index].category;
+                        $scope.studenthomeworkplayschooldata.homeworkcontent = $scope.studenthomeworkplayschooldata.homeworks[index].homework;
+                        return $.ajax({
+                        url: hosturl+"/api/v1/studenthomeworkplayschool",
+                        method: "POST",
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                        data: $.param($scope.studenthomeworkplayschooldata),
+                        success: function (success) {
+                          if((index+1)==$scope.studenthomeworkplayschooldata.homeworks.length) {
+                            alert('Record Saved');
+                            fetchlasthomeworkid();
+                            ClearDataFields();
+                          }
+                        }
+                        });
+                    }
 
                 }
 
                 catch(ex)
                 {
                     alert(ex);
-                    console.log(ex);
                 }
 
 
@@ -111,7 +141,6 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$wi
             var isValid=true;
             // Match the date format through regular expression
             if (dateStr.match(dateformat)) {
-                //document.form1.text1.focus();
                 //Test which seperator is used '/' or '-'
                 var opera1 = dateStr.split('/');
                 var opera2 = dateStr.split('-');
@@ -219,32 +248,26 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$wi
                 return false;
             }
 
-            if(playschlHomeWorkObj.subjectcategory == undefined || playschlHomeWorkObj.subjectcategory ==  null || playschlHomeWorkObj.subjectcategory == '')
-            {
-                $scope.showSubjectCategoryErr = true;
-                $scope.subjectCategoryErrMsg = "(Please enter Category)";
-                return false;
-            }
+            
 
-            if(playschlHomeWorkObj.homeworkcontent == undefined || playschlHomeWorkObj.homeworkcontent ==  null || playschlHomeWorkObj.homeworkcontent == '')
+            $scope.hwEmpty = false;
+            for(var i=0;i<playschlHomeWorkObj.homeworks.length;i++){
+                if(playschlHomeWorkObj.homeworks[i].category == '' || playschlHomeWorkObj.homeworks[i].homework == '') {
+                    $scope.hwEmpty = true;
+                }
+            }
+            if(playschlHomeWorkObj.homeworks == undefined || playschlHomeWorkObj.homeworks ==  null || playschlHomeWorkObj.homeworks.length == 0 || $scope.hwEmpty)
             {
                 $scope.showHomeWorkContentErr = true;
                 $scope.homeworkContentErrMsg = "(Please enter Home Work Content)";
                 return false;
             }
-            // if(playschlHomeWorkObj.instituteid == undefined || playschlHomeWorkObj.instituteid ==  null || playschlHomeWorkObj.instituteid == '')
-            // {
-            //     $scope.showInstituteIdErr = true;
-            //     $scope.institueIdErrMsg = "(Please enter Institute Id)";
-            //     return false;
-            // }
 
 
         }
         catch(ex)
         {
             alert('Exception in validation '+ ex);
-            console.log(ex);
             return false;
         }
 
@@ -271,29 +294,30 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$wi
         $scope.academicYearErrMsg='';
         $scope.showAcademicYearErr=false;
 
-        $scope.subjectCategoryErrMsg='';
-        $scope.showSubjectCategoryErr=false;
+        
 
         $scope.homeworkContentErrMsg='';
         $scope.showHomeWorkContentErr=false;
-
-        // $scope.institueIdErrMsg='';
-        // $scope.showInstituteIdErr=false;
 
 
     }    
 
         function ClearDataFields()
     {
-        // $scope.studenthomeworkplayschooldata.entrydate="";
-        // $scope.studenthomeworkplayschooldata.entryday="";
-        // $scope.studenthomeworkplayschooldata.program="Select Program";
-        // $scope.studenthomeworkplayschooldata.section="Select Section";
-        // $scope.studenthomeworkplayschooldata.academicyear="Select Academic Year";
-        // $scope.studenthomeworkplayschooldata.subjectcategory="Select Subject Category";
-        $scope.studenthomeworkplayschooldata.homeworkcontent="";
-        // $scope.studenthomeworkplayschooldata.instituteid="";
+        $scope.studenthomeworkplayschooldata.entrydate="";
+        $scope.studenthomeworkplayschooldata.entryday="";
+        $scope.studenthomeworkplayschooldata.program="Select Program";
+        $scope.studenthomeworkplayschooldata.section="Select Section";
+        $scope.studenthomeworkplayschooldata.academicyear="Select Academic Year";
+        $scope.studenthomeworkplayschooldata.subjectcategory="Select Subject Category";
+        $scope.studenthomeworkplayschooldata.homeworks=[{'category': '', 'homework': ''}];
+        $scope.studenthomeworkplayschooldata.instituteid="";
     }
-
+    $scope.open1 = function() {
+        $scope.popup1.opened = true;
+    };
+    $scope.popup1 = {
+        opened: false
+    };
 
 });

@@ -28,12 +28,16 @@
 						<input class="form-control" type="text" name="candidatename" ng-model="studentpersonalinformationeditplayschooldata.candidatename">
 					</div>
 
-
-                    <div class="form-group">
+					<div class="form-group">
 						<label>Entered Date of Birth<font color="red">**</font></label>
-						<label class="label-error-message" ng-bind="dateofbirthErrMsg" ng-show="showDateofBirthErr"></label>						
-						<input class="form-control" type="text" name="dateofbirth" ng-model="studentpersonalinformationeditplayschooldata.dateofbirth">
-					</div>
+						<label class="label-error-message" ng-bind="dateofbirthErrMsg" ng-show="showDateofBirthErr"></label>
+						<p class="input-group calendar-input">
+							<input type="text" name="dateofbirth" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open1(popup1)" is-open="popup1.opened" ng-model="studentpersonalinformationeditplayschooldata.dateofbirth" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open1(popup1)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
    					<div class="form-group">
 						<label>Entered Age<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="ageErrMsg" ng-show="showAgeErr"></label>						
@@ -237,18 +241,33 @@
 					<div class="form-group">
 						<label>Entered Students Fathers Date of Birth<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="fathersDobErrMsg" ng-show="showFathersDobErr"></label>
-						<input class="form-control" type="text" name="fathersdob" ng-model="studentpersonalinformationeditplayschooldata.fathersdob">
-					</div>
+						<p class="input-group calendar-input">
+							<input type="text" name="fathersdob" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open2(popup2)" is-open="popup2.opened" ng-model="studentpersonalinformationeditplayschooldata.fathersdob" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open2(popup2)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
 					<div class="form-group">
 						<label>Entered Students Mothers Date of Birth<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="mothersDobErrMsg" ng-show="showMothersDobErr"></label>
-						<input class="form-control" type="text" name="mothersdob" ng-model="studentpersonalinformationeditplayschooldata.mothersdob">
-					</div>
+						<p class="input-group calendar-input">
+							<input type="text" name="mothersdob" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open3(popup3)" is-open="popup3.opened" ng-model="studentpersonalinformationeditplayschooldata.mothersdob" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open3(popup3)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
 					<div class="form-group">
 						<label>Entered Students Parents Wedding Date<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="parentWeddingDateErrMsg" ng-show="showParentWeddingDateErr"></label>
-						<input class="form-control" type="text" name="parentsweddingdate" ng-model="studentpersonalinformationeditplayschooldata.parentsweddingdate">
-					</div>
+						<p class="input-group calendar-input">
+							<input type="text" name="parentsweddingdate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open4(popup4)" is-open="popup4.opened" ng-model="studentpersonalinformationeditplayschooldata.parentsweddingdate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open4(popup4)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
 					<div class="form-group">
 						<label>Entered Students Religion<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="religionErrMsg" ng-show="showreligionErr"></label>

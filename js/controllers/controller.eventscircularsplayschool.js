@@ -24,7 +24,6 @@ sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http,$wi
                         $scope.lastEventId = success.data;
                         if($scope.lastEventId != null && $scope.lastEventId.evecirid != undefined )
                         {
-                           //$scope.studenthomeworkplayschooldata.homeworkid = 'HW'+ $scope.lastHomeWorkId.homeworkid;
                            $scope.eventscircularssplayschooldata = {
                             "eventid": 'EVECIR'+ $scope.lastEventId.evecirid
                            }
@@ -51,7 +50,6 @@ sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http,$wi
 
 
     $scope.eventsCircularsPlaySchoolSubmit = function(){
-    	console.log($scope.eventscircularssplayschooldata);
         $scope.eventscircularssplayschooldata.instituteid=$scope.userdata.instituteid;
         $scope.eventscircularssplayschooldata.loginuser = $scope.userdata.username;
         var playschlEventCircularObj = $scope.eventscircularssplayschooldata;
@@ -68,11 +66,6 @@ sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http,$wi
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.eventscircularssplayschooldata)
                 }).then(function(success) {
-                    alert('Record Saved');
-                    fetchlasteventid();
-                    ClearDataFields();
-                    //$scope.eventscircularssplayschooldata={};
-                   $window.scrollTo(0, 0);
 
                 
             },function (error){
@@ -100,7 +93,6 @@ sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http,$wi
             var isValid=true;
             // Match the date format through regular expression
             if (dateStr.match(dateformat)) {
-                //document.form1.text1.focus();
                 //Test which seperator is used '/' or '-'
                 var opera1 = dateStr.split('/');
                 var opera2 = dateStr.split('-');
@@ -240,19 +232,12 @@ sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http,$wi
                 $scope.messageErrMsg = "(Please enter Event Message)";
                 return false;
             }
-            // if(playschlEventCircularObj.instituteid == undefined || playschlEventCircularObj.instituteid ==  null || playschlEventCircularObj.instituteid == '')
-            // {
-            //     $scope.showInstituteIdErr = true;
-            //     $scope.instituteIdErrMsg = "(Please enter InstituteId)";
-            //     return false;
-            // }
 
 
         }
         catch(ex)
         {
             alert('Exception in validation '+ ex);
-            console.log(ex);
             return false;
         }
 
@@ -288,9 +273,6 @@ sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http,$wi
         $scope.messageErrMsg='';
         $scope.showMessageErr=false;
 
-        // $scope.instituteIdErrMsg='';
-        // $scope.showInstituteIdErr=false;
-
     }    
 
     function ClearDataFields()
@@ -303,8 +285,19 @@ sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http,$wi
         $scope.eventscircularssplayschooldata.academicyear="Select Academic Year";
         $scope.eventscircularssplayschooldata.eventtitle="";
         $scope.eventscircularssplayschooldata.message="";
-        // $scope.eventscircularssplayschooldata.instituteid="";
 
     }
+    $scope.open1 = function() {
+        $scope.popup1.opened = true;
+    };
+    $scope.popup1 = {
+        opened: false
+    };
 
+    $scope.open2 = function() {
+        $scope.popup2.opened = true;
+    };
+    $scope.popup2 = {
+        opened: false
+    };
 });

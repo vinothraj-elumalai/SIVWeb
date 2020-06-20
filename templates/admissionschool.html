@@ -932,10 +932,14 @@
 							<label>Candidate's Last Name</label>
 							<input class="form-control" type="text" name="candlastname" ng-model="admissionschooldata.candlastname" required ng-disabled="true">
 						</div>
-
 						<div class="form-group">
 							<label>Date of Birth</label>
-							<input class="form-control" type="text" name="dateofbirth" ng-model="admissionschooldata.dateofbirth" required ng-disabled="true" >
+							<p class="input-group calendar-input">
+								<input type="text" name="dateofbirth" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open1(popup1)" is-open="popup1.opened" ng-model="admissionschooldata.dateofbirth" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="open1(popup1)"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</p>
 						</div>
 						<div class="form-group">
 							<label>Age</label>
@@ -1255,15 +1259,30 @@
 						</div>
 						<div class="form-group">
 							<label>Fathers Date of Birth</label>
-							<input class="form-control" type="text" name="fathersdob" ng-model="admissionschooldata.fathersdob">
+							<p class="input-group calendar-input">
+								<input type="text" name="fathersdob" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open2(popup2)" is-open="popup2.opened" ng-model="admissionschooldata.fathersdob" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="open2(popup2)"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</p>
 						</div>
 						<div class="form-group">
 							<label>Mothers Date of Birth</label>
-							<input class="form-control" type="text" name="mothersdob" ng-model="admissionschooldata.mothersdob">
+							<p class="input-group calendar-input">
+								<input type="text" name="mothersdob" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open3(popup3)" is-open="popup3.opened" ng-model="admissionschooldata.mothersdob" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="open3(popup3)"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</p>
 						</div>
 						<div class="form-group">
 							<label>Parents Wedding Date</label>
-							<input class="form-control" type="text" name="parentsweddingdate" ng-model="admissionschooldata.parentsweddingdate">
+							<p class="input-group calendar-input">
+								<input type="text" name="parentsweddingdate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open4(popup4)" is-open="popup4.opened" ng-model="admissionschooldata.parentsweddingdate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="open4(popup4)"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</p>
 						</div>
 
 
@@ -1282,7 +1301,12 @@
 						</div>
 						<div class="form-group">
 							<label>Sibling Date of Birth</label>
-							<input class="form-control" type="text" name="siblingdob" ng-model="admissionschooldata.siblingdob " required>
+							<p class="input-group calendar-input">
+								<input type="text" name="siblingdob" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open5(popup5)" is-open="popup5.opened" ng-model="admissionschooldata.siblingdob" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="open5(popup5)"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</p>
 						</div>
 						<div class="form-group">
 							<label>Sibling Age</label>
@@ -1382,7 +1406,12 @@
 						<div class="form-group">
 							<label>Admission Date<font color="red">**</font></label>
 							<label class="label-error-message" ng-bind="admissionDateErrMsg" ng-show="showAdmissionDateErr"></label>
-							<input class="form-control" type="text" name="admissiondate" ng-model="admissionschooldata.admissiondate" required>
+							<p class="input-group calendar-input">
+								<input type="text" name="admissiondate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open6(popup6)" is-open="popup6.opened" ng-model="admissionschooldata.admissiondate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="open6(popup6)"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</p>
 						</div>
 
 						<div class="form-group">
@@ -1511,7 +1540,12 @@
 						<div class="form-group">
 							<label>Facility Fees Due Date<font color="red">**</font></label>
 							<label class="label-error-message" ng-bind="facilityFeesDueDateErrMsg" ng-show="showFacilityFeesDueDateErr"></label>
-							<input class="form-control" type="text" name="facilityfeesduedate" ng-model="admissionschooldata.facilityfeesduedate" allow-only-numbers required ng-disabled="true">
+							<p class="input-group calendar-input">
+								<input type="text" name="facilityfeesduedate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open7(popup7)" is-open="popup7.opened" ng-model="admissionschooldata.facilityfeesduedate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="open7(popup7)"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</p>
 						</div>
 
 						<div class="form-group">
@@ -1523,7 +1557,12 @@
 						<div class="form-group">
 							<label>Book and Note Book Fees Due Date<font color="red">**</font></label>
 							<label class="label-error-message" ng-bind="booknotebookFeesDueDateErrMsg" ng-show="showBookNoteBookFeesDueDateErr"></label>
-							<input class="form-control" type="text" name="booksnotebookfeesduedate" ng-model="admissionschooldata.booksnotebookfeesduedate" allow-only-numbers required ng-disabled="true">
+							<p class="input-group calendar-input">
+								<input type="text" name="booksnotebookfeesduedate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open8(popup8)" is-open="popup8.opened" ng-model="admissionschooldata.booksnotebookfeesduedate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="open8(popup8)"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</p>
 						</div>
 
 						<div class="form-group">
@@ -1535,7 +1574,12 @@
 						<div class="form-group">
 							<label>Others Fees Due Date<font color="red">**</font></label>
 							<label class="label-error-message" ng-bind="othersFeesDueDateErrMsg" ng-show="showOthersFeesDueDateErr"></label>
-							<input class="form-control" type="text" name="othersfeesduedate" ng-model="admissionschooldata.othersfeesduedate" allow-only-numbers required ng-disabled="true">
+							<p class="input-group calendar-input">
+								<input type="text" name="othersfeesduedate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open9(popup9)" is-open="popup9.opened" ng-model="admissionschooldata.othersfeesduedate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="open9(popup9)"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</p>
 						</div>
 
 						<div class="form-group">
@@ -1547,7 +1591,12 @@
 						<div class="form-group">
 							<label>Tuition Fees Monthly Due Date<font color="red">**</font></label>
 							<label class="label-error-message" ng-bind="tuitionfeesmonthlyDueDateErrMsg" ng-show="showTuitionFeesMonthlyDueDateErr"></label>
-							<input class="form-control" type="text" name="tuitionfeesmonthlyduedate" ng-model="admissionschooldata.tuitionfeesmonthlyduedate" allow-only-numbers required ng-disabled="true">
+							<p class="input-group calendar-input">
+								<input type="text" name="tuitionfeesmonthlyduedate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open10(popup10)" is-open="popup10.opened" ng-model="admissionschooldata.tuitionfeesmonthlyduedate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="open10(popup10)"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</p>
 						</div>
 
 						<div class="form-group">
@@ -1559,7 +1608,12 @@
 						<div class="form-group">
 							<label>Tuition Fees Termly Due Date<font color="red">**</font></label>
 							<label class="label-error-message" ng-bind="tuitionfeestermlyDueDateErrMsg" ng-show="showTuitionFeesTermlyDueDateErr"></label>
-							<input class="form-control" type="text" name="tuitionfeestermlyduedate" ng-model="admissionschooldata.tuitionfeestermlyduedate" allow-only-numbers required ng-disabled="true">
+							<p class="input-group calendar-input">
+								<input type="text" name="tuitionfeestermlyduedate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open11(popup11)" is-open="popup11.opened" ng-model="admissionschooldata.tuitionfeestermlyduedate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="open11(popup11)"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</p>
 						</div>
 
 						<div class="form-group">
