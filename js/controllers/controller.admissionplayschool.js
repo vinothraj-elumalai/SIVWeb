@@ -4,112 +4,17 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
     clearFields();
 
     $scope.applicationData = {};
-    // $scope.lastToddlerProgramNumber = {};
-
-    // var program = $scope.admissionplayschooldata.admissionfor;
-    // var status = $scope.admissionplayschooldata.admissionstatus;
-
- //      if ($scope.admissionplayschooldata.admissionfor == 'TODDLER PROGRAM' && $scope.admissionplayschooldata.admissionstatus == 'Admitted')
- //      {
-            //fetchlasttoddlerprogramno();
-//       }
     $scope.schoolvansetting=function(){
         if($scope.admissionplayschooldata.transport == "PRIVATE"){
              $scope.admissionplayschooldata.transportstage = "NO SCHOOL VAN";
              $scope.admissionplayschooldata.transportfeesmethod = "Not Applicable";
              $scope.admissionplayschooldata.transportfees = "0";
-            // $scope.admissionplayschooldata = {
-            //     "transportstage" : "NO SCHOOL VAN",
-            //     "transportfeesmethod": "Not Applicable",
-            //     "transportfees": 0
-            // }
         } else{
             $scope.admissionplayschooldata.transportstage = "Select Stage";
             $scope.admissionplayschooldata.transportfeesmethod = "Select Transport Fees Payment Method";
             $scope.admissionplayschooldata.transportfees = "";
         }
     };
-
-    
-    // $scope.lastToddlerProgramNumber = {};
-    //  $scope.fetchlasttoddlerprogramno = function() {
-    
-    //         $scope.idNumber = {
-    //             idno: 1
-    //         };
-
-    //         $http({
-    //                 url: hosturl+"/api/v1/playschoolprogramadmissionnogenerate/getPlaySchoolToddlerAdmissionNo",
-    //                 method: "POST",
-    //                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-    //                 data: $.param($scope.idNumber)
-    //                 }).then(function(success) {
-   
-    //                     $scope.lastToddlerProgramNumber = success.data;
-    //                     // if($scope.lastEnquiryNumber != null && $scope.lastEnquiryNumber.enquiryno != undefined )
-    //                     // {
-    //                     //    $scope.playschoolapplicationsaledata.applno = 'ENQ'+ $scope.lastEnquiryNumber.enquiryno;
-    //                     // }
-
-
-
-    //                     if ($scope.admissionplayschooldata.appfor == 'TODDLER PROGRAM' && $scope.admissionplayschooldata.admissionstatus == 'Admitted')
-    //                     {
-    //                         if($scope.lastToddlerProgramNumber != null && $scope.lastToddlerProgramNumber.todprgno != undefined )
-    //                         {
-    //                             $scope.admissionplayschooldata.registernumber = '17TOD'+ $scope.lastToddlerProgramNumber.todprgno;
-    //                         }
-    //                     }
-
-    //                     if ($scope.admissionplayschooldata.appfor == 'PRE-KG' && $scope.admissionplayschooldata.admissionstatus == 'Admitted')
-    //                     {
-    //                            if($scope.lastToddlerProgramNumber != null && $scope.lastToddlerProgramNumber.prekgprgno != undefined )
-    //                         {
-    //                             $scope.admissionplayschooldata.registernumber = '17PKG'+ $scope.lastToddlerProgramNumber.prekgprgno;
-    //                         }
-
-    //                     }
-                            
-    //                     if ($scope.admissionplayschooldata.appfor == 'KG1' && $scope.admissionplayschooldata.admissionstatus == 'Admitted')
-    //                     {
-    //                            if($scope.lastToddlerProgramNumber != null && $scope.lastToddlerProgramNumber.kgoneprgno != undefined )
-    //                         {
-    //                             $scope.admissionplayschooldata.registernumber = '17KGO'+ $scope.lastToddlerProgramNumber.kgoneprgno;
-    //                         }
-
-    //                     }
-    //                     if ($scope.admissionplayschooldata.appfor == 'KG2' && $scope.admissionplayschooldata.admissionstatus == 'Admitted')
-    //                     {
-    //                            if($scope.lastToddlerProgramNumber != null && $scope.lastToddlerProgramNumber.kgtwoprgno != undefined )
-    //                         {
-    //                             $scope.admissionplayschooldata.registernumber = '17KGT'+ $scope.lastToddlerProgramNumber.kgtwoprgno;
-    //                         }
-
-    //                     }
-                        
-    //                     if (($scope.admissionplayschooldata.appfor == 'KG2' || $scope.admissionplayschooldata.appfor == 'KG1' || $scope.admissionplayschooldata.appfor == 'PRE-KG' || $scope.admissionplayschooldata.appfor == 'TODDLER PROGRAM') && $scope.admissionplayschooldata.admissionstatus == 'Waiting List')
-    //                     {
-    //                            if($scope.lastToddlerProgramNumber != null && $scope.lastToddlerProgramNumber.waitlistno != undefined )
-    //                         {
-    //                             $scope.admissionplayschooldata.registernumber = '17WLS'+ $scope.lastToddlerProgramNumber.waitlistno;
-    //                         }
-
-    //                     }
-
-    //                 },function (error){
-    //                 alert(error);
-                
-    //                 });        
-
-    // }
-
-    // $scope.autogenerate = function()
-    // {
-    //    // fetchlasttoddlerprogramno();
-        
-
-    // }
-
 
     $scope.admissionPlaySchoolSubmit = function(){
         $scope.genregisternumber="";
@@ -121,26 +26,6 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
             {
                 try
                  {
-                //     $scope.admissionplayschooldata.idno = 1;
-                //     $scope.admissionplayschooldata.todprgno = $scope.lastToddlerProgramNumber.todprgno;
-                //     $scope.admissionplayschooldata.prekgprgno = $scope.lastToddlerProgramNumber.prekgprgno;
-                //     $scope.admissionplayschooldata.kgoneprgno = $scope.lastToddlerProgramNumber.kgoneprgno;
-                //     $scope.admissionplayschooldata.kgtwoprgno = $scope.lastToddlerProgramNumber.kgtwoprgno;
-                //     $scope.admissionplayschooldata.waitlistno = $scope.lastToddlerProgramNumber.waitlistno;
-
-
-
-                //     if($scope.admissionplayschooldata.appfor == 'TODDLER PROGRAM' && $scope.admissionplayschooldata.admissionstatus == 'Admitted')
-                //         $scope.admissionplayschooldata.todprgno = $scope.lastToddlerProgramNumber.todprgno+1;
-                //     if($scope.admissionplayschooldata.appfor == 'PRE-KG' && $scope.admissionplayschooldata.admissionstatus == 'Admitted')
-                //         $scope.admissionplayschooldata.prekgprgno = $scope.lastToddlerProgramNumber.prekgprgno+1;
-                //     if($scope.admissionplayschooldata.appfor == 'KG1' && $scope.admissionplayschooldata.admissionstatus == 'Admitted')
-                //         $scope.admissionplayschooldata.kgoneprgno = $scope.lastToddlerProgramNumber.kgoneprgno+1;
-                //     if($scope.admissionplayschooldata.appfor == 'KG2' && $scope.admissionplayschooldata.admissionstatus == 'Admitted')
-                //         $scope.admissionplayschooldata.kgtwoprgno = $scope.lastToddlerProgramNumber.kgtwoprgno+1;
-                //     if (($scope.admissionplayschooldata.appfor == 'KG2' || $scope.admissionplayschooldata.appfor == 'KG1' || $scope.admissionplayschooldata.appfor == 'PRE-KG' || $scope.admissionplayschooldata.appfor == 'TODDLER PROGRAM') && $scope.admissionplayschooldata.admissionstatus == 'Waiting List')
-                //         $scope.admissionplayschooldata.waitlistno = $scope.lastToddlerProgramNumber.waitlistno+1;   
-                
                     $scope.admissionplayschooldata.loginuser = $scope.userdata.username;
                     $scope.admissionplayschooldata.instituteid = $scope.userdata.instituteid;
                     $http({
@@ -175,7 +60,6 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
                 catch(ex)
                 {
                     alert(ex);
-                    console.log(ex);
                 }
 
             }
@@ -195,16 +79,9 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
             importCSS: true,
              loadCSS: [currentHost+"css/bootstrap.css",currentHost+"css/font-awesome.css",currentHost+"css/icomoon.css",currentHost+"css/simple-sidebar.css",currentHost+"css/style.css"]
         });
-        // $scope.admissionplayschoolprint = {};
     }
 
     $scope.searchAppNo = function(){
-
-         // $scope.feesDetailsRequest = {
-         //         applno :$scope.searchAppnoData.applno, 
-         //         program:$scope.searchAppnoData.appfor,
-         //         academicyear:$scope.searchAppnoData.academicyear
-         // };
          $scope.genregisternumber = "";
          $scope.searchAppnoData.instituteid = $scope.userdata.instituteid;
         $http({
@@ -212,7 +89,6 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
                 method: "POST",
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.searchAppnoData)
-                //data: $.param($scope.feesDetailsRequest)
             }).then(function(success) {
                
                 if(success.data == null || success.data == ""){
@@ -262,78 +138,24 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
 
                 $scope.admissionplayschooldata.siblingage='0.0';
             }
-                // $scope.admissionplayschooldata. = 
-                // $scope.admissionplayschooldata.activityfees = ;
-                //fetchFeesDetails();
-                //$scope.admissionplayschooldata.applno = $scope.applicationData.applno;
             },function (error){
                 
             });
     }
-
-    // $scope.searchFeesDetails = function(){
-    //     $http({
-    //             url: hosturl+"//api/v1/playschoolschoolfeessetting/getPlaySchoolFeesDetail",
-    //             method: "POST",
-    //             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-    //             data: $.param($scope.admissionplayschooldata)
-    //         }).then(function(success) {
-    
-    //             $scope.admissionplayschooldata = success.data;
-
-    //             //$scope.admissionplayschooldata.applno = $scope.applicationData.applno;
-    //         },function (error){
-                
-    //         });
-    // }
 
     $scope.activestep = 1;
     $scope.gotostep = function(position){
         $scope.activestep = position;
         if (position == 3)
         {
-//fetchFeesDetails();
         }
     }
-
-//     fetchFeesDetails = function()
-//     {
-//         $scope.feesDetailsRequest = {
-//                 program:$scope.admissionplayschooldata.appfor,
-//                 academicyear:$scope.admissionplayschooldata.academicyear
-//         };
-
-
-//         $http({
-//                 url: hosturl+"/api/v1/playschoolschoolfeessetting/getPlaySchoolFeesDetail",
-//                 method: "POST",
-//                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-//                 data: $.param($scope.feesDetailsRequest)
-//             }).then(function(success) {
-
-// //                $scope.feesDetailsResponse = success.data;
-//                 $scope.admissionplayschooldata = success.data;
-
-//                 // if($scope.feesDetailsResponse != null) // && $scope.feesDetailsResponse.enquiryno != undefined )
-//                 // {
-//                 //     alert('Fees Details Received');
-//                 //     //$scope.playschoolapplicationsaledata.applno = 'ENQ'+ $scope.lastEnquiryNumber.enquiryno;
-//                 // }
-
-//                 //$scope.admissionplayschooldata.applno = $scope.applicationData.applno;
-//             },function (error){
-                
-//             });
-    
-
-     //}
 
              function validateDate(dateStr) {
            var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
             var isValid=true;
             // Match the date format through regular expression
             if (dateStr.match(dateformat)) {
-                //document.form1.text1.focus();
                 //Test which seperator is used '/' or '-'
                 var opera1 = dateStr.split('/');
                 var opera2 = dateStr.split('-');
@@ -392,108 +214,6 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
                  return false;
                     
              }
-
-            // if(playschlAdmissionObj.fathersoccupation == undefined || playschlAdmissionObj.fathersoccupation ==  null || playschlAdmissionObj.fathersoccupation == '')
-            // {
-            //     alert('1');
-            //     $scope.showFathersOccupationErr = true;
-            //     $scope.fathersOccupationErrMsg = "(Please enter Father Occupation)";
-            //     return false;
-
-            // }   
-            // if(playschlAdmissionObj.fathersofficename == undefined || playschlAdmissionObj.fathersofficename ==  null || playschlAdmissionObj.fathersofficename == '')
-            // {       
-            //     $scope.showfathersOfficeNameErr = true;
-            //     $scope.fathersOfficeNameErrMsg = "(Please Enter Father Office Name)";
-            //     alert('2');
-            //     return false;
-            // }
-            // if(playschlAdmissionObj.fathersofficeaddress1 == undefined || playschlAdmissionObj.fathersofficeaddress1 ==  null || playschlAdmissionObj.fathersofficeaddress1 == '')
-            // {
-            //     $scope.showfathersOffAdd1Err = true;
-            //     $scope.fathersOffAdd1ErrMsg = "(Please enter Father office Address )";
-            //     return false;
-            // }
-
-            // if(playschlAdmissionObj.fathersofficearea == undefined || playschlAdmissionObj.fathersofficearea ==  null || playschlAdmissionObj.fathersofficearea == '')
-            // {
-            //     $scope.showfathersOffAreaErr = true;
-            //     $scope.fathersOffAreaErrMsg = "(Please enter Father office City)";
-            //     return false;
-            // }
-
-            // if(playschlAdmissionObj.fathersofficepincode == undefined || playschlAdmissionObj.fathersofficepincode ==  null || playschlAdmissionObj.fathersofficepincode == '')
-            // {
-            //     $scope.showFathersOffPinCodeErr = true;
-            //     $scope.fathersOffPinCodeErrMsg = "(Please enter Fathers Office Pin Code)";
-            //     return false;
-            // }
-
-            // if(playschlAdmissionObj.fathersofficestate == undefined || playschlAdmissionObj.fathersofficestate ==  null || playschlAdmissionObj.fathersofficestate == '')
-            // {
-            //     $scope.showFathersOffStateErr = true;
-            //     $scope.fathersOffStateErrMsg = "(Please enter Fathers Office Pin Code)";
-            //     return false;
-            // }
-
-            // if(playschlAdmissionObj.fathersdob == undefined || playschlAdmissionObj.fathersdob ==  null || playschlAdmissionObj.fathersdob == '')
-            // {
-            //     $scope.showFathersDobErr = true;
-            //     $scope.fathersDobErrMsg = "(Please enter Fathers Date of Birth)";
-            //     return false;
-            // }
-            // else
-            // {
-            //      var isValidDate=validateDate(playschlAdmissionObj.fathersdob);
-            //     if( isValidDate == null || isValidDate == false) 
-            //     {
-            //         $scope.showFathersDobErr = true;
-            //         $scope.fathersDobErrMsg = "(Invalid Date)";
-            //         return false;
-            //     }
-
-            // }
-
-
-
-            // if(playschlAdmissionObj.mothersdob == undefined || playschlAdmissionObj.mothersdob ==  null || playschlAdmissionObj.mothersdob == '')
-            // {
-            //     $scope.showMothersDobErr = true;
-            //     $scope.mothersDobErrMsg = "(Please enter Mothers Date of Birth)";
-            //     return false;
-            // }
-            // else
-            // {
-            //      var isValidDate=validateDate(playschlAdmissionObj.mothersdob);
-            //     if( isValidDate == null || isValidDate == false) 
-            //     {
-            //         $scope.showMothersDobErr = true;
-            //         $scope.fathersDobErrMsg = "(Invalid Date)";
-            //         return false;
-            //     }
-
-            // }
-
-
-            // if(playschlAdmissionObj.parentsweddingdate == undefined || playschlAdmissionObj.parentsweddingdate ==  null || playschlAdmissionObj.parentsweddingdate == '')
-            // {
-            //     $scope.showParentsWedDayErr = true;
-            //     $scope.parentsWedDayErrMsg = "(Please enter Parents Wedding Date)";
-            //     return false;
-            // }
-            // else
-            // {
-            //      var isValidDate=validateDate(playschlAdmissionObj.parentsweddingdate);
-            //     if( isValidDate == null || isValidDate == false) 
-            //     {
-            //         $scope.showParentsWedDayErr = true;
-            //         $scope.parentsWedDayErrMsg = "(Invalid Date)";
-            //         return false;
-            //     }
-
-            // }
-
-
 
             if(playschlAdmissionObj.religion == undefined || playschlAdmissionObj.religion ==  null || playschlAdmissionObj.religion == '')
             {
@@ -680,24 +400,10 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
                 return false;
             }
 
-            // if(playschlAdmissionObj.grandtotalfees == undefined || playschlAdmissionObj.grandtotalfees ==  null || playschlAdmissionObj.grandtotalfees == '')
-            // {
-            //     $scope.showGrandTotalFeesErr = true;
-            //     $scope.grandTotalFeesErrMsg = "(Please enter Grand Total of First Installment Fees)";
-            //     return false;
-            // }
-            // if(playschlAdmissionObj.instituteid == undefined || playschlAdmissionObj.instituteid ==  null || playschlAdmissionObj.instituteid == '')
-            // {
-            //     $scope.ShowInsituteIdErr = true;
-            //     $scope.instituteIdMsg = "(Please enter Institute ID)";
-            //     return false;
-            // }
-
         }
         catch(ex)
         {
             alert('Exception in validation '+ ex);
-            console.log(ex);
             return false;
         }
 
@@ -708,33 +414,6 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
     {
         $scope.ApplicationNoErrMsg='';
         $scope.showApplicationNoErr=false;
-
-        // $scope.fathersOccupationErrMsg='';
-        // $scope.showFathersOccupationErr=false;
-
-        // $scope.fathersOfficeNameErrMsg='';
-        // $scope.fathersofficename=false;
-
-        // $scope.fathersOffAdd1ErrMsg='';
-        // $scope.showfathersOffAdd1Err=false;
-
-        // $scope.fathersOffAreaErrMsg='';
-        // $scope.showfathersOffAreaErr=false;
-
-        // $scope.fathersOffPinCodeErrMsg='';
-        // $scope.showFathersOffPinCodeErr=false;
-
-        // $scope.fathersOffStateErrMsg='';
-        // $scope.showFathersOffStateErr=false;
-
-        // $scope.fathersDobErrMsg='';
-        // $scope.showFathersDobErr=false;
-
-        // $scope.mothersDobErrMsg='';
-        // $scope.showMothersDobErr=false;
-
-        // $scope.parentsWedDayErrMsg='';
-        // $scope.showParentsWedDayErr=false;
 
         $scope.religionErrMsg='';
         $scope.showReligionErr=false;
@@ -756,9 +435,6 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
 
         $scope.admissionStatusErrMsg='';
         $scope.showAdmissionStatusErr=false;
-
-        // $scope.registerNumberErrMsg='';
-        // $scope.showRegisterNumberErr=false;
 
         $scope.sectionErrMsg='';
         $scope.showSectionErr=false;
@@ -815,6 +491,73 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
         $scope.ShowInsituteIdErr=false;
 
     }    
+    $scope.open1 = function() {
+        $scope.popup1.opened = true;
+    };
+    $scope.popup1 = {
+        opened: false
+    };
 
+    $scope.open2 = function() {
+        $scope.popup2.opened = true;
+    };
+    $scope.popup2 = {
+        opened: false
+    };
+
+    $scope.open3 = function() {
+        $scope.popup3.opened = true;
+    };
+    $scope.popup3 = {
+        opened: false
+    };
+
+    $scope.open4 = function() {
+        $scope.popup4.opened = true;
+    };
+    $scope.popup4 = {
+        opened: false
+    };
+
+    $scope.open5 = function() {
+        $scope.popup5.opened = true;
+    };
+    $scope.popup5 = {
+        opened: false
+    };
+    $scope.open6 = function() {
+        $scope.popup6.opened = true;
+    };
+    $scope.popup6 = {
+        opened: false
+    };
+
+    $scope.open7 = function() {
+        $scope.popup7.opened = true;
+    };
+    $scope.popup7 = {
+        opened: false
+    };
+
+    $scope.open8 = function() {
+        $scope.popup8.opened = true;
+    };
+    $scope.popup8 = {
+        opened: false
+    };
+
+    $scope.open9 = function() {
+        $scope.popup9.opened = true;
+    };
+    $scope.popup9 = {
+        opened: false
+    };
+
+    $scope.open10 = function() {
+        $scope.popup10.opened = true;
+    };
+    $scope.popup10 = {
+        opened: false
+    };
 
 });

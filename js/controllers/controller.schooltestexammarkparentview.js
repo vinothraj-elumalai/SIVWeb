@@ -15,8 +15,6 @@ sivwebapp.controller('schoolTestExamMarkEntryCtrl', function($scope, $http, host
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.testdata)
             }).then(function(success) {
-                
-                console.log(JSON.stringify(success.data));
             },function (error){
                 
             });
@@ -98,6 +96,15 @@ sivwebapp.controller('schoolTestExamMarkEntryCtrl', function($scope, $http, host
             });
     }
 
+    $scope.checkmaxmarks = function(currentMark, parentIndex, index) {
+        let currentMarkParsed = parseFloat(currentMark);
+        let maxMarks = parseFloat($scope.getSchoolTestExamMarkData.subjectmaxmarks);
+        if(currentMarkParsed > maxMarks) {
+            alert('Exceeding the maximum marks');
+            $scope.studentList[parentIndex].subjectmarks[index] = 0;
+        }
+    }
+
     $scope.totalmarks = function (marklist,indexval){
         $scope.enteredmarks = marklist;
         $scope.totalmarksvar = 0;
@@ -106,10 +113,6 @@ sivwebapp.controller('schoolTestExamMarkEntryCtrl', function($scope, $http, host
                 $scope.totalmarksvar = parseInt($scope.totalmarksvar) + parseInt(mark);   
             }
         });
-        // console.log($scope.studentList);
-
-        // $scope.studentList[indexval].totalmark={};
-        // $scope.studentList[indexval].totalmark =  $scope.totalmarksvar;
         return $scope.totalmarksvar;
     }
     $scope.averagemarks = function (marklist,indexval){
@@ -129,7 +132,6 @@ sivwebapp.controller('schoolTestExamMarkEntryCtrl', function($scope, $http, host
         return $scope.percentage.toFixed(2);
     }
     $scope.gradecalc = function(marklist, index) {
-        console.log("index"+index);
         $scope.enteredmarks = marklist;
         $scope.totalmarksvar = 0;
         $scope.result = "PASS";

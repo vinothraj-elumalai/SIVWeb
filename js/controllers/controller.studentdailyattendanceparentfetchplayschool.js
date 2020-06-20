@@ -4,7 +4,6 @@ sivwebapp.controller('studentDailyAttendanceParentFetchPlaySchoolCtrl', function
         "registernumber": $scope.userdata.username,
         "instituteid": $scope.userdata.instituteid
     };
-    console.log("test");
     $scope.studentdailyattendanceparentfetchPlaySchoolSubmit = function(){
 
         $http({

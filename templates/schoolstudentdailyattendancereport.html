@@ -3,12 +3,17 @@
 	<div class="col-md-12">
 		<form name="schoolstudentabsentlistform" ng-submit="getSchoolStudentAbsentList()" novalidate>
 			<div class="row">
-				<div class="col-md-6">	
+				<div class="col-md-6">
 					<div class="form-group">
 						<label>ENTER DATE</label>
 						<label class="label-error-message" ng-bind="attDateErrMsg" ng-show="showattDateErr"></label>
-						<input class="form-control" type="text" name="entrydate" ng-model="schoolstudentabsentlistdata.entrydate"  required ="true">
-					</div>
+						<p class="input-group calendar-input">
+							<input type="text" name="entrydate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open1(popup1)" is-open="popup1.opened" ng-model="schoolstudentabsentlistdata.entrydate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open1(popup1)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
 
 
 					<div class="form-group">

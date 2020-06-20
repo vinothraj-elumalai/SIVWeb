@@ -13,4 +13,10 @@ sivwebapp.controller('playschoolTransportFeesSettingCtrl', function($scope, $htt
             	
    			});
     }
+    $scope.open1 = function() {
+        $scope.popup1.opened = true;
+    };
+    $scope.popup1 = {
+        opened: false
+    };
 });

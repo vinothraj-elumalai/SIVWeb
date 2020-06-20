@@ -86,7 +86,17 @@
 			<td>{{$index+1}}</td>
 			<td>{{subject.subjectcode}}</td>
 			<td>{{subject.subjectname}}</td>
-			<td><input type="text" ng-model="subject.date" class="form-control" /></td>
+			<td>
+				<div class="form-group">
+					<p class="input-group calendar-input">
+						<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open($index)" is-open="popup[$index].opened"  ng-model="subject.date" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-default" ng-click="open($index)"><i class="glyphicon glyphicon-calendar"></i></button>
+						</span>
+					</p>
+				  </div>
+				
+				</td>
 		</tr>
 	</table>
 

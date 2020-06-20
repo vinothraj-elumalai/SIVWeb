@@ -6,7 +6,6 @@ sivwebapp.controller('schoolTestExamTimeTableCtrl', function($scope, $http, host
 
 
     $scope.getSubjectDetailsSubmit = function(){
-        console.log($scope.getTimeTableData);
     	$scope.getTimeTableData.eventid = $scope.eventid;
         $http({
                 url: hosturl+"/api/v1/schooltestexamtimetable/getschooltestexamtimetable",
@@ -34,11 +33,7 @@ sivwebapp.controller('schoolTestExamTimeTableCtrl', function($scope, $http, host
             "getTimeTableData": ttdata,
             "subjectdetails": subjectdetailstring
         }
-
-
-
-
-        console.log($scope.timetableentry);
+        
         $http({
                 url: hosturl+"/api/v1/schooltestexamtimetable/uploadTimeTable",
                 method: "POST",
@@ -79,10 +74,7 @@ sivwebapp.controller('schoolTestExamTimeTableCtrl', function($scope, $http, host
                         $scope.lastEventId = success.data;
                         if($scope.lastEventId != null && $scope.lastEventId.evecirid != undefined )
                         {
-                           //$scope.studenthomeworkplayschooldata.homeworkid = 'HW'+ $scope.lastHomeWorkId.homeworkid;
                            $scope.eventid = 'EVECIR'+ $scope.lastEventId.evecirid;
-                           // $scope.id = 1;
-                           //  $scope.eventscircularssplayschooldata.evecirid = $scope.lastEventId.evecirid+1;
                         }
                     },function (error){
                     alert(error);
@@ -91,4 +83,25 @@ sivwebapp.controller('schoolTestExamTimeTableCtrl', function($scope, $http, host
                     });        
 
        }
+       $scope.open = function (index) {
+           var indexVal = parseInt(index);
+        $scope.popup[indexVal].opened = true;
+       }
+       $scope.popup = [
+        {opened: false},
+        {opened: false},
+        {opened: false},
+        {opened: false},
+        {opened: false},
+        {opened: false},
+        {opened: false},
+        {opened: false},
+        {opened: false},
+        {opened: false},
+        {opened: false},
+        {opened: false},
+        {opened: false},
+        {opened: false},
+        {opened: false}
+    ];
 });

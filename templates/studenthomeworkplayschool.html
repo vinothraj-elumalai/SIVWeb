@@ -3,7 +3,7 @@
 	<div class="col-md-12">
 		<form name="studenthomeworkplayschoolform" ng-submit="studentHomeWorkPlaySchoolSubmit()" novalidate>
 			<div class="row">
-				<div class="col-md-6">					
+				<div class="col-md-12">					
 					<div class="form-group">
 						<label>Enter HomeWork Id <font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="homeworkIdErrMsg" ng-show="showHomeWorkIdErr"></label>
@@ -13,8 +13,13 @@
 					<div class="form-group">
 						<label>Enter Date<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="entryDateErrMsg" ng-show="showEntryDateErr"></label>
-						<input class="form-control" type="text" name="entrydate" ng-model="studenthomeworkplayschooldata.entrydate">
-					</div>
+						<p class="input-group calendar-input">
+							<input type="text" name="entrydate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open1(popup1)" is-open="popup1.opened" ng-model="studenthomeworkplayschooldata.entrydate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open1(popup1)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
 					<div class="form-group">
 						<label>Enter Day<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="entryDayErrMsg" ng-show="showEntryDayErr"></label>
@@ -59,37 +64,51 @@
 							<option>2020-2021</option>
 						</select>
 					</div>
-					<div class="form-group">
-						<label>SELECT SUBJECT CATEGORY<font color="red">**</font></label>
-						<label class="label-error-message" ng-bind="subjectCategoryErrMsg" ng-show="showSubjectCategoryErr"></label>
-						<select class="form-control" ng-model="studenthomeworkplayschooldata.subjectcategory">
-							<option>Select Subject Category</option>
-							<option>LITERACY</option>
-							<option>MEMORIES</option>
-							<option>GENERAL AWARENESS</option>
-							<option>NUMERACY</option>
-							<option>PENCIL TIME ENGLISH</option>
-							<option>PENCIL TIME MATHEMATICS</option>
-							<option>PENCIL TIME STROKES AND CURVES</option>
-							<option>TAMIL</option>
-							<option>ENGLISH</option>
-							<option>MATHS</option>
-							<option>EVS</option>
-							<option>SOCIAL SCIENCE</option>
-							<option>SCIENCE</option>
-							<option>COMPUTER STUDIES</option>
-							<option>HINDI</option>
-							<option>OTHERS</option>
-						</select>
-					</div>
+					<label class="label-error-message" ng-bind="homeworkContentErrMsg" ng-show="showHomeWorkContentErr"></label>
+					<table class="table">
+						<tr>
+							<th>S.no</th>
+							<th>Subject</th>
+							<th>Homework</th>
+							<th>Action</th>
 
-					<div class="form-group">
-						<label>Enter Home Work Content<font color="red">**</font></label>
-						<label class="label-error-message" ng-bind="homeworkContentErrMsg" ng-show="showHomeWorkContentErr"></label>
-						<textarea class="form-control" ng-model="studenthomeworkplayschooldata.homeworkcontent"></textarea>
-						
-<!-- 						<input class="form-control" type="text" name="homeworkcontent" ng-model="studenthomeworkplayschooldata.homeworkcontent"> -->
-					</div>
+						</tr>
+						<tr ng-repeat="hw in studenthomeworkplayschooldata.homeworks">
+							<td>
+								{{$index+1}}
+							</td>
+							<td>
+								<select class="form-control" ng-model="hw.category">
+									<option>Select Subject Category</option>
+									<option>CONSOLIDATED HOMEWORK</option>
+									<option>LITERACY</option>
+									<option>MEMORIES</option>
+									<option>GENERAL AWARENESS</option>
+									<option>NUMERACY</option>
+									<option>PENCIL TIME ENGLISH</option>
+									<option>PENCIL TIME MATHEMATICS</option>
+									<option>PENCIL TIME STROKES AND CURVES</option>
+									<option>தமிழ்</option>
+									<option>ENGLISH</option>
+									<option>MATHS</option>
+									<option>EVS</option>
+									<option>SOCIAL SCIENCE</option>
+									<option>SCIENCE</option>
+									<option>COMPUTER STUDIES</option>
+									<option>HINDI</option>
+									<option>OTHERS</option>
+								</select>
+							</td>
+							<td>
+								<textarea class="form-control" ng-model="hw.homework"></textarea>
+							</td>
+							<td>
+								<a href="javascript:void(0)" ng-click="deleteHomeworkRow($index)">delete</a>
+							</td>
+						</tr>
+					</table>
+
+					<a href="javascript:void(0)" ng-click="addHomeworkRow()">Add row</a>
 					<!-- <div class="form-group">
 						<label>Enter Login User</label>
 						<input class="form-control" type="text" name="loginuser" ng-model="studenthomeworkplayschooldata.loginuser">

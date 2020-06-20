@@ -4,7 +4,6 @@ sivwebapp.controller('studentsNameListPlaySchoolCtrl', function($scope, $http, c
     $scope.admissionplayschoolprint = {};
     $scope.studentsnamelistplayschooldata.instituteid = $scope.userdata.instituteid;
     $scope.studentsNameListSubmit = function(){
-    	console.log($scope.studentsnamelistplayschooldata);
         $http({
                 url: hosturl+"/api/v1/playschoolstudentnamelist",
                 method: "POST",
@@ -15,7 +14,6 @@ sivwebapp.controller('studentsNameListPlaySchoolCtrl', function($scope, $http, c
                 $scope.students = success.data;
 
 
-                // $scope.admissionplayschoolprint = $scope.admissionplayschooldata;
                 $scope.admissionplayschoolprint.instituteName = $scope.userdata.instituteName;
                 $scope.admissionplayschoolprint.instituteAddress1 = $scope.userdata.instituteAddress1;
                 $scope.admissionplayschoolprint.instituteAddress2 = $scope.userdata.instituteAddress2;
@@ -36,6 +34,5 @@ sivwebapp.controller('studentsNameListPlaySchoolCtrl', function($scope, $http, c
             importCSS: true,
              loadCSS: [currentHost+"css/bootstrap.css",currentHost+"css/font-awesome.css",currentHost+"css/icomoon.css",currentHost+"css/simple-sidebar.css",currentHost+"css/style.css"]
         });
-        // $scope.admissionplayschoolprint = {};
     }
 });

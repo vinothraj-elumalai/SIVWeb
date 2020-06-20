@@ -1,24 +1,13 @@
 sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filter, $window, hosturl, Auth, constantService) {
-
-    // $scope.showApplnErr = false;
-    // $scope.applnNumberErrMsg="";
-        // $scope.playschoolapplicationsaledata = {
-
-        //     saledate: ''
-        // };
         $scope.userdata = Auth.isLoggedIn();
         $scope.schoolapplicationsaledata = {};
         $scope.schoolapplicationsaledata.loginuser = $scope.userdata.username;
         $scope.schoolapplicationsaledata.instituteid = $scope.userdata.instituteid;
         $scope.$watch('schoolapplicationsaledata.applicationnumberonly', function(newVal, oldVal) {
-            // checkData(newVal, oldVal, scope);
             $scope.schoolapplicationsaledata.applno = $scope.userdata.instituteid+$scope.schoolapplicationsaledata.applicationnumberonly;
         }, false);
         
         clearFields();
-        // $scope.lastEnquiryNumber = {};
-        // fetchlastenquiryno();
-//       FillSaleDate();
 
         $scope.CalculateAge = function()
         {
@@ -41,10 +30,7 @@ sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filte
                     $scope.showCandDOBErr = false;
                     $scope.candDOBMsg = "";
                 }
-                // givenDob = $filter('date')(new Date(givenDob), 'dd/MM/yyyy');
                 var dobarray = givenDob.split("/");
-
-                // var mdate = "01/08/2015";
                 var yearThen = parseInt(dobarray[2]);
                 var monthThen = parseInt(dobarray[1]);
                 var dayThen = parseInt(dobarray[0]);
@@ -69,34 +55,9 @@ sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filte
                     alert("Invalid birthday - Please try again!");
                 }
                 else {
-                    console.log("You are<br/><span id=\"age\">" + year_age + " years " + month_age + " months " + day_age + " days</span> old");
                     $scope.schoolapplicationsaledata.age = year_age+"."+month_age;
                     $scope.childDob =  year_age+"."+month_age;
                 }
-                // var givenDob = new Date(dobarray[2], dobarray[1] - 1, dobarray[0]);
-                // var today = new Date();
-                // var birthDate = new Date(givenDob);
-                // var yr = today.getFullYear() - birthDate.getFullYear();
-                // var m = today.getMonth() - birthDate.getMonth();
-                // var da = today.getDate() - birthDate.getDate();
-                // if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                //     $scope.schoolapplicationsaledata.age--;
-                // }
-                // if(m<0){
-                //     m +=12;
-                // }
-                // if(da<0){
-                //     da +=30;
-                // }
-
-                // if($scope.schoolapplicationsaledata == null || $scope.schoolapplicationsaledata == undefined)
-                // {   
-                //     $scope.schoolapplicationsaledata = {};
-                // }
-                // $scope.childDob = yr + "." + Math.abs(m);
-                // $scope.schoolapplicationsaledata.age = yr + "." + Math.abs(m);
-                
-                //alert(age+" years "+ Math.abs(m) + "months"+ Math.abs(da) + " days");
             }
         }
 
@@ -105,7 +66,6 @@ sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filte
             var isValid=true;
             // Match the date format through regular expression
             if (dateStr.match(dateformat)) {
-                //document.form1.text1.focus();
                 //Test which seperator is used '/' or '-'
                 var opera1 = dateStr.split('/');
                 var opera2 = dateStr.split('-');
@@ -149,59 +109,7 @@ sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filte
             return isValid;
         }
 
-       // function fetchlastenquiryno() {
-       //      $scope.idNumber = {
-       //          idno: 1
-       //      };
-       //      $http({
-       //              url: hosturl+"/api/v1/playschoolapplicaitonnogenerate/getPlaySchoolApplcationNo",
-       //              method: "POST",
-       //              headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-       //              data: $.param($scope.idNumber)
-       //              }).then(function(success) {
-       
-       //                  $scope.lastEnquiryNumber = success.data;
-       //                  // if($scope.lastEnquiryNumber != null && $scope.lastEnquiryNumber.enquiryno != undefined )
-       //                  // {
-       //                  //    $scope.playschoolapplicationsaledata.applno = 'ENQ'+ $scope.lastEnquiryNumber.enquiryno;
-       //                  // }
-       //              },function (error){
-       //             // alert(error);
-                
-       //              });        
-
-       // }
-
-        // function FillSaleDate()
-        // {
-        //     var currentDate = $filter('date')(new Date(), 'dd/MM/yyyy');
-        //     if($scope.playschoolapplicationsaledata == null || $scope.playschoolapplicationsaledata == undefined)
-        //     {   
-        //         $scope.playschoolapplicationsaledata = {};
-        //     }
-        //     $scope.playschoolapplicationsaledata.saledate = currentDate;    
-        //     $scope.appSaleDate = currentDate;
-        // }
-
-
-       // $scope.autogenerate = function()
-       // {
-       //  var category = $scope.playschoolapplicationsaledata.category;
-       //  if (category == 'Enquiry')
-       //  {
-       //      if($scope.lastEnquiryNumber != null && $scope.lastEnquiryNumber.enquiryno != undefined )
-       //      {
-       //          $scope.playschoolapplicationsaledata.applno = 'ENQ'+ $scope.lastEnquiryNumber.enquiryno;
-       //      }
-
-
-       //  }
-
-       // }
-
-
         $scope.schoolApplicationSaleSubmit = function(){
-    	console.log($scope.schoolapplicationsaledata);
         var schlAppObj = $scope.schoolapplicationsaledata;
 
         if(schlAppObj != undefined && schlAppObj != null )
@@ -209,14 +117,6 @@ sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filte
 
             if(validateApplication(schlAppObj))
             {
-                //try
-               // {
-                    // $scope.playschoolapplicationsaledata.idno = 1;
-                    // if($scope.playschoolapplicationsaledata.category == 'Enquiry')
-                    //     $scope.playschoolapplicationsaledata.enquiryno = $scope.lastEnquiryNumber.enquiryno+1;
-                    // else
-                    //     $scope.playschoolapplicationsaledata.enquiryno = $scope.lastEnquiryNumber.enquiryno;    
-
                     $http({
                         url: hosturl+"/api/v1/playschoolapplicationsale",
                         method: "POST",
@@ -227,15 +127,8 @@ sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filte
                     ClearDataFields();
                     $window.scrollTo(0, 0);
                     },function (error){
-                   // alert(error);
                 
-                    });        
-                //}
-                //catch(ex)
-                //{
-                //    alert(ex);
-                //    console.log(ex);
-                //}
+                    });
             }
             else
             {
@@ -245,14 +138,11 @@ sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filte
         else
         {
             clearFields();
-            // $scope.showCategoryErr = true;
-            // $scope.categoryErrMsg = "(Please Select Category)";
         }  
     }
 
     function ClearDataFields()
     {
-        // $scope.playschoolapplicationsaledata.category="Select Category";
         $scope.schoolapplicationsaledata.applno="";
         $scope.schoolapplicationsaledata.appfor="Select Application For";
         $scope.schoolapplicationsaledata.candfirstname="";
@@ -290,13 +180,6 @@ sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filte
         {    
              clearFields();
 
-            // if(playschlAppObj.category == undefined || playschlAppObj.category ==  null || playschlAppObj.category == '' || playschlAppObj.category == 'Select Category')
-            //  {
-            //     $scope.showCategoryErr = true;
-            //     $scope.categoryErrMsg = "(Please Select Category)";
-            //      return false;
-            //  }
-
             if(schlAppObj.applno == undefined || schlAppObj.applno ==  null || schlAppObj.applno == '')
              {
 
@@ -316,7 +199,6 @@ sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filte
             {       
                 $scope.showAppForErr = true;
                 $scope.saleAppforMsg = "(Please Select Application For)";
-                //alert('2');
                 return false;
             }
             if(schlAppObj.candfirstname == undefined || schlAppObj.candfirstname ==  null || schlAppObj.candfirstname == '')
@@ -530,24 +412,9 @@ sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filte
                 return false;
             }
 
-            // if(playschlAppObj.category == undefined || playschlAppObj.category ==  null || playschlAppObj.category == '')
-            // {
-            //     $scope.showCategoryErr = true;
-            //     $scope.categoryErrMsg = "(Please Select Category)";
-            //     return false;
-            // }
-            // if(schlAppObj.instituteid == undefined || schlAppObj.instituteid ==  null || schlAppObj.instituteid == '')
-            // {
-            //     $scope.ShowInsituteIdErr = true;
-            //     $scope.instituteIdMsg = "(Please Enter Institute ID)";
-            //     return false;
-            // }
-
             }
             catch(ex)
             {
-                //alert('Exception in validation '+ ex);
-                console.log(ex);
                 return false;
             }
 
@@ -628,13 +495,26 @@ sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filte
         $scope.showAppForErr = false;
         $scope.saleAppforMsg = '';
 
-        // $scope.showCategoryErr = false;
-        // $scope.categoryErrMsg = '';
-
-        // $scope.ShowInsituteIdErr = false;
-        // $scope.instituteIdMsg = '';
-
     }
 
+    $scope.open1 = function() {
+        $scope.popup1.opened = true;
+    };
+    $scope.popup1 = {
+        opened: false
+    };
 
+    $scope.open2 = function() {
+        $scope.popup2.opened = true;
+    };
+    $scope.popup2 = {
+        opened: false
+    };
+
+    $scope.open3 = function() {
+        $scope.popup3.opened = true;
+    };
+    $scope.popup3 = {
+        opened: false
+    };
 });

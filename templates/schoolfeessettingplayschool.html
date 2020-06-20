@@ -3,13 +3,17 @@
 	<div class="col-md-12">
 		<form name="playschoolfeessettingform" ng-submit="playschoolFeesSettingSubmit()" novalidate class="form-validation">
 			<div class="row">
-				<div class="col-md-6">					
+				<div class="col-md-6">
 					<div class="form-group">
 						<label>Fees Setting Date<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="feesSettingDateErrMsg" ng-show="showFeesSettingDateErr"></label>
-
-						<input class="form-control" type="text" name="feessettingdate" ng-model="playschoolfeessettingdata.feessettingdate" required>
-					</div>
+						<p class="input-group calendar-input">
+							<input type="text" name="feessettingdate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open1(popup1)" is-open="popup1.opened" ng-model="playschoolfeessettingdata.feessettingdate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open1(popup1)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
 					<div class="form-group">
 						<label>PROGRAMME NAME<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="programErrMsg" ng-show="showprogramErr"></label>
@@ -74,9 +78,13 @@
 					<div class="form-group">
 						<label>First Installment Amount Due Date<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="installment1DueDateErrMsg" ng-show="showInstallment1DueDateErr"></label>
-
-						<input class="form-control" type="text" name="installment1duedate" ng-model="playschoolfeessettingdata.installment1duedate" required>
-					</div>
+						<p class="input-group calendar-input">
+							<input type="text" name="installment1duedate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open2(popup2)" is-open="popup2.opened" ng-model="playschoolfeessettingdata.installment1duedate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open2(popup2)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
 					<div class="form-group">
 						<label>Second Installment Amount<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="installment2FeesErrMsg" ng-show="showInstallment2FeesErr"></label>
@@ -86,9 +94,13 @@
 					<div class="form-group">
 						<label>Second Installment Amount Due Date<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="installment2DueDateErrMsg" ng-show="showInstallment2DueDateErr"></label>
-
-						<input class="form-control" type="text" name="installment2duedate" ng-model="playschoolfeessettingdata.installment2duedate" required>
-					</div>
+						<p class="input-group calendar-input">
+							<input type="text" name="installment2duedate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open3(popup3)" is-open="popup3.opened" ng-model="playschoolfeessettingdata.installment2duedate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open3(popup3)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
 					<div class="form-group">
 						<label>Third Installment Amount<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="installment3FeesErrMsg" ng-show="showInstallment3FeesErr"></label>
@@ -98,9 +110,13 @@
 					<div class="form-group">
 						<label>Third Installment Amount Due Date<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="installment3DueDateErrMsg" ng-show="showInstallment3DueDateErr"></label>
-
-						<input class="form-control" type="text" name="installment3duedate" ng-model="playschoolfeessettingdata.installment3duedate" required>
-					</div>
+						<p class="input-group calendar-input">
+							<input type="text" name="installment3duedate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open4(popup4)" is-open="popup4.opened" ng-model="playschoolfeessettingdata.showInstallment3DueDateErr" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open4(popup4)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
 					<div class="form-group">
 						<label>Others Fees Amount</label>
 						<label class="label-error-message" ng-bind="othersFeesErrMsg" ng-show="showothersFeesErr"></label>
@@ -110,9 +126,13 @@
 					<div class="form-group">
 						<label>Others Amount Due Date</label>
 						<label class="label-error-message" ng-bind="othersfeesDueDateErrMsg" ng-show="showOthersfeesDueDateErr"></label>
-
-						<input class="form-control" type="text" name="othersfeesduedate" ng-model="playschoolfeessettingdata.othersfeesduedate" required>
-					</div>
+						<p class="input-group calendar-input">
+							<input type="text" name="othersfeesduedate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open5(popup5)" is-open="popup5.opened" ng-model="playschoolfeessettingdata.othersfeesduedate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open5(popup5)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
 
 
 					<div class="form-group">

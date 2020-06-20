@@ -10,7 +10,6 @@ sivwebapp.controller('eventsListSchoolCtrl', function($scope, $http, currentHost
 
 
     $scope.eventsListSubmit = function(){
-    	console.log($scope.eventslistdata);
         $http({
                 url: hosturl+"/api/v1/eventscircularsplayschool/eventslist",
                 method: "POST",
@@ -21,7 +20,6 @@ sivwebapp.controller('eventsListSchoolCtrl', function($scope, $http, currentHost
                 $scope.students = success.data;
 
 
-                // $scope.admissionplayschoolprint = $scope.admissionplayschooldata;
                 $scope.admissionplayschoolprint.instituteName = $scope.userdata.instituteName;
                 $scope.admissionplayschoolprint.instituteAddress1 = $scope.userdata.instituteAddress1;
                 $scope.admissionplayschoolprint.instituteAddress2 = $scope.userdata.instituteAddress2;
@@ -42,16 +40,18 @@ sivwebapp.controller('eventsListSchoolCtrl', function($scope, $http, currentHost
             importCSS: true,
              loadCSS: [currentHost+"css/bootstrap.css",currentHost+"css/font-awesome.css",currentHost+"css/icomoon.css",currentHost+"css/simple-sidebar.css",currentHost+"css/style.css"]
         });
-        // $scope.admissionplayschoolprint = {};
     }
 
     $scope.getEventList = function() {
         $scope.eventslistdata.currentdatestatus = false;
         $scope.eventslistdata.hwdate = $scope.entrydate;
-        console.log($scope.eventslistdata);
         $scope.eventsListSubmit();
     }
     $scope.eventsListSubmit();
+    $scope.open1 = function() {
+        $scope.popup1.opened = true;
+    };
+    $scope.popup1 = {
+        opened: false
+    };
 });
-
-//});

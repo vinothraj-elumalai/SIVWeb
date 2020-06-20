@@ -15,7 +15,6 @@ sivwebapp.controller('childsPickupPlaySchoolEntryCtrl', function($scope, $http, 
                 
                     $scope.playschoolstudentList = success.data;
                     $scope.$watch('playschoolstudentList', function(newVal, oldVal){
-                        console.log('changed');
                     }, true);
                
                 
@@ -33,8 +32,6 @@ sivwebapp.controller('childsPickupPlaySchoolEntryCtrl', function($scope, $http, 
             "pickupdetailsattributes": $scope.pickupdetailsattributes,
             "pickupdetails": $scope.pickupdetails
         };
-        console.log("$scope.pickupdetailsdata");
-        console.log($scope.pickupdetailsdata);
         $http({
                 url: hosturl+"/api/v1/childspickupplayschool/setPickUpDetails",
                 method: "POST",
@@ -50,4 +47,10 @@ sivwebapp.controller('childsPickupPlaySchoolEntryCtrl', function($scope, $http, 
                 
          });
     }
+    $scope.open1 = function() {
+        $scope.popup1.opened = true;
+    };
+    $scope.popup1 = {
+        opened: false
+    };
 });

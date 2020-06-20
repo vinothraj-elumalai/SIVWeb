@@ -3,11 +3,16 @@
 	<div class="col-md-12">
 		<form name="playschooltransportfeessettingform" ng-submit="playschoolTransportFeesSettingSubmit()" novalidate>
 			<div class="row">
-				<div class="col-md-6">					
+				<div class="col-md-6">
 					<div class="form-group">
 						<label>Fees Setting Date</label>
-						<input class="form-control" type="text" name="fees_setting_date" ng-model="playschoolTransportfeessettingdata.fees_setting_date">
-					</div>
+						<p class="input-group calendar-input">
+							<input type="text" name="fees_setting_date" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open1(popup1)" is-open="popup1.opened" ng-model="playschoolTransportfeessettingdata.fees_setting_date" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open1(popup1)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
 					<div class="form-group">
 						<label>SELECT STAGE</label>
 						<select class="form-control" ng-model="playschoolTransportfeessettingdata.stage">

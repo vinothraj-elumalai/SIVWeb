@@ -40,8 +40,13 @@
 					<div class="form-group">
 						<label>Sale Date<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="saleDateErrMsg" ng-show="showSaleDateErr"></label>
-						<input class="form-control" type="text" name="saledate" ng-model="schoolapplicationsaledata.saledate" required>
-					</div>
+						<p class="input-group calendar-input">
+							<input type="text" name="saledate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open1(popup1)" is-open="popup1.opened" ng-model="schoolapplicationsaledata.saledate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open1(popup1)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
 
 					<div class="form-group">
 						<label>Application For<font color="red">**</font></label>
@@ -83,8 +88,13 @@
 					<div class="form-group">
 						<label>Candidate Date of Birth<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="candDOBMsg" ng-show="showCandDOBErr"></label>
-						<input class="form-control" type="text" name="dateofbirth" ng-model="schoolapplicationsaledata.dateofbirth" ng-blur='CalculateAge()' required>
-					</div>
+						<p class="input-group calendar-input">
+							<input type="text" name="dateofbirth" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open2(popup2)" is-open="popup2.opened" ng-model="schoolapplicationsaledata.dateofbirth" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open2(popup2)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
 					<div class="form-group">
 						<label>Candidate Age<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="candAgeMsg" ng-show="showCandAgeErr"></label>
@@ -188,8 +198,13 @@
 					<div class="form-group">
 						<label>Date Committed to Join<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="datecommittedjoinMsg" ng-show="showdatecommittedjoinErr"></label>
-						<input class="form-control" type="text" name="followupdate" ng-model="schoolapplicationsaledata.followupdate" required>
-					</div>
+						<p class="input-group calendar-input">
+							<input type="text" name="followupdate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open3(popup3)" is-open="popup3.opened" ng-model="schoolapplicationsaledata.followupdate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open3(popup3)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+          			</div>
 					<div class="form-group">
 						<label>Application Price<font color="red">**</font></label>
 						<label class="label-error-message" ng-bind="applicationpriceMsg" ng-show="applicationpriceErr"></label>

@@ -17,8 +17,13 @@
     </table> -->
     <div class="form-group">
         <label>Enter Homework Date</label>
-        <input type="text" class="form-control" placeholder="Enter Homework Date" ng-model="homeworkDate">
-    </div>
+        <p class="input-group calendar-input">
+            <input type="text" name="homeworkDate" class="form-control" uib-datepicker-popup="{{format}}" ng-focus="open1(popup1)" is-open="popup1.opened" ng-model="homeworkDate" datepicker-options="dateOpenOptions" ng-required="true" close-text="Close" readonly />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open1(popup1)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </p>
+      </div>
     <input type="button" ng-click="getHomework()" class="btn btn-primary form-button" value="Submit">
     <br/>
     <br/>
