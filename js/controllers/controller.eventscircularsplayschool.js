@@ -56,6 +56,8 @@ sivwebapp.controller('eventsCircularsPlaySchoolCtrl', function($scope, $http,$wi
 
         if(playschlEventCircularObj != undefined && playschlEventCircularObj != null )
         {
+            playschlEventCircularObj.entrydate = constantService.toDateFormat(playschlEventCircularObj.entrydate);
+            playschlEventCircularObj.eventdate = constantService.toDateFormat(playschlEventCircularObj.eventdate);
             if(validateEventCircular(playschlEventCircularObj))
             {
             $scope.eventscircularssplayschooldata.id = 1;

@@ -22,6 +22,7 @@ sivwebapp.controller('admissionPlaySchoolCtrl', function($scope, $http, hosturl,
 
         if(playschlAdmissionObj != undefined && playschlAdmissionObj != null )
         {
+            playschlAdmissionObj.admissiondate = constantService.toDateFormat(playschlAdmissionObj.admissiondate);
             if(validateAdmission(playschlAdmissionObj))
             {
                 try

@@ -78,6 +78,7 @@ sivwebapp.controller('studentHomeWorkPlaySchoolCtrl', function($scope, $http,$wi
 
         if(playschlHomeWorkObj != undefined && playschlHomeWorkObj != null )
         {
+            playschlHomeWorkObj.entrydate = constantService.toDateFormat(playschlHomeWorkObj.entrydate);
             if(validateAdmission(playschlHomeWorkObj))
             {
                 try

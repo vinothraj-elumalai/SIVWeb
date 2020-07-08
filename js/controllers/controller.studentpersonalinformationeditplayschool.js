@@ -11,6 +11,7 @@ sivwebapp.controller('studentPersonalInformationEditPlaySchoolCtrl', function($s
 
         if(playschlStudPersInfEditObj != undefined && playschlStudPersInfEditObj != null )
         {
+            playschlStudPersInfEditObj.dateofbirth = constantService.toDateFormat(playschlStudPersInfEditObj.dateofbirth);
             if(validateStudentPersonalInformation(playschlStudPersInfEditObj))
             {
                 $http({

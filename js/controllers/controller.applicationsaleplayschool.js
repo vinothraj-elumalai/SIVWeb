@@ -14,7 +14,7 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
             if($scope.playschoolapplicationsaledata.dateofbirth != undefined && $scope.playschoolapplicationsaledata.dateofbirth !=  null || $scope.playschoolapplicationsaledata.dateofbirth != '')
             {
                 var givenDob = $scope.playschoolapplicationsaledata.dateofbirth;
-
+                givenDob = constantService.toDateFormat(givenDob);
                 var isValidDate=validateDate(givenDob);
                 if( isValidDate == null || isValidDate == false) 
                 {
@@ -116,6 +116,8 @@ sivwebapp.controller('playSchoolapplicationSaleCtrl', function($scope, $http, $f
         if(playschlAppObj != undefined && playschlAppObj != null )
         {
 
+            playschlAppObj.dateofbirth = constantService.toDateFormat(playschlAppObj.dateofbirth);
+            playschlAppObj.followupdate = constantService.toDateFormat(playschlAppObj.followupdate);
             if(validateApplication(playschlAppObj))
             {
                     $http({

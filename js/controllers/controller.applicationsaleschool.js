@@ -14,7 +14,7 @@ sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filte
             if($scope.schoolapplicationsaledata.dateofbirth != undefined && $scope.schoolapplicationsaledata.dateofbirth !=  null || $scope.schoolapplicationsaledata.dateofbirth != '')
             {
                 var givenDob = $scope.schoolapplicationsaledata.dateofbirth;
-
+                givenDob = constantService.toDateFormat(givenDob);
                 var isValidDate=validateDate(givenDob);
                 if( isValidDate == null || isValidDate == false) 
                 {
@@ -114,7 +114,8 @@ sivwebapp.controller('schoolApplicationSaleCtrl', function($scope, $http, $filte
 
         if(schlAppObj != undefined && schlAppObj != null )
         {
-
+            schlAppObj.dateofbirth = constantService.toDateFormat(schlAppObj.dateofbirth);
+            schlAppObj.followupdate = constantService.toDateFormat(schlAppObj.followupdate);
             if(validateApplication(schlAppObj))
             {
                     $http({
